@@ -24,7 +24,7 @@ function displayOptions(options: { label: string; nextStep: string }[]) {
         displayMessage(opt.label)
     })
 
-    if (chatbot.getHistory().length > 0) {
+    if (chatbot.getHistory().length > 1) {
         displayMessage('9️⃣ One Level Up')
     }
 

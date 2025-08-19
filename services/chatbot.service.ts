@@ -1,4 +1,3 @@
-// chatbot.service.ts
 import { BotFlow } from '../models/chatbot'
 
 export class ChatbotEngine {
@@ -14,6 +13,9 @@ export class ChatbotEngine {
 
     getCurrentStep() {
         const step = this.flow[this.currentStepId]
+        if (this.currentStepId === 'pusaka_estate_check_status') {
+            this.goToStep('retrieve_page1')
+        }
         // Replace placeholders like {name}
         const parsedMessage = step.message.replace(/\{(\w+)\}/g, (_, key) => this.userData[key] || '')
         return { ...step, message: parsedMessage }
@@ -25,17 +27,22 @@ export class ChatbotEngine {
             this.userData['name'] = input
             this.goToStep('greet')
         }
-        if (this.currentStepId === 'retrieve_page1') {
-            this.userData['name'] = input;
-            this.goToStep('retrieve_page1_nric');
-        }
-        if (this.currentStepId === 'retrieve_page1_nric') {
-            this.userData['nric'] = input;
-            this.goToStep('retrieve_page1_contact');
-        }
-        if (this.currentStepId === 'retrieve_page1_contact') {
-            this.userData['contact'] = input;
-            this.goToStep('retrieve_page1_done');
+        switch (this.currentStepId) {
+            case 'retrieve_page1':
+                this.userData['name'] = input;
+                this.goToStep('retrieve_page1_nric');
+                break;
+            case 'retrieve_page1_nric':
+                this.userData['nric'] = input;
+                this.goToStep('retrieve_page1_contact');
+                break;
+            case 'retrieve_page1_contact':
+                this.userData['contact'] = input;
+                this.goToStep('retrieve_page1_done');
+                break;
+            default:
+                break;
+
         }
     }
 
@@ -57,7 +64,7 @@ export class ChatbotEngine {
     }
 
     goBack() {
-        if (this.history.length > 0) {
+        if (this.history.length > 1) {
             this.currentStepId = this.history.pop()!
         }
     }
