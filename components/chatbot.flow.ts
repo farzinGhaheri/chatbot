@@ -70,7 +70,7 @@ export const chatbotFlow: BotFlow = {
                 label: '1️⃣ Hibah', nextStep: 'hibah'
             },
             {
-                label: '2️⃣ Trust', nextStep: 'Trust'
+                label: '2️⃣ Trust', nextStep: 'trust'
             },
         ]
     },
@@ -82,7 +82,7 @@ export const chatbotFlow: BotFlow = {
                 label: '1️⃣ will', nextStep: 'will'
             },
             {
-                label: '2️⃣ Trust', nextStep: 'hibah_ku'
+                label: '2️⃣ Trust', nextStep: 'trust'
             },
         ]
     },
@@ -115,10 +115,7 @@ export const chatbotFlow: BotFlow = {
                     Please visit any of our nearest branch counters to make the payment by bringing along the required documents.<br>
                     Payment can be made by cash (limited to RM5,000), cheque, debit/credit card, or online transfer.<br><br>
                     
-                    <strong><b>{name}</b></strong> may schedule an appointment at:
-                    <a href="https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m" target="_blank">
-                    Schedule Appointment
-                    </a><br>
+                    <strong><b>{name}</b></strong> may <a href="https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m" target="_blank">Schedule An Appointment</a><br>
                     Branch information can be found at: <a href="https://www.amanahraya.my/contact-us/branch-locator/" target="_blank"> Branch Information</a>`,
         options: [
             { label: 'Thank you. Feel free to return anytime!', nextStep: 'exit' },
@@ -138,10 +135,8 @@ export const chatbotFlow: BotFlow = {
                     Please visit any of our nearest branch counters to make the payment by bringing along the required documents.<br>
                     Payment can be made by cash (limited to RM5,000), cheque, debit/credit card, or online transfer.<br><br>
                     
-                    <strong><b>{name}</b></strong> may schedule an appointment at:
-                    <a href="https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m" target="_blank">
-                    Schedule Appointment
-                    </a><br>
+                    <strong><b>{name}</b></strong> may 
+                    <a href="https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m" target="_blank">Schedule An Appointment</a><br>
                     Branch information can be found at: <a href="https://www.amanahraya.my/contact-us/branch-locator/" target="_blank"> Branch Information</a>`,
         options: [
             { label: 'Thank you. Feel free to return anytime!', nextStep: 'exit' },
@@ -248,7 +243,7 @@ export const chatbotFlow: BotFlow = {
             `,
         options: [
             { label: '1️⃣ Estate', nextStep: 'pusaka_estate' },
-            { label: '2️⃣ Will', nextStep: 'will' },
+            { label: '2️⃣ Will', nextStep: 'will_one' },
             { label: '3️⃣ Trust', nextStep: 'trust' },
             { label: '4️⃣ Hibah', nextStep: 'hibah' },
             { label: '5️⃣ HibahKu', nextStep: 'hibah_ku' },
@@ -1159,10 +1154,7 @@ export const chatbotFlow: BotFlow = {
     },
     sabah_main_yes: {
         id: 'sabah_main_yes',
-        message: `May ARIA know where
-            the previous estate
-            administration was
-            carried out?`,
+        message: `May ARIA know where the previous estate administration was carried out?`,
         options: [
             { label: '1️⃣ Civil High Court (Peninsular) ', nextStep: 'sabah_main_yes_peninsular_court' },
             { label: '2️⃣ Civil High Court (Kota Kinabalu / Tawau / Sandakan)', nextStep: 'sabah_main_yes_kota_kinabalu' },
@@ -1176,11 +1168,7 @@ export const chatbotFlow: BotFlow = {
     },
     sabah_main_yes_peninsular_court: {
         id: 'sabah_main_yes_peninsular_court',
-        message: `Has the property in
-            Sabah been included in
-            the previous estate
-            administration that was
-            carried out?`,
+        message: `Has the property in Sabah been included in the previous estate administration that was carried out?`,
         options: [
             { label: '1️⃣ Yes ', nextStep: 'sabah_main_yes_peninsular_court_yes' },
             { label: '2️⃣ No', nextStep: 'sabah_main_yes_peninsular_court_no' },
@@ -1188,19 +1176,8 @@ export const chatbotFlow: BotFlow = {
     },
     sabah_main_yes_peninsular_court_yes: {
         id: '',
-        message: `For non-Muslims, the
-                transfer of ownership can
-                only be done if <b>{name}</b>
-                submits the Court Order
-                to ARB Kota Kinabalu for
-                the purpose of resealing
-                at the Sabah High Court.
-                For Muslims, <b>{name}</b>
-                must submit a new estate
-                application at ARB Kota
-                Kinabalu to be filed
-                through the Syariah
-                Court.<br><br>
+        message: `For non-Muslims, the transfer of ownership can only be done if <b>{name}</b> submits the Court Order to ARB Kota Kinabalu for the purpose of resealing at the Sabah High Court.<br><br>
+                For Muslims, <b>{name}</b> must submit a new estate application at ARB Kota Kinabalu to be filed through the Syariah Court.<br><br>
                 Would <b>{name}</b> like to proceed?`,
         options: [
             { label: '1️⃣ Proceed ', nextStep: 'sabah_main_no' },
@@ -1209,14 +1186,10 @@ export const chatbotFlow: BotFlow = {
     },
     sabah_main_yes_district_office: {
         id: 'sabah_main_yes_district_office',
-        message: `<b>{name}</b> may submit a
-                new estate application at
-                ARB Kota Kinabalu to be
-                filed through the Civil
-                High Court (for Non-
-                Muslims) or the Syariah
-                Court (for Muslims).<br><br>
-                Would <b>{name}</b> like to proceed?`,
+        message: `
+                <b>{name}</b> may submit a new estate application at ARB Kota Kinabalu to be filed through the Civil High Court (for Non-Muslims) or the Syariah Court (for Muslims).<br><br>
+                Would <b>{name}</b> like to proceed?
+                `,
         options: [
             { label: '1️⃣ Proceed ', nextStep: 'sabah_main_no' },
             { label: "2️⃣ That's all, Thank you", nextStep: 'exit' },
@@ -1224,16 +1197,10 @@ export const chatbotFlow: BotFlow = {
     },
     sabah_main_yes_native_court: {
         id: "sabah_main_yes_native_court",
-        message: `For the deceased's estate
-                that cannot be
-                administered through the
-                Native Court, <b>{name}</b> may
-                submit a new estate
-                application at ARB Kota
-                Kinabalu to be filed
-                through the Civil High
-                Court.<br><br>
-                Would <b>{name}</b> like to proceed?`,
+        message: `
+                For the deceased's estate that cannot be administered through the Native Court, <b>{name}</b> may submit a new estate application at ARB Kota Kinabalu to be filed through the Civil High Court.<br><br>
+                Would <b>{name}</b> like to proceed?
+                `,
         options: [
             { label: '1️⃣ Proceed ', nextStep: 'sabah_main_no' },
             { label: "2️⃣ That's all, Thank you", nextStep: 'exit' },
@@ -1241,13 +1208,8 @@ export const chatbotFlow: BotFlow = {
     },
     sabah_main_yes_peninsular_court_no: {
         id: 'sabah_main_yes_peninsular_court_no',
-        message: `<b>{name}</b> may submit a
-                new estate application at
-                ARB Kota Kinabalu to be
-                filed through the Civil
-                High Court (for non-
-                Muslims) or the Syariah
-                Court (for Muslims).<br><br>
+        message: `
+                <b>{name}</b> may submit a new estate application at ARB Kota Kinabalu to be filed through the Civil High Court (for non-Muslims) or the Syariah Court (for Muslims).<br><br>
                 Would <b>{name}</b> like to proceed?`,
         options: [
             { label: '1️⃣ Proceed ', nextStep: 'sabah_main_no' },
@@ -1256,21 +1218,11 @@ export const chatbotFlow: BotFlow = {
     },
     sabah_main_yes_syriah_court: {
         id: 'sabah_main_yes_syriah_court',
-        message: `if an Executor (Wasi) or
-                Guardian (Wali Harta) has
-                been appointed by the Syariah
-                Court, <b>{name}</b> may proceed
-                with the administration
-                granted by the Syariah Court.
-                However, if the appointed
-                Executor or Guardian fails to
-                carry out their duties, <b>{name}</b>
-                may appoint Amanah Raya
-                Berhad (ARB) Kota Kinabalu as
-                the new Executor or Guardian
-                by submitting an application
-                to ARB Kota Kinabalu.<br><br>
-                Would <b>{name}</b> like to proceed?`,
+        message: `
+                if an Executor (Wasi) or Guardian (Wali Harta) has been appointed by the Syariah  Court, <b>{name}</b> may proceed with the administration granted by the Syariah Court.<br><br>
+                However, if the appointed Executor or Guardian fails to carry out their duties, <b>{name}</b> ay appoint Amanah Raya Berhad (ARB) Kota Kinabalu as the new Executor or Guardian by 
+                submitting an application to ARB Kota Kinabalu.<br><br> Would <b>{name}</b> like to proceed?
+                `,
         options: [
             { label: '1️⃣ Proceed ', nextStep: 'sabah_main_no' },
             { label: "2️⃣ That's all, Thank you", nextStep: 'exit' },
@@ -1282,7 +1234,7 @@ export const chatbotFlow: BotFlow = {
                 appointed by the High Court,
                 <b>{name}</b> may proceed with the
                 estate administration as
-                ordered by the Court.
+                ordered by the Court.<br><br>
                 However, if the appointed
                 Administrator fails to carry out
                 their duties, <b>{name}</b> may apply
@@ -1306,7 +1258,6 @@ export const chatbotFlow: BotFlow = {
                 form along with the
                 complete documents to
                 ARB Kota Kinabalu.<br><br>
-                
                 <a href="https://drive.google.com/file/d/1sMYoAe-0iOpgoTc-U50FwTi9-zsbshOO/view" target=_blank>BORANG PERMOHONAN ASET TAMBAHAN</a>`,
         options: [
             { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
@@ -1345,12 +1296,136 @@ export const chatbotFlow: BotFlow = {
             { label: '2️⃣ Non-muslim', nextStep: 'sabah_non_muslim' },
         ]
     },
+    sabah_muslim: {
+        id: 'sabah_muslim',
+        message: `
+        1. DECEASED (SIMATI)<br>
+        a. Deceased’s Original Death Certificate & 3 certified true copies by JPN (If death occurred overseas, submit the Laporan Kematian Luar Negara issued by JPN).<br>
+        b. 3 certified true copies of the Deceased’s Birth Certificate by JPN.<br>
+        c. Original Will of the Deceased & 1 copy (if any).<br><br>
+        2. DECEASED'S BENEFICIARIES<br>
+        a. 3 certified true copies of Identity Card of each beneficiary by JPN.<br>
+        b. Proof of relationship with the Deceased:<br>
+        i. Spouse – Original Marriage Certificate & 3 certified true copies by the Department of Islamic Religious Affairs of the State of Sabah (JHEAINS) / Sabah Islamic Religious Council (MUIS)<br>
+        ii. Children – 3 certified true copies of Birth Certificate of each the  beneficiary by JPN.<br>
+        c. 3 certified true copies of Death Certificate (for beneficiary who passed away before / after the Deceased) by JPN.<br><br>
+        * If documents such as Birth Certificate / Death Certificate cannot be produced, please obtain them from JPN.<br>
+        * For Marriage Certificate, the spouse must obtain it from JHEAINS / MUIS.<br><br>
+        3. STATUTORY DECLARATION (PROVIDE ONLY IF RELEVANT)<br>
+        To be signed by an independent witness in front of a Commissioner for Oaths and stamped via the Inland Revenue Board (LHDN) website. A copy of the witness’s Identity Card must be included.<br>
+        a. Statutory Declaration of Single Status (if the deceased was unmarried).<br>
+        b. Statutory Declaration of No Children (if the deceased had no children).<br>
+        c. Statutory Declaration of Sole Beneficiary (if there is only one surviving beneficiary).<br><br>
+        4. MOVABLE ASSETS (PROVIDE ONLY IF APPLICABLE)<br>
+        a. 1 copy of Vehicle Grant / Certificate of Vehicle Ownership (front and back) and no outstanding loan / loan fully settled.<br>
+        b. 1 copy of the deceased’s account statement / savings book (ASB / Bank / Tabung Haji).<br>
+        c. 1 copy of current account statement.<br>
+        d. 1 copy of joint account statement / savings book.<br>
+        e. 1 copy of Bursa Malaysia share statement.<br>
+        f. 1 copy of Fixed Deposit statement.<br>
+        g. 1 copy of Safe Deposit Box slip.<br>
+        h. 1 copy of Company Share Certificate.<br>
+        i. 1 copy of EPF (KWSP) statement.<br>
+        j. 1 copy of Insurance Policy.<br>
+        k. 1 copy of Vessel Licence.<br><br>
+        5. IMMOVABLE PROPERTY (PROVIDE ONLY IF APPLICABLE)<br>
+        a. Original land title under the Deceased’s name & 1 copy of land title<br>
+        b. Native status confirmation (for Native Title land) if beneficiary is not 100% Sabah bumiputera<br><br>
+        6. MINIMUM DEPOSIT<br>
+        a. RM1,500.00 for movable assets only.<br>
+        b. RM2,000.00 for each immovable asset.<br><br>
+        7. ADMINISTRATION PERIOD<br>
+        Minimum 1 year 6 months from the date of file opening.<br><br>
+        8. RELATED FORMS<br>
+        a. Application Form For Estate Administration.<br>
+        b. Document Checklist to be Attached.<br>
+        c. Statutory Declaration (Married / Divorced / No Children / Sole Beneficiary / Single).<br>
+        d. Sample – Estate Administration Application Form.<br>
+        e. Sample – Statutory Declaration (Married / Divorced / No Children / Sole Beneficiary / Single).<br><br>
+        The Application Form must be completed and signed by the Applicant before a Commissioner for Oaths. The completed form must be stamped with RM10.00 online through the Inland Revenue Board (LHDN) <a href="https://stamps.hasil.gov.my/stamps" target="_blank">website</a> <br><br>
+        An administration fee will be charged for the estate administration, as follows:<br>
+        5% on the first RM25,000.<br>
+        4% on the next RM225,000.<br>
+        3% on the next RM250,000.<br>
+        2% on the next RM500,000.<br>
+        1% on the remaining balance.<br><br>
+        * Excluding legal fees & third-party charges (e.g., Court, Inland Revenue Board (LHDN), Valuation and Property Services Department (JPPH), etc.).<br><br>
+        The completed form along with the required documents may be submitted to ARB Kota Kinabalu for the estate file opening process.<br>
+        <b>{name}</b> may schedule an appointment at <a href="https://www.amanahraya.my" target="_blank">AmanahRaya</a><br><br>
+        For our branches location, please click <a href="https://www.amanahraya.my/contact-us/branch-locator/" taregt="_blank">here</a><br><br>
+        1. On the appointment date, consultation and advisory services can be conducted with our officer.<br>
+        2. Document submission and payment can be completed on the same day.<br><br>
+        Is there anything else ARIA can assist you with?
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    sabah_non_muslim: {
+        id: 'sabah_non_muslim',
+        message: `
+        1. DECEASED (SIMATI)
+        a. Deceased’s Original Death Certificate & 3 certified true copies by JPN (If death occurred overseas, submit the Laporan Kematian Luar Negara issued by JPN).<br>
+        b. Original Will of the Deceased & 1 copy (if any).<br><br>
+        2. DECEASED'S BENEFICIARIES<br>
+        a. 3 certified true copies of Identity Card of each beneficiary by JPN.<br>
+        b. Proof of relationship with the Deceased:<br>
+        i. Spouse – Original Marriage Certificate & 3 certified true copies by JPN).<br>
+        ii. Children – 3 certified true copies of Birth Certificate of each the beneficiary by JPN.<br>
+        c. 3 certified true copies of Death Certificate (for beneficiary who passed away before / after the Deceased) by JPN.<br><br>
+        * If documents such as Birth Certificate / Death Certificate / MArriage Certificate cannot be produced, please obtain them from JPN.<br><br>
+        3. STATUTORY DECLARATION (PROVIDE ONLY IF RELEVANT)<br>
+        To be signed by an independent witness in front of a Commissioner or Oaths and stamped via the Inland Revenue Board (LHDN) website. A copy of the witness’s Identity Card must be included.<br>
+        a. Statutory Declaration of Single Status (if the deceased was unmarried).<br>
+        b. Statutory Declaration of No Children (if the deceased had no children).<br>
+        c. Statutory Declaration of Sole Beneficiary (if there is only one surviving beneficiary).<br><br>
+        4. MOVABLE ASSETS (PROVIDE ONLY IF APPLICABLE)<br>
+        a. 1 copy of Vehicle Grant / Certificate of Vehicle Ownership (front and back) and no outstanding loan / loan fully settled.<br>
+        b. 1 copy of the deceased’s account statement / savings book (ASB / Bank / Tabung Haji).<br>
+        c. 1 copy of current account statement.<br>
+        d. 1 copy of joint account statement / savings book.<br>
+        e. 1 copy of Bursa Malaysia share statement.<br>
+        f. 1 copy of Fixed Deposit statement.<br>
+        g. 1 copy of Safe Deposit Box slip.<br>
+        h. 1 copy of Company Share Certificate.<br>
+        i. 1 copy of EPF (KWSP) statement.<br>
+        j. 1 copy of Insurance Policy.<br>
+        k. 1 copy of Vessel Licence.<br><br>
+        5. IMMOVABLE PROPERTY (PROVIDE ONLY IF APPLICABLE)<br>
+        a. Original land title under the Deceased’s name & 1 copy of land title<br>
+        b. Native status confirmation (for Native Title land) if beneficiary is not 100% Sabah bumiputera<br><br>
+        6. MINIMUM DEPOSIT<br>
+        a. RM1,500.00 for movable assets only<br>
+        b. RM2,000.00 for each immovable asset<br><br>
+        7. ADMINISTRATION PERIOD<br>
+        Minimum 1 year 6 months from the date of file opening<br>
+        8. RELATED FORMS<br>
+        a. Application Form For Estate Administration.<br>
+        b. Document Checklist to be Attached.<br>
+        c. Sample – Estate Administration Application Form.<br><br>
+        The Application Form must be completed and signed by the Applicant before a Commissioner for Oaths. The completed form must be stamped with RM10.00 online through the Inland Revenue Board (LHDN) <a href="https://stamps.hasil.gov.my/stamps" target="_blank">website</a> <br><br>
+        An administration fee will be charged for the estate administration, as follows:<br>
+        5% on the first RM25,000.<br>
+        4% on the next RM225,000.<br>
+        3% on the next RM250,000.<br>
+        2% on the next RM500,000.<br>
+        1% on the remaining balance.<br><br>
+        * Excluding legal fees & third-party charges (e.g., Court, Inland Revenue Board (LHDN), Valuation and Property Services Department (JPPH), etc.).<br><br>
+        The completed form along with the required documents may be submitted to ARB Kota Kinabalu for the estate file opening process.<br>
+        <b>{name}</b> may schedule an appointment at <a href="https://www.amanahraya.my" target="_blank">AmanahRaya</a><br><br>
+        For our branches location, please click <a href="https://www.amanahraya.my/contact-us/branch-locator/" taregt="_blank">here</a><br><br>
+        1. On the appointment date, consultation and advisory services can be conducted with our officer.<br>
+        2. Document submission and payment can be completed on the same day.<br><br>
+        Is there anything else ARIA can assist you with?
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
     // The below steps are belong to Serawak
     serawak: {
         id: 'serawak',
-        message: `To <b>{name}</b>’s knowledge, has the
-                deceased’s estate ever been
-                administered before?`,
+        message: `To <b>{name}</b>’s knowledge, has the deceased’s estate ever been administered before?`,
         options: [
             { label: '1️⃣ Yes, it has been done before', nextStep: 'serawak_main_yes' },
             { label: '2️⃣ No, it has never been done before', nextStep: 'serawak_main_no' },
@@ -1358,10 +1433,7 @@ export const chatbotFlow: BotFlow = {
     },
     serawak_main_yes: {
         id: 'serawak_main_yes',
-        message: `May ARIA know where
-                the previous estate
-                administration was
-                carried out?`,
+        message: `May ARIA know where the previous estate administration was carried out?`,
         options: [
             { label: '1️⃣ District Office(Sarawak) ', nextStep: 'serawak_main_yes_district_office' },
             { label: '2️⃣ Amanah Raya Berhad(Sarawak)', nextStep: 'serawak_main_yes_amanah_raya' },
@@ -1373,39 +1445,23 @@ export const chatbotFlow: BotFlow = {
     },
     serawak_main_yes_district_office: {
         id: 'serawak_main_yes_district_office',
-        message: `<b>{name}</b> may refer to
-                the District Office for
-                the administration of
-                the deceased’s
-                additional assets.`,
+        message: `<b>{name}</b> may refer to the District Office for the administration of the deceased’s additional assets.`,
         options: [
             { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
         ]
     },
     serawak_main_yes_amanah_raya: {
         id: 'serawak_main_yes_amanah_raya',
-        message: `<b>{name}</b> may
-                complete the
-                additional assets
-                form below and
-                submit the form
-                along with the
-                required documents
-                to the Kuching
-                branch for the
-                issuance of the
-                Supplementary
-                Letter of
-                Administration.<br><br>`,// Do it form
+        message: `
+        <b>{name}</b> may complete the additional assets form below and submit the form along with the required documents to
+         the Kuching branch for the issuance of the Supplementary Letter of Administration.<br><br>`,// Do it form
         options: []
     },
     serawak_main_yes_civil_court: {
         id: 'serawak_main_yes_civil_court',
-        message: `Has the property in
-                Sarawak been included in
-                the previous estate
-                administration that was
-                carried out?`,
+        message: `
+        Has the property in Sarawak been included in the previous estate administration that was carried out?
+        `,
         options: [
             { label: '1️⃣ Yes ', nextStep: 'serawak_main_yes_civil_court_yes' },
             { label: '2️⃣ No', nextStep: 'serawak_main_no' },
@@ -1413,16 +1469,10 @@ export const chatbotFlow: BotFlow = {
     },
     serawak_main_yes_civil_court_yes: {
         id: 'serawak_main_yes_civil_court_yes',
-        message: `For the transfer of
-                ownership of the
-                property, <b>{name}</b> will
-                need to undergo the
-                resealing process at
-                Amanah Raya Berhad
-                Kuching.<br><br>
-                <b>{name}</b> may visit our
-                Kuching branch for
-                further expalanation.`,
+        message: `
+                For the transfer of ownership of the property, <b>{name}</b> will need to undergo the resealing process at Amanah Raya Berhad Kuching.<br><br>
+                <b>{name}</b> may visit our Kuching branch for further expalanation.
+                `,
         options: [
             { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
         ]
@@ -1453,17 +1503,134 @@ export const chatbotFlow: BotFlow = {
         Further explanation only applies if <b>{name}</b>'s information meets the specified criteria.<br><br>
         Did the deceased leave a will, and who is the Executor named in the will?`,
         options: [
-            { label: '1️⃣ No will left by the deceased ', nextStep: 'sabah_main_yes_peninsular_court' },
-            { label: '2️⃣ Have a will, and the executor is other than ARB', nextStep: 'sabah_main_yes_kota_kinabalu' },
-            { label: '3️⃣ Have a will, and the executor is ARB', nextStep: 'sabah_main_yes_syriah_court' },
+            { label: '1️⃣ No will left by the deceased ', nextStep: 'sabah_main_no_deceased' },
+            { label: '2️⃣ Have a will, and the executor is other than ARB', nextStep: 'sabah_main_no_have_will' },
+            { label: '3️⃣ Have a will, and the executor is ARB', nextStep: 'sabah_main_no_have_will' },
+        ]
+    },
+    abah_main_no_deceased: {
+        id: 'abah_main_no_deceased',
+        message: `
+        1. DECEASED (SIMATI)<br>
+        a. Deceased's Original Death Certificate & 1 copy (If death occurred overseas, submit the Death Certificate issued by the relevant country together with confirmation of death from the Malaysian
+        Embassy, or Overseas Death Report issued by JPN) OR<br>
+        b. Presumption of Death Order from the High Court (Civil) & 1 copy.<br>
+        c. Copy of Marriage / Divorce Certificate / Decree Nisi Absolute.<br><br>
+        2. DECEASED'S BENEFICIARY<br>
+        a. 1 copy of Identity Card of beneficiary / applicant.<br>
+        b. 1 copy of proof of relationship to the Deceased (e.g.: Birth Certificate, Marriage Certificate).<br>
+        c. 1 copy of Death Certificate (for heirs who passed away before / after the Deceased).<br><br>
+        3. STATUTORY DECLARATION<br>
+        a. Statutory Declaration by applicant (if beneficiary’s Death Certificate cannot be produced) – LA 1 (Swk. 1/2017).<br>
+        b. Statutory Declaration by applicant and 2 independent witnesses (if Marriage Certificate cannot be produced) – LA 2 (Swk. 1/2017) & LA 3 (Swk. 1/2017).<br>
+        c. Statutory Declaration by applicant (for application of Letter of Administration) – LA 5 (Swk. 1/2017).<br>
+        d. Statutory Declaration by an independent witness who knew the Deceased to confirm the marital status of the Deceased OR confirmation by Clan Association / Village Head / Community 
+        Leader / Religious Leader (if the Deceased was single).<br><br>
+        * The declarations must be signed by the applicant / independent witness before a Commissioner for Oaths and stamped 
+        online at the Inland Revenue Board (LHDN) website. Copies of applicant’s / witness’s identity card must be attached.<br><br>
+        4. OTHER DOCUMENTS<br>
+        a. Letter of confirmation by next-of-kin from Clan Association / Temenggong / Penghulu – LA 4 (Swk. 1/2017).<br>
+        b. Letter of consent by beneficiaries / next-of-kin of the Deceased – LA 6 (Swk. 1/2017).<br>
+        c. Police Report / Complete Police Investigation Report (if death was caused by accident), together with a letter from the applicant stating intention to pursue related legal action.<br>
+        d. Letter from applicant stating there is no requirement for valuation of the Deceased’s assets such as land, shares, vehicles, etc. – LA 7 (Swk. 1/2017).<br>
+        e. Trust Undertaking Form – TU (Swk. 1/2017) (if applicable).<br><br>
+        5. MOVABLE ASSETS (PROVIDE ONLY IF APPLICABLE)<br>
+        a. 1 copy of Savings Account Book / Current Account Statement (latest) / Fixed Deposit Statement / Fixed Deposit Receipt / Security Deposit Receipt.<br>
+        b. 1 copy of Bursa Malaysia Share Certificate / CDS Account Statement.<br>
+        c. 1 copy of EPF Statement or confirmation letter from EPF stating total balance.<br>
+        d. 1 copy of Insurance Policy or confirmation letter from the insurance company stating the payable amount.<br>
+        e. For business: 3 copies of Trading Account, Profit & Loss Account, and Balance Sheet as of the date of death.<br>
+        i. If sole proprietorship – must be confirmed by next-of-kin and attached with company stamp.<br>
+        ii. If holding company shares – must submit a search from SSM.<br>
+        iii. If partnership – must be confirmed by surviving partner(s) and attached with company stamp & copy of business registration from LHDN / District Office.<br>
+        f. 1 copy of Grant / Vehicle Ownership Certificate (front and back).<br>
+        g. 1 copy of Firearm License.<br>
+        h. Letter from employer confirming salary/bonus of the Deceased (if any).<br><br>
+        6. IMMOVABLE PROPERTY (PROVIDE ONLY IF APPLICABLE)<br>
+        a. Copy of Land Title and Official Search from Land Office / Memorandum of Transfer / Sale & Purchase Agreement / Tenancy Agreement / Power of Attorney.<br><br>
+        7. ADMINISTRATION FEES<br>
+        a. RM300.00 (No valuation of movable and immovable assets).<br>
+        b. RM150.00 (If valuation of movable and immovable assets is less than RM100,000).<br>
+        c. RM300.00 (If movable and immovable assets valued between RM100,000 and RM1 million).<br>
+        d. RM500.00 (If movable and immovable assets valued at RM1 million and above).<br>
+        e. RM350.00 (For applications by foreign citizens).<br><br>
+        8. ADMINISTRATION PERIOD<br>
+        30 working days.<br><br>
+        9. RELATED FORMS<br>
+        a. Application for Letter of Administration.<br>
+        b. Statutory Declaratin – LA 1 (Swk. 1/2017).<br>
+        c. Letter of Next-of-Kin – LA 4 (Swk. 1/2017).<br>
+        d. Statutory Declaration (by applicant) – LA 5 (1/2017).<br>
+        e. Consent to Grant of Letter of Administration – LA 6 (1/2017).<br>
+        f. No valuation letter – LA 7 (Swk.1/2017).<br><br>
+        The completed form along with the required documents may be submitted to ARB Kota Kinabalu for the estate file opening process.<br>
+        <b>{name}</b> may schedule an appointment at <a href="https://www.amanahraya.my" target="_blank">AmanahRaya</a><br><br>
+        For our branches location, please click <a href="https://www.amanahraya.my/contact-us/branch-locator/" taregt="_blank">here</a><br><br>
+        1. On the appointment date, consultation and advisory services can be conducted with our officer.<br>
+        2. Document submission and payment can be completed on the same day.<br><br>
+        Is there anything else ARIA can assist you with?
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    sabah_main_no_have_will: {
+        id: 'sabah_main_no_have_will',
+        message: `
+        1. DECEASED (SIMATI)<br>
+        a. Deceased's Original Death Certificate & 1 copy (If death occurred overseas, submit the Death Certificate issued by the relevant country together with confirmation of death from the Malaysian Embassy, or Overseas Death Report issued by JPN) OR<br>
+        b. Presumption of Death Order from the High Court (Civil) & 1 copy.<br>
+        c. Original Will of the Deceased & 2 copies (certified true copies are not required)<br><br>
+        2. WASI / EXECUTOR<br>
+        a. 1 copy of Identity Card of Wasi / Executor.<br><br>
+        3. STATUTORY DECLARATION<br>
+        a. Statutory Declaration by 2 witnesses of the Deceased’s Will (for the purpose of witness confirmation).<br>
+        b. Statutory Declaration by Wasi / Executor (for application of Grant of Probate for administration of the Deceased’s estate) – P1 (Swk. 1/2005).<br><br>
+        * The declarations must be signed by the witness / Executor before a Commissioner for Oaths and stamped online at the Inland Revenue Board (LHDN) website. 
+        Copies of applicant’s / witness’s identity card must be attached.<br><br>
+        4. OTHER DOCUMENTS<br>
+        a. Letter from applicant stating there is no requirement for valuation of the Deceased’s assets such as land, shares, vehicles, etc. - P2 (Swk. 1/2005).<br><br>
+        5. MOVABLE ASSETS (PROVIDE ONLY IF APPLICABLE)<br>
+        a. 1 copy of Savings Account Book / Current Account Statement (latest) / Fixed Deposit Statement / Fixed Deposit Receipt / Security Deposit Receipt.<br>
+        b. 1 copy of Bursa Malaysia Share Certificate / CDS Account Statement.<br>
+        c. 1 copy of EPF Statement or confirmation letter from EPF stating total balance.<br>
+        d. 1 copy of Insurance Policy or confirmation letter from the insurance company stating the payable amount.<br>
+        e. For business: 3 copies of Trading Account, Profit & Loss Account, and Balance Sheet as of the date of death.<br>
+        i. If sole proprietorship – must be confirmed by next-of-kin and attached with company stamp.<br>
+        ii. If holding company shares – must submit a search from SSM.<br>
+        iii. If partnership – must be confirmed by surviving partner(s) and attached with company stamp & copy of business registration from LHDN / District Office.<br>
+        f. 1 copy of Grant / Vehicle Ownership Certificate (front and back).<br>
+        g. 1 copy of Firearm License.<br>
+        h. Letter fr.<br><br>
+        6. IMMOVABLE PROPERTY (PROVIDE ONLY IF APPLICABLE)<br>
+        a. Copy of Land Title and Official Search from Land Office / Memorandum of Transfer / Sale & Purchase Agreement / Tenancy Agreement / Power of Attorney.<br><br>
+        7. ADMINISTRATION FEES<br>
+        a. RM300.00 (No valuation of movable and immovable assets).<br>
+        b. RM150.00 (If valuation of movable and immovable assets is less than RM100,000).<br>
+        c. RM300.00 (If movable and immovable assets valued between RM100,000 and RM1 million).<br>
+        d. RM500.00 (If movable and immovable assets valued at RM1 million and above).<br>
+        e. RM350.00 (For applications by foreign citizens).<br><br>
+        8. ADMINISTRATION PERIOD<br>
+        30 working days.<br><br>
+        9. RELATED FORMS<br>
+        a. Application for Probate of the Will.<br>
+        b. Statutory Declaration – P1 (Swk. 1/2005).<br>
+        c. No valuation letter – P2 (Swk. 1/2005).<br><br>
+        The completed form along with the required documents may be submitted to ARB Kota Kinabalu for the estate file opening process.<br>
+        <b>{name}</b> may schedule an appointment at <a href="https://www.amanahraya.my" target="_blank">AmanahRaya</a><br><br>
+        For our branches location, please click <a href="https://www.amanahraya.my/contact-us/branch-locator/" taregt="_blank">here</a><br><br>
+        1. On the appointment date, consultation and advisory services can be conducted with our officer.<br>
+        2. Document submission and payment can be completed on the same day.<br><br>
+        Is there anything else ARIA can assist you with?
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
         ]
     },
     // The below steps are belong to Pusaka(Add Assets)
     pukasa_add_asset: {
         id: 'pukasa_add_asset',
-        message: `May ARIA know what
-                additional assets are to be
-                administered?`,
+        message: `May ARIA know what additional assets are to be administered?`,
         options: [
             { label: '1️⃣ Vehicle only (current value less than RM10,000) ', nextStep: 'pukasa_add_asset_vehicle' },
             { label: '2️⃣ Movable asset only', nextStep: 'pukasa_add_asset_movable' },
@@ -1475,9 +1642,7 @@ export const chatbotFlow: BotFlow = {
     pukasa_add_asset_movable: {
         id: 'pukasa_add_asset_movable',
         message: `
-            Okay. ARIA will list
-            down the required
-            documents.<br><br>
+            Okay. ARIA will list down the required documents.<br><br>
             1. DECEASED (SIMATI)<br>
             a. Original Death Certificate & 1 copy.<br><br>
             2. DECEASED'S BENEFICIARY<br>
@@ -1833,7 +1998,7 @@ export const chatbotFlow: BotFlow = {
         message: `
         Excellent!!! <b>{name}</b> has chosen the right executor.<br><br>
         Please visit any of our nearby branches and bring along the following documents:<br>
-        1. Will Application Form (link).<br>
+        1. <a href="https://drive.google.com/file/d/13si6oc13MdvQDy7WYzFWbvz7MTHVYb_9/view">Will Application Form.</a><br>
         2. Original will.<br>
         3. Copies of the identification cards of the testator and the will’s witnesses.<br>
         4. Storage fee: RM400 (payment can be made via cash, debit/credit card, or QR code).<br><br>
@@ -1850,7 +2015,7 @@ export const chatbotFlow: BotFlow = {
         message: `
         Excellent!!! <b>{name}</b> has chosen the right executor.<br><br>
         Please visit any of our nearby branches and bring along the following documents:<br>
-        1. Will Application Form (link).<br>
+        1. <a href="https://drive.google.com/file/d/13si6oc13MdvQDy7WYzFWbvz7MTHVYb_9/view">Will Application Form.</a><br>
         2. Original will.<br>
         3. Copies of the identification card.<br>
         4. Storage fee: RM600 (payment can be made via cash, debit/credit card, or QR code).<br><br>
@@ -1917,6 +2082,407 @@ export const chatbotFlow: BotFlow = {
         options: [
             { label: '1️⃣ Basic Will  ', nextStep: 'muslim_wills_basic' },
             { label: "2️⃣ Comprehensive Will", nextStep: 'muslim_wills_comprehensive' }
+        ]
+    },
+    muslim_wills_basic: {
+        id: 'muslim_wills_basic',
+        message: `
+        Congratulations on taking the step to plan your estate.<br><br>
+        Will Executor: AmanahRaya.<br>
+        Preparation Time: 1 working day.<br>
+        Will Fee: RM500 (includes consultation, preparation, and custodian services).<br><br>
+        Shall Aria proceed with the application process?
+        `,
+        options: [
+            { label: '1️⃣ Please, proceed ', nextStep: 'muslim_wills_basic_proceed' },
+            { label: "2️⃣ That's all, thank you", nextStep: 'exit' }
+        ]
+    },
+    muslim_wills_basic_proceed: {
+        id: 'muslim_wills_basic_proceed',
+        message: `
+        The application can be made in several ways. Which one would you prefer,<b>{name}</b>?
+        `,
+        options: [
+            { label: '1️⃣ MyAmanahRaya Apps ', nextStep: 'muslim_wills_basic_proceed_amanah_raya_app' },
+            { label: "2️⃣ Online Will Application ", nextStep: 'muslim_wills_basic_proceed_amanah_raya_app_online' },
+            { label: '3️⃣ Counter', nextStep: 'muslim_wills_basic_proceed_counter' },
+        ]
+    },
+    muslim_wills_basic_proceed_amanah_raya_app: {
+        id: 'muslim_wills_basic_proceed_amanah_raya_app',
+        message: `
+        1. Download the MyAmanahRaya app from Google Play or Apple App Store.<br>
+        2.Register for access.<br>
+        3.Select “Will”.<br>
+        4. Choose a nearby agent for a face-to-face session or proceed directly within the app.<br><br>
+        Would <b>{name}</b> like to do it through an agent or online?
+        `,
+        options: [
+            { label: '1️⃣ Agent ', nextStep: 'muslim_wills_basic_proceed_amanah_raya_app_agent' },
+            { label: "2️⃣ Online", nextStep: 'muslim_wills_basic_proceed_amanah_raya_app_online' },
+        ]
+    },
+    muslim_wills_basic_proceed_amanah_raya_app_agent: {
+        id: 'muslim_wills_basic_proceed_amanah_raya_app_agent',
+        message: `
+        1.Select a nearby agent.<br>
+        2.The agent will contact you to schedule an appointment.<br>
+        3.Consultation will be conducted on the agreed date.<br>
+        4.The agent will assist with the application and online payment.<br>
+        5.Print and sign the Basic Will with the agent present.<br>
+        6.The original will is submitted by the agent to the nearest branch.<br>
+        7.A duplicate copy of the will is handed over to you, <b>{name}</b>, for safekeeping.<br><br>
+        Upon successful receipt and storage of your Original Will by AmanahRaya, you will be sent a confirmation email and a Will e-card.<br><br>
+        If you’ve reached this stage, ARIA congratulates you on successfully planning your future.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    muslim_wills_basic_proceed_amanah_raya_app_online: {
+        id: 'muslim_wills_basic_proceed_amanah_raya_app_online',
+        message: `
+        1. Please visit <a href="https://willwriting.amanahraya.com.my/" target="_blank">Will Writing</a><br>
+        2. Register for access.<br>
+        3. Proceed with writing your will and making payment by following the on-screen instructions.<br><br>
+        1. The Basic Will can be printed either by yourself or at our branch.<br>
+        2. If self-printing, please follow the provided online instructions.<br>
+        3. If printing at a branch, please call Talian Mesra 03-2723 7273 to schedule an appointment.<br>
+        4. The signing will take place with our officer on the scheduled date.<br>
+        5. The original will is kept by AmanahRaya, while the duplicate will is given to <b>{name}</b> forsafekeeping.<br>
+        Upon successful receipt and storage of your Original Will by AmanahRaya, you will be sent a confirmation email and a Will e-card.<br><br>
+        If you’ve reached this stage, ARIA congratulates you on successfully planning your future.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    muslim_wills_basic_proceed_counter: {
+        id: '',
+        message: `
+        Please submit the application form together with the following documents:<br>
+        1. <a href="https://drive.google.com/file/d/191q6_ZU-Lfr-MkUUexR0OEsrKRh47Pdq/view" target="_blank">Basic Will Application Form.</a><br>
+        2. Copy of the testator’s Identification Card.<br>
+        3. Copy of the beneficiary’s Identification Card.<br>
+        4. Basic Will Fee: RM500 (Payment can be made via cash, debit/credit card, or QR code<br><br>
+        Please visit any of our nearest branch. You may schedule an appointment via this link:<br>
+        <a href="https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m" target="_blank">
+        Schedule Appointment
+        </a><br><br>
+        Branch information can be found at: <a href="https://www.amanahraya.my/contact-us/branch-locator/" target="_blank"> Branch Information</a><br><br>
+        On the Appointment Date:<br>
+        1. You can have a consultation with our officer.<br>
+        2. Submission of documents and payment can be completed on thesame day.<br>
+        3. Signing will take place in the presence of our officer.<br>
+        4. The Original Will will be securely kept by AmanahRaya.<br>
+        5. A Duplicate Will will be handed to you, <b>{name}</b>, for safekeeping.<br><br>
+        Upon successful receipt and storage of your Original Will by AmanahRaya, you will be sent a confirmation email and a Will e-card.<br><br>
+        If you’ve reached this stage, ARIA congratulates you on successfully planning your future.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    muslim_wills_comprehensive: {
+        id: 'muslim_wills_comprehensive',
+        message: `
+        Congratulations on taking the step to plan your estate.<br><br>
+        Will Executor: AmanahRaya Preparation Time: 7 working days Will Fee: RM1,200 (This includes consulltation, preparation, and custodian services).<br><br>
+        Shall Aria proceed with the application process?
+
+        `,
+        options: [
+            { label: '1️⃣ Please, proceed ', nextStep: 'muslim_wills_comprehensive_proceed' },
+            { label: "2️⃣ That's all, thank you", nextStep: 'exit' }
+        ]
+    },
+    muslim_wills_comprehensive_proceed: {
+        id: 'muslim_wills_comprehensive_proceed',
+        message: `
+        The application can be made in several ways. Which one would you prefer,<b>{name}</b>?
+        `,
+        options: [
+            { label: '1️⃣ MyAmanahRaya Apps ', nextStep: 'muslim_wills_comprehensive_proceed_amanah_raya_app' },
+            { label: "2️⃣ Online Will Application ", nextStep: 'muslim_wills_comprehensive_proceed_amanah_raya_app_online' },
+            { label: '3️⃣ Counter', nextStep: 'muslim_wills_comprehensive_proceed_counter' },
+        ]
+    },
+    muslim_wills_comprehensive_proceed_amanah_raya_app: {
+        id: 'muslim_wills_comprehensive_proceed_amanah_raya_app',
+        message: `
+        1. Download the MyAmanahRaya app from Google Play or Apple App Store.<br>
+        2. Register for access.<br>
+        3. Select “Will”.<br>
+        4. Choose a nearby agent for a face-to-face session or proceed directly within the app.<br><br>
+        Would <b>{name}</b> like to do it through an agent or online?
+        `,
+        options: [
+            { label: '1️⃣ Agent ', nextStep: 'muslim_wills_comprehensive_proceed_amanah_raya_app_agent' },
+            { label: "2️⃣ Online", nextStep: 'muslim_wills_comprehensive_proceed_amanah_raya_app_online' },
+        ]
+    },
+    muslim_wills_comprehensive_proceed_amanah_raya_app_agent: {
+        id: 'muslim_wills_comprehensive_proceed_amanah_raya_app_agent',
+        message: `
+        1. Our drafer will prepare the draft within 7 working days from the date of application registration and will email it to you.<br>
+        2. Please provide feedback on whether you agree with the draft or require any amendments.<br>
+        3. If you agree, set an appointment at your preferred branch for signing.<br>
+        4. The signing will be done together with our officer on the appointment date.<br>
+        5. The Original Will will be securely kept by AmanahRaya. A Duplicate Will will be handed to you, <b>{name}</b>, for safekeeping.<br><br>
+        Upon successful receipt and storage of your Original Will by AmanahRaya, you will be sent a confirmation email and a Will e-card.<br><br>
+        If you’ve reached this stage, ARIA congratulates you on successfully planning your future.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    muslim_wills_comprehensive_proceed_amanah_raya_app_online: {
+        id: 'muslim_wills_comprehensive_proceed_amanah_raya_app_online',
+        message: `
+        1. Please visit <a href="https://willwriting.amanahraya.com.my/" target="_blank">Will Writing</a><br>
+        2. Register for access.<br>
+        3. Proceed with writing your will and making payment by following the on-screen instructions.<br><br>
+        1. Our drafer will prepare the draft within 7 working days from the date of application registration and will email it to you.<br>
+        2. Please provide feedback on whether you agree with the draft or require anyamendments.<br>
+        3. If you agree, set an appointment at your preferred branch for signing.<br>
+        4. The signing will be done together with our officer on the appointment date.<br>
+        5. The Original Will will be securely kept by AmanahRaya. A Duplicate Will will be handed to you, <b>{name}</b>, for safekeeping.<br><br>
+        Upon successful receipt and storage of your Original Will by AmanahRaya, you will be sent a confirmation email and a Will e-card.<br><br>
+        If you’ve reached this stage, ARIA congratulates you on successfully planning your future.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    muslim_wills_comprehensive_proceed_counter: {
+        id: 'muslim_wills_comprehensive_proceed_counter',
+        message: `
+        Please submit the application form along with the following documents:<br>
+        1. <a href="https://drive.google.com/file/d/13si6oc13MdvQDy7WYzFWbvz7MTHVYb_9/view">Will Application Form.</a><br>
+        2. Copy of the testator’s Identification Card.<br>
+        3. Copy of the beneficiary’s Identification Card.<br>
+        4. Copy of the guardian’s Identification Card (if applicable).<br>
+        5. Copies of documents related to assets/liabilities mentioned in the will.<br>
+        6. Comprehensive Will Fee: RM1,200 (Payment can be made via cash, debit/credit card, or QR code).<br>.<br>
+        Please visit any of our nearest branch. You may schedule an appointment via this link:<br>
+        <a href="https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m" target="_blank">
+        Schedule Appointment
+        </a><br><br>
+        Branch information can be found at: <a href="https://www.amanahraya.my/contact-us/branch-locator/" target="_blank"> Branch Information</a><br><br>
+        On the Appointment Date:<br>
+        1. You can have a consultation with our officer.<br>
+        2. Submission of documents and payment can be done on the same day.<br>
+        3. Our drafter will prepare the draft within 7 working days from the date of registration and email it to you.<br>
+        4. Please confirm whether you agree with the content or request amendments.<br>
+        5. If you agree, set an appointment at a nearby branch for the signing process.<br>
+        6. The signing will be done together with our officer on the appointment date.<br>
+        7. The Original Will will be securely kept by AmanahRaya. A Duplicate Will will be handed to you, <b>{name}</b>, for safekeeping.<br>
+        Upon successful receipt and storage of your Original Will by AmanahRaya, you will be sent a confirmation email and a Will e-card.<br><br>
+        If you’ve reached this stage, ARIA congratulates you on successfully planning your future.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    none_muslim_wills: {
+        id: 'none_muslim_wills',
+        message: `
+        AmanahRaya Offers Two Types of Wills:<br><br>
+        Basic Will:<br>
+        A document that appoints Amanah Raya Berhad to manage the estate, including debt settlement, in accordance with the Wills
+        Act 1959. This will states only the name of the beneficiary and the share to be received, without detailing the types of assets
+        involved.<br><br>
+        Comprehensive Will:<br>
+        A more detailed and complete legal document that outlines the testator’s wishes for the management and distribution of their
+        assets after death. It not only includes the appointment of an executor and the distribution of assets to chosen beneficiaries,
+        but may also contain specific instructions such as guardianship of minor children, fulfillment of financial obligations, charitable
+        donations, and personal messages to beneficiaries. A Comprehensive Will ensures clearer estate planning, reduces the
+        likelihood of disputes among beneficiaries, and facilitates the estate administration process after the testator’s passing.
+        For a detailed comparison between the Basic and Comprehensive Will, please click: <a href="https://www.amanahraya.my/ms/perkhidmatan-wasiat/" target="_blank">Will's Services</a><br><br>
+        Which type of will are you interested in, <b>{name}</b>?
+        `,
+        options: [
+            { label: '1️⃣ Basic Will  ', nextStep: 'muslim_wills_basic' },
+            { label: "2️⃣ Comprehensive Will", nextStep: 'muslim_wills_comprehensive' }
+        ]
+    },
+    // The below steps are for will one 
+    will_one: {
+        id: 'will_one',
+        message: `
+        Alright, how can ARIA assist you, <b>{name}</b>?
+        `,
+        options: [
+            { label: '1️⃣ Checking the status of the will ', nextStep: 'retrieve_page1' },
+            { label: "2️⃣ Amending a will  ", nextStep: 'will_one_amending_will' },
+            { label: '3️⃣ Obtaining a copy of the will', nextStep: 'will_one_will_copy' },
+        ]
+    },
+    will_one_amending_will: {
+        id: 'will_one_amending_will',
+        message: `
+        May ARIA know the type of will registered at ARB?
+        `,
+        options: [
+            { label: '1️⃣ Basis ', nextStep: 'will_one_amending_will_basis' },
+            { label: "2️⃣ Comprehensive  ", nextStep: 'will_one_amending_will_comprehensive' },
+            { label: '3️⃣ Uncertain', nextStep: 'retrieve_page1' },
+        ]
+    },
+    will_one_amending_will_basis: {
+        id: 'will_one_amending_will_basis',
+        message: `
+        <b>{name}</b> can switch to a Comprehensive Will to specify the types of assets to be distributed to
+        heirs or non-heirs who are entitled to receive assets after death.<br><br>
+        1. <a href="https://drive.google.com/file/d/13si6oc13MdvQDy7WYzFWbvz7MTHVYb_9/view">Will Application Form.</a><br>
+        2. Copy of the testator’s identification card.<br>
+        3. Copy of the recipient’s identification card.<br>
+        4. Copy of the guardian’s identification card (if applicable).<br>
+        5. Copies of documents for assets mentioned in the will.<br><br>
+        Which delivery method is more convenient for <b>{name}</b>?
+        `,
+        options: [
+            { label: '1️⃣ Counter ', nextStep: 'will_one_amending_will_basis_counter' },
+            { label: "2️⃣ Via Post  ", nextStep: 'will_one_amending_will_basis_via_post' },
+            { label: '3️⃣ Email/ WhatsApp', nextStep: 'will_one_amending_will_basis_via_post_email' },
+        ]
+    },
+    will_one_amending_will_basis_counter: {
+        id: 'will_one_amending_will_basis_counter',
+        message: `
+        Please visit any of our nearest branch counters. <b>{name}</b> may <a href="https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m" target="_blank">
+        Schedule an Appointment
+        </a><br><br>
+        Branch information can be found at: <a href="https://www.amanahraya.my/contact-us/branch-locator/" target="_blank"> Branch Information</a><br><br>
+        Is there anything else ARIA can assist you with?<br>
+        `,
+        options: [
+            { label: "1️⃣ That's all, thank you", nextStep: 'exit' }
+        ]
+    },
+    will_one_amending_will_basis_via_post: {
+        id: 'will_one_amending_will_basis_via_post',
+        message: `
+        Please post it to the branch where the file was registered.<br><br>
+        Branch information can be found at: <a href="https://www.amanahraya.my/contact-us/branch-locator/" target="_blank"> Branch Information</a><br><br>
+        <b>{name}<b> will be contacted for online payment once the documents are received.<br><br>
+        Is there anything else ARIA can assist you with?
+        `,
+        options: [
+            { label: "1️⃣ That's all, thank you", nextStep: 'exit' }
+        ]
+    },
+    will_one_amending_will_basis_via_post_email: {
+        id: 'will_one_amending_will_basis_via_post_email',
+        message: `
+        Clear documents can be sent via email to crmd@arb.com.my or WhatsApp us at 03-2055 7557.<br><br>
+        <b>{name}<b> will be contacted for online payment once the documents are received.<br><br>
+        Is there anything else ARIA can assist you with?
+        `,
+        options: []
+    },
+    will_one_amending_will_comprehensive: {
+        id: 'will_one_amending_will_comprehensive',
+        message: `
+        <b>{name}</b> can make changes to the existing will.<br><br>
+        1. <a href="https://drive.google.com/file/d/13si6oc13MdvQDy7WYzFWbvz7MTHVYb_9/view">Will Application Form.</a><br>
+        2. Copy of the testator’s identification card.<br>
+        3. Copy of the recipient’s identification card.<br>
+        4. Copy of the guardian’s identification card (if applicable).<br>
+        5. Copies of documents for assets mentioned in the will.<br><br>
+        Which delivery method is more convenient for <b>{name}</b>?
+        `,
+        options: [
+            { label: '1️⃣ Counter ', nextStep: 'will_one_amending_will_basis_counter' },
+            { label: "2️⃣ Via Post  ", nextStep: 'will_one_amending_will_basis_via_post' },
+            { label: '3️⃣ Email/ WhatsApp', nextStep: 'will_one_amending_will_basis_via_post_email' },
+        ]
+    },
+    will_one_will_copy: {
+        id: 'will_one_will_copy',
+        message: `
+        A copy of the will can be requested by:<br>
+        The testator.<br>
+        The heirs of the testator.<br>
+        The lawyer appointed by the heirs of the testator.<br><br>
+        <b>{name}</b> would like to obtain a copy of this will for what purpose?
+        `,
+        options: [
+            { label: '1️⃣ My Will has been misplaced ', nextStep: 'will_one_will_copy_misplaced' },
+            { label: "2️⃣ For estate administration  ", nextStep: 'will_one_will_copy_admin' },
+        ]
+    },
+    will_one_will_copy_misplaced: {
+        id: 'will_one_will_copy_misplaced',
+        message: `
+        Please submit the completed form along with the following documents to the email address crmd@arb.com.my:<br>
+        1. <a href="https://drive.google.com/file/d/1GUlaRvva8qcofzdsHsYCCWPA59rDFjuw/view" target="_blank">Personal Data Access and Change Form</a><br>
+        2. Copy of Identification Card.<br>
+        3. Copy of payment receipt.<br>
+        Online payment can be made to:<br>
+        Company Name: Amanah Raya Berhad<br>
+        Bank Name: Maybank<br>
+        Account Number: 564155119930<br>
+        Payment Amount: RM50<br><br>
+        <b>{name}</b> will be contacted within 7 working days to collect the copy of the will at the counter.<br><br>
+        Is there anything else ARIA can assist you with?
+        `,
+        options: [
+            { label: "1️⃣ That's all, thank you", nextStep: 'exit' }
+        ]
+    },
+    will_one_will_copy_admin: {
+        id: 'will_one_will_copy_admin',
+        message: `
+        What is <b>{name}’s</b> relationship with the deceased?
+`,
+        options: [
+            { label: "1️⃣ Deceased's beneficiary ", nextStep: 'will_one_will_copy_admin_beneficiary' },
+            { label: "2️⃣ Lawyer  ", nextStep: 'will_one_will_copy_admin_lawyer' },
+        ]
+    },
+    will_one_will_copy_admin_beneficiary: {
+        id: 'will_one_will_copy_admin_beneficiary',
+        message: `
+        Please submit the completed form along with the following documents:<br>
+        1. <a href="https://drive.google.com/file/d/1GUlaRvva8qcofzdsHsYCCWPA59rDFjuw/view" target="_blank">Personal Data Access and Change Form</a><br>
+        2. Copy of Identification Card and proof of relationship (applicant).<br>
+        3. Copy of deceased's Death Certificate.<br>
+        4. Copy of payment receipt.<br>
+        Online payment can be made to:<br>
+        Company Name: Amanah Raya Berhad<br>
+        Bank Name: Maybank<br>
+        Account Number: 564155119930<br>
+        Payment Amount: RM50<br>
+        The contents of the will will only be read in the presence of the heirs. No copy of the will will be provided.<br><br>
+        <b>{name}</b> will be contacted within 7 working days to schedule the will reading session date at the counter.<br><br>
+        Is there anything else ARIA can assist you with?
+        `,
+        options: [
+            { label: "1️⃣ That's all, thank you", nextStep: 'exit' }
+        ]
+    },
+    will_one_will_copy_admin_lawyer: {
+        id: 'will_one_will_copy_admin_lawyer',
+        message: `
+        Please submit the completed form along with the following documents:<br>
+        1. <a href="https://drive.google.com/file/d/1GUlaRvva8qcofzdsHsYCCWPA59rDFjuw/view" target="_blank">Personal Data Access and Change Form</a><br>
+        2. Copy of Identification Card and proof of relationship (applicant).<br>
+        3. Copy of deceased's Death Certificate.<br>
+        4. Notice of lawyer’s appointment<br>
+        5. Copy of payment receipt<br>
+        Online payment can be made to:<br>
+        Company Name: Amanah Raya Berhad<br>
+        Bank Name: Maybank<br>
+        Account Number: 564155119930<br>
+        Payment Amount: RM50<br>
+        The contents of the will will only be read in the presence of the heirs. No copy of the will will be provided.<br><br>
+        <b>{name}</b> will be contacted within 7 working days to schedule the will reading session date at the counter.<br><br>
+        Is there anything else ARIA can assist you with?
+        `,
+        options: [
+            { label: "1️⃣ That's all, thank you", nextStep: 'exit' }
         ]
     },
     exit: {
