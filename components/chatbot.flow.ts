@@ -70,7 +70,7 @@ export const chatbotFlow: BotFlow = {
                 label: '1️⃣ Hibah', nextStep: 'hibah'
             },
             {
-                label: '2️⃣ Trust', nextStep: 'trust'
+                label: '2️⃣ Trust', nextStep: 'amanah_eng'
             },
         ]
     },
@@ -79,10 +79,10 @@ export const chatbotFlow: BotFlow = {
         message: 'Please choose',
         options: [
             {
-                label: '1️⃣ will', nextStep: 'will'
+                label: '1️⃣ Will', nextStep: 'will'
             },
             {
-                label: '2️⃣ Trust', nextStep: 'trust'
+                label: '2️⃣ HibahKu', nextStep: 'hibah_ku'
             },
         ]
     },
@@ -115,7 +115,7 @@ export const chatbotFlow: BotFlow = {
                     Please visit any of our nearest branch counters to make the payment by bringing along the required documents.<br>
                     Payment can be made by cash (limited to RM5,000), cheque, debit/credit card, or online transfer.<br><br>
                     
-                    <strong><b>{name}</b></strong> may <a href="https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m" target="_blank">Schedule An Appointment</a><br>
+                    <b>{name}</b> may <a href="https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m" target="_blank">Schedule An Appointment</a><br>
                     Branch information can be found at: <a href="https://www.amanahraya.my/contact-us/branch-locator/" target="_blank"> Branch Information</a>`,
         options: [
             { label: 'Thank you. Feel free to return anytime!', nextStep: 'exit' },
@@ -244,9 +244,9 @@ export const chatbotFlow: BotFlow = {
         options: [
             { label: '1️⃣ Estate', nextStep: 'pusaka_estate' },
             { label: '2️⃣ Will', nextStep: 'will_one' },
-            { label: '3️⃣ Trust', nextStep: 'trust' },
-            { label: '4️⃣ Hibah', nextStep: 'hibah' },
-            { label: '5️⃣ HibahKu', nextStep: 'hibah_ku' },
+            { label: '3️⃣ Trust', nextStep: 'amanah_eng' },
+            { label: '4️⃣ Hibah', nextStep: 'retrieve_page1' },
+            { label: '5️⃣ HibahKu', nextStep: 'retrieve_page1' },
         ]
     },
     // these below steps are belong to Pusaka
@@ -1128,8 +1128,16 @@ export const chatbotFlow: BotFlow = {
     obtain_form: {
         id: 'obtain_form',
         message: `Please select the required form.<br><br>
-        <a href="https://drive.google.com/file/d/1KziGKpTnw4eLp_8FHup-SCAEQM625tnc/view?usp=sharing" target="_blank">Application Form for Estate Administration</a>
-        <a href="https://drive.google.com/file/d/1HedU88RKdbxcU3fjtU8nUQUxxvi7xIoR/view?usp=sharing" target="_blank">Checklist of Documents To Be Attached</a>
+        1. <a href="https://drive.google.com/file/d/1m0RX6iV98j44J59aWvRUVpwExVQT2LYS/view" target="_blank">Application Form for Estate Administration</a><br>
+        2. <a href="https://drive.google.com/file/d/1HedU88RKdbxcU3fjtU8nUQUxxvi7xIoR/view" target="_blank">Checklist of Documents To Be Attached</a><br>
+        3. <a href="https://drive.google.com/file/d/1Iw5PPCU704RCX55T7_fNZ7iPFh1McT08/view" target="_blank">Deed of Renunciation</a><br>
+        4. <a href="https://drive.google.com/file/d/14vpHwW7ifhdYAXTkaF0dvOqch-pDvkvb/view" target="_blank">Statutory Declaration of Death</a><br>
+        5. <a href="https://drive.google.com/file/d/1sq7N2VPONYdnATA-Fm8_UC8mQ-beMr5H/view" target="_blank">Statutory Declaration(Married / Divorced / No Children / SoleHeir / Single)</a><br>
+        6. <a href="https://drive.google.com/file/d/1TYJJ-O_mkuioqCmnCkper8vQuqTYA7Zl/view" target="_blank">Letter of Undertaking and Indemnity for Vehicle Ownership Transfer</a><br>
+        7. <a href="https://drive.google.com/file/d/1wGZeu1tu3kUgscM6XVOWS5dmjRFfmQNv/view" target="_blank">Confirmation of Bank Account Details Form</a><br>
+        8. <a href="https://drive.google.com/file/d/1Nwhv0lP2pCcNgKMbUkRQ3e4ZrmHfPZUp/view" target="_blank">Declaration of Vehicle Ownership Transfer</a><br>
+        9. <a href="https://drive.google.com/file/d/1sMYoAe-0iOpgoTc-U50FwTi9-zsbshOO/view" target="_blank">Application Form for Additional Assets / Liabilities</a><br>
+        10. <a href="https://drive.google.com/file/d/1P3Ur3CKLcQXVNs9bjhpCkP17vnmzydt6/view" target="_blank">Letter of Vehicle Valuation</a><br>
         `,
         options: [
             { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
@@ -1454,7 +1462,7 @@ export const chatbotFlow: BotFlow = {
         id: 'serawak_main_yes_amanah_raya',
         message: `
         <b>{name}</b> may complete the additional assets form below and submit the form along with the required documents to
-         the Kuching branch for the issuance of the Supplementary Letter of Administration.<br><br>`,// Do it form
+         the Kuching branch for the issuance of the <a href="https://drive.google.com/file/d/187OrybkH0m6xPbS65gU6aj3L5lP5XZXZ/view" target="_blank">Supplementary Letter of Administration.</a><br><br>`,// Do it form
         options: []
     },
     serawak_main_yes_civil_court: {
@@ -2480,6 +2488,424 @@ export const chatbotFlow: BotFlow = {
         The contents of the will will only be read in the presence of the heirs. No copy of the will will be provided.<br><br>
         <b>{name}</b> will be contacted within 7 working days to schedule the will reading session date at the counter.<br><br>
         Is there anything else ARIA can assist you with?
+        `,
+        options: [
+            { label: "1️⃣ That's all, thank you", nextStep: 'exit' }
+        ]
+    },
+    // Below steps are belong to Amanah English
+    amanah_eng: {
+        id: 'amanah_eng',
+        message: `
+            What can ARIA assist <b>{name}</b> with?
+        `,
+        options: [
+            { label: '1️⃣ Updating information ', nextStep: 'amanah_eng_updating_information' },
+            { label: '2️⃣ Closing a trust account', nextStep: 'amanah_eng_closing_trust_account' },
+            { label: '3️⃣ Withdrawal of trust money', nextStep: 'amanah_eng_withdrawal' },
+            { label: '4️⃣ Requesting an account statement', nextStep: 'amanah_eng_requesting_account' },
+            { label: '5️⃣ Change of guardian', nextStep: 'amanah_eng_change_guardian' },
+            { label: '6️⃣ File status', nextStep: 'retrieve_page1' },
+        ]
+    },
+    amanah_eng_updating_information: {
+        id: 'amanah_eng_updating_information',
+        message: `
+        Please click on the following <a href="https://online.amanahraya.my/TRUST_ONLINE/" target="_blank">Trust Online</a> for updating information.<br><br>
+        Is there anything else ARIA can assist you with?
+        `,
+        options: [
+            { label: "1️⃣ That's all, thank you", nextStep: 'exit' }
+        ]
+    },
+    amanah_eng_closing_trust_account: {
+        id: 'amanah_eng_closing_trust_account',
+        message: `
+        Please click both of these links, <a href="https://forms.gle/RDiL93pvWrcZJsKT9" target="_blank">First Link</a> and <a href="https://forms.gle/YRRdYh5qMTrWNQKm6" target="_blank">Second Link</a>, to proceed with the account closure application.<br><br>
+        Payment will be made within 14 working days from the date of receipt of complete documents. <b>{name}</b> will be contacted if additional information is required.<br><br>
+        Is there anything else ARIA can assist you with?
+        `,
+        options: [
+            { label: "1️⃣ That's all, thank you", nextStep: 'exit' }
+        ]
+    },
+    amanah_eng_withdrawal: {
+        id: 'amanah_eng_withdrawal',
+        message: `
+        Withdrawal of trust funds is permitted strictly for the benefit and welfare of the beneficiary, or for any purposes explicitly stated in the Trust Deed.<br><br>
+        Withdrawals may be made for the following purposes:<br>
+        1. Education<br>
+        2. Medical treatment<br>
+        3. Monthly maintenance<br>
+        4. Festive or religious celebrations<br>
+        5. Other purposes (subject to approval)<br><br>
+        Please click on the following <a href="https://online.amanahraya.my/TRUST_ONLINE/" target="_blank">Trust Online</a> to submit a request for account closure.<br><br>
+        Is there anything else ARIA can assist you with?
+        `,
+        options: [
+            { label: "1️⃣ That's all, thank you", nextStep: 'exit' }
+        ]
+    },
+    amanah_eng_requesting_account: {
+        id: 'amanah_eng_requesting_account',
+        message: `
+        Please click on the following <a href="https://online.amanahraya.my/TRUST_ONLINE/" target="_blank">Trust Online</a> to request for account statement.<br><br>
+        Is there anything else ARIA can assist you with?
+        `,
+        options: [
+            { label: "1️⃣ That's all, thank you", nextStep: 'exit' }
+        ]
+    },
+    amanah_eng_change_guardian: {
+        id: 'amanah_eng_change_guardian',
+        message: `
+        Change of guardian is only allowed under the following circumstances:<br>
+        1. The current guardian has passed away.<br>
+        2. The current guardian is incapacitated and no longer able to fulfil their responsibilities.<br>
+        3. There has been a breach of duty by the current guardian.<br><br>
+        To request for change of guardian, the following documents must be submitted:<br>
+        1. A completed Guardian Change Form.<br>
+        2. Court Order (if the guardian was appointed by the Court).<br>
+        3. Guardian Appointment Order (Form H) – if the guardian was appointed through the Small Estate Distribution.<br><br>
+        RELATED FORMS<br>
+        a. Declaration of Confirmation for Change of Guardian.<br>
+        b. Sample - Declaration of Confirmation for Change of Guardian.<br><br>
+        Please submit the completed form along with a copy of <b>{name}'s</b> Identification Card to any nearby ARB branch.<br><br>
+        Branch information can be found at: <a href="https://www.amanahraya.my/contact-us/branch-locator/" target="_blank"> Branch Information</a>
+        Is there anything else ARIA can assist you with?
+        `,
+        options: [
+            { label: "1️⃣ That's all, thank you", nextStep: 'exit' }
+        ]
+    },
+    // Below steps are belong to Hibah English
+    hibah: {
+        id: 'hibah',
+        message: `
+        Ok. Before ARIA provides further explanation, here are the concept and pillars of the Hibah product.<br><br>
+        Hibah Concept
+        1. The voluntary transfer of ownership of one’s property to another person during the Donor’s lifetime without expecting any return.<br>
+        2. The property is entrusted to ARB as the trustee for a specified period, in accordance with the Deed of Hibah and the Deed of Trust.<br>
+        3. A formal declaration (akad) will be made for the Donor (Penghibah) to declare the gifting of their property to the Recipient (Penerima Hibah).<br>
+        4. A hibah cannot be revoked, except for those made by a parent/grandparent to their child/grandchild.<br>
+        5. In the event of the Recipient’s death, the gifted property becomes part of the Recipient’s estate and will not be returned to the Donor, except
+        through methods permitted under Shariah law or legislation.<br><br>
+        Pillars of Hibah<br><br>
+        Donor (Penghibah)<br>
+        a) An individual (aged 18 and above) or an organisation.<br>
+        b) Of sound mind, mature (baligh), prudent (rasyid), and not bankrupt.<br>
+        c) Can be either Muslim or non-Muslim.<br>
+        d) Not in a terminal illness that is likely to lead to death.<br><br>
+        Recipient (Penerima Hibah)<br>
+        a) An individual or an organisation.<br>
+        b) A minor recipient may receive the hibah property through a legal guardian (Wali Mal).<br>
+        c) Can be either Muslim or non-Muslim.<br><br>
+        Property Subject to Hibah<br>
+        a) Fully owned by the Donor.<br>
+        b) Transferable (no restrictions).<br>
+        c) Must exist at the time the contract (akad) is made.<br>
+        d) Clearly identified.<br>
+        e) Has value.<br><br>
+        Offer and Acceptance (Sighah – Ijab and Qabul)<br>
+        a) Ijab – The Donor declares the gift of property to the Recipient.<br>
+        b) Qabul – The Recipient accepts the gifted property.<br>
+        c) Must be conducted in a single contract session.<br>
+        d) A legal guardian (Wali Mal) must be appointed if the recipient is a minor or a person with disabilities.<br><br>
+        Possession (Qabd)<br>
+        a) The Recipient has the authority to deal with the property received.<br>
+        b) Possession can be actual (physical) or by legal transfer.<br><br>
+        May I know the type of property you wish to Hibah?
+        `,
+        options: [
+            { label: '1️⃣ Cash ', nextStep: 'hibah_cash' },
+            { label: "2️⃣ Property  ", nextStep: 'hibah_property' },
+        ]
+    },
+    hibah_cash: {
+        id: 'hibah_cash',
+        message: `
+        For cash assets, (name) will need to deposit the amount to be given into ARB’s account.<br><br>
+        CASH HIBAH TRUST<br><br>
+        1. MINIMUM CAPITAL<br>
+        RM20,000.00<br><br>
+        2. ASSETS ELIGIBLE FOR TRUST.<br>
+        Movable assets (cash only)<br><br>
+        3. TRUST PERIOD<br>
+        As stated in the Trust Deed.<br><br>
+        4. PROFIT DISTRIBUTION<br>
+        3.00% per annum.<br><br>
+        5. REQUIRED DOCUMENTS<br>
+        a. Copy of Donor’s Identity Card.<br>
+        b. Copy of Recipient’s Identity Card.<br>
+        c. Copy of Guardian’s (Wali Mal) Identity Card (if applicable).<br><br>
+        6. RELATED FORMS<br>
+        a. Application Form For Hibah AmanahRaya.<br>
+        b. Sample - Application Form For Hibah AmanahRaya.<br><br>
+        Please visit any of our nearest branch counters to make payment,
+        bringing along the required documents. Payment can be made in cash
+        (limited to RM5,000), cheque, debit/credit card, or online transfer.<br>
+        <b>{name}</b> may <a href="https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m" target="_blank">Schedule An Appointment</a><br><br>
+        for our branches location, please click  <a href="https://www.amanahraya.my/contact-us/branch-locator/" target="_blank"> Branch Information</a><br><br>
+        1. On the appointment date, consultation and advisory services can be conducted with our officer.<br>
+        2. Document submission and payment can be completed on the same day.<br>
+        <b>{name}</b> will be contacted by the branch officer for the preparation of the Trust Deed.<br><br>
+        Is there anything else ARIA can assist you with?
+        `,
+        options: [
+            { label: "1️⃣ That's all, thank you", nextStep: 'exit' }
+        ]
+    },
+    hibah_property: {
+        id: 'hibah_property',
+        message: `
+        For property assets, they must be free
+        from any encumbrances, and the property
+        title must registered under the Donor's
+        name. The property will be transferred to
+        ARB as the trustee, and the original title
+        deed will be kept by ARB.<br><br>
+        Is the property you wish to give is free from any encumbrances, and registered under your name?
+        `,
+        options: [
+            { label: '1️⃣ Free from encumbrances and the title deed is under my name. ', nextStep: 'hibah_property_title_deed' },
+            { label: "2️⃣ Still under loan and the title deed is under my name.  ", nextStep: 'hibah_property_title_deed_under_my_name' },
+        ]
+    },
+    hibah_property_title_deed: {
+        id: 'hibah_property_title_deed',
+        message: `
+        For this product, several matters need to be noted:<br><br>
+        1. The current valuation of the property will be carried out by ARB
+        through the Valuation and Property Services Department (JPPH).<br>
+        2. The property title will be registered under ARB (as Trustee) and kept
+        by ARB.<br>
+        3. Quit rent and assessment rates must still be paid by the Donor.<br>
+        4. Stamp duty must be settled by the Donor during their lifetime.
+        However, if not done, the Recipient (Penerima Hibah) must pay it first
+        before the transfer of ownership can be completed.<br>
+        5. The property will be transferred to the Recipient after the death of
+        the Donor or as stipulated in the Trust Deed.<br>
+        6. If there are restrictions, approval must first be obtained from the
+        State Authority for the transfer of ownership to ARB as Trustee.<br><br>
+        PROPERTY HIBAH TRUST<br><br>
+        1. DEPOSIT<br>
+        RM1,240 per property<br><br>
+        2. ELIGIBLE DONORS & BENEFICIARIES<br>
+        Can be any individual, agency, organisation, or company.<br><br>
+        3. STAMP DUTY As assessed by the Inland Revenue Board of Malaysia (LHDN)<br><br>
+        4. REQUIRED DOCUMENTS<br>
+        a. Copy of Donor’s Identity Card<br>
+        b. Copy of Recipient’s Identity Card<br>
+        c. Copy of Guardian’s (Wali Mal) Identity Card (if applicable)<br>
+        d. Copy of property title deed, latest quit rent proof of payment, and latest assessment bill<br><br>
+        5. RELATED FORMS<br>
+        a. Application Form For Hibah AmanahRaya<br>
+        b. Sample - Application Form For Hibah AmanahRaya<br><br>
+        Please visit any of our nearest branch counters to make payment,
+        bringing along the required documents. Payment can be made in cash
+        (limited to RM5,000), cheque, debit/credit card, or online transfer.<br>
+        <b>{name}</b> may <a href="https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m" target="_blank">Schedule An Appointment</a><br><br>
+        for our branches location, please click  <a href="https://www.amanahraya.my/contact-us/branch-locator/" target="_blank"> Branch Information</a><br><br>
+        1. On the appointment date, consultation and advisory services can be conducted with our officer.<br>
+        2. Document submission and payment can be completed on the same day.<br>
+        <b>{name}</b> will be contacted by the branch officer for the preparation of the Trust Deed.<br><br>
+        Is there anything else ARIA can assist you with?
+        `,
+        options: [
+            { label: "1️⃣ That's all, thank you", nextStep: 'exit' }
+
+        ]
+    },
+    hibah_property_title_deed_under_my_name: {
+        id: 'hibah_property_title_deed_under_my_name',
+        message: `
+        For assets that are still under loan, you may opt for another product, namely Hibahku.<br><br>
+        Would you be interested to know more?
+        `,
+        options: [
+            { label: '1️⃣ Yes, I want to know about HibahKu. ', nextStep: 'hibah_ku' },
+            { label: "2️⃣ That's all, thank you  ", nextStep: 'exit' },
+        ]
+    },
+    // Below steps are belong to HibahKu
+    hibah_ku: {
+        id: 'hibah_ku',
+        message: `
+        CONCEPT OF HIBAH<br><br>
+        1. The transfer of ownership of one’s property to another person during the owner’s lifetime,
+        voluntarily and without expecting anything in return.<br>
+        2. A contract (akad) will be executed to declare that the Donor (Penghibah) is granting the
+        property to the Recipient of the Hibah (Penerima Hibah).<br>
+        3. A Hibah cannot be revoked, except for a Hibah made by a parent/grandparent to their child/
+        grandchild.<br>
+        4. In the event of the Recipient’s death, the gifted property becomes part of the Recipient’s
+        estate and will not be returned to the Donor, except through methods permitted by Shariah or
+        the law.<br><br>
+        For your information, under the Hibahku product, (name) may gift the following assets to any intended recipient:<br>
+        i) Properties (whether fully paid or under financing)<br>
+        ii) Vehicles (whether fully paid or under financing)<br>
+        iii) Joint savings accounts at any bank (only allowed in the state of Selangor)<br><br>
+        What asset does <b>{name}</b> intend to gift?
+        `,
+        options: [
+            { label: '1️⃣ Property and / or vehicles, and cash in the bank', nextStep: 'hibah_ku_property_vehicle_cash' },
+            { label: '2️⃣ Property and / or vehicle only', nextStep: 'hibah_ku_property_vehicle' },
+            { label: '3️⃣ Bank savings(cash only)', nextStep: 'hibah_ku_property_bank_savings' },
+        ]
+    },
+    hibah_ku_property_vehicle_cash: {
+        id: 'hibah_ku_property_vehicle_cash',
+        message: `
+        A. Cash in Bank<br><br>
+        1. Only joint accounts between the Donor (Penghibah) and the Recipient (Penerima Hibah) are allowed.<br>
+        2. Only applicable for cash assets located in the state of Selangor.<br>
+        3. Savings in ASNB and Tabung Haji are excluded.<br><br>
+        B. Property<br>
+        1. Must be free from any encumbrances.<br>
+        2. If still under loan, the property must have full insurance coverage (MRTA/MRTT).<br>
+        3. Must be owned by the Donor.<br>
+        4. Must be transferable (no restrictions).<br>
+        5. Must exist at the time the contract (akad) is made.<br>
+        6. Must be clearly identified.<br>
+        7. Must have value.<br><br>
+        C. Vehicle<br>
+        1. Must be free from any encumbrances.<br>
+        2. If still under loan, the vehicle must have full insurance coverage (auto-life insurance).<br>
+        3. Must be owned by the Donor.<br>
+        4. Must exist at the time the contract (akad) is made.<br>
+        5. Must be clearly identified.<br>
+        6. Must have value.<br><br>
+        Further explanation will only apply if your information meets the specified criteria.<br><br>
+        HIBAHKU<br><br>
+        1. DONOR (PENGHIBAH)<br>
+        Individual aged 18 years and above.<br><br>
+        2. RECIPIENT (PENERIMA HIBAH)<br>
+        Any individual, except those with mental incapacity.<br><br>
+        3. REQUIRED DOCUMENTS<br>
+        a) AmanahRaya HibahKu Application Form (can be obtained at ARB branch counter).<br>
+        b) Copy of Donor’s Identity Card.<br>
+        c) Copy of Recipient’s Identity Card / Birth Certificate.<br>
+        d) Copy of Guardian’s (Wali Mal) Identity Card (if recipient is a minor or a person with disabilities).<br>
+        e) Immovable Property.<br>
+        i) Copy of Land Title / Strata Title.<br>
+        ii) Copy of Sales & Purchase Agreement + MRTA/MRTT (if still under charge).<br>
+        iii) Copy of Official Search.<br>
+        iv) Copy of Offer Letter from the financial instituion (if still under charge).<br>
+        f) Movable Property – Vehicle.<br>
+        i) Copy of Vehicle Registration Card.<br>
+        ii) Copy of Auto-life Insurance Policy (if still under charge).<br>
+        g) Movable Property – Cash in Bank.<br>
+        i) Copy of Bank Statement / Bank Account Confirmation.<br><br>
+        4. APPLICABLE FEES<br>
+        RM1,500 (1st asset), RM500 (each subsequent asset).<br><br>
+        Please visit any of our nearest branch counters to make payment, bringing
+        along the required documents. Payment can be made in cash (limited to
+        RM5,000), cheque, debit/credit card, or online transfer.<br>
+        <b>{name}</b> may <a href="https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m" target="_blank">Schedule An Appointment</a><br><br>
+        for our branches location, please click  <a href="https://www.amanahraya.my/contact-us/branch-locator/" target="_blank"> Branch Information</a><br><br>
+        1. On the appointment date, consultation and advisory services can be conducted with our officer.<br>
+        2. Document submission and payment can be completed on the same day.<br>
+        3. <b>{name}</b> will be contacted by the branch officer for the preparation of the akad documents.<br><br>
+        Is there anything else that ARIA can help you?
+        `,
+        options: [
+            { label: "1️⃣ That's all, thank you", nextStep: 'exit' }
+        ]
+    },
+    hibah_ku_property_vehicle: {
+        id: 'hibah_ku_property_vehicle',
+        message: `
+        A. Property<br><br>
+        1. Must be free from any encumbrances.<br>
+        2. If still under loan, the property must have full insurance coverage (MRTA/MRTT).<br>
+        3. Must be owned by the Donor (Penghibah).<br>
+        4. Must be transferable (no restrictions).<br>
+        5. Must exist at the time the contract (akad) is made.<br>
+        6. Must be clearly identified.<br>
+        7. Must have value.<br><br>
+        B. Vehicle.<br>
+        1. Must be free from any encumbrances.<br>
+        2. If still under loan, the vehicle must have full insurance coverage (auto-life insurance).<br>
+        3. Must be owned by the Donor.<br>
+        4. Must exist at the time the contract (akad) is made.<br>
+        5. Must be clearly identified.<br>
+        6. Must have value.<br><br>
+        Further explanation will only apply if your information meets the specified criteria.<br><br>
+        HIBAHKU<br><br>
+        1. DONOR (PENGHIBAH)<br>
+        Individual aged 18 years and above.<br><br>
+        2. RECIPIENT (PENERIMA HIBAH)<br>
+        Any individual, except those with mental incapacity.<br><br>
+        3. REQUIRED DOCUMENTS<br>
+        a) AmanahRaya HibahKu Application Form (can be obtained at ARB branch counter).<br>
+        b) Copy of Donor’s Identity Card.<br>
+        c) Copy of Recipient’s Identity Card / Birth Certificate.<br>
+        d) Copy of Guardian’s (Wali Mal) Identity Card (if recipient is a minor or a person with disabilities).<br>
+        e) Immovable Property.<br>
+        i) Copy of Land Title / Strata Title.<br>
+        ii) Copy of Sales & Purchase Agreement + MRTA/MRTT (if still under charge).<br>
+        iii) Copy of Official Search.<br>
+        iv) Copy of Offer Letter from the financial instituion (if still under charge).<br>
+        f) Movable Property – Vehicle.<br>
+        i) Copy of Vehicle Registration Card.<br>
+        ii) Copy of Auto-life Insurance Policy (if still under charge).<br>
+        g) Movable Property – Cash in Bank.<br>
+        i) Copy of Bank Statement / Bank Account Confirmation.<br><br>
+        4. APPLICABLE FEES<br>
+        RM1,500 (1st asset), RM500 (each subsequent asset).<br><br>
+        Please visit any of our nearest branch counters to make payment, bringing
+        along the required documents. Payment can be made in cash (limited to
+        RM5,000), cheque, debit/credit card, or online transfer.<br>
+        <b>{name}</b> may <a href="https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m" target="_blank">Schedule An Appointment</a><br><br>
+        for our branches location, please click  <a href="https://www.amanahraya.my/contact-us/branch-locator/" target="_blank"> Branch Information</a><br><br>
+        1. On the appointment date, consultation and advisory services can be conducted with our officer.<br>
+        2. Document submission and payment can be completed on the same day.<br>
+        3. <b>{name}</b> will be contacted by the branch officer for the preparation of the akad documents.<br><br>
+        Is there anything else that ARIA can help you?
+        `,
+        options: [
+            { label: "1️⃣ That's all, thank you", nextStep: 'exit' }
+        ]
+    },
+    hibah_ku_property_bank_savings: {
+        id: 'hibah_ku_property_bank_savings',
+        message: `
+        A. Cash in Bank<br>
+        1. Only joint accounts between the Donor (Penghibah) and the Recipient (Penerima Hibah) are allowed.<br>
+        2. Only applicable for cash assets located in the state of Selangor.<br>
+        3. Savings in ASNB and Tabung Haji are excluded.<br><br>
+        Further explanation will only apply if your information meets the specified criteria.<br><br>
+        HIBAHKU<br><br>
+        1. DONOR (PENGHIBAH)<br>
+        Individual aged 18 years and above.<br><br>
+        2. RECIPIENT (PENERIMA HIBAH)<br>
+        Any individual, except those with mental incapacity.<br><br>
+        3. REQUIRED DOCUMENTS<br>
+        a) AmanahRaya HibahKu Application Form (can be obtained at ARB branch counter).<br>
+        b) Copy of Donor’s Identity Card.<br>
+        c) Copy of Recipient’s Identity Card / Birth Certificate.<br>
+        d) Copy of Guardian’s (Wali Mal) Identity Card (if recipient is a minor or a person with disabilities).<br>
+        e) Immovable Property.<br>
+        i) Copy of Land Title / Strata Title.<br>
+        ii) Copy of Sales & Purchase Agreement + MRTA/MRTT (if still under charge).<br>
+        iii) Copy of Official Search.<br>
+        iv) Copy of Offer Letter from the financial instituion (if still under charge).<br>
+        f) Movable Property – Vehicle.<br>
+        i) Copy of Vehicle Registration Card.<br>
+        ii) Copy of Auto-life Insurance Policy (if still under charge).<br>
+        g) Movable Property – Cash in Bank.<br>
+        i) Copy of Bank Statement / Bank Account Confirmation.<br><br>
+        4. APPLICABLE FEES<br>
+        RM1,500 (1st asset), RM500 (each subsequent asset).<br><br>
+        Please visit any of our nearest branch counters to make payment, bringing
+        along the required documents. Payment can be made in cash (limited to
+        RM5,000), cheque, debit/credit card, or online transfer.<br>
+        <b>{name}</b> may <a href="https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m" target="_blank">Schedule An Appointment</a><br><br>
+        for our branches location, please click  <a href="https://www.amanahraya.my/contact-us/branch-locator/" target="_blank"> Branch Information</a><br><br>
+        1. On the appointment date, consultation and advisory services can be conducted with our officer.<br>
+        2. Document submission and payment can be completed on the same day.<br>
+        3. <b>{name}</b> will be contacted by the branch officer for the preparation of the akad documents.<br><br>
+        Is there anything else that ARIA can help you?
         `,
         options: [
             { label: "1️⃣ That's all, thank you", nextStep: 'exit' }
