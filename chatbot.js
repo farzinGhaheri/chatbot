@@ -1,5 +1,5 @@
-import { chatbotFlow } from '../components/chatbot.flow.js';
-import { ChatbotEngine } from '../services/chatbot.service.js';
+import { chatbotFlow } from './chatbot.flow.js';
+import { ChatbotEngine } from './chatbot.service.js';
 const chatbot = new ChatbotEngine(chatbotFlow);
 const chatBox = document.getElementById('chat');
 const inputBox = document.getElementById('userInput');
