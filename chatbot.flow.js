@@ -30,7 +30,7 @@ export const chatbotFlow = {
             { label: "3️⃣ I would like to pay the beneficiary's /deceased's share to ARB", nextStep: 'pay_page1' },
             { label: "4️⃣ I would like to retrieve my unclaimed portion at ARB", nextStep: 'retrieve_page1' },
             { label: "5️⃣ I have an order from the Land Office / High Court", nextStep: 'order_page1' },
-            { label: "6️⃣ I would like to know about the establishment of rightful beneficiaries", nextStep: 'establishment_page1' }
+            { label: "6️⃣ I would like to know about the establishment of rightful beneficiaries", nextStep: 'establishment_rightful_beneficiaries' }
         ]
     },
     // these below steps are belong to page 1
@@ -2902,6 +2902,1263 @@ export const chatbotFlow = {
         options: [
             { label: "1️⃣ That's all, thank you", nextStep: 'exit' }
         ]
+    },
+    // Below steps are belong to Establishment rightful beneficiaries
+    establishment_rightful_beneficiaries: {
+        id: 'establishment_rightful_beneficiaries',
+        message: `
+        May ARIA know the deceased’s religion at during death?
+        `,
+        options: [
+            { label: '1️⃣ Muslim', nextStep: 'establishment_rightful_muslim' },
+            { label: '2️⃣ Non-muslim', nextStep: 'establishment_rightful_non_muslim' },
+        ]
+    },
+    establishment_rightful_muslim: {
+        id: 'establishment_rightful_muslim',
+        message: `
+        For Muslim, the distribution of assets will follow the Faraid (Islamic Inheritance Law) after deducting debts and executing any wills (if applicable).<br><br>
+        The beneficiary determination information below applies only to standard cases—for example, where beneficiaries such as a spouse or child are still living. It does not cover layered inheritance scenarios, such as when a 
+        beneficiary (e.g., a child) has passed away after the deceased.<br><br>
+        To <b>{name}</b> knowledge, what was the deceased's marital status?
+        `,
+        options: [
+            { label: '1️⃣ Single', nextStep: 'establishment_rightful_muslim_single' },
+            { label: '2️⃣ Married', nextStep: 'establishment_rightful_muslim_married' },
+        ]
+    },
+    establishment_rightful_muslim_single: {
+        id: 'establishment_rightful_muslim_single',
+        message: `
+        Were the deceased’s parents still alive at the time of deceased's death?
+        `,
+        options: [
+            { label: '1️⃣ Both had passed away ', nextStep: 'establishment_rightful_muslim_single_both_pass_away' },
+            { label: '2️⃣ Only the mother is still alive', nextStep: 'establishment_rightful_muslim_single_mother' },
+            { label: '3️⃣ Only the father is still alive', nextStep: 'establishment_rightful_muslim_single_father' },
+            { label: '4️⃣ Both are still alive', nextStep: 'establishment_rightful_muslim_single_both_still_alive' },
+        ]
+    },
+    establishment_rightful_muslim_single_both_pass_away: {
+        id: 'establishment_rightful_muslim_single_both_pass_away',
+        message: `
+        Did the deceased have any siblings?
+        `,
+        options: [
+            { label: '1️⃣ Passed away before the deceased ', nextStep: 'establishment_rightful_muslim_single_both_pass_away_before_deceased' },
+            { label: '2️⃣ Male and female siblings', nextStep: 'establishment_rightful_muslim_single_both_pass_away_male_female_siblings' },
+            { label: '3️⃣ Female siblings only', nextStep: 'establishment_rightful_muslim_single_both_pass_away_female_siblings' },
+            { label: '4️⃣ Male siblings only', nextStep: 'establishment_rightful_muslim_single_both_pass_away_male_siblings' },
+            { label: '5️⃣ No sibling', nextStep: 'establishment_rightful_muslim_single_both_pass_away_no_siblings' },
+        ]
+    },
+    establishment_rightful_muslim_single_both_pass_away_before_deceased: {
+        id: 'establishment_rightful_muslim_single_both_pass_away',
+        message: `
+        The estate will be distributed to other rightful beneficiaries in the following order:<br><br>
+        1. Paternal grandfather.<br>
+        2. Nephew (brother's son).<br>
+        3. Paternal uncle.<br>
+        4. Male cousin (paternal uncle's son).<br>
+        5. Male cousin's son<br><br>
+        If there are no eligible beneficiaries, the remainder will be distributed to the Baitulmal.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    establishment_rightful_muslim_single_both_pass_away_male_female_siblings: {
+        id: 'establishment_rightful_muslim_single_both_pass_away_male_female_siblings',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Siblings – Asobah (residue)<br><br>
+        * Asobah - The distribution ratio between male and female siblings is 2:1.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    establishment_rightful_muslim_single_both_pass_away_female_siblings: {
+        id: 'establishment_rightful_muslim_single_both_pass_away_female_siblings',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Siblings – 1/2 or 2/3<br><br>
+        *The remaining portion will be distributed to other eligible beneficiaries in the following order:<br><br>
+        1. Paternal grandfather.<br>
+        2. Paternal uncle.<br>
+        3. Male cousin.<br>
+        4. Male cousin’s son.<br>
+        If no eligible beneficiaries are found, the remainder will be given to the Baitulmal.<br>
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    establishment_rightful_muslim_single_both_pass_away_male_siblings: {
+        id: 'establishment_rightful_muslim_single_both_pass_away_male_siblings',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Siblings - Asobah (residue).<br><br>
+        *Asobah - The share will be distributed equally among them. 
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    establishment_rightful_muslim_single_both_pass_away_no_siblings: {
+        id: 'establishment_rightful_muslim_single_both_pass_away_no_siblings',
+        message: `
+        The estate will be distributed to other rightful beneficiaries in the following order:<br><br>
+        1. Paternal grandfather.<br>
+        2. Paternal uncle.<br>
+        3. Male cousin (paternal uncle's son).<br>
+        4. Male cousin's son.<br><br>
+        *If there are no eligible beneficiaries, the remainder will be distributed to the Baitulmal.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    establishment_rightful_muslim_single_mother: {
+        id: 'establishment_rightful_muslim_single_mother',
+        message: `
+        Did the deceased have any siblings?
+        `,
+        options: [
+            { label: '1️⃣ Passed away before the deceased ', nextStep: 'establishment_rightful_muslim_single_mother_both_pass_away_before_deceased' },
+            { label: '2️⃣ Male and female siblings', nextStep: 'establishment_rightful_muslim_single_mother_pass_away_male_female_siblings' },
+            { label: '3️⃣ Female siblings only', nextStep: 'establishment_rightful_muslim_single_mother_pass_away_female_siblings' },
+            { label: '4️⃣ Male siblings only', nextStep: 'establishment_rightful_muslim_single_mother_pass_away_male_siblings' },
+            { label: '5️⃣ No sibling', nextStep: 'establishment_rightful_muslim_single_mother_pass_away_no_siblings' },
+        ]
+    },
+    establishment_rightful_muslim_single_mother_both_pass_away_before_deceased: {
+        id: 'establishment_rightful_muslim_single_mother_both_pass_away_before_deceased',
+        message: `
+        The distribution is as follows:
+        1. Mother - 1/3<br><br>
+        *The remaining portion will be distributed to other eligible beneficiaries in the following order:<br><br>
+        1. Paternal grandfather.<br>
+        2. Nephew (brother's son).<br>
+        3. Paternal uncle.<br>
+        4. Male cousin (paternal uncle's son).<br>
+        5. Male cousin's son.<br><br>
+        *If there are no eligible beneficiaries, the remainder will be distributed to the Baitulmal.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    establishment_rightful_muslim_single_mother_pass_away_male_female_siblings: {
+        id: 'establishment_rightful_muslim_single_mother_pass_away_male_female_siblings',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Mother - 1/3 @ 1/6.<br>
+        2. Maternal siblings – 1/3 or 1/6 (if any).<br>
+        3. Full or paternal siblings – Asabah (residue).<br><br>
+        *Asobah - The distribution ratio between male and female siblings is 2:1.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    establishment_rightful_muslim_single_mother_pass_away_female_siblings: {
+        id: 'establishment_rightful_muslim_single_mother_pass_away_female_siblings',
+        message: `
+        The distribution is as follows:<br>
+        1. Mother - 1/3 @ 1/6.<br>
+        2. Siblings - 1/2 @ 2/3.<br><br>
+        *The remaining portion will be distributed to other eligible beneficiaries in the following order:<br><br>
+        1. Paternal grandfather.<br>
+        2. Paternal uncle.<br>
+        3. Male cousin (paternal uncle's son).<br>
+        4. Male cousin's son.<br>
+        *If there are no eligible beneficiaries, the remainder will be distributed to the Baitulmal.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    establishment_rightful_muslim_single_mother_pass_away_male_siblings: {
+        id: 'establishment_rightful_muslim_single_mother_pass_away_male_siblings',
+        message: `
+        The distribution is as follows:<br>
+        1. Mother - 1/3 @ 1/6.<br>
+        2. Maternal siblings – 1/3 or 1/6 (if any).<br>
+        3. Full or paternal siblings – Asabah (residue).<br><br> 
+        *Asobah - The share will be distributed equally among them.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    establishment_rightful_muslim_single_mother_pass_away_no_siblings: {
+        id: 'establishment_rightful_muslim_single_mother_pass_away_no_siblings',
+        message: `
+        The distribution is as follows:<br>
+        1. Mother - 1/3 @ 1/6<br><br>
+        *The remaining portion will be distributed to other eligible beneficiaries in the following order:<br><br>
+        1. Paternal grandfather.<br>
+        2. Paternal uncle.<br>
+        3. Male cousin (paternal uncle's son).<br>
+        4. Male cousin's son.<br><br>
+        *If there are no eligible beneficiaries, the remainder will be distributed to the Baitulmal.
+        `,
+        options: []
+    },
+    establishment_rightful_muslim_single_father: {
+        id: 'establishment_rightful_muslim_single_father',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Father – Asobah(residue).<br><br>
+        * The father inherits the entire estate of the deceased.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    establishment_rightful_muslim_single_both_still_alive: {
+        id: 'establishment_rightful_muslim_single_both_still_alive',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Mother - 1/3 @ 1/6.<br>
+        2. Father - Asobah(residue).<br><br>
+        * The remainder will be distributed to the father.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    establishment_rightful_muslim_married: {
+        id: 'establishment_rightful_muslim_married',
+        message: `
+        Did the deceased have any children?
+        `,
+        options: [
+            { label: "1️⃣ No children", nextStep: 'establishment_rightful_muslim_married_no_children' },
+            { label: '2️⃣ Son(s) and daughter(s)', nextStep: 'establishment_rightful_muslim_married_son_daughter' },
+            { label: '3️⃣ Son(s) only', nextStep: 'establishment_rightful_muslim_married_son_only' },
+            { label: '4️⃣ Daughter(s) only', nextStep: 'establishment_rightful_muslim_married_daughter_only' },
+        ]
+    },
+    establishment_rightful_muslim_married_no_children: {
+        id: 'establishment_rightful_muslim_married_no_children',
+        message: `
+        Were the deceased’s parents still alive at the time of deceased's death?`,
+        options: [
+            { label: "1️⃣ Both had passed away", nextStep: 'est_righ_muslim_m_no_children_both_pass_away' },
+            { label: '2️⃣ Only the mother is still alive', nextStep: 'est_righ_muslim_m_no_children_only_mother_alive' },
+            { label: '3️⃣ Only the father is still alive', nextStep: 'est_righ_muslim_m_no_children_only_father_alive' },
+            { label: '4️⃣ Both are still alive', nextStep: 'est_righ_muslim_m_no_children_both_alive' },
+        ]
+    },
+    est_righ_muslim_m_no_children_both_pass_away: {
+        id: 'est_righ_muslim_m_no_children_both_pass_away',
+        message: `
+        Was deceased's spouse still alive at the time of deceased's death?
+        `,
+        options: [
+            { label: "1️⃣ Yes", nextStep: 'est_righ_muslim_m_no_children_both_pass_away_yes' },
+            { label: '2️⃣ No', nextStep: 'est_righ_muslim_m_no_children_both_pass_away_no' },
+        ]
+    },
+    est_righ_muslim_m_no_children_both_pass_away_yes: {
+        id: 'est_righ_muslim_m_no_children_both_pass_away_yes',
+        message: `
+        Did the deceased have any siblings?
+        `,
+        options: [
+            { label: '1️⃣ Passed away before the deceased', nextStep: 'est_righ_muslim_m_no_children_both_pass_away_yes_both_pass_away_before_deceased' },
+            { label: '2️⃣ Male and female siblings', nextStep: 'est_righ_muslim_m_no_children_both_pass_away_yes_pass_away_male_female_siblings' },
+            { label: '3️⃣ Female siblings only', nextStep: 'est_righ_muslim_m_no_children_both_pass_away_yes_pass_away_female_siblings' },
+            { label: '4️⃣ Male siblings only', nextStep: 'est_righ_muslim_m_no_children_both_pass_away_yes_pass_away_male_siblings' },
+            { label: '5️⃣ No sibling', nextStep: 'est_righ_muslim_m_no_children_both_pass_away_yes_pass_away_no_siblings' },
+        ]
+    },
+    est_righ_muslim_m_no_children_both_pass_away_yes_both_pass_away_before_deceased: {
+        id: 'est_righ_muslim_m_no_children_both_pass_away_yes_both_pass_away_before_deceased',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Spouse - 1/2 (Husband), 1/4 (Wife)<br><br>
+        *The remaining portion will be distributed to other eligible beneficiaries in the following order:<br><br>
+        1. Paternal grandfather.<br>
+        2. Nephew (brother's son).<br>
+        3. Paternal uncle.<br>
+        4. Male cousin (paternal uncle's son).<br>
+        5. Male cousin's son.<br><br>
+        If no eligible beneficiaries are found, the remainder will be given to the Baitulmal.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    est_righ_muslim_m_no_children_both_pass_away_yes_pass_away_male_female_siblings: {
+        id: 'est_righ_muslim_m_no_children_both_pass_away_yes_pass_away_male_female_siblings',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Spouse - 1/2 (Husband), 1/4 (Wife).<br>
+        2. Maternal siblings - 1/3 @ 1/6 (if any).<br>
+        3. Full or paternal siblings - Asobah (residue).<br><br>
+        *Asobah - The distribution ratio between male and female siblings is 2:1.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    est_righ_muslim_m_no_children_both_pass_away_yes_pass_away_female_siblings: {
+        id: 'est_righ_muslim_m_no_children_both_pass_away_yes_pass_away_female_siblings',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Spouse - 1/2 (Husband), 1/4 (Wife).<br>
+        2. Maternal siblings - 1/3 @ 1/6 (if any).<br>
+        3. Full or paternal siblings - 1/2 @ 2/3.<br>
+        *The remaining portion will be distributed to other eligible beneficiaries in the following order:<br><br>
+        1. Paternal grandfather.<br>
+        2. Paternal uncle.<br>
+        3. Male cousin.<br>
+        4. Male cousin’s son.<br><br>
+        If no eligible beneficiaries are found, the remainder will be given to the Baitulmal.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    est_righ_muslim_m_no_children_both_pass_away_yes_pass_away_male_siblings: {
+        id: 'est_righ_muslim_m_no_children_both_pass_away_yes_pass_away_male_siblings',
+        message: `
+        The distribution is asfollows:<br><br>
+        1. Spouse - 1/2 (Husband), 1/4 (Wife).<br>
+        2. Maternal siblings - 1/3 @ 1/6 (if any).<br>
+        3. Full or paternal siblings - Asobah (residue).<br><br> 
+        *Asobah - The share will be distributed equally among them.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    est_righ_muslim_m_no_children_both_pass_away_yes_pass_away_no_siblings: {
+        id: 'est_righ_muslim_m_no_children_both_pass_away_yes_pass_away_no_siblings',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Spouse - 1/2 (Husband), 1/4 (Wife).<br><br>
+        *The remaining portion will be distributed to other eligible beneficiaries in the following order:<br><br>
+        1. Paternal grandfather.<br>
+        2. Paternal uncle.<br>
+        3. Male cousin.<br>
+        4. Male cousin’s son.<br><br>
+        If no eligible beneficiaries are found, the remainder will be given to the Baitulmal.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    est_righ_muslim_m_no_children_both_pass_away_no: {
+        id: 'est_righ_muslim_m_no_children_both_pass_away_no',
+        message: `
+        Did the deceased have any siblings?
+        `,
+        options: [
+            { label: '1️⃣ Passed away before the deceased', nextStep: 'est_righ_muslim_m_no_children_both_pass_away_no_both_pass_away_before_deceased' },
+            { label: '2️⃣ Male and female siblings', nextStep: 'est_righ_muslim_m_no_children_both_pass_away_no_pass_away_male_female_siblings' },
+            { label: '3️⃣ Female siblings only', nextStep: 'est_righ_muslim_m_no_children_both_pass_away_no_pass_away_female_siblings' },
+            { label: '4️⃣ Male siblings only', nextStep: 'est_righ_muslim_m_no_children_both_pass_away_no_pass_away_male_siblings' },
+            { label: '5️⃣ No sibling', nextStep: 'est_righ_muslim_m_no_children_both_pass_away_no_pass_away_no_siblings' },
+        ]
+    },
+    est_righ_muslim_m_no_children_both_pass_away_no_both_pass_away_before_deceased: {
+        id: 'est_righ_muslim_m_no_children_both_pass_away_no_both_pass_away_before_deceased',
+        message: `
+        The estate will be distributed to other rightful beneficiaries in the following order:<br><br>
+        1. Paternal grandfather.<br>
+        2. Nephew (brother's son).<br>
+        3. Paternal uncle.<br>
+        4. Male cousin (paternal uncle's son).<br>
+        5. Male cousin's son.<br><br>
+        If there are no eligible beneficiaries, the remainder will be distributed to the Baitulmal.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    est_righ_muslim_m_no_children_both_pass_away_no_pass_away_male_female_siblings: {
+        id: 'est_righ_muslim_m_no_children_both_pass_away_no_pass_away_male_female_siblings',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Maternal siblings – 1/3 or 1/6 (if any).<br>
+        2. Full or paternal siblings – Asabah (residue).<br><br>
+        *Asobah - The distribution ratio between male and female siblings is 2:1.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    est_righ_muslim_m_no_children_both_pass_away_no_pass_away_female_siblings: {
+        id: 'est_righ_muslim_m_no_children_both_pass_away_no_pass_away_female_siblings',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Maternal siblings – 1/3 or 1/6 (if any).<br>
+        2. Full or paternal siblings – 1/2 @ 2/3.<br>
+        *The remaining portion will be distributed to other eligible beneficiaries in the following order:<br><br>
+        1. Paternal grandfather.<br>
+        2. Paternal uncle.<br>
+        3. Male cousin (paternal uncle's son).<br>
+        4. Male cousin's son.<br><br>
+        *If there are no eligible beneficiaries, the remainder will be distributed to the Baitulmal.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    est_righ_muslim_m_no_children_both_pass_away_no_pass_away_male_siblings: {
+        id: 'est_righ_muslim_m_no_children_both_pass_away_no_pass_away_male_siblings',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Maternal siblings – 1/ 3 or 1/6 (if any).<br>
+        2. Full or paternal siblings – Asabah (residue).<br><br>
+        *Asobah - The share will be distributed equally among them.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    est_righ_muslim_m_no_children_both_pass_away_no_pass_away_no_siblings: {
+        id: 'est_righ_muslim_m_no_children_both_pass_away_no_pass_away_no_siblings',
+        message: `
+        The estate will be distributed to other rightful beneficiaries in the following order:<br><br>
+        1. Paternal grandfather.<br>
+        2. Paternal uncle.<br>
+        3. Male cousin (paternal uncle's son).<br>
+        4. Male cousin's son.<br><br>
+        If there are no eligible beneficiaries, the remainder will be distributed to the Baitulmal.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    est_righ_muslim_m_no_children_only_mother_alive: {
+        id: 'est_righ_muslim_m_no_children_only_mother_alive',
+        message: `
+        Was deceased's spouse still alive at the time of deceased's death?
+        `,
+        options: [
+            { label: "1️⃣ Yes", nextStep: 'est_righ_muslim_m_no_children_only_mother_alive_yes' },
+            { label: '2️⃣ No', nextStep: 'est_righ_muslim_m_no_children_only_mother_alive_no' },
+        ]
+    },
+    est_righ_muslim_m_no_children_only_mother_alive_yes: {
+        id: 'est_righ_muslim_m_no_children_only_mother_alive_yes',
+        message: `
+        Did the deceased have any siblings?
+        `,
+        options: [
+            { label: '1️⃣ Passed away before the deceased', nextStep: 'est_righ_muslim_m_no_children_only_mother_alive_yes_both_pass_away_before_deceased' },
+            { label: '2️⃣ Male and female siblings', nextStep: 'est_righ_muslim_m_no_children_only_mother_alive_yes_pass_away_male_female_siblings' },
+            { label: '3️⃣ Female siblings only', nextStep: 'est_righ_muslim_m_no_children_only_mother_alive_yes_pass_away_female_siblings' },
+            { label: '4️⃣ Male siblings only', nextStep: 'est_righ_muslim_m_no_children_only_mother_alive_yes_pass_away_male_siblings' },
+            { label: '5️⃣ No sibling', nextStep: 'est_righ_muslim_m_no_children_only_mother_alive_yes_pass_away_no_siblings' },
+        ]
+    },
+    est_righ_muslim_m_no_children_only_mother_alive_yes_both_pass_away_before_deceased: {
+        id: 'est_righ_muslim_m_no_children_only_mother_alive_yes_both_pass_away_before_deceased',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Mother - 1/3 @ 1/6.<br>
+        2. Spouse - 1/2 (Husband), 1/4 (Wife).<br><br>
+        *The remaining portion will be distributed to other eligible beneficiaries in the following order:<br><br>
+        1. Paternal grandfather.<br>
+        2. Nephew (brother's son).<br>
+        3. Paternal uncle.<br>
+        4. Male cousin (paternal uncle's son).<br>
+        5. Male cousin's son.<br><br>
+        If no eligible beneficiaries are found, the remainder will be given to the Baitulmal.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    est_righ_muslim_m_no_children_only_mother_alive_yes_pass_away_male_female_siblings: {
+        id: 'est_righ_muslim_m_no_children_only_mother_alive_yes_pass_away_male_female_siblings',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Mother - 1/3 @ 1/6.<br>
+        2. Spouse - 1/2 (Husband), 1/4 (Wife).<br>
+        3. Maternal siblings - 1/3 @ 1/6 (if any).<br>
+        4. Full or paternal siblings - Asobah (residue).<br><br>
+        *Asobah - The distribution ratio between male and female siblings is 2:1.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    est_righ_muslim_m_no_children_only_mother_alive_yes_pass_away_female_siblings: {
+        id: 'est_righ_muslim_m_no_children_only_mother_alive_yes_pass_away_female_siblings',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Mother - 1/3 @ 1/6.<br>
+        2.Spouse - 1/2 (Husband), 1/4 (Wife).<br>
+        3. Maternal siblings - 1/3 @ 1/6 (if any).<br>
+        4. Full or paternal siblings - 1/2 @ 2/3.<br><br>
+        *The remaining portion will be distributed to other eligible beneficiaries in the following order:<br><br>
+        1. Paternal grandfather.<br>
+        2. Paternal uncle.<br>
+        3. Male cousin.<br>
+        4. Male cousin’s son.<br><br>
+        If no eligible beneficiaries are found, the remainder will be given to the Baitulmal.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    est_righ_muslim_m_no_children_only_mother_alive_yes_pass_away_male_siblings: {
+        id: 'est_righ_muslim_m_no_children_only_mother_alive_yes_pass_away_male_siblings',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Mother - 1/3 @ 1/6.<br>
+        2. Spouse - 1/2 (Husband), 1/4 (Wife).<br>
+        3. Maternal siblings - 1/3 @ 1/6 (if any).<br>
+        4. Full or paternal siblings - Asobah (residue).<br><br>
+        *Asobah - The share will be distributed equally among them.
+        `,
+        options: []
+    },
+    est_righ_muslim_m_no_children_only_mother_alive_yes_pass_away_no_siblings: {
+        id: 'est_righ_muslim_m_no_children_only_mother_alive_yes_pass_away_no_siblings',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Mother - 1/3.<br>
+        2. Spouse - 1/2 (Husband), 1/ 4 (Wife).<br><br>
+        *The remaining portion will be distributed to other eligible beneficiaries in the following order:<br><br>
+        1. Paternal grandfather.<br>
+        2. Paternal uncle.<br>
+        3. Male cousin.<br>
+        4. Male cousin’s son.<br><br>
+        If no eligible beneficiaries are found, the remainder will be given to the Baitulmal.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    est_righ_muslim_m_no_children_only_mother_alive_no: {
+        id: 'est_righ_muslim_m_no_children_only_mother_alive_no',
+        message: ``,
+        options: [
+            { label: '1️⃣ Passed away before the deceased', nextStep: 'est_righ_muslim_m_no_children_only_mother_alive_no_both_pass_away_before_deceased' },
+            { label: '2️⃣ Male and female siblings', nextStep: 'est_righ_muslim_m_no_children_only_mother_alive_no_pass_away_male_female_siblings' },
+            { label: '3️⃣ Female siblings only', nextStep: 'est_righ_muslim_m_no_children_only_mother_alive_no_pass_away_female_siblings' },
+            { label: '4️⃣ Male siblings only', nextStep: 'est_righ_muslim_m_no_children_only_mother_alive_no_pass_away_male_siblings' },
+            { label: '5️⃣ No sibling', nextStep: 'est_righ_muslim_m_no_children_only_mother_alive_no_pass_away_no_siblings' },
+        ]
+    },
+    est_righ_muslim_m_no_children_only_mother_alive_no_both_pass_away_before_deceased: {
+        id: 'est_righ_muslim_m_no_children_only_mother_alive_no_both_pass_away_before_deceased',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Mother - 1/3 @ 1/6.<br><br>
+        *The remaining portion will be distributed to other eligible beneficiaries in the following order:<br><br>
+        1. Paternal grandfather.<br>
+        2. Nephew (brother's son).<br>
+        3. Paternal uncle.<br>
+        4. Male cousin (paternal uncle's son).<br>
+        5. Male cousin's son.<br><br>
+        If no eligible beneficiaries are found, the remainder will be given to the Baitulmal.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    est_righ_muslim_m_no_children_only_mother_alive_no_pass_away_male_female_siblings: {
+        id: 'est_righ_muslim_m_no_children_only_mother_alive_no_pass_away_male_female_siblings',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Mother - 1/3 @ 1/6.<br>
+        2. Maternal siblings - 1/3 @ 1/6 (if any).<br>
+        3. Full or paternal siblings - Asobah (residue).<br><br>
+        *Asobah - The distribution ratio between male and female siblings is 2:1.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    est_righ_muslim_m_no_children_only_mother_alive_no_pass_away_female_siblings: {
+        id: 'est_righ_muslim_m_no_children_only_mother_alive_no_pass_away_female_siblings',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Mother - 1/3 @ 1/6.<br>
+        2. Maternal siblings - 1/3 @ 1/6 (if any).<br>
+        3. Full or paternal siblings - 1/2 @ 2/3.<br><br>
+        *The remaining portion will be distributed to other eligible beneficiaries in the following order:<br><br>
+        1. Paternal grandfather.<br>
+        2. Paternal uncle.<br>
+        3. Male cousin.<br>
+        4. Male cousin’s son.<br><br>
+        If no eligible beneficiaries are found, the remainder will be given to the Baitulmal.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    est_righ_muslim_m_no_children_only_mother_alive_no_pass_away_male_siblings: {
+        id: 'est_righ_muslim_m_no_children_only_mother_alive_no_pass_away_male_siblings',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Mother - 1/3 @ 1/6.<br>
+        2. Maternal siblings - 1/3 @ 1/6 (if any).<br>
+        3. Full or paternal siblings - Asobah (residue).<br><br>
+        *Asobah - The share will be distributed equally among them.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    est_righ_muslim_m_no_children_only_mother_alive_no_pass_away_no_siblings: {
+        id: 'est_righ_muslim_m_no_children_only_mother_alive_no_pass_away_no_siblings',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Mother - 1/3.<br><br>
+        *The remaining portion will be distributed to other eligible beneficiaries in the following order:<br><br>
+        1. Paternal grandfather.<br>
+        2. Paternal uncle.<br>
+        3. Male cousin.<br>
+        4. Male cousin’s son.<br><br>
+        If no eligible beneficiaries are found, the remainder will be given to the Baitulmal.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    est_righ_muslim_m_no_children_only_father_alive: {
+        id: 'est_righ_muslim_m_no_children_only_father_alive',
+        message: `
+        Was deceased's spouse still alive at the time of deceased's death?
+        `,
+        options: [
+            { label: '1️⃣ Yes', nextStep: 'est_righ_muslim_m_no_children_only_father_alive_yes' },
+            { label: '2️⃣ No', nextStep: 'est_righ_muslim_m_no_children_only_father_alive_no' },
+        ]
+    },
+    est_righ_muslim_m_no_children_only_father_alive_yes: {
+        id: 'est_righ_muslim_m_no_children_only_father_alive_yes',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Father - Asobah (residue).<br>
+        2. Spouse - 1/2 (Husband), 1/4 (Wife)
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    est_righ_muslim_m_no_children_only_father_alive_no: {
+        id: 'est_righ_muslim_m_no_children_only_father_alive_no',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Father - Asobah (residue).<br><br>
+        * The father inherits the entire estate of the deceased.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    est_righ_muslim_m_no_children_both_alive: {
+        id: 'est_righ_muslim_m_no_children_both_alive',
+        message: `
+        Was deceased's spouse still alive at the time of deceased's death?
+        `,
+        options: [
+            { label: '1️⃣ Yes', nextStep: 'est_righ_muslim_m_no_children_both_alive_yes' },
+            { label: '2️⃣ No', nextStep: 'est_righ_muslim_m_no_children_both_alive_no' },
+        ]
+    },
+    est_righ_muslim_m_no_children_both_alive_yes: {
+        id: 'est_righ_muslim_m_no_children_both_alive_yes',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Mother - 1/3 @ 1/6.<br>
+        2. Father - Asobah(residue).<br>
+        3. Spouse - 1/2 (Husband), 1/4 (Wife).<br><br>
+        * The remainder will be distributed to the father.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    est_righ_muslim_m_no_children_both_alive_no: {
+        id: 'est_righ_muslim_m_no_children_both_alive_no',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Mother - 1/3 @ 1/6.<br>
+        2. Father - Asobah (residue).<br><br>
+        * The remainder will be distributed to the father.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    establishment_rightful_muslim_married_son_daughter: {
+        id: 'establishment_rightful_muslim_married_son_daughter',
+        message: `
+        Were the deceased’s parents still alive at the time of deceased's death?
+        `,
+        options: [
+            { label: '1️⃣ Father / Mother is still alive', nextStep: 'es_righ_muslim_m_son_daughter_father_or_mother' },
+            { label: '2️⃣ Both are still alive', nextStep: 'es_righ_muslim_m_son_daughter_both_alive' },
+            { label: '3️⃣ Both had passed away', nextStep: 'es_righ_muslim_m_son_daughter_both_pass_away' },
+        ]
+    },
+    es_righ_muslim_m_son_daughter_father_or_mother: {
+        id: 'es_righ_muslim_m_son_daughter_father_or_mother',
+        message: `
+        Was deceased's spouse still alive at the time of deceased's death?
+        `,
+        options: [
+            { label: '1️⃣ Yes', nextStep: 'es_righ_muslim_m_son_daughter_father_or_mother_yes' },
+            { label: '2️⃣ No', nextStep: 'es_righ_muslim_m_son_daughter_father_or_mother_no' },
+        ]
+    },
+    es_righ_muslim_m_son_daughter_father_or_mother_yes: {
+        id: 'es_righ_muslim_m_son_daughter_father_or_mother_yes',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Father @ Mother - 1/6.<br>
+        2. Spouse - 1/4 (Husband), 1/8 (Wife).<br>
+        3. Children- Asobah (residue).<br><br>
+        *Asobah - The distribution ratio between male and female siblings is 2:1.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    es_righ_muslim_m_son_daughter_father_or_mother_no: {
+        id: 'es_righ_muslim_m_son_daughter_father_or_mother_no',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Father @ Mother - 1/6.<br>
+        2. Children - Asobah (residue).<br><br>
+        *Asobah - The distribution ratio between male and female siblings is 2:1.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    es_righ_muslim_m_son_daughter_both_alive: {
+        id: 'es_righ_muslim_m_son_daughter_both_alive',
+        message: `
+        Was deceased's spouse still alive at the time of deceased's death?
+        `,
+        options: [
+            { label: '1️⃣ Yes', nextStep: 'es_righ_muslim_m_son_daughter_both_alive_yes' },
+            { label: '2️⃣ No', nextStep: 'es_righ_muslim_m_son_daughter_both_alive_no' },
+        ]
+    },
+    es_righ_muslim_m_son_daughter_both_alive_yes: {
+        id: 'es_righ_muslim_m_son_daughter_both_alive_yes',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Father - 1/6.<br>
+        2. Mother - 1/6.<br>
+        3. Spouse - 1/4 (Husband), 1/8 (Wife).<br>
+        4. Children - Asobah (residue).<br><br>
+        *Asobah - The distribution ratio between male and female siblings is 2:1.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    es_righ_muslim_m_son_daughter_both_alive_no: {
+        id: 'es_righ_muslim_m_son_daughter_both_alive_no',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Father - 1/6.<br>
+        2. Mother - 1/6.<br>
+        3. Children - Asobah (residue).<br><br>
+        *Asobah - The distribution ratio between male and female siblings is 2:1.
+`,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    es_righ_muslim_m_son_daughter_both_pass_away: {
+        id: 'es_righ_muslim_m_son_daughter_both_pass_away',
+        message: `
+        Was deceased's spouse still alive at the time of deceased's death?
+        `,
+        options: [
+            { label: '1️⃣ Yes', nextStep: 'es_righ_muslim_m_son_daughter_both_pass_away_yes' },
+            { label: '2️⃣ No', nextStep: 'es_righ_muslim_m_son_daughter_both_pass_away_no' },
+        ]
+    },
+    es_righ_muslim_m_son_daughter_both_pass_away_yes: {
+        id: 'es_righ_muslim_m_son_daughter_both_pass_away_yes',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Spouse - 1/4 (Husband), 1/8 (Wife).<br>
+        2. Children - Asobah (residue).<br><br>
+        *Asobah - The distribution ratio between male and female siblings is 2:1.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    es_righ_muslim_m_son_daughter_both_pass_away_no: {
+        id: 'es_righ_muslim_m_son_daughter_both_pass_away_no',
+        message: `
+        Children - Asobah (residue)<br><br>
+        *Asobah - The distribution ratio between male and female siblings is 2:1
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    establishment_rightful_muslim_married_son_only: {
+        id: 'establishment_rightful_muslim_married_son_only',
+        message: `
+        Was deceased's spouse still alive at the time of deceased's death?
+        `,
+        options: [
+            { label: '1️⃣ Father / Mother is still alive', nextStep: 'es_right_muslim_m_son_only_father_or_mother' },
+            { label: '2️⃣ Both are still alive', nextStep: 'es_right_muslim_m_son_only_both_alive' },
+            { label: '3️⃣ Both had passed away', nextStep: 'es_right_muslim_m_son_only_both_pass_away' },
+        ]
+    },
+    es_right_muslim_m_son_only_father_or_mother: {
+        id: 'es_right_muslim_m_son_only_father_or_mother',
+        message: `
+        Was deceased's spouse still alive at the time of deceased's death?
+        `,
+        options: [
+            { label: '1️⃣ Yes', nextStep: 'es_right_muslim_m_son_only_father_or_mother_yes' },
+            { label: '2️⃣ No', nextStep: 'es_right_muslim_m_son_only_father_or_mother_no' },
+        ]
+    },
+    es_right_muslim_m_son_only_father_or_mother_yes: {
+        id: 'es_right_muslim_m_son_only_father_or_mother_yes',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Father @ Mother - 1/6.<br>
+        2. Spouse - 1/4(Husband), 1/8 (Wife).<br>
+        3. Children - Asobah(residue).<br><br>
+        *Asobah - The share will be distributed equally among them.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    es_right_muslim_m_son_only_father_or_mother_no: {
+        id: 'es_right_muslim_m_son_only_father_or_mother_no',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Father @ Mother - 1/6.<br>
+        2. Children - Asobah (residue).<br><br>
+        *Asobah - The share will be distributed equally among them.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    es_right_muslim_m_son_only_both_alive: {
+        id: 'es_right_muslim_m_son_only_both_alive',
+        message: `
+        Was deceased's spouse still alive at the time of deceased's death?
+        `,
+        options: [
+            { label: '1️⃣ Yes', nextStep: 'es_right_muslim_m_son_only_both_alive_yes' },
+            { label: '2️⃣ No', nextStep: 'es_right_muslim_m_son_only_both_alive_no' },
+        ]
+    },
+    es_right_muslim_m_son_only_both_alive_yes: {
+        id: 'es_right_muslim_m_son_only_both_alive_yes',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Father - 1/6.<br>
+        2. Mother - 1/6.<br>
+        3. Spouse - 1/4 (Husband), 1/8 (Wife).<br>
+        4. Children - Asobah (residue).<br><br>
+        *Asobah - The share will be distributed equally among them.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    es_right_muslim_m_son_only_both_alive_no: {
+        id: 'es_right_muslim_m_son_only_both_alive_no',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Father - 1/6.<br>
+        2. Mother - 1/6.<br>
+        3. Children - Asobah (residue).<br><br>
+        *Asobah - The share will be distributed equally among them.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    es_right_muslim_m_son_only_both_pass_away: {
+        id: 'es_right_muslim_m_son_only_both_pass_away',
+        message: `
+        Was deceased's spouse still alive at the time of deceased's death?
+        `,
+        options: [
+            { label: '1️⃣ Yes', nextStep: 'es_right_muslim_m_son_only_both_pass_away_yes' },
+            { label: '2️⃣ No', nextStep: 'es_right_muslim_m_son_only_both_pass_away_no' },
+        ]
+    },
+    es_right_muslim_m_son_only_both_pass_away_yes: {
+        id: 'es_right_muslim_m_son_only_both_pass_away_yes',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Spouse - 1/4 (Husband), 1/8 (Wife).<br>
+        2. Children - Asobah (residue).<br><br>
+        *Asobah - The share will be distributed equally among them.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    es_right_muslim_m_son_only_both_pass_away_no: {
+        id: 'es_right_muslim_m_son_only_both_pass_away_no',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Children - Asobah (residue)<br><br>
+        *Asobah - The share will be distributed equally among them.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    establishment_rightful_muslim_married_daughter_only: {
+        id: 'establishment_rightful_muslim_married_daughter_only',
+        message: `
+        Were the deceased’s parents still alive at the time of deceased's death?
+        `,
+        options: [
+            { label: '1️⃣ Mother is still alive', nextStep: 'es_right_muslim_m_daughter_only_mother_alive' },
+            { label: '2️⃣ Father is still alive', nextStep: 'es_right_muslim_m_daughter_only_father_alive' },
+            { label: '3️⃣ Both are still alive', nextStep: 'es_right_muslim_m_daughter_only_both_alive' },
+            { label: '4️⃣ Both had pass away', nextStep: 'es_right_muslim_m_daughter_only_both_pass_away' },
+        ]
+    },
+    es_right_muslim_m_daughter_only_mother_alive: {
+        id: 'es_right_muslim_m_daughter_only_mother_alive',
+        message: `
+        Was deceased's spouse still alive at the time of deceased's death?
+        `,
+        options: [
+            { label: '1️⃣ Yes', nextStep: 'es_right_muslim_m_daughter_only_mother_alive_yes' },
+            { label: '2️⃣ No', nextStep: 'es_right_muslim_m_daughter_only_mother_alive_no' },
+        ]
+    },
+    es_right_muslim_m_daughter_only_mother_alive_yes: {
+        id: 'es_right_muslim_m_daughter_only_mother_alive_yes',
+        message: `
+        Did the deceased have any siblings?
+        `,
+        options: [
+            { label: '1️⃣ Yes and still alive', nextStep: 'es_right_muslim_m_daughter_only_mother_alive_yes_siblings' },
+            { label: '2️⃣ Passed away before the deceased', nextStep: 'es_right_muslim_m_daughter_only_mother_alive_yes_passed_away_sibling' },
+            { label: '3️⃣ No siblings', nextStep: 'es_right_muslim_m_daughter_only_mother_alive_yes_no_siblings' },
+        ]
+    },
+    es_right_muslim_m_daughter_only_mother_alive_yes_siblings: {
+        id: 'es_right_muslim_m_daughter_only_mother_alive_yes_siblings',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Mother - 1/6.<br>
+        2. Spouse - 1/4 (Husband), 1/8 (Wife).<br>
+        3. Children - 1/2 @ 2/3.<br>
+        4. Siblings - Asobah (residue).<br><br>
+        *Siblings refer only to full siblings or paternal siblings, and they will inherit only if there is a remaining balance. Maternal siblings do not inherit in this situation.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    es_right_muslim_m_daughter_only_mother_alive_yes_passed_away_sibling: {
+        id: 'es_right_muslim_m_daughter_only_mother_alive_yes_passed_away_sibling',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Mother - 1/6.<br>
+        2. Spouse - 1/4 (Husband), 1/8 (Wife).<br>
+        3. Children - 1/2 @ 2/3.<br>
+        *The remaining portion will be distributed to other eligible beneficiaries in the following order:<br><br>
+        1. Paternal grandfather.<br>
+        2. Nephew (brother's son).<br>
+        3. Paternal uncle.<br>
+        4. Male cousin (paternal uncle's son).<br>
+        5. Male cousin's son.<br><br>
+        If no eligible beneficiaries are found, the remainder will be given to the Baitulmal.
+        `,
+        options: []
+    },
+    es_right_muslim_m_daughter_only_mother_alive_yes_no_siblings: {
+        id: 'es_right_muslim_m_daughter_only_mother_alive_yes_no_siblings',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Mother - 1/6.<br>
+        2. Spouse - 1/4 (Husband), 1/8 (Wife).<br>
+        3. Children - 1/2 @ 2/3.<br>
+        *The remaining portion will be distributed to other eligible beneficiaries in the following order:<br><br>
+        1. Paternal grandfather.<br>
+        2. Paternal uncle.<br>
+        3. Male cousin (paternal uncle's son).<br>
+        4. Male cousin's son.<br><br>
+        If no eligible beneficiaries are found, the remainder will be given to the Baitulmal.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    es_right_muslim_m_daughter_only_mother_alive_no: {
+        id: 'es_right_muslim_m_daughter_only_mother_alive_no',
+        message: `
+        Did the deceased have any siblings?
+        `,
+        options: [
+            { label: '1️⃣ Yes and still alive', nextStep: 'es_right_muslim_m_daughter_only_mother_alive_no_siblings' },
+            { label: '2️⃣ Passed away before the deceased', nextStep: 'es_right_muslim_m_daughter_only_mother_alive_no_passed_away_sibling' },
+            { label: '3️⃣ No siblings', nextStep: 'es_right_muslim_m_daughter_only_mother_alive_no_no_siblings' },
+        ]
+    },
+    es_right_muslim_m_daughter_only_mother_alive_no_siblings: {
+        id: 'es_right_muslim_m_daughter_only_mother_alive_no_siblings',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Mother - 1/6.<br>
+        2. Anak - 1/2 @ 2/3.<br>
+        3. Children - 1/2 @ 2/3.<br>
+        4. Siblings - Asobah (residue).<br><br>
+        *Siblings refer only to full siblings or paternal siblings, and they will inherit only if there is a remaining balance. Maternal siblings do not inherit in this situation.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    es_right_muslim_m_daughter_only_mother_alive_no_passed_away_sibling: {
+        id: 'es_right_muslim_m_daughter_only_mother_alive_no_passed_away_sibling',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Mother - 1/6.<br>
+        2. Children - 1/2 @ 2/3.<br>
+        *The remaining portion will be distributed to other eligible beneficiaries in the following order:<br><br>
+        1. Paternal grandfather.<br>
+        2. Nephew (brother's son).<br>
+        3. Paternal uncle.<br>
+        4. Male cousin (paternal uncle's son).<br>
+        5. Male cousin's son.<br><br>
+        If no eligible beneficiaries are found, the remainder will be given to the Baitulmal
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    es_right_muslim_m_daughter_only_mother_alive_no_no_siblings: {
+        id: 'es_right_muslim_m_daughter_only_mother_alive_no_no_siblings',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Mother - 1/6.<br>
+        2. Children - 1/2 @ 2/3.<br>
+        *The remaining portion will be distributed to other eligible beneficiaries in the following order:<br><br>
+        1. Paternal grandfather.<br>
+        2. Paternal uncle.<br>
+        3. Male cousin (paternal uncle's son).<br>
+        4. Male cousin's son.<br><br>
+        If no eligible beneficiaries are found, the remainder will be given to the Baitulmal
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    es_right_muslim_m_daughter_only_father_alive: {
+        id: 'es_right_muslim_m_daughter_only_father_alive',
+        message: `
+        Was deceased's spouse still alive at the time of deceased's death?
+        `,
+        options: [
+            { label: '1️⃣ Yes', nextStep: 'es_right_muslim_m_daughter_only_father_alive_yes' },
+            { label: '2️⃣ No', nextStep: 'es_right_muslim_m_daughter_only_father_alive_no' },
+        ]
+    },
+    es_right_muslim_m_daughter_only_father_alive_yes: {
+        id: 'es_right_muslim_m_daughter_only_father_alive_yes',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Father - 1/6 + Asobah (residue).<br>
+        2. Spouse - 1/4 (Husband), 1/8 (Wife).<br>
+        3. Children - 1/2 @ 2/3.<br><br>
+        *Asobah - The residue will be distributed to the father (if any)
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    es_right_muslim_m_daughter_only_father_alive_no: {
+        id: 'es_right_muslim_m_daughter_only_father_alive_no',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Father - 1/6 + Asobah (residue).<br>
+        2. Children - 1/2 @ 2/3.<br><br>
+        *Asobah - The residue will be distributed to the father (if any)
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    es_right_muslim_m_daughter_only_both_alive: {
+        id: 'es_right_muslim_m_daughter_only_both_alive',
+        message: `
+        Was deceased's spouse still alive at the time of deceased's death?
+        `,
+        options: [
+            { label: '1️⃣ Yes', nextStep: 'es_right_muslim_m_daughter_only_both_alive_yes' },
+            { label: '2️⃣ No', nextStep: 'es_right_muslim_m_daughter_only_both_alive_no' },
+        ]
+    },
+    es_right_muslim_m_daughter_only_both_alive_yes: {
+        id: 'es_right_muslim_m_daughter_only_both_alive_yes',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Mother - 1/6.<br>
+        2. Father - 1/6 + Asobah (residue).<br>
+        3. Spouse - 1/4 (Husband), 1/8 (Wife).<br>
+        4. Children - 1/2 @ 2/3.<br><br>
+        *Asobah - The residue will be distributed to the father (if any)
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    es_right_muslim_m_daughter_only_both_alive_no: {
+        id: 'es_right_muslim_m_daughter_only_both_alive_no',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Mother - 1/6.<br>
+        2. Father - 1/6 + Asobah (residue).<br>
+        3. Children - 1/2 @ 2/3.<br><br>
+        *Asobah - The residue will be distributed to the father (if any)
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    es_right_muslim_m_daughter_only_both_pass_away: {
+        id: 'es_right_muslim_m_daughter_only_both_pass_away',
+        message: `
+        Was deceased's spouse still alive at the time of deceased's death?
+        `,
+        options: [
+            { label: '1️⃣ Yes', nextStep: 'es_right_muslim_m_daughter_only_both_pass_away_yes' },
+            { label: '2️⃣ No', nextStep: 'es_right_muslim_m_daughter_only_both_pass_away_no' },
+        ]
+    },
+    es_right_muslim_m_daughter_only_both_pass_away_yes: {
+        id: 'es_right_muslim_m_daughter_only_both_pass_away_yes',
+        message: `
+        Did the deceased have any siblings?
+        `,
+        options: [
+            { label: '1️⃣ Yes and still alive', nextStep: 'es_right_muslim_m_daughter_only_both_pass_away_yes_siblings' },
+            { label: '2️⃣ Passed away before the deceased', nextStep: 'es_right_muslim_m_daughter_only_both_pass_away_yes_passed_away_sibling' },
+            { label: '3️⃣ No siblings', nextStep: 'es_right_muslim_m_daughter_only_both_pass_away_yes_no_siblings' },
+        ]
+    },
+    es_right_muslim_m_daughter_only_both_pass_away_yes_siblings: {
+        id: 'es_right_muslim_m_daughter_only_both_pass_away_yes_siblings',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Spouse - 1/4 (Husband), 1/8 (Wife).<br>
+        2. Children - 1/2 @ 2/3.<br>
+        3. Siblings - Asobah (residue).<br><br>
+        *Siblings refer only to full siblings or paternal siblings, and they will inherit only if there is a remaining balance. Maternal siblings do not inherit in this situation.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    es_right_muslim_m_daughter_only_both_pass_away_yes_passed_away_sibling: {
+        id: 'es_right_muslim_m_daughter_only_both_pass_away_yes_passed_away_sibling',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Spouse - 1/4 (Husband), 1/8 (Wife).<br>
+        2. Children - 1/2 @ 2/3.<br><br>
+        *The remaining portion will be distributed to other eligible beneficiaries in the following order:<br><br>
+        1. Paternal grandfather.<br>
+        2. Nephew (brother's son).<br>
+        3. Paternal uncle.<br>
+        4. Male cousin (paternal uncle's son).<br>
+        5. Male cousin's son.<br><br> 
+        If no eligible beneficiaries are found, the remainder will be given to the Baitulmal.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    es_right_muslim_m_daughter_only_both_pass_away_yes_no_siblings: {
+        id: 'es_right_muslim_m_daughter_only_both_pass_away_yes_no_siblings',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Spouse - 1/4 (Husband), 1/8 (Wife).<br>
+        2. Children - 1/2 @ 2/3.<br>
+        *The remaining portion will be distributed to other eligible beneficiaries in the following order:<br><br>
+        1. Paternal grandfather.<br>
+        2. Paternal uncle.<br>
+        3. Male cousin (paternal uncle's son).<br>
+        4. Male cousin's son.<br><br>
+        If no eligible beneficiaries are found, the remainder will be given to the Baitulmal.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    es_right_muslim_m_daughter_only_both_pass_away_no: {
+        id: 'es_right_muslim_m_daughter_only_both_pass_away_no',
+        message: `
+        Did the deceased have any siblings?
+        `,
+        options: [
+            { label: '1️⃣ Yes and still alive', nextStep: 'es_right_muslim_m_daughter_only_both_pass_away_no_siblings' },
+            { label: '2️⃣ Passed away before the deceased', nextStep: 'es_right_muslim_m_daughter_only_both_pass_away_no_passed_away_sibling' },
+            { label: '3️⃣ No siblings', nextStep: 'es_right_muslim_m_daughter_only_both_pass_away_no_no_siblings' },
+        ]
+    },
+    es_right_muslim_m_daughter_only_both_pass_away_no_siblings: {
+        id: 'es_right_muslim_m_daughter_only_both_pass_away_no_siblings',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Children - 1/2 @ 2/3.<br>
+        2. Siblings - Asobah (residue).<br><br>
+        *Siblings refer only to full siblings or paternal siblings, and they will inherit only if there is a remaining balance. Maternal siblings do not inherit in this situation.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    es_right_muslim_m_daughter_only_both_pass_away_no_passed_away_sibling: {
+        id: 'es_right_muslim_m_daughter_only_both_pass_away_no_passed_away_sibling',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Children - 1/2 @ 2/3.<br><br>
+        *The remaining portion will be distributed to other eligible beneficiaries in the following order:<br><br>
+        1. Paternal grandfather.<br>
+        2. Nephew (brother's son).
+        3. Paternal uncle.<br>
+        4. Male cousin (paternal uncle's son).<br>
+        5. Male cousin's son.<br><br>
+        If no eligible beneficiaries are found, the remainder will be given to the Baitulmal.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    es_right_muslim_m_daughter_only_both_pass_away_no_no_siblings: {
+        id: 'es_right_muslim_m_daughter_only_both_pass_away_no_no_siblings',
+        message: `
+        The distribution is as follows:<br><br>
+        1. Children - 1/2 @ 2/3.<br><br>
+        *The remaining portion will be distributed to other eligible beneficiaries in the following order:<br><br>
+        1. Paternal grandfather.<br>
+        2. Paternal uncle.<br>
+        3. Male cousin (paternal uncle's son).<br>
+        4. Male cousin's son.<br><br>
+        If no eligible beneficiaries are found, the remainder will be given to the Baitulmal.`,
+        options: []
     },
     exit: {
         id: 'exit',

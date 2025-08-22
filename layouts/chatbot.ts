@@ -9,6 +9,10 @@ let expectingName = true
 
 function scrollToBottom() {
     chatBox.scrollTop = chatBox.scrollHeight
+    window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth'
+    });
 }
 
 function displayMessage(message: string, className: string = 'bot-message') {
