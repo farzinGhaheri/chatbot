@@ -50,7 +50,13 @@ function displayStep() {
 function handleInput() {
     const input = inputBox.value.trim()
     inputBox.value = ''
-
+    if (input === 'agent') {
+        displayMessage('Please wait while I am transfering you to the available agent')
+        chatbot.restart()
+        expectingName = true
+        displayStep()
+        return
+    }
     if (!input) return
 
     displayMessage(input, 'user-message')
