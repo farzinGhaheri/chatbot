@@ -1,0 +1,20 @@
+{
+    "name": "arb-chatbot-bridge",
+    "type": "module",
+    "scripts": {
+        "dev": "tsx watch src/server.ts",
+        "start": "node dist/server.js",
+        "build": "tsc -p tsconfig.json",
+        "build-dist": "tsc"
+    },
+    "dependencies": {
+        "dotenv": "^16.4.5",
+        "express": "^4.19.2",
+        "undici": "^6.19.8"
+    },
+    "devDependencies": {
+        "@types/express": "^5.0.3",
+        "tsx": "^4.15.7",
+        "typescript": "^5.5.4"
+    }
+}
