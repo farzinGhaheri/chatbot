@@ -4166,7 +4166,171 @@ export const chatbotFlow: BotFlow = {
         3. Male cousin (paternal uncle's son).<br>
         4. Male cousin's son.<br><br>
         If no eligible beneficiaries are found, the remainder will be given to the Baitulmal.`,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    establishment_rightful_non_muslim: {
+        id: 'establishment_rightful_non_muslim',
+        message: `
+        For non-Muslim, if no will was left, the estate administration will follow the Distribution Act 1958, after deducting any debts (if applicable).<br><br>
+        The beneficiary determination information below applies only to standard cases—for example, where beneficiaries such as a spouse or child are still living. It does not cover layered inheritance scenarios, such as when a beneficiary (e.g., a child) has passed away after the deceased.<br><br>
+        To <b>{name}</b> knowledge, what was the deceased's marital status?
+        `,
+        options: [
+            { label: '1️⃣ Single', nextStep: 'establishment_rightful_non_muslim_single' },
+            { label: '2️⃣ Married', nextStep: 'establishment_rightful_non_muslim_married' },
+        ]
+    },
+    establishment_rightful_non_muslim_single: {
+        id: 'establishment_rightful_non_muslim_single',
+        message: `
+        Were the deceased’s parents still alive at the time of deceased's death?
+        `,
+        options: [
+            { label: '1️⃣ Both or one of them is still alive', nextStep: 'es_right_non_m_single_alive' },
+            { label: '2️⃣ Both had passed away', nextStep: 'es_right_non_m_single_passed_away' },
+        ]
+    },
+    es_right_non_m_single_alive: {
+        id: 'es_right_non_m_single_alive',
+        message: `
+        1. Both are still alive – The estate will be distributed equally between them.<br><br>
+        2. One of them is still alive – The surviving parent will inherit the entire estate of the deceased.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    es_right_non_m_single_passed_away: {
+        id: 'es_right_non_m_single_passed_away',
+        message: `
+        Did the deceased have any siblings?
+        `,
+        options: [
+            { label: '1️⃣ Yes and still alive', nextStep: 'es_right_non_m_single_passed_away_alive' },
+            { label: '2️⃣ Passed away before the deceased', nextStep: 'es_right_non_m_single_passed_away_sibling' },
+            { label: '3️⃣ No siblings', nextStep: 'es_right_non_m_single_passed_away_sibling' },
+        ]
+    },
+    es_right_non_m_single_passed_away_alive: {
+        id: 'es_right_non_m_single_passed_away_alive',
+        message: `
+        The deceased’s siblings will inherit the entire estate. If there is more than one sibling, the estate will be divided equally among them.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    es_right_non_m_single_passed_away_sibling: {
+        id: 'es_right_non_m_single_passed_away_sibling',
+        message: `
+        If the deceased still had any of the following relatives alive at the time of death, they are eligible to inherit the estate (in order of priority):<br><br>
+        1. Grandfather / Grandmother.<br>
+        2. Uncle / Aunt.<br>
+        3. Great-grandfather / Great-grandmother.<br>
+        4. Great-uncle / Great-aunt.<br><br>
+        However, if the deceased also had none of the above relatives, the estate will be passed to the Government under Bona Vacantia.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    establishment_rightful_non_muslim_married: {
+        id: 'establishment_rightful_non_muslim_married',
+        message: `
+        Who were the deceased’s surviving beneficiaries at the time deceased's death?
+        `,
+        options: [
+            { label: '1️⃣ Parents, spouse and children ', nextStep: 'es_righ_non_m_married_parent_spouse_child' },
+            { label: '2️⃣ Spouse and children only', nextStep: 'es_righ_non_m_married_spouse_child_only' },
+            { label: '3️⃣ Parents and children only', nextStep: 'es_righ_non_m_married_parent_child_only' },
+            { label: '4️⃣ Parents and spouse only', nextStep: 'es_righ_non_m_married_parent_spouse_only' },
+            { label: '5️⃣ Parents / spouse / children only', nextStep: 'es_righ_non_m_married_parent_spouse_child_only' },
+            { label: '6️⃣ Siblings only', nextStep: 'es_righ_non_m_married_siblings_only' },
+            { label: '7️⃣ No surviving beneficiaries', nextStep: 'es_righ_non_m_married_no_survive' },
+        ]
+    },
+    es_righ_non_m_married_parent_spouse_child: {
+        id: 'es_righ_non_m_married_parent_spouse_child',
+        message: `
+        The distributions is as follows:<br><br>
+        1. Parent(s): 1/4.<br>
+        2. Spouse : 1/4.<br>
+        3. Children : 2/4.<br><br>
+        *If both parents are still alive, the portion will be shared equally.<br><br>
+        *If there is more than one children, the portion will be divided equally among them.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    es_righ_non_m_married_spouse_child_only: {
+        id: 'es_righ_non_m_married_spouse_child_only',
+        message: `
+        The distributions is as follows:<br><br>
+        1. Spouse : 1/3.<br>
+        2. Children : 2/3.<br><br>
+        *If there is more than one children, the portion will be divided equally among them
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    es_righ_non_m_married_parent_child_only: {
+        id: 'es_righ_non_m_married_parent_child_only',
+        message: `
+        The distributions is as follows:<br><br>
+        1. Parent(s): 1/3.<br>
+        2. Children : 2/3.<br><br>
+        *If both parents are still alive, the portion will be shared equally.<br><br>
+        *If there is more than one children, the portion will be divided equally among them.
+        `,
         options: []
+    },
+    es_righ_non_m_married_parent_spouse_only: {
+        id: 'es_righ_non_m_married_parent_spouse_only',
+        message: `
+        The distributions is as follows:<br><br>
+        1. Spouse : 1/2.<br>
+        2. Parent(s) : 1/2.<br><br>
+        *If both parents are stillalive, the portion will be shared equally.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    es_righ_non_m_married_parent_spouse_child_only: {
+        id: 'es_righ_non_m_married_parent_spouse_child_only',
+        message: `
+        The surviving beneficiaries will inherit the entire estate of the deceased. If there is more than one, the estate will be divided equally among them.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    es_righ_non_m_married_siblings_only: {
+        id: 'es_righ_non_m_married_siblings_only',
+        message: `
+        If there are no surviving parents, spouse, or children, the deceased’s siblings will inherit the entire estate. If there is more than one sibling, the estate will be divided equally among them.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
+    },
+    es_righ_non_m_married_no_survive: {
+        id: 'es_righ_non_m_married_no_survive',
+        message: `
+        If the deceased still had any of the following relatives alive at the time of death, they are eligible to inherit the estate (in order of priority):<br><br>
+        1. Grandfather / Grandmother.<br>
+        2. Uncle / Aunt.<br>
+        3. Great-grandfather / Great-grandmother.<br>
+        4. Great-uncle / Great-aunt.<br><br>
+        However, if the deceased also had none of the above relatives, the estate will be passed to the Government under Bona Vacantia.
+        `,
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
     },
     exit: {
         id: 'exit',
