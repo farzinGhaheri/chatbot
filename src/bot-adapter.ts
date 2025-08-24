@@ -19,19 +19,22 @@ function render(step: Step, eng: ChatbotEngine): string {
     let out = step.message || "";
     const opts = step.options ?? [];
     if (opts.length) {
-        const lines = opts.map((o, i) => `${i + 1}. ${o.label}`);
-        if ((eng.getHistory?.() ?? []).length > 0) lines.push("9. Previous Menu");
-        lines.push("0. Start Over");
+        const lines = opts.map((o, i) => `${o.label}`);
+        if ((eng.getHistory?.() ?? []).length > 1) lines.push("9️⃣ Previous Menu");
+        lines.push("0️⃣ Start Over");
         out += "\n\n" + lines.join("\n");
     }
-    return out || "✅ Thank you! Conversation complete.";
+    return out || "Thank you! Conversation complete.";
 }
 
-export async function handleIncomingText(conversationId: number, text: string): Promise<string> {
+export async function handleIncomingText(
+    conversationId: number,
+    text: string
+): Promise<string> {
     const eng = getEngine(conversationId);
     const raw = (text ?? "").trim();
 
-    if (!raw) return "❌ Please enter a valid input.";
+    if (!raw) return "Please enter a valid input.";
     if (raw.toLowerCase() === "agent") {
         eng.restart?.();
         return "Please wait while I am transferring you to the available agent.";
@@ -54,10 +57,10 @@ export async function handleIncomingText(conversationId: number, text: string): 
             eng.selectOption(n - 1);
             return render(eng.getCurrentStep() as Step, eng);
         }
-        return "❌ Please enter a valid number.\n\n" + render(current, eng);
+        return "Please enter a valid number.\n\n" + render(current, eng);
     }
 
-    // Otherwise treat as free text (engine handles start/name + retrieve_page1* internally)
+    // Otherwise treat as free text (your engine routes internally)
     eng.receiveUserInput(raw);
     return render(eng.getCurrentStep() as Step, eng);
 }

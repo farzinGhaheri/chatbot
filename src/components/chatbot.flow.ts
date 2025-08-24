@@ -8,7 +8,7 @@ export const chatbotFlow: BotFlow = {
     },
     greet: {
         id: 'greet',
-        message: '<b>{name}</b>, are you more comfortable communicating in Bahasa Malaysia or English?',
+        message: '**{name}**, are you more comfortable communicating in Bahasa Malaysia or English?',
         options: [
             { label: '1️⃣ Bahasa Malaysia', nextStep: 'malayu' },
             { label: '2️⃣ English', nextStep: 'english_main' },
@@ -16,7 +16,7 @@ export const chatbotFlow: BotFlow = {
     },
     english_main: {
         id: 'english_main',
-        message: 'Is <b>{name}</b> our existing customer?',
+        message: 'Is **{name}** our existing customer?',
         options: [
             { label: '1️⃣ No, I would like to make an inquiry', nextStep: 'no_page1' },
             { label: '2️⃣ Yes, I already have a registered file with ARB.', nextStep: 'yes_page1' },
@@ -25,7 +25,7 @@ export const chatbotFlow: BotFlow = {
     },
     no_page1: {
         id: 'no_page1',
-        message: 'What can ARIA assist <b>{name}</b> with?',
+        message: 'What can ARIA assist **{name}** with?',
         options: [
             { label: "1️⃣ I would like to administer the deceased's estate", nextStep: 'pusaka' },
             { label: '2️⃣ I would like to allocate my assets according to my wishes', nextStep: 'allocate_page1' },
@@ -39,7 +39,7 @@ export const chatbotFlow: BotFlow = {
     // these below steps are belong to page 1
     pusaka: {
         id: 'pusaka',
-        message: `May ARIA know what <b>{name}</b> would like to inquire about?`,
+        message: `May ARIA know what **{name}** would like to inquire about?`,
         options: [
             { label: '1️⃣ Estate application for vehicles only', nextStep: 'estate_application_vehicle' },
             { label: '2️⃣ Estate application', nextStep: 'estate_application' },
@@ -56,7 +56,7 @@ export const chatbotFlow: BotFlow = {
     },
     allocate_page1: {
         id: 'allocate_page1',
-        message: 'Does <b>{name}</b> intend to give it as a trust, hibah or will wasiat?',
+        message: 'Does **{name}** intend to give it as a trust, hibah or will wasiat?',
         options: [
             { label: '1️⃣ During lifetime ', nextStep: 'during_lifeitime' },
             { label: '2️⃣ After Death', nextStep: 'after_death' }
@@ -88,7 +88,7 @@ export const chatbotFlow: BotFlow = {
     },
     pay_page1: {
         id: 'pay_page1',
-        message: `Whose share does <b>{name}</b> intend to pay for?`,
+        message: `Whose share does **{name}** intend to pay for?`,
         options: [
             {
                 label: `1️⃣ Minor / Disabled (OKU) beneficiary`, nextStep: 'minor_disabled'
@@ -115,7 +115,7 @@ export const chatbotFlow: BotFlow = {
                     Please visit any of our nearest branch counters to make the payment by bringing along the required documents.<br>
                     Payment can be made by cash (limited to RM5,000), cheque, debit/credit card, or online transfer.<br><br>
                     
-                    <b>{name}</b> may <a href="https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m" target="_blank">Schedule An Appointment</a><br>
+                    **{name}** may <a href="https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m" target="_blank">Schedule An Appointment</a><br>
                     Branch information can be found at: <a href="https://www.amanahraya.my/contact-us/branch-locator/" target="_blank"> Branch Information</a>`,
         options: [
             { label: 'Thank you. Feel free to return anytime!', nextStep: 'exit' },
@@ -135,7 +135,7 @@ export const chatbotFlow: BotFlow = {
                     Please visit any of our nearest branch counters to make the payment by bringing along the required documents.<br>
                     Payment can be made by cash (limited to RM5,000), cheque, debit/credit card, or online transfer.<br><br>
                     
-                    <strong><b>{name}</b></strong> may 
+                    <strong>**{name}**</strong> may 
                     <a href="https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m" target="_blank">Schedule An Appointment</a><br>
                     Branch information can be found at: <a href="https://www.amanahraya.my/contact-us/branch-locator/" target="_blank"> Branch Information</a>`,
         options: [
@@ -149,7 +149,7 @@ export const chatbotFlow: BotFlow = {
                     2. 1 copy of Form G and H (Notice of Award and Compensation Offer).<br>
                     Please submit the above documents to the email address
                     crmd@arb.com.my. Payment information will be provided
-                    once the documents are received by <b>{name}</b>.`,
+                    once the documents are received by **{name}**.`,
         options: [
             { label: 'Thank you. Feel free to return anytime!', nextStep: 'exit' },
         ]
@@ -161,7 +161,7 @@ export const chatbotFlow: BotFlow = {
                     2. Payment notification letter regarding the Deceased’s share to ARB<br>
                     Please submit the above documents to the email address
                     crmd@arb.com.my. Payment information will be provided
-                    once the documents are received by <b>{name}</b>.`,
+                    once the documents are received by **{name}**.`,
         options: [
             { label: 'Thank you. Feel free to return anytime!', nextStep: 'exit' },
         ]
@@ -174,7 +174,7 @@ export const chatbotFlow: BotFlow = {
     },
     retrieve_page1_nric: {
         id: 'retrieve_page1_nric',
-        message: `Thanks <b>{name}</b>. Now please provide your NRIC.`,
+        message: `Thanks **{name}**. Now please provide your NRIC.`,
         options: [],
         expectsInput: true
     },
@@ -186,7 +186,7 @@ export const chatbotFlow: BotFlow = {
     },
     retrieve_page1_done: {
         id: 'retrieve_page1_done',
-        message: `<b>{name}</b>, thank you. You will be contacted on the next working day.`,
+        message: `**{name}**, thank you. You will be contacted on the next working day.`,
         options: [{
             label: 'Thank you. Feel free to return anytime!', nextStep: ''
         }],
@@ -225,7 +225,7 @@ export const chatbotFlow: BotFlow = {
                 Office appointing ARB as the Trustee for the
                 minor / OKU / untraceable /uncooperative beneficiary.<br>
                 Please visit any of our nearest branch counters with the required documents.
-                <b>{name}</b> may also schedule an appointment at:
+                **{name}** may also schedule an appointment at:
                 <a href="https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m" target="_blank">Appointment Form</a><br>
                 You can find the nearest AmanahRaya branch here: 
                 <a href="https://www.amanahraya.my/contact-us/branch-locator/" target="_blank"> Branch Information </a>`,
@@ -238,7 +238,7 @@ export const chatbotFlow: BotFlow = {
     yes_page1: {
         id: 'yes_page1',
         message: `
-            Great! <b>{name}</b>, you are a valued customer to us.<br>
+            Great! **{name}**, you are a valued customer to us.<br>
             Please state your existing product with us.
             `,
         options: [
@@ -254,12 +254,12 @@ export const chatbotFlow: BotFlow = {
         id: 'estate_application_vehicle',
         message: `The estate administration for this vehicle only applies to
                 administration in Peninsular Malaysia. For administration in
-                Sarawak or Sabah, <b>{name}</b> may click the estate application option
+                Sarawak or Sabah, **{name}** may click the estate application option
                 above.<br>
                 For your information, estate administration is required for the
                 transfer of ownership of the deceased’s vehicle. A Letter of
                 Administration will be issued for this process.<br><br>
-                To <b>{name}</b>’s knowledge, has the deceased’s estate ever
+                To **{name}**’s knowledge, has the deceased’s estate ever
                 been administered before?`,
         options: [
             { label: '1️⃣ No, it has never been done before', nextStep: 'estate_no_1' },
@@ -345,7 +345,7 @@ export const chatbotFlow: BotFlow = {
                     The completed form along with the required
                     documents can be submitted to any of our
                     nearest branches for the estate file opening
-                    process. <b>{name}</b> may schedule an appointment at
+                    process. **{name}** may schedule an appointment at
                     <a href="https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m" target="_blank">Appointment Form</a>`,
         options: [
             { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
@@ -396,7 +396,7 @@ export const chatbotFlow: BotFlow = {
                 The completed form along with the required
                 documents can be submitted to any of our
                 nearest branches for the estate file opening
-                process. <b>{name}</b> may schedule an appointment at
+                process. **{name}** may schedule an appointment at
                 <a href="https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m" target="_blank">Appointment Form</a>`,
         options: [
             { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
@@ -440,7 +440,7 @@ export const chatbotFlow: BotFlow = {
                 application for additional
                 assets must be proceeded
                 with at the High Court.<br><br>
-                Would <b>{name}</b> like a more
+                Would **{name}** like a more
                 detailed explanation?`,
         options: [
             { label: '1️⃣ No', nextStep: 'exit' },
@@ -456,7 +456,7 @@ export const chatbotFlow: BotFlow = {
                 assets must be submitted
                 to the Estate Distribution
                 Office.<br><br>
-                Would <b>{name}</b> like a more
+                Would **{name}** like a more
                 detailed explanation?`,
         options: [
             { label: '1️⃣ No', nextStep: 'exit' },
@@ -467,7 +467,7 @@ export const chatbotFlow: BotFlow = {
         id: 'admin_arb',
         message: `As the deceased’s estate
                 has previously been
-                administered here, <b>{name}</b>
+                administered here, **{name}**
                 is required to submit an
                 application for additional
                 assets to be administered.`,
@@ -477,7 +477,7 @@ export const chatbotFlow: BotFlow = {
     },
     estate_application: {
         id: 'estate_application',
-        message: `For your information, <b>{name}</b>, estate administration is required for the deceased’s assets
+        message: `For your information, **{name}**, estate administration is required for the deceased’s assets
                 that do not have a nominee or were not given through hibah (gift). A Letter of
                 Administration will be issued to administer the deceased’s assets.<br><br>
                 May ARIA know the location of the deceased’s assets`,
@@ -489,7 +489,7 @@ export const chatbotFlow: BotFlow = {
     },
     peninsular: {
         id: 'peninsular',
-        message: `To <b>{name}</b>’s knowledge, has
+        message: `To **{name}**’s knowledge, has
                 the deceased’s estate ever
                 been administered before?`,
         options: [
@@ -596,7 +596,7 @@ export const chatbotFlow: BotFlow = {
                 The completed form along with the required
                 documents can be submitted to any of our
                 nearest branches for the estate file opening
-                process. <b>{name}</b> may schedule an appointment at
+                process. **{name}** may schedule an appointment at
                 <a href="https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m" target="_blank">Appointment Form</a>`,
         options: [
             { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
@@ -646,7 +646,7 @@ export const chatbotFlow: BotFlow = {
                 The completed form along with the required
                 documents can be submitted to any of our
                 nearest branches for the estate file opening
-                process. <b>{name}</b> may schedule an appointment at
+                process. **{name}** may schedule an appointment at
                 <a href="https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m" target="_blank">Appointment Form</a>`,
         options: [
             { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
@@ -701,7 +701,7 @@ export const chatbotFlow: BotFlow = {
                 The completed form along with the required
                 documents can be submitted to any of our
                 nearest branches for the estate file opening
-                process. <b>{name}</b> may schedule an appointment at
+                process. **{name}** may schedule an appointment at
                 <a href="https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m" target="_blank">Appointment Form</a>`,
         options: [
             { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
@@ -781,7 +781,7 @@ export const chatbotFlow: BotFlow = {
                 The completed form along with the required
                 documents can be submitted to any of our
                 nearest branches for the estate file opening
-                process. <b>{name}</b> may schedule an appointment at
+                process. **{name}** may schedule an appointment at
                 <a href="https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m" target="_blank">Appointment Form</a>`,
         options: [
             { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
@@ -845,7 +845,7 @@ export const chatbotFlow: BotFlow = {
                 The completed form along with the required
                 documents can be submitted to any of our
                 nearest branches for the estate file opening
-                process. <b>{name}</b> may schedule an appointment at
+                process. **{name}** may schedule an appointment at
                 <a href="https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m" target="_blank">Appointment Form</a>`,
         options: [
             { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
@@ -898,7 +898,7 @@ export const chatbotFlow: BotFlow = {
                 The completed form along with the required
                 documents can be submitted to any of our
                 nearest branches for the estate file opening
-                process. <b>{name}</b> may schedule an appointment at
+                process. **{name}** may schedule an appointment at
                 <a href="https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m" target="_blank">Appointment Form</a>`,
         options: [
             { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
@@ -974,7 +974,7 @@ export const chatbotFlow: BotFlow = {
                 The completed form along with the required
                 documents can be submitted to any of our
                 nearest branches for the estate file opening
-                process. <b>{name}</b> may schedule an appointment at
+                process. **{name}** may schedule an appointment at
                 <a href="https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m" target="_blank">Appointment Form</a>`,
         options: [
             { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
@@ -1048,7 +1048,7 @@ export const chatbotFlow: BotFlow = {
                 The completed form along with the required
                 documents can be submitted to any of our
                 nearest branches for the estate file opening
-                process. <b>{name}</b> may schedule an appointment at
+                process. **{name}** may schedule an appointment at
                 <a href="https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m" target="_blank">Appointment Form</a>`,
         options: [
             { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
@@ -1119,7 +1119,7 @@ export const chatbotFlow: BotFlow = {
             The completed form along with the required
             documents can be submitted to any of our
             nearest branches for the estate file opening
-            process. <b>{name}</b> may schedule an appointment at
+            process. **{name}** may schedule an appointment at
             <a href="https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m" target="_blank">Appointment Form</a>`,
         options: [
             { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
@@ -1153,7 +1153,7 @@ export const chatbotFlow: BotFlow = {
                 If the assets are located in Peninsular Malaysia, Sarawak, or Labuan,
                 the estate administration must be filed and carried out in the
                 respective region based on the location of the assets.<br><br>
-                To <b>{name}</b>’s knowledge, has the deceased’s estate ever been
+                To **{name}**’s knowledge, has the deceased’s estate ever been
                 administered before?`,
         options: [
             { label: '1️⃣ Yes, it has been done before', nextStep: 'sabah_main_yes' },
@@ -1184,9 +1184,9 @@ export const chatbotFlow: BotFlow = {
     },
     sabah_main_yes_peninsular_court_yes: {
         id: '',
-        message: `For non-Muslims, the transfer of ownership can only be done if <b>{name}</b> submits the Court Order to ARB Kota Kinabalu for the purpose of resealing at the Sabah High Court.<br><br>
-                For Muslims, <b>{name}</b> must submit a new estate application at ARB Kota Kinabalu to be filed through the Syariah Court.<br><br>
-                Would <b>{name}</b> like to proceed?`,
+        message: `For non-Muslims, the transfer of ownership can only be done if **{name}** submits the Court Order to ARB Kota Kinabalu for the purpose of resealing at the Sabah High Court.<br><br>
+                For Muslims, **{name}** must submit a new estate application at ARB Kota Kinabalu to be filed through the Syariah Court.<br><br>
+                Would **{name}** like to proceed?`,
         options: [
             { label: '1️⃣ Proceed ', nextStep: 'sabah_main_no' },
             { label: "2️⃣ That's all, Thank you", nextStep: 'exit' },
@@ -1195,8 +1195,8 @@ export const chatbotFlow: BotFlow = {
     sabah_main_yes_district_office: {
         id: 'sabah_main_yes_district_office',
         message: `
-                <b>{name}</b> may submit a new estate application at ARB Kota Kinabalu to be filed through the Civil High Court (for Non-Muslims) or the Syariah Court (for Muslims).<br><br>
-                Would <b>{name}</b> like to proceed?
+                **{name}** may submit a new estate application at ARB Kota Kinabalu to be filed through the Civil High Court (for Non-Muslims) or the Syariah Court (for Muslims).<br><br>
+                Would **{name}** like to proceed?
                 `,
         options: [
             { label: '1️⃣ Proceed ', nextStep: 'sabah_main_no' },
@@ -1206,8 +1206,8 @@ export const chatbotFlow: BotFlow = {
     sabah_main_yes_native_court: {
         id: "sabah_main_yes_native_court",
         message: `
-                For the deceased's estate that cannot be administered through the Native Court, <b>{name}</b> may submit a new estate application at ARB Kota Kinabalu to be filed through the Civil High Court.<br><br>
-                Would <b>{name}</b> like to proceed?
+                For the deceased's estate that cannot be administered through the Native Court, **{name}** may submit a new estate application at ARB Kota Kinabalu to be filed through the Civil High Court.<br><br>
+                Would **{name}** like to proceed?
                 `,
         options: [
             { label: '1️⃣ Proceed ', nextStep: 'sabah_main_no' },
@@ -1217,8 +1217,8 @@ export const chatbotFlow: BotFlow = {
     sabah_main_yes_peninsular_court_no: {
         id: 'sabah_main_yes_peninsular_court_no',
         message: `
-                <b>{name}</b> may submit a new estate application at ARB Kota Kinabalu to be filed through the Civil High Court (for non-Muslims) or the Syariah Court (for Muslims).<br><br>
-                Would <b>{name}</b> like to proceed?`,
+                **{name}** may submit a new estate application at ARB Kota Kinabalu to be filed through the Civil High Court (for non-Muslims) or the Syariah Court (for Muslims).<br><br>
+                Would **{name}** like to proceed?`,
         options: [
             { label: '1️⃣ Proceed ', nextStep: 'sabah_main_no' },
             { label: "2️⃣ That's all, Thank you", nextStep: 'exit' },
@@ -1227,9 +1227,9 @@ export const chatbotFlow: BotFlow = {
     sabah_main_yes_syriah_court: {
         id: 'sabah_main_yes_syriah_court',
         message: `
-                if an Executor (Wasi) or Guardian (Wali Harta) has been appointed by the Syariah  Court, <b>{name}</b> may proceed with the administration granted by the Syariah Court.<br><br>
-                However, if the appointed Executor or Guardian fails to carry out their duties, <b>{name}</b> ay appoint Amanah Raya Berhad (ARB) Kota Kinabalu as the new Executor or Guardian by 
-                submitting an application to ARB Kota Kinabalu.<br><br> Would <b>{name}</b> like to proceed?
+                if an Executor (Wasi) or Guardian (Wali Harta) has been appointed by the Syariah  Court, **{name}** may proceed with the administration granted by the Syariah Court.<br><br>
+                However, if the appointed Executor or Guardian fails to carry out their duties, **{name}** ay appoint Amanah Raya Berhad (ARB) Kota Kinabalu as the new Executor or Guardian by 
+                submitting an application to ARB Kota Kinabalu.<br><br> Would **{name}** like to proceed?
                 `,
         options: [
             { label: '1️⃣ Proceed ', nextStep: 'sabah_main_no' },
@@ -1240,19 +1240,19 @@ export const chatbotFlow: BotFlow = {
         id: 'sabah_main_yes_kota_kinabalu',
         message: `If an Administrator has been
                 appointed by the High Court,
-                <b>{name}</b> may proceed with the
+                **{name}** may proceed with the
                 estate administration as
                 ordered by the Court.<br><br>
                 However, if the appointed
                 Administrator fails to carry out
-                their duties, <b>{name}</b> may apply
+                their duties, **{name}** may apply
                 to appoint Amanah Raya
                 Berhad (ARB) Kota Kinabalu as a
                 substitute Administrator by
                 submitting an official
                 application to ARB Kota
                 Kinabalu.<br><br>
-                Would <b>{name}</b> like to proceed?`,
+                Would **{name}** like to proceed?`,
         options: [
             { label: '1️⃣ Proceed ', nextStep: 'sabah_main_no' },
             { label: "2️⃣ That's all, Thank you", nextStep: 'exit' },
@@ -1260,7 +1260,7 @@ export const chatbotFlow: BotFlow = {
     },
     sabah_main_yes_amanah_raya_sabah: {
         id: 'sabah_main_yes_amanah_raya_sabah',
-        message: `<b>{name}</b> may complete
+        message: `**{name}** may complete
                 the additional asset form
                 below and submit the
                 form along with the
@@ -1273,7 +1273,7 @@ export const chatbotFlow: BotFlow = {
     },
     sabah_main_no: {
         id: 'sabah_main_no',
-        message: `Before ARIA provides further explanation, <b>{name}</b> is advised to first review the following
+        message: `Before ARIA provides further explanation, **{name}** is advised to first review the following
             information regarding estate administration at ARB Kota Kinabalu:<br><br>
             1. Estate Administration<br>
             a. If the deceased was Muslim, the application will be filed through the Syariah Court.<br>
@@ -1297,7 +1297,7 @@ export const chatbotFlow: BotFlow = {
             The information above applies only to immovable assets such as house and land in Sabah.<br>
             For movable assets such as bank accounts, insurance, vehicles etc located in Sabah, the case
             may be filed anywhere (it is not required to be filed in Sabah).<br><br>
-            Further explanation only applies if <b>{name}</b>'s information meets the specified criteria.<br><br>
+            Further explanation only applies if **{name}**'s information meets the specified criteria.<br><br>
             What was the religion of the deceased?`,
         options: [
             { label: '1️⃣ Muslim', nextStep: 'sabah_muslim' },
@@ -1359,7 +1359,7 @@ export const chatbotFlow: BotFlow = {
         1% on the remaining balance.<br><br>
         * Excluding legal fees & third-party charges (e.g., Court, Inland Revenue Board (LHDN), Valuation and Property Services Department (JPPH), etc.).<br><br>
         The completed form along with the required documents may be submitted to ARB Kota Kinabalu for the estate file opening process.<br>
-        <b>{name}</b> may schedule an appointment at <a href="https://www.amanahraya.my" target="_blank">AmanahRaya</a><br><br>
+        **{name}** may schedule an appointment at <a href="https://www.amanahraya.my" target="_blank">AmanahRaya</a><br><br>
         For our branches location, please click <a href="https://www.amanahraya.my/contact-us/branch-locator/" taregt="_blank">here</a><br><br>
         1. On the appointment date, consultation and advisory services can be conducted with our officer.<br>
         2. Document submission and payment can be completed on the same day.<br><br>
@@ -1420,7 +1420,7 @@ export const chatbotFlow: BotFlow = {
         1% on the remaining balance.<br><br>
         * Excluding legal fees & third-party charges (e.g., Court, Inland Revenue Board (LHDN), Valuation and Property Services Department (JPPH), etc.).<br><br>
         The completed form along with the required documents may be submitted to ARB Kota Kinabalu for the estate file opening process.<br>
-        <b>{name}</b> may schedule an appointment at <a href="https://www.amanahraya.my" target="_blank">AmanahRaya</a><br><br>
+        **{name}** may schedule an appointment at <a href="https://www.amanahraya.my" target="_blank">AmanahRaya</a><br><br>
         For our branches location, please click <a href="https://www.amanahraya.my/contact-us/branch-locator/" taregt="_blank">here</a><br><br>
         1. On the appointment date, consultation and advisory services can be conducted with our officer.<br>
         2. Document submission and payment can be completed on the same day.<br><br>
@@ -1433,7 +1433,7 @@ export const chatbotFlow: BotFlow = {
     // The below steps are belong to Serawak
     serawak: {
         id: 'serawak',
-        message: `To <b>{name}</b>’s knowledge, has the deceased’s estate ever been administered before?`,
+        message: `To **{name}**’s knowledge, has the deceased’s estate ever been administered before?`,
         options: [
             { label: '1️⃣ Yes, it has been done before', nextStep: 'serawak_main_yes' },
             { label: '2️⃣ No, it has never been done before', nextStep: 'serawak_main_no' },
@@ -1453,7 +1453,7 @@ export const chatbotFlow: BotFlow = {
     },
     serawak_main_yes_district_office: {
         id: 'serawak_main_yes_district_office',
-        message: `<b>{name}</b> may refer to the District Office for the administration of the deceased’s additional assets.`,
+        message: `**{name}** may refer to the District Office for the administration of the deceased’s additional assets.`,
         options: [
             { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
         ]
@@ -1461,7 +1461,7 @@ export const chatbotFlow: BotFlow = {
     serawak_main_yes_amanah_raya: {
         id: 'serawak_main_yes_amanah_raya',
         message: `
-        <b>{name}</b> may complete the additional assets form below and submit the form along with the required documents to
+        **{name}** may complete the additional assets form below and submit the form along with the required documents to
          the Kuching branch for the issuance of the <a href="https://drive.google.com/file/d/187OrybkH0m6xPbS65gU6aj3L5lP5XZXZ/view" target="_blank">Supplementary Letter of Administration.</a><br><br>`,// Do it form
         options: []
     },
@@ -1478,8 +1478,8 @@ export const chatbotFlow: BotFlow = {
     serawak_main_yes_civil_court_yes: {
         id: 'serawak_main_yes_civil_court_yes',
         message: `
-                For the transfer of ownership of the property, <b>{name}</b> will need to undergo the resealing process at Amanah Raya Berhad Kuching.<br><br>
-                <b>{name}</b> may visit our Kuching branch for further expalanation.
+                For the transfer of ownership of the property, **{name}** will need to undergo the resealing process at Amanah Raya Berhad Kuching.<br><br>
+                **{name}** may visit our Kuching branch for further expalanation.
                 `,
         options: [
             { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
@@ -1508,7 +1508,7 @@ export const chatbotFlow: BotFlow = {
         The explanation above applies only to immovable property such as house or land in
         Sarawak. For movable assets such as bank accounts, insurance, vehicles etc located in
         Sarawak, the case may be filed anywhere (it is not required to be filed in Sarawak).<br><br>
-        Further explanation only applies if <b>{name}</b>'s information meets the specified criteria.<br><br>
+        Further explanation only applies if **{name}**'s information meets the specified criteria.<br><br>
         Did the deceased leave a will, and who is the Executor named in the will?`,
         options: [
             { label: '1️⃣ No will left by the deceased ', nextStep: 'sabah_main_no_deceased' },
@@ -1572,7 +1572,7 @@ export const chatbotFlow: BotFlow = {
         e. Consent to Grant of Letter of Administration – LA 6 (1/2017).<br>
         f. No valuation letter – LA 7 (Swk.1/2017).<br><br>
         The completed form along with the required documents may be submitted to ARB Kota Kinabalu for the estate file opening process.<br>
-        <b>{name}</b> may schedule an appointment at <a href="https://www.amanahraya.my" target="_blank">AmanahRaya</a><br><br>
+        **{name}** may schedule an appointment at <a href="https://www.amanahraya.my" target="_blank">AmanahRaya</a><br><br>
         For our branches location, please click <a href="https://www.amanahraya.my/contact-us/branch-locator/" taregt="_blank">here</a><br><br>
         1. On the appointment date, consultation and advisory services can be conducted with our officer.<br>
         2. Document submission and payment can be completed on the same day.<br><br>
@@ -1625,7 +1625,7 @@ export const chatbotFlow: BotFlow = {
         b. Statutory Declaration – P1 (Swk. 1/2005).<br>
         c. No valuation letter – P2 (Swk. 1/2005).<br><br>
         The completed form along with the required documents may be submitted to ARB Kota Kinabalu for the estate file opening process.<br>
-        <b>{name}</b> may schedule an appointment at <a href="https://www.amanahraya.my" target="_blank">AmanahRaya</a><br><br>
+        **{name}** may schedule an appointment at <a href="https://www.amanahraya.my" target="_blank">AmanahRaya</a><br><br>
         For our branches location, please click <a href="https://www.amanahraya.my/contact-us/branch-locator/" taregt="_blank">here</a><br><br>
         1. On the appointment date, consultation and advisory services can be conducted with our officer.<br>
         2. Document submission and payment can be completed on the same day.<br><br>
@@ -1686,7 +1686,7 @@ export const chatbotFlow: BotFlow = {
             b. Sample - Additional Assets / Liabilities Application Form.<br><br>
             The completed form along with the required documents must be submitted to the same
             AmanahRaya branch as in the previous administration.<br><br>
-            Which delivery method is more convenient for <b>{name}</b>?
+            Which delivery method is more convenient for **{name}**?
             `,
         options: [
             { label: '1️⃣ Counter ', nextStep: 'pukasa_add_asset_movable_counter' },
@@ -1750,7 +1750,7 @@ export const chatbotFlow: BotFlow = {
                 c. For total value between RM5,000.01 and RM10,000 : 5.00% of the
                 vehicle's value.<br><br>
                 For your information, the vehicle valuation will be conducted via the
-                website at the branch counter during the file opening process. <b>{name}</b>
+                website at the branch counter during the file opening process. **{name}**
                 will be required to sign as confirmation of agreement with the issued
                 valuation.<br><br>
                 The completed form along with the required documents must be submitted to the same
@@ -1768,7 +1768,7 @@ export const chatbotFlow: BotFlow = {
                 branch where the file
                 was registered.<br><br>
                 Branch information can be found at: <a href="https://www.amanahraya.my/contact-us/branch-locator/" target="_blank"> Branch Information</a><br><br>
-                <b>{name}</b> will be contacted for online payment once the documents have been received.<br><br>
+                **{name}** will be contacted for online payment once the documents have been received.<br><br>
                 Is there anything else ARIA can assist you with?
                 `,
         options: [
@@ -1782,7 +1782,7 @@ export const chatbotFlow: BotFlow = {
                 crmd@arb.com.my or
                 WhatsApp to us at 03-
                 2055 7557.<br><br>
-                <b>{name}</b> will be contacted for online payment once the documents have been received.<br><br>
+                **{name}** will be contacted for online payment once the documents have been received.<br><br>
                 Is there anything else ARIA can assist you with?
                 `,
         options: [
@@ -1794,7 +1794,7 @@ export const chatbotFlow: BotFlow = {
         id: 'pusaka_estate',
         message: `Alright, how can
                 ARIA assist you
-                today, <b>{name}</b>?`,
+                today, **{name}**?`,
         options: [
             { label: '1️⃣ Check current status ', nextStep: 'pusaka_estate_check_status' },
             { label: '2️⃣ Obtaining a copy of the Letter of Administration (LOA)', nextStep: 'pusaka_estate_admin' },
@@ -1812,7 +1812,7 @@ export const chatbotFlow: BotFlow = {
     },
     pusaka_estate_admin: {
         id: 'pusaka_estate_admin',
-        message: `Is <b>{name}</b> a deceased's beneficiary?`,
+        message: `Is **{name}** a deceased's beneficiary?`,
         options: [
             { label: '1️⃣ Yes ', nextStep: 'pusaka_estate_admin_yes' },
             { label: '2️⃣ No', nextStep: 'pusaka_estate_admin_no' },
@@ -1837,7 +1837,7 @@ export const chatbotFlow: BotFlow = {
                 RELATED FORMS<br>
                 a) Personal Data Access and Change Form.<br>
                 b) Sample - Personal Data Access and Change Form.<br><br>
-                Which delivery method is more convenient for <b>{name}</b>?`,
+                Which delivery method is more convenient for **{name}**?`,
         options: [
             { label: '1️⃣ Counter ', nextStep: 'pusaka_estate_admin_counter' },
             { label: '2️⃣ Post', nextStep: 'pusaka_estate_admin_post' },
@@ -1850,8 +1850,8 @@ export const chatbotFlow: BotFlow = {
         Branch information can be found at: <a href="https://www.amanahraya.my/contact-us/branch-locator/" target="_blank"> Branch Information</a><br><br>
         There will be charges imposed, and the amount will be determined by the branch upon receipt of the documents.<br><br>
         Payment can be made via cash, QR code, or debit/credit card.<br><br>
-        A copy of the LA will be handed over to <b>{name}</b> within 7 working days.<br><br>
-        May ARIA know how this document will be delivered to <b>{name}</b>?
+        A copy of the LA will be handed over to **{name}** within 7 working days.<br><br>
+        May ARIA know how this document will be delivered to **{name}**?
         `,
         options: [
             { label: '1️⃣ Collection at the counter ', nextStep: 'collection_counter' },
@@ -1887,9 +1887,9 @@ export const chatbotFlow: BotFlow = {
         You may post the documents to the branch where the file was registered.<br><br>
         Branch information can be found at: <a href="https://www.amanahraya.my/contact-us/branch-locator/" target="_blank"> Branch Information</a><br><br>
         There will be charges imposed, and the amount will be determined by the branch upon receipt of the documents.<br><br>
-        <b>{name}</b> will be contacted by the branch for online payment once the documents are received.<br><br>
-        A copy of the LA will be handed over to <b>{name}</b> within 7 working days.<br><br>
-        May ARIA know how this document will be delivered to <b>{name}</b>?
+        **{name}** will be contacted by the branch for online payment once the documents are received.<br><br>
+        A copy of the LA will be handed over to **{name}** within 7 working days.<br><br>
+        May ARIA know how this document will be delivered to **{name}**?
         `,
         options: [
             { label: '1️⃣ Collection at the counter ', nextStep: 'collection_counter' },
@@ -1901,9 +1901,9 @@ export const chatbotFlow: BotFlow = {
         message: `
         Clear documents can be sent via email to crmd@arb.com.my or WhatsApp us at 03-2055 7557.<br><br>
         There will be charges imposed, and the amount will be determined by the branch upon receipt of the documents.<br><br>
-        <b>{name}</b> will be contacted by the branch for online payment once the documents are received.<br><br>
-        A copy of the LA will be handed over to <b>{name}</b> within 7 working days.<br><br>
-        May ARIA know how this document will be delivered to <b>{name}</b>?
+        **{name}** will be contacted by the branch for online payment once the documents are received.<br><br>
+        A copy of the LA will be handed over to **{name}** within 7 working days.<br><br>
+        May ARIA know how this document will be delivered to **{name}**?
         `,
         options: [
             { label: '1️⃣ Collection at the counter ', nextStep: 'collection_counter' },
@@ -1931,7 +1931,7 @@ export const chatbotFlow: BotFlow = {
         RELATED FORMS<br>
         a) Personal Data Access and Change Form.<br>
         b) Sample - Personal Data Access and Change Form.<br><br>
-        Which delivery method is more convenient for <b>{name}</b>?
+        Which delivery method is more convenient for **{name}**?
         `,
         options: [
             { label: '1️⃣ Counter ', nextStep: 'pusaka_estate_admin_counter' },
@@ -1950,7 +1950,7 @@ export const chatbotFlow: BotFlow = {
         RELATED FORMS<br>
         a) Personal Data Access and Change Form.<br>
         b) Sample - Personal Data Access and Change Form.<br><br>
-        Which delivery method is more convenient for <b>{name}</b>?
+        Which delivery method is more convenient for **{name}**?
         `,
         options: [
             { label: '1️⃣ Counter ', nextStep: 'pusaka_estate_admin_counter' },
@@ -1962,7 +1962,7 @@ export const chatbotFlow: BotFlow = {
     will: {
         id: 'will',
         message: `
-        Can ARIA know what <b>{name}</b> wants to know about?
+        Can ARIA know what **{name}** wants to know about?
         `,
         options: [
             { label: '1️⃣ General Inquiry', nextStep: 'will_general_inquiry' },
@@ -1982,7 +1982,7 @@ export const chatbotFlow: BotFlow = {
         2. Easy and Organized Access.<br>
         3. Confidentiality is Preserved.<br>
         4. Simplifies the Process for Heirs.<br><br>
-        <b>{name}</b> Whose will would you like to store?
+        **{name}** Whose will would you like to store?
         `,
         options: [
             { label: '1️⃣ My will ', nextStep: 'will_custody_common' },
@@ -2004,14 +2004,14 @@ export const chatbotFlow: BotFlow = {
     will_custody_amanah_raya_berhad: {
         id: 'will_custody_amanah_raya_berhad',
         message: `
-        Excellent!!! <b>{name}</b> has chosen the right executor.<br><br>
+        Excellent!!! **{name}** has chosen the right executor.<br><br>
         Please visit any of our nearby branches and bring along the following documents:<br>
         1. <a href="https://drive.google.com/file/d/13si6oc13MdvQDy7WYzFWbvz7MTHVYb_9/view">Will Application Form.</a><br>
         2. Original will.<br>
         3. Copies of the identification cards of the testator and the will’s witnesses.<br>
         4. Storage fee: RM400 (payment can be made via cash, debit/credit card, or QR code).<br><br>
         Branch information can be found at: <a href="https://www.amanahraya.my/contact-us/branch-locator/" target="_blank"> Branch Information</a><br><br>
-        <b>{name}</b> will receive a confirmation email once the will storage process is completed.<br><br>
+        **{name}** will receive a confirmation email once the will storage process is completed.<br><br>
         Is there anything else that ARIA can help you with?
         `,
         options: [
@@ -2021,14 +2021,14 @@ export const chatbotFlow: BotFlow = {
     other_than_amanah_rayah_berhad: {
         id: 'other_than_amanah_rayah_berhad',
         message: `
-        Excellent!!! <b>{name}</b> has chosen the right executor.<br><br>
+        Excellent!!! **{name}** has chosen the right executor.<br><br>
         Please visit any of our nearby branches and bring along the following documents:<br>
         1. <a href="https://drive.google.com/file/d/13si6oc13MdvQDy7WYzFWbvz7MTHVYb_9/view">Will Application Form.</a><br>
         2. Original will.<br>
         3. Copies of the identification card.<br>
         4. Storage fee: RM600 (payment can be made via cash, debit/credit card, or QR code).<br><br>
         Branch information can be found at: <a href="https://www.amanahraya.my/contact-us/branch-locator/" target="_blank"> Branch Information</a><br><br>
-        <b>{name}</b> will receive a confirmation email once the will storage process is completed.<br><br>
+        **{name}** will receive a confirmation email once the will storage process is completed.<br><br>
         Is there anything else that ARIA can help you with?
         `,
         options: [
@@ -2038,7 +2038,7 @@ export const chatbotFlow: BotFlow = {
     will_application: {
         id: 'will_application',
         message: `
-        Have you previously prepared a will with another party, <b>{name}</b>?
+        Have you previously prepared a will with another party, **{name}**?
         `,
         options: [
             { label: '1️⃣ Yes ', nextStep: 'will_application_yes' },
@@ -2049,7 +2049,7 @@ export const chatbotFlow: BotFlow = {
         id: 'will_application',
         message: `
         Congratulations on taking the step to plan your estate.<br><br>
-        Please be informed that any previous will shall be revoked if you create a new will with AmanahRaya, <b>{name}</b>.<br><br>
+        Please be informed that any previous will shall be revoked if you create a new will with AmanahRaya, **{name}**.<br><br>
         Would you like ARIA to continue?
         `,
         options: [
@@ -2060,7 +2060,7 @@ export const chatbotFlow: BotFlow = {
     will_application_no: {
         id: 'will_application_no',
         message: `
-        Would you like to know moreabout Islamic Wills or Non-Islamic Wills,<b>{name}</b>?
+        Would you like to know moreabout Islamic Wills or Non-Islamic Wills,**{name}**?
         `,
         options: [
             { label: '1️⃣ Muslim Will ', nextStep: 'muslim_wills' },
@@ -2084,7 +2084,7 @@ export const chatbotFlow: BotFlow = {
         obligations, donations to charitable organisations, and personal messages to beneficiaries. The comprehensive will ensures clearer
         estate planning, prevents disputes among beneficiaries, and facilitates a smoother estate administration process after the testator's death.<br><br>
         For a detailed comparison between the Basic and Comprehensive Will, please click: <a href="https://www.amanahraya.my/ms/perkhidmatan-wasiat/" target="_blank">Will's Services</a> <br><br>
-        Which type of will are you interested in, <b>{name}</b>?
+        Which type of will are you interested in, **{name}**?
 
         `,
         options: [
@@ -2109,7 +2109,7 @@ export const chatbotFlow: BotFlow = {
     muslim_wills_basic_proceed: {
         id: 'muslim_wills_basic_proceed',
         message: `
-        The application can be made in several ways. Which one would you prefer,<b>{name}</b>?
+        The application can be made in several ways. Which one would you prefer,**{name}**?
         `,
         options: [
             { label: '1️⃣ MyAmanahRaya Apps ', nextStep: 'muslim_wills_basic_proceed_amanah_raya_app' },
@@ -2124,7 +2124,7 @@ export const chatbotFlow: BotFlow = {
         2.Register for access.<br>
         3.Select “Will”.<br>
         4. Choose a nearby agent for a face-to-face session or proceed directly within the app.<br><br>
-        Would <b>{name}</b> like to do it through an agent or online?
+        Would **{name}** like to do it through an agent or online?
         `,
         options: [
             { label: '1️⃣ Agent ', nextStep: 'muslim_wills_basic_proceed_amanah_raya_app_agent' },
@@ -2140,7 +2140,7 @@ export const chatbotFlow: BotFlow = {
         4.The agent will assist with the application and online payment.<br>
         5.Print and sign the Basic Will with the agent present.<br>
         6.The original will is submitted by the agent to the nearest branch.<br>
-        7.A duplicate copy of the will is handed over to you, <b>{name}</b>, for safekeeping.<br><br>
+        7.A duplicate copy of the will is handed over to you, **{name}**, for safekeeping.<br><br>
         Upon successful receipt and storage of your Original Will by AmanahRaya, you will be sent a confirmation email and a Will e-card.<br><br>
         If you’ve reached this stage, ARIA congratulates you on successfully planning your future.
         `,
@@ -2158,7 +2158,7 @@ export const chatbotFlow: BotFlow = {
         2. If self-printing, please follow the provided online instructions.<br>
         3. If printing at a branch, please call Talian Mesra 03-2723 7273 to schedule an appointment.<br>
         4. The signing will take place with our officer on the scheduled date.<br>
-        5. The original will is kept by AmanahRaya, while the duplicate will is given to <b>{name}</b> forsafekeeping.<br>
+        5. The original will is kept by AmanahRaya, while the duplicate will is given to **{name}** forsafekeeping.<br>
         Upon successful receipt and storage of your Original Will by AmanahRaya, you will be sent a confirmation email and a Will e-card.<br><br>
         If you’ve reached this stage, ARIA congratulates you on successfully planning your future.
         `,
@@ -2184,7 +2184,7 @@ export const chatbotFlow: BotFlow = {
         2. Submission of documents and payment can be completed on thesame day.<br>
         3. Signing will take place in the presence of our officer.<br>
         4. The Original Will will be securely kept by AmanahRaya.<br>
-        5. A Duplicate Will will be handed to you, <b>{name}</b>, for safekeeping.<br><br>
+        5. A Duplicate Will will be handed to you, **{name}**, for safekeeping.<br><br>
         Upon successful receipt and storage of your Original Will by AmanahRaya, you will be sent a confirmation email and a Will e-card.<br><br>
         If you’ve reached this stage, ARIA congratulates you on successfully planning your future.
         `,
@@ -2208,7 +2208,7 @@ export const chatbotFlow: BotFlow = {
     muslim_wills_comprehensive_proceed: {
         id: 'muslim_wills_comprehensive_proceed',
         message: `
-        The application can be made in several ways. Which one would you prefer,<b>{name}</b>?
+        The application can be made in several ways. Which one would you prefer,**{name}**?
         `,
         options: [
             { label: '1️⃣ MyAmanahRaya Apps ', nextStep: 'muslim_wills_comprehensive_proceed_amanah_raya_app' },
@@ -2223,7 +2223,7 @@ export const chatbotFlow: BotFlow = {
         2. Register for access.<br>
         3. Select “Will”.<br>
         4. Choose a nearby agent for a face-to-face session or proceed directly within the app.<br><br>
-        Would <b>{name}</b> like to do it through an agent or online?
+        Would **{name}** like to do it through an agent or online?
         `,
         options: [
             { label: '1️⃣ Agent ', nextStep: 'muslim_wills_comprehensive_proceed_amanah_raya_app_agent' },
@@ -2237,7 +2237,7 @@ export const chatbotFlow: BotFlow = {
         2. Please provide feedback on whether you agree with the draft or require any amendments.<br>
         3. If you agree, set an appointment at your preferred branch for signing.<br>
         4. The signing will be done together with our officer on the appointment date.<br>
-        5. The Original Will will be securely kept by AmanahRaya. A Duplicate Will will be handed to you, <b>{name}</b>, for safekeeping.<br><br>
+        5. The Original Will will be securely kept by AmanahRaya. A Duplicate Will will be handed to you, **{name}**, for safekeeping.<br><br>
         Upon successful receipt and storage of your Original Will by AmanahRaya, you will be sent a confirmation email and a Will e-card.<br><br>
         If you’ve reached this stage, ARIA congratulates you on successfully planning your future.
         `,
@@ -2255,7 +2255,7 @@ export const chatbotFlow: BotFlow = {
         2. Please provide feedback on whether you agree with the draft or require anyamendments.<br>
         3. If you agree, set an appointment at your preferred branch for signing.<br>
         4. The signing will be done together with our officer on the appointment date.<br>
-        5. The Original Will will be securely kept by AmanahRaya. A Duplicate Will will be handed to you, <b>{name}</b>, for safekeeping.<br><br>
+        5. The Original Will will be securely kept by AmanahRaya. A Duplicate Will will be handed to you, **{name}**, for safekeeping.<br><br>
         Upon successful receipt and storage of your Original Will by AmanahRaya, you will be sent a confirmation email and a Will e-card.<br><br>
         If you’ve reached this stage, ARIA congratulates you on successfully planning your future.
         `,
@@ -2285,7 +2285,7 @@ export const chatbotFlow: BotFlow = {
         4. Please confirm whether you agree with the content or request amendments.<br>
         5. If you agree, set an appointment at a nearby branch for the signing process.<br>
         6. The signing will be done together with our officer on the appointment date.<br>
-        7. The Original Will will be securely kept by AmanahRaya. A Duplicate Will will be handed to you, <b>{name}</b>, for safekeeping.<br>
+        7. The Original Will will be securely kept by AmanahRaya. A Duplicate Will will be handed to you, **{name}**, for safekeeping.<br>
         Upon successful receipt and storage of your Original Will by AmanahRaya, you will be sent a confirmation email and a Will e-card.<br><br>
         If you’ve reached this stage, ARIA congratulates you on successfully planning your future.
         `,
@@ -2308,7 +2308,7 @@ export const chatbotFlow: BotFlow = {
         donations, and personal messages to beneficiaries. A Comprehensive Will ensures clearer estate planning, reduces the
         likelihood of disputes among beneficiaries, and facilitates the estate administration process after the testator’s passing.
         For a detailed comparison between the Basic and Comprehensive Will, please click: <a href="https://www.amanahraya.my/ms/perkhidmatan-wasiat/" target="_blank">Will's Services</a><br><br>
-        Which type of will are you interested in, <b>{name}</b>?
+        Which type of will are you interested in, **{name}**?
         `,
         options: [
             { label: '1️⃣ Basic Will  ', nextStep: 'muslim_wills_basic' },
@@ -2319,7 +2319,7 @@ export const chatbotFlow: BotFlow = {
     will_one: {
         id: 'will_one',
         message: `
-        Alright, how can ARIA assist you, <b>{name}</b>?
+        Alright, how can ARIA assist you, **{name}**?
         `,
         options: [
             { label: '1️⃣ Checking the status of the will ', nextStep: 'retrieve_page1' },
@@ -2341,14 +2341,14 @@ export const chatbotFlow: BotFlow = {
     will_one_amending_will_basis: {
         id: 'will_one_amending_will_basis',
         message: `
-        <b>{name}</b> can switch to a Comprehensive Will to specify the types of assets to be distributed to
+        **{name}** can switch to a Comprehensive Will to specify the types of assets to be distributed to
         heirs or non-heirs who are entitled to receive assets after death.<br><br>
         1. <a href="https://drive.google.com/file/d/13si6oc13MdvQDy7WYzFWbvz7MTHVYb_9/view">Will Application Form.</a><br>
         2. Copy of the testator’s identification card.<br>
         3. Copy of the recipient’s identification card.<br>
         4. Copy of the guardian’s identification card (if applicable).<br>
         5. Copies of documents for assets mentioned in the will.<br><br>
-        Which delivery method is more convenient for <b>{name}</b>?
+        Which delivery method is more convenient for **{name}**?
         `,
         options: [
             { label: '1️⃣ Counter ', nextStep: 'will_one_amending_will_basis_counter' },
@@ -2359,7 +2359,7 @@ export const chatbotFlow: BotFlow = {
     will_one_amending_will_basis_counter: {
         id: 'will_one_amending_will_basis_counter',
         message: `
-        Please visit any of our nearest branch counters. <b>{name}</b> may <a href="https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m" target="_blank">
+        Please visit any of our nearest branch counters. **{name}** may <a href="https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m" target="_blank">
         Schedule an Appointment
         </a><br><br>
         Branch information can be found at: <a href="https://www.amanahraya.my/contact-us/branch-locator/" target="_blank"> Branch Information</a><br><br>
@@ -2393,13 +2393,13 @@ export const chatbotFlow: BotFlow = {
     will_one_amending_will_comprehensive: {
         id: 'will_one_amending_will_comprehensive',
         message: `
-        <b>{name}</b> can make changes to the existing will.<br><br>
+        **{name}** can make changes to the existing will.<br><br>
         1. <a href="https://drive.google.com/file/d/13si6oc13MdvQDy7WYzFWbvz7MTHVYb_9/view">Will Application Form.</a><br>
         2. Copy of the testator’s identification card.<br>
         3. Copy of the recipient’s identification card.<br>
         4. Copy of the guardian’s identification card (if applicable).<br>
         5. Copies of documents for assets mentioned in the will.<br><br>
-        Which delivery method is more convenient for <b>{name}</b>?
+        Which delivery method is more convenient for **{name}**?
         `,
         options: [
             { label: '1️⃣ Counter ', nextStep: 'will_one_amending_will_basis_counter' },
@@ -2414,7 +2414,7 @@ export const chatbotFlow: BotFlow = {
         The testator.<br>
         The heirs of the testator.<br>
         The lawyer appointed by the heirs of the testator.<br><br>
-        <b>{name}</b> would like to obtain a copy of this will for what purpose?
+        **{name}** would like to obtain a copy of this will for what purpose?
         `,
         options: [
             { label: '1️⃣ My Will has been misplaced ', nextStep: 'will_one_will_copy_misplaced' },
@@ -2433,7 +2433,7 @@ export const chatbotFlow: BotFlow = {
         Bank Name: Maybank<br>
         Account Number: 564155119930<br>
         Payment Amount: RM50<br><br>
-        <b>{name}</b> will be contacted within 7 working days to collect the copy of the will at the counter.<br><br>
+        **{name}** will be contacted within 7 working days to collect the copy of the will at the counter.<br><br>
         Is there anything else ARIA can assist you with?
         `,
         options: [
@@ -2464,7 +2464,7 @@ export const chatbotFlow: BotFlow = {
         Account Number: 564155119930<br>
         Payment Amount: RM50<br>
         The contents of the will will only be read in the presence of the heirs. No copy of the will will be provided.<br><br>
-        <b>{name}</b> will be contacted within 7 working days to schedule the will reading session date at the counter.<br><br>
+        **{name}** will be contacted within 7 working days to schedule the will reading session date at the counter.<br><br>
         Is there anything else ARIA can assist you with?
         `,
         options: [
@@ -2486,7 +2486,7 @@ export const chatbotFlow: BotFlow = {
         Account Number: 564155119930<br>
         Payment Amount: RM50<br>
         The contents of the will will only be read in the presence of the heirs. No copy of the will will be provided.<br><br>
-        <b>{name}</b> will be contacted within 7 working days to schedule the will reading session date at the counter.<br><br>
+        **{name}** will be contacted within 7 working days to schedule the will reading session date at the counter.<br><br>
         Is there anything else ARIA can assist you with?
         `,
         options: [
@@ -2497,7 +2497,7 @@ export const chatbotFlow: BotFlow = {
     amanah_eng: {
         id: 'amanah_eng',
         message: `
-            What can ARIA assist <b>{name}</b> with?
+            What can ARIA assist **{name}** with?
         `,
         options: [
             { label: '1️⃣ Updating information ', nextStep: 'amanah_eng_updating_information' },
@@ -2522,7 +2522,7 @@ export const chatbotFlow: BotFlow = {
         id: 'amanah_eng_closing_trust_account',
         message: `
         Please click both of these links, <a href="https://forms.gle/RDiL93pvWrcZJsKT9" target="_blank">First Link</a> and <a href="https://forms.gle/YRRdYh5qMTrWNQKm6" target="_blank">Second Link</a>, to proceed with the account closure application.<br><br>
-        Payment will be made within 14 working days from the date of receipt of complete documents. <b>{name}</b> will be contacted if additional information is required.<br><br>
+        Payment will be made within 14 working days from the date of receipt of complete documents. **{name}** will be contacted if additional information is required.<br><br>
         Is there anything else ARIA can assist you with?
         `,
         options: [
@@ -2644,11 +2644,11 @@ export const chatbotFlow: BotFlow = {
         Please visit any of our nearest branch counters to make payment,
         bringing along the required documents. Payment can be made in cash
         (limited to RM5,000), cheque, debit/credit card, or online transfer.<br>
-        <b>{name}</b> may <a href="https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m" target="_blank">Schedule An Appointment</a><br><br>
+        **{name}** may <a href="https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m" target="_blank">Schedule An Appointment</a><br><br>
         for our branches location, please click  <a href="https://www.amanahraya.my/contact-us/branch-locator/" target="_blank"> Branch Information</a><br><br>
         1. On the appointment date, consultation and advisory services can be conducted with our officer.<br>
         2. Document submission and payment can be completed on the same day.<br>
-        <b>{name}</b> will be contacted by the branch officer for the preparation of the Trust Deed.<br><br>
+        **{name}** will be contacted by the branch officer for the preparation of the Trust Deed.<br><br>
         Is there anything else ARIA can assist you with?
         `,
         options: [
@@ -2704,11 +2704,11 @@ export const chatbotFlow: BotFlow = {
         Please visit any of our nearest branch counters to make payment,
         bringing along the required documents. Payment can be made in cash
         (limited to RM5,000), cheque, debit/credit card, or online transfer.<br>
-        <b>{name}</b> may <a href="https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m" target="_blank">Schedule An Appointment</a><br><br>
+        **{name}** may <a href="https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m" target="_blank">Schedule An Appointment</a><br><br>
         for our branches location, please click  <a href="https://www.amanahraya.my/contact-us/branch-locator/" target="_blank"> Branch Information</a><br><br>
         1. On the appointment date, consultation and advisory services can be conducted with our officer.<br>
         2. Document submission and payment can be completed on the same day.<br>
-        <b>{name}</b> will be contacted by the branch officer for the preparation of the Trust Deed.<br><br>
+        **{name}** will be contacted by the branch officer for the preparation of the Trust Deed.<br><br>
         Is there anything else ARIA can assist you with?
         `,
         options: [
@@ -2745,7 +2745,7 @@ export const chatbotFlow: BotFlow = {
         i) Properties (whether fully paid or under financing)<br>
         ii) Vehicles (whether fully paid or under financing)<br>
         iii) Joint savings accounts at any bank (only allowed in the state of Selangor)<br><br>
-        What asset does <b>{name}</b> intend to gift?
+        What asset does **{name}** intend to gift?
         `,
         options: [
             { label: '1️⃣ Property and / or vehicles, and cash in the bank', nextStep: 'hibah_ku_property_vehicle_cash' },
@@ -2801,11 +2801,11 @@ export const chatbotFlow: BotFlow = {
         Please visit any of our nearest branch counters to make payment, bringing
         along the required documents. Payment can be made in cash (limited to
         RM5,000), cheque, debit/credit card, or online transfer.<br>
-        <b>{name}</b> may <a href="https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m" target="_blank">Schedule An Appointment</a><br><br>
+        **{name}** may <a href="https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m" target="_blank">Schedule An Appointment</a><br><br>
         for our branches location, please click  <a href="https://www.amanahraya.my/contact-us/branch-locator/" target="_blank"> Branch Information</a><br><br>
         1. On the appointment date, consultation and advisory services can be conducted with our officer.<br>
         2. Document submission and payment can be completed on the same day.<br>
-        3. <b>{name}</b> will be contacted by the branch officer for the preparation of the akad documents.<br><br>
+        3. **{name}** will be contacted by the branch officer for the preparation of the akad documents.<br><br>
         Is there anything else that ARIA can help you?
         `,
         options: [
@@ -2856,11 +2856,11 @@ export const chatbotFlow: BotFlow = {
         Please visit any of our nearest branch counters to make payment, bringing
         along the required documents. Payment can be made in cash (limited to
         RM5,000), cheque, debit/credit card, or online transfer.<br>
-        <b>{name}</b> may <a href="https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m" target="_blank">Schedule An Appointment</a><br><br>
+        **{name}** may <a href="https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m" target="_blank">Schedule An Appointment</a><br><br>
         for our branches location, please click  <a href="https://www.amanahraya.my/contact-us/branch-locator/" target="_blank"> Branch Information</a><br><br>
         1. On the appointment date, consultation and advisory services can be conducted with our officer.<br>
         2. Document submission and payment can be completed on the same day.<br>
-        3. <b>{name}</b> will be contacted by the branch officer for the preparation of the akad documents.<br><br>
+        3. **{name}** will be contacted by the branch officer for the preparation of the akad documents.<br><br>
         Is there anything else that ARIA can help you?
         `,
         options: [
@@ -2900,11 +2900,11 @@ export const chatbotFlow: BotFlow = {
         Please visit any of our nearest branch counters to make payment, bringing
         along the required documents. Payment can be made in cash (limited to
         RM5,000), cheque, debit/credit card, or online transfer.<br>
-        <b>{name}</b> may <a href="https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m" target="_blank">Schedule An Appointment</a><br><br>
+        **{name}** may <a href="https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m" target="_blank">Schedule An Appointment</a><br><br>
         for our branches location, please click  <a href="https://www.amanahraya.my/contact-us/branch-locator/" target="_blank"> Branch Information</a><br><br>
         1. On the appointment date, consultation and advisory services can be conducted with our officer.<br>
         2. Document submission and payment can be completed on the same day.<br>
-        3. <b>{name}</b> will be contacted by the branch officer for the preparation of the akad documents.<br><br>
+        3. **{name}** will be contacted by the branch officer for the preparation of the akad documents.<br><br>
         Is there anything else that ARIA can help you?
         `,
         options: [
@@ -2928,7 +2928,7 @@ export const chatbotFlow: BotFlow = {
         For Muslim, the distribution of assets will follow the Faraid (Islamic Inheritance Law) after deducting debts and executing any wills (if applicable).<br><br>
         The beneficiary determination information below applies only to standard cases—for example, where beneficiaries such as a spouse or child are still living. It does not cover layered inheritance scenarios, such as when a 
         beneficiary (e.g., a child) has passed away after the deceased.<br><br>
-        To <b>{name}</b> knowledge, what was the deceased's marital status?
+        To **{name}** knowledge, what was the deceased's marital status?
         `,
         options: [
             { label: '1️⃣ Single', nextStep: 'establishment_rightful_muslim_single' },
@@ -4175,7 +4175,7 @@ export const chatbotFlow: BotFlow = {
         message: `
         For non-Muslim, if no will was left, the estate administration will follow the Distribution Act 1958, after deducting any debts (if applicable).<br><br>
         The beneficiary determination information below applies only to standard cases—for example, where beneficiaries such as a spouse or child are still living. It does not cover layered inheritance scenarios, such as when a beneficiary (e.g., a child) has passed away after the deceased.<br><br>
-        To <b>{name}</b> knowledge, what was the deceased's marital status?
+        To **{name}** knowledge, what was the deceased's marital status?
         `,
         options: [
             { label: '1️⃣ Single', nextStep: 'establishment_rightful_non_muslim_single' },
