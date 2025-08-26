@@ -18,7 +18,7 @@ function scrollToBottom() {
 function displayMessage(message: string, className: string = 'bot-message') {
     const div = document.createElement('div');
     div.className = className;
-    div.innerHTML = message;
+    div.innerHTML = normalizeHtml(message);
     chatBox.appendChild(div);
     scrollToBottom()
 }
@@ -45,6 +45,10 @@ function displayStep() {
     if (step.options?.length) {
         displayOptions(step.options)
     }
+}
+
+function normalizeHtml(html: string): string {
+    return html.replace(/[“”]/g, '"').replace(/[‘’]/g, "'");
 }
 
 function handleInput() {
@@ -91,13 +95,13 @@ function handleInput() {
     }
 
     if (!step.options?.length) {
-        displayMessage("✅ Thank you! Conversation complete.")
+        displayMessage("Thank you! Conversation complete.")
         return
     }
 
     const selectedIndex = parseInt(input)
     if (isNaN(selectedIndex) || selectedIndex < 1 || selectedIndex > step.options.length) {
-        displayMessage('❌ Please enter a valid number.')
+        displayMessage('Please enter a valid number.')
         displayStep()
         return
     }

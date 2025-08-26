@@ -16,7 +16,7 @@ function getEngine(conversationId: number): ChatbotEngine {
 }
 
 function render(step: Step, eng: ChatbotEngine): string {
-    let out = step.message || "";
+    let out = normalizeHtml(step.message.trim()) || "";
     const opts = step.options ?? [];
     if (opts.length) {
         const lines = opts.map((o, i) => `${o.label}`);
@@ -25,6 +25,18 @@ function render(step: Step, eng: ChatbotEngine): string {
         out += "\n\n" + lines.join("\n");
     }
     return out || "Thank you! Conversation complete.";
+}
+
+function normalizeHtml(html: string): string {
+    return html.replace(/[“”]/g, '"').replace(/[‘’]/g, "'");
+}
+
+export function getFirstStep(conversationId: number): string {
+    const eng = getEngine(conversationId);
+    // If you ever need to force it, uncomment:
+    // eng.restart();
+    const step = eng.getCurrentStep() as Step;
+    return render(step, eng);
 }
 
 export async function handleIncomingText(

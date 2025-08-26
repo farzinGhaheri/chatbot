@@ -3,7 +3,7 @@ import express from "express";
 import crypto from "crypto";
 import { fetch } from "undici";
 
-import { handleIncomingText } from "./bot-adapter.js";
+import { getFirstStep, handleIncomingText } from "./bot-adapter.js";
 
 const {
     PORT = "3000",
@@ -30,6 +30,9 @@ app.use(
 // health routes (avoid 404 noise)
 app.get("/", (_req, res) => res.send("OK"));
 app.post("/", (_req, res) => res.status(204).end());
+
+// Track whether we've sent the first step for a conversation
+const startedConversations = new Set<number>();
 
 function verifySignature(req: any): boolean {
     if (!CHATWOOT_WEBHOOK_SECRET) return true; // skip if not set
@@ -85,6 +88,13 @@ app.post("/chatwoot/webhook", async (req, res) => {
 
             if (!Number.isFinite(accountId) || !Number.isFinite(conversationId)) {
                 console.error("Missing accountId or conversationId in webhook payload");
+                return res.sendStatus(200);
+            }
+
+            if (!startedConversations.has(conversationId)) {
+                startedConversations.add(conversationId);
+                const first = getFirstStep(conversationId);
+                await sendToChatwoot(accountId, conversationId, first);
                 return res.sendStatus(200);
             }
 
