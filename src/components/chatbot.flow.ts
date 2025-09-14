@@ -3,14 +3,14 @@ import { BotFlow } from '../models/chatbot';
 export const chatbotFlow: BotFlow = {
     start: {
         id: 'start',
-        message: 'Hi, I’m ARIA. May I know your name?',
+        message: `Salam sejahtera, saya ARIA. Boleh saya tahu nama anda?\n\n Hi, I’m ARIA. May I know your name?`,
         options: [],
     },
     greet: {
         id: 'greet',
-        message: '**{name}**, are you more comfortable communicating in Bahasa Malaysia or English?',
+        message: `**{name}**, selesa berinteraksi dalam Bahasa Malaysia atau English?\n\n are you more comfortable communicating in Bahasa Malaysia or English?`,
         options: [
-            { label: '1️⃣ Bahasa Malaysia', nextStep: 'malayu' },
+            { label: '1️⃣ Bahasa Malaysia', nextStep: 'bahasa_melayu' },
             { label: '2️⃣ English', nextStep: 'english_main' },
         ],
     },
@@ -569,7 +569,9 @@ export const chatbotFlow: BotFlow = {
     serawak_main_yes_amanah_raya: {
         id: 'serawak_main_yes_amanah_raya',
         message: `**{name}** may complete the additional assets form below and submit the form along with the required documents to the Kuching branch for the issuance of the [Supplementary Letter of Administration](https://drive.google.com/file/d/187OrybkH0m6xPbS65gU6aj3L5lP5XZXZ/view)`,
-        options: []
+        options: [
+            { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
+        ]
     },
     serawak_main_yes_civil_court: {
         id: 'serawak_main_yes_civil_court',
@@ -1093,7 +1095,7 @@ export const chatbotFlow: BotFlow = {
     },
     hibah_cash: {
         id: 'hibah_cash',
-        message: `For cash assets, (name) will need to deposit the amount to be given into ARB’s account.\n\n CASH HIBAH TRUST\n\n 1. MINIMUM CAPITAL\n RM20,000.00\n\n 2. ASSETS ELIGIBLE FOR TRUST.\n Movable assets (cash only)\n\n 3. TRUST PERIOD\n As stated in the Trust Deed.\n\n 4. PROFIT DISTRIBUTION\n 3.00% per annum.\n\n 5. REQUIRED DOCUMENTS\n a. Copy of Donor’s Identity Card.\n b. Copy of Recipient’s Identity Card.\n c. Copy of Guardian’s (Wali Mal) Identity Card (if applicable).\n\n 6. RELATED FORMS\n a. Application Form For Hibah AmanahRaya.\n b. Sample - Application Form For Hibah AmanahRaya.\n\n Please visit any of our nearest branch counters to make payment, bringing along the required documents. Payment can be made in cash (limited to RM5,000), cheque, debit/credit card, or online transfer.\n **{name}** may [Schedule An Appointment](https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m)\n\n for our branches location, please click [here](https://www.amanahraya.my/contact-us/branch-locator/)\n\n 1. On the appointment date, consultation and advisory services can be conducted with our officer.\n 2. Document submission and payment can be completed on the same day.\n **{name}** will be contacted by the branch officer for the preparation of the Trust Deed.\n\n Is there anything else ARIA can assist you with?`,
+        message: `For cash assets, **{name}** will need to deposit the amount to be given into ARB’s account.\n\n CASH HIBAH TRUST\n\n 1. MINIMUM CAPITAL\n RM20,000.00\n\n 2. ASSETS ELIGIBLE FOR TRUST.\n Movable assets (cash only)\n\n 3. TRUST PERIOD\n As stated in the Trust Deed.\n\n 4. PROFIT DISTRIBUTION\n 3.00% per annum.\n\n 5. REQUIRED DOCUMENTS\n a. Copy of Donor’s Identity Card.\n b. Copy of Recipient’s Identity Card.\n c. Copy of Guardian’s (Wali Mal) Identity Card (if applicable).\n\n 6. RELATED FORMS\n a. Application Form For Hibah AmanahRaya.\n b. Sample - Application Form For Hibah AmanahRaya.\n\n Please visit any of our nearest branch counters to make payment, bringing along the required documents. Payment can be made in cash (limited to RM5,000), cheque, debit/credit card, or online transfer.\n **{name}** may [Schedule An Appointment](https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m)\n\n for our branches location, please click [here](https://www.amanahraya.my/contact-us/branch-locator/)\n\n 1. On the appointment date, consultation and advisory services can be conducted with our officer.\n 2. Document submission and payment can be completed on the same day.\n **{name}** will be contacted by the branch officer for the preparation of the Trust Deed.\n\n Is there anything else ARIA can assist you with?`,
         options: [
             { label: "1️⃣ That's all, thank you", nextStep: 'exit' }
         ]
@@ -1125,7 +1127,7 @@ export const chatbotFlow: BotFlow = {
     // Below steps are belong to HibahKu
     hibah_ku: {
         id: 'hibah_ku',
-        message: `CONCEPT OF HIBAH\n\n 1. The transfer of ownership of one’s property to another person during the owner’s lifetime, voluntarily and without expecting anything in return.\n 2. A contract (akad) will be executed to declare that the Donor (Penghibah) is granting the property to the Recipient of the Hibah (Penerima Hibah).\n 3. A Hibah cannot be revoked, except for a Hibah made by a parent/grandparent to their child/ grandchild.\n 4. In the event of the Recipient’s death, the gifted property becomes part of the Recipient’s estate and will not be returned to the Donor, except through methods permitted by Shariah or the law.\n\n For your information, under the Hibahku product, (name) may gift the following assets to any intended recipient:\n i) Properties (whether fully paid or under financing)\n ii) Vehicles (whether fully paid or under financing)\n iii) Joint savings accounts at any bank (only allowed in the state of Selangor)\n\n What asset does **{name}** intend to gift?`,
+        message: `CONCEPT OF HIBAH\n\n 1. The transfer of ownership of one’s property to another person during the owner’s lifetime, voluntarily and without expecting anything in return.\n 2. A contract (akad) will be executed to declare that the Donor (Penghibah) is granting the property to the Recipient of the Hibah (Penerima Hibah).\n 3. A Hibah cannot be revoked, except for a Hibah made by a parent/grandparent to their child/ grandchild.\n 4. In the event of the Recipient’s death, the gifted property becomes part of the Recipient’s estate and will not be returned to the Donor, except through methods permitted by Shariah or the law.\n\n For your information, under the Hibahku product, **{name}** may gift the following assets to any intended recipient:\n i) Properties (whether fully paid or under financing)\n ii) Vehicles (whether fully paid or under financing)\n iii) Joint savings accounts at any bank (only allowed in the state of Selangor)\n\n What asset does **{name}** intend to gift?`,
         options: [
             { label: '1️⃣ Property and / or vehicles, and cash in the bank', nextStep: 'hibah_ku_property_vehicle_cash' },
             { label: '2️⃣ Property and / or vehicle only', nextStep: 'hibah_ku_property_vehicle' },
@@ -2013,6 +2015,2140 @@ export const chatbotFlow: BotFlow = {
         id: 'office_hour',
         message: `Please wait while I am transfering you to the agent`,
         options: []
+    },
+    // Bahasa Melayu (MY) page starts here
+    bahasa_melayu: {
+        id: 'bahasa_melayu',
+        message: `Adakah **{name}** pelanggan sedia ada kami?`,
+        options: [
+            { label: '1️⃣ Tidak, saya ingin buat pertanyaan', nextStep: 'no_page1_my' },
+            { label: '2️⃣ Ya, saya telah mempunyai nombor pendaftaran/rujukan fail di ARB', nextStep: 'yes_page1_my' },
+            { label: '3️⃣ Saya ingin tahu berkenaan promosi', nextStep: 'i_would_like_my' },
+        ]
+    },
+    no_page1_my: {
+        id: 'no_page1_my',
+        message: `Adakah **{name}** pelanggan sedia ada kami?`,
+        options: [
+            { label: "1️⃣ Saya ingin uruskan harta orang yang telah meninggal dunia", nextStep: 'pusaka_my' },
+            { label: '2️⃣ Saya ingin serahkan harta saya kepada orang yang saya hajatkan', nextStep: 'allocate_page1_my' },
+            { label: "3️⃣ Saya ingin bayar bahagian waris/ simati kepada ARB", nextStep: 'pay_page1_my' },
+            { label: "4️⃣ Saya ingin dapatkan bahagian saya yang belum dituntut di ARB", nextStep: 'retrieve_page1_my' },
+            { label: "5️⃣ Saya ada Perintah dari Pejabat Tanah/ Mahkamah Tinggi", nextStep: 'order_page1_my' },
+            { label: "6️⃣ Saya ingin tahu berkenaan penentuan waris", nextStep: 'establishment_rightful_beneficiaries_my' }
+        ]
+    },
+    allocate_page1_my: {
+        id: 'allocate_page1_my',
+        message: `**{name}** berhajat untuk menyerahkan harta semasa hidup atau selepas kematian?`,
+        options: [
+            { label: '1️⃣ Semasa hidup', nextStep: 'during_lifeitime_my' },
+            { label: '2️⃣ Selepas kematian', nextStep: 'after_death_my' },
+        ]
+    },
+    during_lifeitime_my: {
+        id: 'during_lifeitime_my',
+        message: `Sila buat pilihan`,
+        options: [
+            { label: '1️⃣ Hibah', nextStep: 'hibah_my' },
+            { label: '2️⃣ Amanah', nextStep: 'amanah_my' },
+        ]
+    },
+    after_death_my: {
+        id: 'after_death_my',
+        message: `Sila buat pilihan`,
+        options: [
+            { label: '1️⃣ Wasiat', nextStep: 'wasiat_my' },
+            { label: '2️⃣ HibahKu', nextStep: 'hibahku_my' },
+        ]
+    },
+    pay_page1_my: {
+        id: 'pay_page1_my',
+        message: `**{name}** ingin bayar bahagian siapa?`,
+        options: [
+            {
+                label: `1️⃣ Waris bawah umur/OKU`, nextStep: 'minor_disabled_my'
+            },
+            {
+                label: `2️⃣ Waris tak dapat dikesan / tak bagi kerjasama (tebus bahagian)`, nextStep: 'untraceable_my'
+            },
+            {
+                label: `3️⃣ Bahagian Simati (pampasan)`, nextStep: 'compensation_my'
+            },
+            {
+                label: `4️⃣ Bahagian Simati (selain pampasan)`, nextStep: 'other_than_compensation_my'
+            }
+        ]
+    },
+    minor_disabled_my: {
+        id: 'minor_disabled_my',
+        message: `Sila sertakan dokumen berikut:\n\n 1. 1 Salinan Sijil Kematian Simati\n 2. 1 Salinan Kad Pengenalan Penjaga\n 3. 1 Salinan Kad Pengenalan dan Sijil Kelahiran waris bawah umur / OKU\n\n 4. Perintah asal daripada Mahkamah Tinggi / Pejabat Tanah yang melantik ARB sebagai pemegang amanah kepada waris bawah umur / OKU\n\nSila hadir ke mana-mana kaunter cawangan kami yang berdekatan untuk membuat bayaran dengan membawa dokumen yang diperlukan . Bayaran boleh dibuat secara tunai (terhad kepada RM5,000), cek, kad debit/kredit atau pindahan wang atas talian. **{name}** boleh buat temujanji di [sini](https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m)\n\n Maklumat cawangan boleh didapati di [sini](https://www.amanahraya.my/contact-us/branch-locator/)`,
+        options: [
+            { label: 'Terima kasih. Sila datang kembali bila-bila masa', nextStep: 'exit_my' },
+
+        ]
+    },
+    untraceable_my: {
+        id: 'untraceable_my',
+        message: `Sila sertakan dokumen berikut:\n\n 1. 1 Salinan Sijil Kematian Simati\n 2. 1 Salinan Kad Pengenalan waris tak dapat dikesan / tak bagi kerjasama\n 3. Surat / Arahan daripada Mahkamah Tinggi / Pejabat Tanah yang mengarahkan bayaran dibuat kepada ARB\n\n Sila hadir ke mana-mana kaunter cawangan kami yang berdekatan untuk membuat bayaran dengan membawa dokumen yang diperlukan . Bayaran boleh dibuat secara tunai (terhad kepada RM5,000), cek, kad debit/kredit atau pindahan wang atas talian. **{name}** boleh buat temujanji di [sini](https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m)\n\n Maklumat cawangan boleh didapati di [sini](https://www.amanahraya.my/contact-us/branch-locator/)`,
+        options: [
+            { label: 'Terima kasih. Sila datang kembali bila-bila masa', nextStep: 'exit_my' },
+        ]
+    },
+    compensation_my: {
+        id: 'compensation_my',
+        message: `Sila sertakan dokumen berikut:\n\n 1. 1 Salinan Sijil Kematian Simati\n 2. 1 Salinan Borang G dan H (Notis Award dan Tawaran Pampasan)\n\n Sila kemukakan dokumen di atas ke alamat e-mel crmd@arb.com.my. Maklumat pembayaran akan diberikan setelah dokumen diterima oleh **{name}**.`,
+        options: [
+            { label: 'Terima kasih. Sila datang kembali bila-bila masa', nextStep: 'exit_my' },
+        ]
+    },
+    other_than_compensation_my: {
+        id: 'other_than_compensation_my',
+        message: `Sila sertakan dokumen berikut:\n\n 1. 1 Salinan Sijil Kematian Simati\n 2.  Surat pemakluman bayaran bahagian Simati kepada ARB\n\n Sila kemukakan dokumen di atas ke alamat e-mel crmd@arb.com.my. Maklumat pembayaran akan diberikan setelah dokumen diterima oleh **{name}**.`,
+        options: [
+            { label: 'Terima kasih. Sila datang kembali bila-bila masa', nextStep: 'exit_my' },
+        ]
+    },
+    retrieve_page1_my: {
+        id: 'retrieve_page1_my',
+        message: `Sila berikan nama anda`,
+        options: [],
+        expectsInput: true
+    },
+    retrieve_page1_nric_my: {
+        id: 'retrieve_page1_nric_my',
+        message: `Terima kasih **{name}**. Sekarang sila berikan NRIC anda.`,
+        options: [],
+        expectsInput: true
+    },
+    retrieve_page1_contact_my: {
+        id: 'retrieve_page1_contact_my',
+        message: `Mohon berikan nombor telefon anda`,
+        options: [],
+        expectsInput: true
+    },
+    retrieve_page1_done_my: {
+        id: 'retrieve_page1_done_my',
+        message: `**{name}**, terima kasih. Pihak kami akan menghubungi anda pada hari bekerja berikutnya.`,
+        options: [{
+            label: 'Terima kasih. Sila datang kembali bila-bila masa', nextStep: ''
+        }],
+    },
+    exit_my: {
+        id: 'exit_my',
+        message: 'Terima kasih. Sila datang kembali bila-bila masa.',
+        options: []
+    },
+    order_page1_my: {
+        id: 'order_page1_my',
+        message: 'Perintah tersebut berkenaan apa?',
+        options: [
+            {
+                label: `1️⃣ ARB jadi Pemegang Amanah kepada waris bawah umur/ OKU`,
+                nextStep: 'order_page1_details_my'
+            },
+            {
+                label: `2️⃣ ARB jadi Pemegang Amanah kepada waris tak dapat dikesan / tak bagi kerjasama`,
+                nextStep: 'order_page1_details_my'
+            }
+        ]
+    },
+    order_page1_details_my: {
+        id: 'order_page1_details_my',
+        message: `Sila sertakan dokumen berikut:\n 1. Salinan Sijil Kematian Simati\n 2. Salinan Kad Pengenalan Penjaga\n 3. Salinan Kad Pengenalan dan Sijil Kelahiran waris bawah umur / OKU.\n 4. Perintah asal daripada Mahkamah Tinggi / Pejabat Tanah yang melantik ARB sebagai pemegang amanah kepada waris bawah umur / OKU / tak dapat dikesan/ tak bagi kerjasama\n\n Sila hadir ke mana-mana kaunter cawangan kami yang berdekatan untuk membawa dokumen yang diperlukan. **{name}** boleh buat temujanji di [sini](https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m)\n\n Maklumat cawangan boleh didapati di [sini](https://www.amanahraya.my/contact-us/branch-locator/)`,
+        options: [
+            {
+                label: 'Terima kasih. Sila datang kembali bila-bila masa', nextStep: ''
+            }
+        ]
+    },
+    yes_page1_my: {
+        id: 'yes_page1_my',
+        message: `Hebat, **{name}** adalah pelanggan yang kami hargai.\n\n Produk apa yang **{name}** ada bersama kami?`,
+        options: [
+            { label: '1️⃣ Pusaka', nextStep: 'pusaka_estate_my' },
+            { label: '2️⃣ Wasiat', nextStep: 'will_one_my' },
+            { label: '3️⃣ Amanah', nextStep: 'amanah_one_my' },
+            { label: '4️⃣ Hibah', nextStep: 'retrieve_page1_my' },
+            { label: '5️⃣ HibahKu', nextStep: 'retrieve_page1_my' },
+        ]
+    },
+    i_would_like_my: {
+        id: 'i_would_like_my',
+        message: `[Promosi](https://drive.google.com/file/d/1fw8S2Mvia-Lc4-U7KMtzhxEDEPF-teXV/view)`,
+        options: [
+            { label: 'Terima kasih. Sila datang kembali bila-bila masa', nextStep: '' }
+        ]
+    },
+    // Pusaka (BM) flow in Bahasa Melayu starts here
+    pusaka_estate_my: {
+        id: 'pusaka_estate_my',
+        message: `Baiklah apa yang ARIA boleh bantu **{name}**?`,
+        options: [
+            { label: '1️⃣ Menyemak status wasiat ', nextStep: 'retrieve_page1_my' },
+            { label: '2️⃣ Mendapatkan salinan Surat Kuasa Mentadbir (SKM) ', nextStep: 'skm' },
+            { label: '3️⃣ Membuat penambahan aset simati', nextStep: 'pukasa_add_asset_my' },
+        ]
+    },
+    skm: {
+        id: 'skm',
+        message: `Adakah **{name}** waris bagi pusaka ini?`,
+        options: [
+            { label: '1️⃣ Ya ', nextStep: 'skm_ya' },
+            { label: '2️⃣ Tidak ', nextStep: 'skm_tidak' },
+        ]
+    },
+    skm_ya: {
+        id: 'skm_ya',
+        message: `Senarai dokumen yang diperlukan untuk permohonan salinan SKM oleh waris:\n\n (1) Personal Data Access and Change Form yang dilengkapkan oleh waris yang memohon\n(2) 1 salinan kad pengenalan waris yang memohon\n(3) 1 salinan surat dari Unit Pusaka Kecil (sekiranya berkaitan)\n\n BORANG YANG BERKAITAN\n a) Personal Data Access and Change Form\n b) Contoh Pengisian - Personal Data Access and Change Form\n\n Cara penghantaran mana yang lebih mudah untuk **{name}**?`,
+        options: [
+            { label: '1️⃣ Kaunter ', nextStep: 'skm_kaunter' },
+            { label: '2️⃣ Pos ', nextStep: 'skm_pos' },
+            { label: '3️⃣ E-mel / WhatsApp', nextStep: 'skm_email' },
+        ]
+    },
+    skm_kaunter: {
+        id: 'skm_kaunter',
+        message: `Sila hadir ke mana-mana kaunter cawangan kami yang berdekatan.\n\n Maklumat cawangan boleh didapati di [sini](https://www.amanahraya.my/contact-us/branch-locator/)\n\n Terdapat caj yang akan dikenakan dan caj tersebut akan ditentukan oleh pihak cawangan setelah penerimaan dokumen diterima.\n\n Pembayaran boleh dibuat secara tunai, kod QR atau kad debit/ kredit.\n\n Salinan SKM akan diserahkan kepada **{name}** dalam masa 7 hari bekerja.\n\n Boleh ARIA tahu, bagaimana dokumen ini akan diserahkan kepada **{name}**?`,
+        options: [
+            { label: '1️⃣ Kutipan di kaunter  ', nextStep: 'skm_kutipan_kaunter' },
+            { label: '2️⃣ Pos Berdaftar ', nextStep: 'skm_pos_kaunter' },
+        ]
+    },
+    skm_kutipan_kaunter: {
+        id: 'skm_kutipan_kaunter',
+        message: `Sila buat temujanji di [sini](https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m)\n\n Ada apa-apa lagi yang boleh AIRA bantu?`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' },
+        ]
+    },
+    skm_pos_kaunter: {
+        id: 'skm_pos_kaunter',
+        message: `Dokumen akan diposkan ke alamat yang dinyatakan di dalam borang permohonan. Tambahan RM10 akan dikenakan.\n\n Ada apa-apa lagi yang boleh AIRA bantu?`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' },
+        ],
+    },
+    skm_pos: {
+        id: 'skm_pos',
+        message: `Sila poskan ke cawangan di mana fail telah didaftarkan\n\n Maklumat cawangan boleh didapati di [sini](https://www.amanahraya.my/contact-us/branch-locator/)\n\n Terdapat caj yang akan dikenakan dan caj tersebut akan ditentukan oleh pihak cawangan setelah penerimaan dokumen diterima.\n\n **{name}** akan dihubungi bagi pembayaran atas talian setelah dokumen diterima.\n\n Salinan SKM akan diserahkan kepada **{name}** dalam masa 7 hari bekerja.\n\n Boleh ARIA tahu, bagaimana dokumen ini akan diserahkan kepada **{name}**?`,
+        options: [
+            { label: '1️⃣ Kutipan di kaunter  ', nextStep: 'skm_kutipan_kaunter' },
+            { label: '2️⃣ Pos Berdaftar ', nextStep: 'skm_pos_kaunter' },
+        ]
+    },
+    skm_email: {
+        id: 'skm_email',
+        message: `Dokumen yang jelas boleh dihantar melalui e-mel ke crmd@arb.com.my atau WhatsApp kami di 03-2055 7557.\n\n Terdapat caj yang akan dikenakan dan caj tersebut akan ditentukan oleh pihak cawangan setelah penerimaan dokumen diterima.\n\n **{name}** akan dihubungi bagi pembayaran atas talian setelah dokumen diterima.\n\n Salinan SKM akan diserahkan kepada **{name}** dalam masa 7 hari bekerja.\n\n Boleh ARIA tahu, bagaimana dokumen ini akan diserahkan kepada **{name}**?`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' },
+        ]
+    },
+    skm_tidak: {
+        id: 'skm_tidak',
+        message: `Apakah hubungan **{name}** dengan simati?`,
+        options: [
+            { label: '1️⃣ Wakil waris  ', nextStep: 'skm_tidak_wakil' },
+            { label: '2️⃣ Peguam lantikan waris ', nextStep: 'skm_tidak_peguam' },
+        ]
+    },
+    skm_tidak_wakil: {
+        id: 'skm_tidak_wakil',
+        message: `Senarai dokumen yang diperlukan untuk permohonan salinan SKM oleh wakil waris:\n\n (1) Surat lantikan daripada waris\n (2) Personal Data Access and Change Form yang dilengkapkan oleh waris yang sama seperti surat lantikan\n (3) 1 salinan kad pengenalan wakil waris dan waris yang melantik\n (4) 1 salinan surat dari Unit Pusaka Kecil (sekiranya berkaitan)\n\n BORANG YANG BERKAITAN\n a) Personal Data Access and Change Form\n b) Contoh Pengisian - Personal Data Access and Change Form\n\n Cara penghantaran mana yang lebih mudah untuk **{name}**?`,
+        options: [
+            { label: '1️⃣ Kaunter ', nextStep: 'skm_kaunter' },
+            { label: '2️⃣ Pos ', nextStep: 'skm_pos' },
+            { label: '3️⃣ E-mel / WhatsApp', nextStep: 'skm_email' },
+        ]
+    },
+    skm_tidak_peguam: {
+        id: 'skm_tidak_peguam',
+        message: `Senarai dokumen yang diperlukan untuk permohonan salinan SKM oleh wakil waris:\n\n (1) Notis Pelantikan Peguam\n (2) Surat Rasmi peguam\n (3) Personal Data Access and Change Form yang dilengkapkan oleh anak guam (waris)\n (4) 1 salinan kad pengenalan anak guam\n\n BORANG YANG BERKAITAN\n a) Personal Data Access and Change Form\n b) Contoh Pengisian - Personal Data Access and Change Form\n\n Cara penghantaran mana yang lebih mudah untuk **{name}**?`,
+        options: [
+            { label: '1️⃣ Kaunter ', nextStep: 'skm_kaunter' },
+            { label: '2️⃣ Pos ', nextStep: 'skm_pos' },
+            { label: '3️⃣ E-mel / WhatsApp', nextStep: 'skm_email' },
+        ]
+    },
+    // Pusaka asset addition (BM) flow in Bahasa Melayu starts here
+    pukasa_add_asset_my: {
+        id: 'pukasa_add_asset_my',
+        message: `Boleh ARIA tahu, apa aset tambahan yang hendak ditadbir?`,
+        options: [
+            { label: '1️⃣ Kenderaan sahaja (nilaian semasa kurang dari RM10,000) ', nextStep: 'pukasa_add_asset_vehicle_my' },
+            { label: '2️⃣ Aset alih sahaja', nextStep: 'pukasa_add_asset_movable_my' },
+            { label: '3️⃣ Kenderaan sahaja (nilaian semasa melebihi RM10,000)', nextStep: 'pukasa_add_asset_movable_my' },
+            { label: '4️⃣ Aset alih dan aset tak alih  ', nextStep: 'pukasa_add_asset_movable_my' },
+            { label: '5️⃣ Aset tak alih sahaja', nextStep: 'pukasa_add_asset_movable_my' },
+        ]
+    },
+    pukasa_add_asset_vehicle_my: {
+        id: 'pukasa_add_asset_vehicle_my',
+        message: `ARIA maklumkan pentadbiran ini boleh dibuat secara prosedur Fast Lane iaitu Surat Kuasa Mentadbir (SKM) dikeluarkan dalam tempoh 30 hari dari tarikh penerimaan dokumen lengkap. Prosedur ini hanya terpakai bagi SKM yang dikeluarkan oleh ARB sahaja.\n\n ARIA akan senaraikan keperluan dokumen.\n\n 1. SIMATI\n a. Sijil Kematian asal & 1 salinan\n b. 1 salinan Sijil Kelahiran simati (Jika waris simati adalah ibubapa / adik beradik)\n\n 2. WAKIL WARISa.\n 1 salinan kad pengenalan / passport\n b. 1 salinan dokumen pembuktian pertalian dengan simati\n i. Sijil Kelahiran (jika waris adalah anak / adik beradik)\n ii. Sijil Perkahwinan (jika waris adalah pasangan)\n 3. PEMBELI (JIKA PENERIMA KENDERAAN ADALAH PEMBELI)\n a. 1 salinan kad pengenalan / passport\n b. Bukti pembelian kenderaan\n\n 4. HARTA ALIH - KENDERAAN\n a. Geran baru - 1 salinan geran kenderaan (depan sahaja) * Perlu sertakan carian e-hakmilik kenderaan / bukti penyelesaian hutang / bukti pembelian tunai\n b. Geran lama - 1 salinan geran kenderaan (depan dan belakang sahaja) * Jika masih mempunyai hakmilik dituntut yang belum dibatalkan dan pinjaman telah selesai, perlu sertakan carian e-hakmilik / bukti penyelesaian hutang\n\n 5. MINIMUM DEPOSIT RM50\n\n 6. TEMPOH PENTADBIRAN\n 30 hari dari tarikh pembukaan fail dan dokumen lengkap\n 7. BORANG YANG BERKAITAN\n a. Borang Permohonan Pusaka Aset atau Liabiliti Tambahan\n b. Surat Akuan Pindahmilik Kenderaan\n c. Contoh Pengisian - Borang Permohonan Pusaka Aset atau Liabiliti Tambahan\n d. Contoh Pengisian - Surat Akuan Pindahmilik Kenderaan\n\n Terdapat fi pentadbiran yang dikenakan bagi pentadbiran harta pusaka ini.\n a. Jumlah nilaian RM3,000 dan ke bawah : RM50\n b. Jumlah nilaian RM3,000.01 - RM5,000 : RM150\n c. Jumlah nilaian RM5,000.01 - RM10,000 : 5.00% ke atas nilai kenderaan\n\n Untuk makluman, nilaian kenderaan akan dibuat melalui laman web di kaunter cawangan ketika proses pembukaan fail. **{name}** perlu tandatangan bagi menyatakan persetujuan ke atas nilaian yang dikeluarkan.\n\n Borang yang lengkap beserta dokumen yang diperlukan mestilah dihantar ke cawangan AmanahRaya yang sama mengikut pentadbiran terdahulu.\n\n Cara penghantaran mana yang lebih mudah untuk **{name}**?`,
+        options: [
+            { label: '1️⃣ Kaunter ', nextStep: 'p_add_as_vh_my_kaunter' },
+            { label: '2️⃣ Pos ', nextStep: 'p_add_as_vh_my_pos' },
+            { label: '3️⃣ E-mel / WhatsApp', nextStep: 'p_add_as_vh_my_email' },
+        ]
+    },
+    p_add_as_vh_my_kaunter: {
+        id: 'p_add_as_vh_my_kaunter',
+        message: `Sila hadir ke mana-mana kaunter cawangan kami yang berdekatan. **{name}** boleh buat temujanji di [sini](https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m)\n\n Maklumat cawangan boleh didapati di [sini](https://www.amanahraya.my/contact-us/branch-locator/)\n\n Ada apa-apa lagi yang boleh AIRA bantu?`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' },
+        ]
+    },
+    p_add_as_vh_my_pos: {
+        id: 'p_add_as_vh_my_pos',
+        message: `Sila poskan ke cawangan di mana fail telah didaftarkan\n\n Maklumat cawangan boleh didapati di [sini](https://www.amanahraya.my/contact-us/branch-locator/)\n\n **{name}** akan dihubungi bagi pembayaran atas talian setelah dokumen diterima.\n\n Ada apa-apa lagi yang boleh AIRA bantu?`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' },
+        ],
+    },
+    p_add_as_vh_my_email: {
+        id: 'p_add_as_vh_my_email',
+        message: `Dokumen yang jelas boleh dihantar melalui e-mel ke crmd@arb.com.my atau WhatsApp kami di 03-2055 7557.\n\n **{name}** akan dihubungi bagi pembayaran atas talian setelah dokumen diterima.\n\n Ada apa-apa lagi yang boleh AIRA bantu?`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' },
+        ]
+    },
+    pukasa_add_asset_movable_my: {
+        id: 'pukasa_add_asset_movable_my',
+        message: `Ok jelas. ARIA akan senaraikan keperluan dokumen.\n\n 1. SIMATI\n a. Sijil Kematian asal & 1 salinan\n\n 2. WARIS SIMATI\n a. 1 salinan Sijil Kematian (jika terdapat waris yang meninggal selepas pentadbiran awal selesai)\n\n 3. HARTA ALIH (SEDIAKAN YANG BERKAITAN SAHAJA)\n a. 1 salinan Geran / Sijil Pemilikan Kenderaan (depan dan belakang) dan tidak mempunyai tanggungan / selesai pinjaman\n b. 1 salinan penyata akaun / buku simpanan akaun simati (ASB / Bank / Tabung Haji)\n c. 1 salinan penyata akaun semasa\n d. 1 salinan penyata / buku simpanan akaun bersama\n e. 1 salinan penyata Saham Bursa Malaysia\n f. 1 salinan penyata Deposit Tetap\n g. 1 salinan slip Peti Simpanan Selamat (Safe Deposit Box)\n h. 1 salinan sijil Saham Syarikat\n i. 1 salinan penyata KWSP\n j. 1 salinan polisi Insuran\n k. 1 salinan lesen vessel\n\n 4. HARTA TAK ALIH (SEDIAKAN YANG BERKAITAN SAHAJA)\n a. 1 salinan perjanjian jual beli (S&P) untuk rumah yang belum memilik hakmilik strata\n b. 1 salinan hakmilik strata rumah\n c. 1 salinan geran rumah\n .d 1 salinan geran tanah.\n e Resit asal cukai tanah terkini dan 1 salinan\n f. Resit asal cukai pintu terkini dan 1 salinan\n\n 5. DEPOSIT\n a. RM50 - RM1000 (jumlah sebenar akan dimaklumkan\n setelah semakan dokumen dibuat)\n\n 6. BORANG YANG BERKAITAN\n a. Borang Permohonan Pusaka Aset atau Liabiliti Tambahan\n b. Contoh Pengisian - Borang Permohonan Pusaka Aset atau Liabiliti Tambahan\n\n Borang yang lengkap beserta dokumen yang diperlukan mestilah dihantar ke cawangan AmanahRaya yang sama mengikut pentadbiran terdahulu.\n\n Cara penghantaran mana yang lebih mudah untuk **{name}**?`,
+        options: [
+            { label: '1️⃣ Kaunter ', nextStep: 'p_add_as_vh_my_kaunter' },
+            { label: '2️⃣ Pos ', nextStep: 'p_add_as_vh_my_pos' },
+            { label: '3️⃣ E-mel / WhatsApp', nextStep: 'p_add_as_vh_my_email' },
+        ]
+    },
+    will_one_my: {
+        id: 'will_one_my',
+        message: `Baiklah apa yang ARIA boleh bantu **{name}**?`,
+        options: [
+            { label: '1️⃣ Menyemak status wasiat ', nextStep: 'retrieve_page1_my' },
+            { label: "2️⃣ Meminda wasiat ", nextStep: 'will_one_amending_will_my' },
+            { label: '3️⃣ Memndapatkan salinan wasiat', nextStep: 'will_one_will_copy_my' },
+        ],
+    },
+    will_one_amending_will_my: {
+        id: 'will_one_amending_will_my',
+        message: `Boleh ARIA tahu jenis wasiat yang didaftarkan di ARB?`,
+        options: [
+            { label: '1️⃣ Asas ', nextStep: 'will_one_amending_will_my_asas' },
+            { label: "2️⃣ Komprehensif ", nextStep: 'will_one_amending_will_my_komprehensif' },
+            { label: '3️⃣ Tidak pasti', nextStep: 'retrieve_page1_my' },
+        ]
+    },
+    will_one_amending_will_my_asas: {
+        id: 'will_one_amending_will_my_asas',
+        message: `**{name}** boleh menukar kepada Wasiat Komprehensif untuk memperincikan jenis harta kepada waris atau bukan waris yang berhak menerima harta selepas kematian.\n\n Sila sertakan dokumen berikut:\n\n 1. Borang Permohonan Wasiat (link)\n 2. 1 salinan Kad Pengenalan pewasiat\n 3. 1 salinan Kad Pengenalan penerima\n 4. 1 salinan Kad Pengenalan penjaga (sekiranya berkaitan)\n 5. 1 salinan dokumen aset yang dinyatakan di dalam wasiat.\n 6. Fi Penukaran : RM700.\n\n Cara penghantaran mana yang lebih mudah untuk **{name}**?`,
+        options: [
+            { label: '1️⃣ Kaunter ', nextStep: 'p_add_as_vh_my_kaunter' },
+            { label: '2️⃣ Pos ', nextStep: 'p_add_as_vh_my_pos' },
+            { label: '3️⃣ E-mel / WhatsApp', nextStep: 'p_add_as_vh_my_email' },
+        ]
+    },
+    will_one_amending_will_my_komprehensif: {
+        id: 'will_one_amending_will_my_komprehensif',
+        message: `**{name}** boleh membuat perubahan ke atas wasiat sedia ada.\n\n Sila sertakan dokumen berikut:\n\n 1. Borang Permohonan Wasiat (link)\n 2. 1 salinan Kad Pengenalan pewasiat\n 3. 1 salinan Kad Pengenalan penerima\n 4. 1 salinan Kad Pengenalan penjaga (sekiranya berkaitan)\n 5. 1 salinan dokumen aset yang dinyatakan di dalam wasiat.\n 6. Fi Pindaan : RM150.\n\n Cara penghantaran mana yang lebih mudah untuk **{name}**?`,
+        options: [
+            { label: '1️⃣ Kaunter ', nextStep: 'p_add_as_vh_my_kaunter' },
+            { label: '2️⃣ Pos ', nextStep: 'p_add_as_vh_my_pos' },
+            { label: '3️⃣ E-mel / WhatsApp', nextStep: 'p_add_as_vh_my_email' },
+        ]
+    },
+    will_one_will_copy_my: {
+        id: 'will_one_will_copy_my',
+        message: `Salinan wasiat boleh dipohon oleh:\n\n 1. Pewasiat\n 2. Waris-waris pewasiat\n 3. Peguam yang dilantik oleh waris pewasiat\n\n **{name}** ingin dapatkan salinan wasiat ini untuk tujuan apa?`,
+        options: [
+            { label: '1️⃣ Wasiat saya hilang dalam simpanan ', nextStep: 'will_one_will_copy_my_dalam' },
+            { label: '2️⃣ Untuk pentadbiran harta pusaka', nextStep: 'will_one_will_copy_my_harta' },
+        ]
+    },
+    will_one_will_copy_my_dalam: {
+        id: 'will_one_will_copy_my_dalam',
+        message: `Sila majukan borang lengkap yang disertakan di bawah beserta dokumen berikut ke alamat e-mel crmd@arb.com.my:\n\n 1. Personal Data Access and Change Form (link)\n 2. Salinan Kad Pengenalan pemohon\n 3. Salinan resit pembayaran Bayaran secara atas talian boleh dibuat kepada:\n Nama Syarikat: Amanah Raya Berhad\n Nama Bank : Maybank\n Nombor Akaun : 564155119930\n Bayaran : RM50\n\n **{name}** akan dihubungi dalam masa 7 hari bekerja untuk mengambil salinan wasiat di kaunter.\n\n Ada apa-apa lagi yang boleh ARIA bantu?`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' },
+        ]
+    },
+    will_one_will_copy_my_harta: {
+        id: 'will_one_will_copy_my_harta',
+        message: `Apakah hubungan **{name}** dengan simati?`,
+        options: [
+            { label: '1️⃣ Waris simati ', nextStep: 'will_one_will_copy_my_harta_waris' },
+            { label: '2️⃣ Peguam', nextStep: 'will_one_will_copy_my_harta_pegum' },
+        ]
+    },
+    will_one_will_copy_my_harta_waris: {
+        id: 'will_one_will_copy_my_harta_waris',
+        message: `Sila majukan borang lengkap yang disertakan di bawah beserta dokumen berikut:\n\n 1. Personal Data Access and Change Form (link)\n 2. Salinan kad pengenalan dan dokumen pertalian (pemohon)\n 3. Salinan sijil kematian Simati\n 4. Salinan resit pembayaran Bayaran secara atas talian boleh dibuat kepada:\n Nama Syarikat: Amanah Raya Berhad\n Nama Bank : Maybank\n Nombor Akaun : 564155119930\n Bayaran : RM50\n\n Kandungan wasiat hanya akan dibaca di hadapan waris sahaja. Tiada salinan wasiat yang akan diberikan.\n\n **{name}** akan dihubungi dalam masa 7 hari bekerja untuk penetapan tarikh sesi pembacaan wasiat di kaunter.\n\n Ada apa-apa lagi yang boleh ARIA bantu?`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' },
+        ]
+    },
+    will_one_will_copy_my_harta_pegum: {
+        id: 'will_one_will_copy_my_harta_pegum',
+        message: `Sila majukan borang lengkap yang disertakan di bawah beserta dokumen berikut: 1. Personal Data Access and Change Form (link)\n 2. Salinan kad pengenalan dan dokumen pertalian (pemohon)\n 3. Salinan sijil kematian SImati\n 4. Notis lantikan peguam\n 5. Salinan resit pembayaran Bayaran secara atas talian boleh dibuat kepada:\n Nama Syarikat : Amanah Raya Berhad\n Nama Bank : Maybank\n Nombor Akaun : 564155119930\n Bayaran : RM50\n\n Kandungan wasiat hanya akan dibaca di hadapan waris sahaja. Tiada salinan wasiat yang akan diberikan.\n\n **{name}** akan dihubungi dalam masa 7 hari bekerja untuk penetapan tarikh sesi pembacaan wasiat di kaunter.\n\n Ada apa-apa lagi yang boleh ARIA bantu?`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' },
+        ]
+    },
+    // Amanah BM 1 starts from here
+    amanah_one_my: {
+        id: 'amanah_one_my',
+        message: `Baiklah apa yang ARIA boleh bantu **{name}**?`,
+        options: [
+            { label: "1️⃣ Membuat pengemaskinian maklumat", nextStep: 'amanah_one_my_maklumat' },
+            { label: '2️⃣ Membuat penutupan akaun amanah', nextStep: 'amanah_one_my_akuan_amanah' },
+            { label: "3️⃣ Membuat pengeluaran wang amanah", nextStep: 'amanah_one_my_wang_amanah' },
+            { label: "4️⃣ Mendapatkan penyata akaun", nextStep: 'amanah_one_my_akuan' },
+            { label: "5️⃣ Membuat penukaran penjaga", nextStep: 'amanah_one_my_penjaga' },
+            { label: "6️⃣ Menyemak status permohonan", nextStep: 'retrieve_page1_my' }
+        ]
+    },
+    amanah_one_my_maklumat: {
+        id: 'amanah_one_my_maklumat',
+        message: `Sila klik pautan [ini](https://online.amanahraya.my/TRUST_ONLINE/) bagi pengemaskinian maklumat.\n\n Ada apa-apa lagi yang boleh ARIA bantu?`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' },
+        ]
+    },
+    amanah_one_my_akuan_amanah: {
+        id: 'amanah_one_my_akuan_amanah',
+        message: `Sila klik kedua-dua pautan ini https://forms.gle/RDiL93pvWrcZJsKT9 dan https://forms.gle/YRRdYh5qMTrWNQKm6 bagi permohonan penutupan akaun.\n\n Pembayaran akan dibuat dalam tempoh 14 hari bekerja dari tarikh penerimaan dokumen lengkap. **{name}** akan dihubungi sekiranya maklumat tambahan diperlukan.\n\n Ada apa-apa lagi yang boleh ARIA bantu?`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' },
+        ]
+    },
+    amanah_one_my_wang_amanah: {
+        id: 'amanah_one_my_wang_amanah',
+        message: `Pengeluaran wang amanah dibolehkan bagi tujuan kegunaan dan kebajikan benefisiari atau bagi tujuan pengeluaran yang dibenarkan di dalam SuratIkatan Amanah.\n\n Pengeluaran boleh dibuat bagi tujuan-tujuan berikut:\n\n 1. Persekolahan\n 2. Perubatan\n 3. Nafkah bulanan\n 4. Perayaan\n 5. Lain-lain\n\n Sila klik pautan ini https://online.amanahraya.my/TRUST_ONLINE/ bagi permohonan penutupan akaun.\n\n Ada apa-apa lagi yang boleh ARIA bantu?`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' },
+        ]
+    },
+    amanah_one_my_akuan: {
+        id: 'amanah_one_my_akuan',
+        message: `Sila klik pautan ini https://online.amanahraya.my/TRUST_ONLINE/ bagi mendapatkan penyata akaun.\n\n Ada apa-apa lagi yang boleh ARIA bantu?`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' },
+        ]
+    },
+    amanah_one_my_penjaga: {
+        id: 'amanah_one_my_penjaga',
+        message: `Penukaran penjaga hanya dibenarkan sekiranya:\n\n 1. Penjaga sedia ada meninggal dunia.\n 2. Penjaga sedia ada telah uzur.\n 3. Pelanggaran tanggungjawab oleh penjaga.\n\n * Penukaran penjaga hanya dibenarkan dengan mengemukakan:\n\n 1. Borang Penukaran Penjaga\n 2. Perintah Mahkamah (sekiranya penjaga dilantik oleh Mahkamah)\n 3. Perintah Penjaga (Borang H) (sekiranya penjaga dilantik oleh Pembahagian Pusaka Kecil)\n\n BORANG YANG BERKAITAN\n a. Akuan Pengesahan Penukaran Penjaga\n b. Contoh Pengisian - Akuan Pengesahan Penukaran Penjaga\n\n Sila majukan borang yang lengkap beserta salinan Kad Pengenalan **{nama}** ke mana-mana cawangan ARB yang berdekatan.\n\n Maklumat cawangan boleh didapati di https://www.amanahraya.my/contact-us/branch-locator/ \n\n Ada apa-apa lagi yang boleh ARIA bantu?`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' },
+        ]
+    },
+    // PUSAKA BM start from here
+    pusaka_my: {
+        id: 'pusaka_my',
+        message: `Boleh ARIA tahu, **{name}** ingin tahu berkenaan apa?`,
+        options: [
+            { label: "1️⃣ Permohonan pusaka kenderaan sahaja", nextStep: 'pusaka_my_sahaja' },
+            { label: '2️⃣ Permohonan pusaka', nextStep: 'pusaka_my_pusaka' },
+            { label: "3️⃣ Maklumat am", nextStep: 'pusaka_my_maklumat' }, // need to check with Sanjay
+            { label: "4️⃣ Mendapatkan borang", nextStep: 'pusaka_my_borang' },
+        ]
+    },
+    pusaka_my_sahaja: {
+        id: 'pusaka_my_sahaja',
+        message: `Pentadbiran pusaka kenderaan ini hanya terpakai bagi pentadbiran di Semenanjung sahaja. Bagi pentadbiran di Sarawak atau Sabah, **{name}** boleh klik pilihan permohonan pusaka di atas.\n\n Untuk makluman, pentadbiran pusaka diperlukan bagi proses pindahmilik kenderaan Simati. Surat Kuasa akan dikeluarkan untuk proses ini.\n\n Sepanjang pengetahuan **{name}**, adakah pentadbiran pusaka simati pernah dibuat sebelum ini?`,
+        options: [
+            { label: "1️⃣ Tidak pernah dibuat sebelum ini", nextStep: 'pusaka_my_sahaja_tidak' },
+            { label: '2️⃣ Ya, pernah dibuat', nextStep: 'pusaka_my_sahaja_ya' },
+        ]
+    },
+    pusaka_my_sahaja_tidak: {
+        id: 'pusaka_my_sahaja_tidak',
+        message: `Adakah kenderaan Simati masih mempunyai hutang?`,
+        options: [
+            { label: "1️⃣ Tidak", nextStep: 'pusaka_my_sahaja_tidak_tidak' },
+            { label: '2️⃣ Ya', nextStep: 'pusaka_my_sahaja_tidak_ya' },
+        ]
+    },
+    pusaka_my_sahaja_tidak_tidak: {
+        id: 'pusaka_my_sahaja_tidak_tidak',
+        message: `Prosedur pentadbiran pusaka ini hanya boleh digunapakai bagi keadaan berikut:\n\n 1. Kenderaan darat sahaja\n 2. Telah bebas daripada hutang\n 3. Jumlah nilaian kenderaan mestilah tidak melebihi RM10,000\n 4. Tidak melibatkan waris tidak bagi kerjasama / tidak dapat dikesan\n 5. Tidak melibatkan Baitulmal (bagi Islam sahaja)\n\n Adakah kenderaan Simati memenuhi kriteria yang disebut?`,
+        options: [
+            { label: "1️⃣ Tidak", nextStep: 'pusaka_my_sahaja_tidak_tidak_tidak' },
+            { label: '2️⃣ Ya', nextStep: 'pusaka_my_sahaja_tidak_ya_ya' },
+        ]
+    },
+    pusaka_my_sahaja_tidak_tidak_tidak: {
+        id: 'pusaka_my_sahaja_tidak_tidak_tidak',
+        message: `1. SIMATI\n a. Sijil Kematian asal Simati & 1 salinan\n b. 1 salinan Sijil Kelahiran Simati\n c. Wasiat asal Simati & 1 salinan\n d. 1 salinan Sijil Perkahwinan/Perceraian (jika Simati berkahwin / bercerai)\n\n 2. WARIS SIMATI\n a. 1 salinan Kad Pengenalan dan Sijil Kelahiran waris\n b. 1 salinan Sijil Kematian (bagi waris yang meninggal sebelum / selepas simati)\n\n 3. AKUAN (SEDIAKAN YANG BERKAITAN SAHAJA)\n Perlu ditandatangan oleh saksi bebas di hadapan Pesuruhjaya Sumpah dan membuat penyeteman di laman web Lembaga Hasil Dalam Negeri (LHDN). Salinan kad pengenalan saksi perlu disertakan)\n a. Akuan Berkanun Bujang (jika Simati meninggal Bujang)\n b. Akuan Tiada Zuriat (jika Simati tidak mempunyai anak)\n c. Akuan Waris Tunggal (jika Simati hanya meninggalkan seorang waris sahaja)\n\n 4. HARTA ALIH - KENDERAAN\n a. Geran baru - 1 salinan geran kenderaan (depan sahaja)\n * Perlu sertakan carian e-hakmilik kenderaan / bukti penyelesaian hutang / bukti pembelian tunai\n b. Geran lama - 1 salinan geran kenderaan (depan dan belakang sahaja)\n * Jika masih mempunyai hakmilik dituntut yang belum dibatalkan dan pinjaman telah selesai, perlu sertakan carian e-hakmilik / bukti penyelesaian hutang\n\n 5. MINIMUM DEPOSIT RM50\n\n 6. TEMPOH PENTADBIRAN\n 4 bulan dari tarikh pembukaan fail, 7. BORANG YANG BERKAITAN\n a. Borang Permohonan Pentadbiran Harta Pusaka\n b. Senarai Semak Dokumen Yang Perlu Disertakan (Checklist)\n c. Akuan Berkanun (Kahwin / Cerai / Tiada Zuriat / Waris Tunggal / Bujang)\n d. Contoh Pengisian - Borang Permohonan Pentadbiran Harta Pusaka\n e. Contoh Pengisian - Akuan Berkanun (Kahwin / Cerai / Tiada Zuriat / Waris Tunggal / Bujang)\n\n Terdapat fi pentadbiran yang dikenakan bagi pentadbiran harta pusaka ini.\n\n 5% x RM25,000 yang pertama\n 4% x RM225,000 yang berikutnya\n 3% x RM250,000 yang berikutnya\n 2% x RM500,000 yang berikutnya\n 1% x baki selebihnya\n\n Borang yang lengkap beserta dokumen yang diperlukan boleh dihantar ke mana-mana cawangan kami yang berdekatan untuk proses pembukaan fail pusaka. **{name}** boleh membuat temujanji di https://www.amanahraya.my/.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' },
+        ]
+    },
+    pusaka_my_sahaja_tidak_ya_ya: {
+        id: 'pusaka_my_sahaja_tidak_ya_ya',
+        message: `1. SIMATI\n a. Sijil Kematian asal & 1 salinan\n b. 1 salinan Sijil Kelahiran simati (Jika waris simati adalah ibubapa / adik beradik)\n\n 2. WAKIL WARIS\n a. 1 salinan kad pengenalan / passport\n b. 1 salinan dokumen pembuktian pertalian dengan simati\n i. Sijil Kelahiran (jika waris adalah anak / adik beradik)\n ii. Sijil Perkahwinan (jika waris adalah pasangan)\n\n 3. PEMBELI (JIKA PENERIMA KENDERAAN ADALAH PEMBELI)\n a. 1 salinan kad pengenalan / passport\n b. Bukti pembelian kenderaan\n\n 4. HARTA ALIH - KENDERAAN\n a. Geran baru - 1 salinan geran kenderaan (depan sahaja)\n * Perlu sertakan carian e-hakmilik kenderaan / bukti penyelesaian hutang / bukti pembelian tunai\n b. Geran lama - 1 salinan geran kenderaan (depan dan belakang sahaja)\n * Jika masih mempunyai hakmilik dituntut yang belum dibatalkan dan pinjaman telah selesai, perlu sertakan carian e-hakmilik / bukti penyelesaian hutang\n\n 5. MINIMUM DEPOSIT\n RM50\n 6. TEMPOH PENTADBIRAN\n 30 hari dari tarikh pembukaan fail dan dokumen lengkap\n\n 7. BORANG YANG BERKAITAN\n a. Borang Permohonan Pentadbiran Harta Pusaka\n b. Senarai Semak Dokumen Yang Perlu Disertakan (Checklist)\n c. Surat Akuan Pindahmilik Kenderaan\n d. Contoh Pengisian - Borang Permohonan Pentadbiran Harta Pusaka\n e. Contoh Pengisian - Surat Akuan Pindahmilik Kenderaan\n\n Terdapat fi pentadbiran yang dikenakan bagi pentadbiran harta pusaka ini.\n a. Jumlah nilaian RM3,000 dan ke bawah : RM50\n b. Jumlah nilaian RM3,000.01 - RM5,000 : RM150\n c. Jumlah nilaian RM5,000.01 - RM10,000 : 5.00% ke atas nilai kenderaan\n\n Borang yang lengkap beserta dokumen yang diperlukan boleh dihantar ke mana-mana cawangan kami yang berdekatan untuk proses pembukaan fail pusaka. **{name}** boleh membuat temujanji di https://www.amanahraya.my/.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' },
+        ]
+    },
+    pusaka_my_sahaja_tidak_ya: {
+        id: 'pusaka_my_sahaja_tidak_ya',
+        message: `Bagi kenderaan yang masih mempunyai hutang, waris hendaklah menyelesaikan hutang tersebut terlebih dahulu sebelum proses pindahmilik dibuat.\n\n Berikut adalah antara kaedah yang boleh digunakan untuk menyelesaikan hutang kenderaan Simati.\n a. Bayar secara sekaligus (lump sum) kepada institusi kewangan.\n b. Bayar secara ansuran bulanan sehingga selesai hutang.\n c. Buat pembiayaan semula (refinancement) bagi tujuan penyelesaian hutang Simati.\n\n Ada apa-apa lagi yang boleh AIRA bantu?`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' },
+        ]
+    },
+    pusaka_my_sahaja_ya: {
+        id: 'pusaka_my_sahaja_ya',
+        message: `Boleh ARIA tahu, di mana pentadbiran sebelum ini dibuat?`,
+        options: [
+            { label: "1️⃣ Mahkamah Tinggi Sivil", nextStep: 'pusaka_my_sahaja_ya_sivil' },
+            { label: '2️⃣ Unit Pusaka Kecil, Pejabat Tanah Daerah', nextStep: 'pusaka_my_sahaja_ya_kecil' },
+            { label: "3️⃣ Amanah Raya Berhad", nextStep: 'pusaka_my_sahaja_ya_arb' },
+        ]
+    },
+    pusaka_my_sahaja_ya_sivil: {
+        id: 'pusaka_my_sahaja_ya_sivil',
+        message: `Memandangkan harta pusaka simati pernah ditadbir, permohonan aset tambahan perlu diteruskan di Mahkamah Tinggi.\n\n Adakah **{name}** ingin mendapatkan penerangan lanjut?`,
+        options: [
+            { label: '1️⃣ Tidak', nextStep: 'exit_my' },
+            { label: '2️⃣ Ya', nextStep: 'retrieve_page1_my' },
+        ]
+    },
+    pusaka_my_sahaja_ya_kecil: {
+        id: 'pusaka_my_sahaja_ya_kecil',
+        message: `Memandangkan harta pusaka simati pernah ditadbir, permohonan aset tambahan perlu diteruskan di Unit Pusaka Kecil.\n\n Adakah **{name}** ingin mendapatkan penerangan lanjut?`,
+        options: [
+            { label: '1️⃣ Tidak', nextStep: 'exit_my' },
+            { label: '2️⃣ Ya', nextStep: 'retrieve_page1_my' },
+        ]
+    },
+    pusaka_my_sahaja_ya_arb: {
+        id: 'pusaka_my_sahaja_ya_arb',
+        message: `Memandangkan harta pusaka simati pernah ditadbir di sini, **{name}** perlu membuat permohonan aset tambahan bagi aset yang ingin ditadbir.`,
+        options: [
+            { label: '1️⃣ Teruskan ke aset tambahan', nextStep: 'pusaka_my_aset' },
+        ]
+    },
+    pusaka_my_pusaka: {
+        id: 'pusaka_my_pusaka',
+        message: `Untuk makluman **{name}**, pentadbiran pusaka diperlukan bagi aset simati yang tidak mempunyai penama atau hibah. Surat Kuasa akan dikeluarkan untuk mentadbir aset simati.\n\n Boleh ARIA tahu lokasi harta simati?`,
+        options: [
+            { label: "1️⃣ Semenanjung", nextStep: 'pusaka_my_pusaka_semenanjung' },
+            { label: '2️⃣ Sabah', nextStep: 'sabah_my' },
+            { label: "3️⃣ Sarawak", nextStep: 'sarawak_my' },
+        ]
+    },
+    pusaka_my_pusaka_semenanjung: {
+        id: 'pusaka_my_pusaka_semenanjung',
+        message: `Sepanjang pengetahuan **{name}**, adakah pentadbiran pusaka simati pernah dibuat sebelum ini?`,
+        options: [
+            { label: "1️⃣ Ya, pernah dibuat", nextStep: 'pusaka_my_pusaka_semenanjung_ya' },
+            { label: '2️⃣ Tidak pernah dibuat sebelum ini', nextStep: 'pusaka_my_pusaka_semenanjung_tidak' },
+        ]
+    },
+    pusaka_my_pusaka_semenanjung_ya: {
+        id: 'pusaka_my_pusaka_semenanjung_ya',
+        message: `Boleh ARIA tahu, di mana pentadbiran sebelum ini dibuat?`,
+        options: [
+            { label: "1️⃣ Mahkamah Tinggi Sivil", nextStep: 'pusaka_my_pusaka_semenanjung_ya_sivil' },
+            { label: '2️⃣ Unit Pusaka Kecil, Pejabat Tanah Daerah', nextStep: 'pusaka_my_pusaka_semenanjung_ya_daerah' },
+            { label: "3️⃣ Amanah Raya Berhad", nextStep: 'pusaka_my_pusaka_semenanjung_ya_arb' },
+        ]
+    },
+    pusaka_my_pusaka_semenanjung_ya_sivil: {
+        id: 'pusaka_my_pusaka_semenanjung_ya_sivil',
+        message: `Memandangkan harta pusaka simati pernah ditadbir, permohonan aset tambahan perlu diteruskan di Mahkamah Tinggi.\n\n Adakah **{name}** ingin mendapatkan penerangan lanjut?`,
+        options: [
+            { label: '1️⃣ Ya', nextStep: 'retrieve_page1_my' },
+            { label: '2️⃣ Tidak', nextStep: 'exit_my' },
+        ]
+    },
+    pusaka_my_pusaka_semenanjung_ya_daerah: {
+        id: 'pusaka_my_pusaka_semenanjung_ya_daerah',
+        message: `Memandangkan harta pusaka simati pernah ditadbir, permohonan aset tambahan perlu diteruskan di Unit Pusaka Kecil.\n\n Adakah **{name}** ingin mendapatkan penerangan lanjut?`,
+        options: [
+            { label: '1️⃣ Ya', nextStep: 'retrieve_page1_my' },
+            { label: '2️⃣ Tidak', nextStep: 'exit_my' },
+        ]
+    },
+    pusaka_my_pusaka_semenanjung_ya_arb: {
+        id: 'pusaka_my_pusaka_semenanjung_ya_arb',
+        message: `Memandangkan harta pusaka simati pernah ditadbir di sini, **{name}** perlu membuat permohonan aset tambahan bagi aset yang ingin ditadbir.`,
+        options: [
+            { label: '1️⃣ Teruskan ke aset tambahan', nextStep: 'pusaka_my_aset' },
+        ]
+    },
+    pusaka_my_pusaka_semenanjung_tidak: {
+        id: 'pusaka_my_pusaka_semenanjung_tidak',
+        message: `Apakah agama yang dianuti oleh Simati?`,
+        options: [
+            { label: '1️⃣ Islam', nextStep: 'pusaka_my_pusaka_semenanjung_tidak_islam' },
+            { label: '2️⃣ Bukan Islam', nextStep: 'pusaka_my_pusaka_semenanjung_tidak_bukan_islam' },
+        ]
+    },
+    pusaka_my_pusaka_semenanjung_tidak_islam: {
+        id: 'pusaka_my_pusaka_semenanjung_tidak_islam',
+        message: `Adakah Simati mempunyai wasiat?`,
+        options: [
+            { label: '1️⃣ Ya', nextStep: 'pusaka_my_pusaka_semenanjung_tidak_islam_ya' },
+            { label: '2️⃣ Tidak', nextStep: 'pusaka_my_pusaka_semenanjung_tidak_islam_ya_tidak' },
+        ]
+    },
+
+    pusaka_my_pusaka_semenanjung_tidak_islam_ya: {
+        id: 'pusaka_my_pusaka_semenanjung_tidak_islam_ya',
+        message: `Apakah harta yang ditinggalkan oleh simati?`,
+        options: [
+            { label: "1️⃣ Harta Alih sahaja (tidak melebihi RM100,000)", nextStep: 'pusaka_my_pusaka_semenanjung_tidak_islam_ya_tidak_melebihi_rm100' },
+            { label: '2️⃣ Harta Alih sahaja (melebihi RM100,000)', nextStep: 'pusaka_my_pusaka_semenanjung_tidak_islam_ya_melebihi_rm100' },
+            { label: "3️⃣ Harta Alih dan Tak Alih / Harta Tak Alih sahaja", nextStep: 'pusaka_my_pusaka_semenanjung_tidak_islam_ya_alih_sahaja' },
+        ]
+    },
+    pusaka_my_pusaka_semenanjung_tidak_islam_ya_tidak_melebihi_rm100: {
+        id: 'pusaka_my_pusaka_semenanjung_tidak_islam_ya_tidak_melebihi_rm100',
+        message: `1. SIMATI\n a. Sijil Kematian asal Simati & 1 salinan\n b. 1 salinan Sijil Kelahiran Simati\n c. Wasiat asal Simati & 1 salinan\n d. 1 salinan Sijil Perkahwinan/Perceraian (jika Simati berkahwin / bercerai)\n\n 2. WARIS SIMATI\n a. 1 salinan Kad Pengenalan dan Sijil Kelahiran waris\n b. 1 salinan Sijil Kematian (bagi waris yang meninggal sebelum / selepas simati)\n\n 3. AKUAN (SEDIAKAN YANG BERKAITAN SAHAJA) Perlu ditandatangan oleh saksi bebas di hadapan Pesuruhjaya Sumpah dan membuat penyeteman di laman web Lembaga Hasil Dalam Negeri (LHDN). Salinan kad pengenalan saksi perlu disertakan)\n\n a. Akuan Berkanun Bujang (jika Simati meninggal Bujang)\n b. Akuan Tiada Zuriat (jika Simati tidak mempunyai anak)\n c. Akuan Waris Tunggal (jika Simati hanya meninggalkan seorang waris sahaja)\n\n 4. HARTA ALIH (SEDIAKAN YANG BERKAITAN SAHAJA)\n a. 1 salinan Geran / Sijil Pemilikan Kenderaan (depan dan belakang) dan tidak mempunyai tanggungan / selesai pinjaman\n b. 1 salinan penyata akaun / buku simpanan akaun simati(ASB / Bank / Tabung Haji)\n c. 1 salinan penyata akaun semasa\n d. 1 salinan penyata / buku simpanan akaun bersama\n e. 1 salinan penyata Saham Bursa Malaysia\n f. 1 salinan penyata Deposit Tetap\n g. 1 salinan slip Peti Simpanan Selamat (Safe Deposit Box)\n h. 1 salinan sijil Saham Syarikat\n i. 1 salinan penyata KWSP\n j. 1 salinan polisi Insuran\n k. 1 salinan lesen vessel\n\n 5. MINIMUM DEPOSIT\n RM50\n\n 6. TEMPOH PENTADBIRAN\n 4 - 6 bulan dari tarikh pembukaan fail\n\n 7. BORANG YANG BERKAITAN\n a. Borang Permohonan Pentadbiran Harta Pusaka\n b. Senarai Semak Dokumen Yang Perlu Disertakan (Checklist)\n c. Akuan Berkanun (Kahwin / Cerai / Tiada Zuriat / Waris Tunggal / Bujang)\n d. Contoh Pengisian - Borang Permohonan Pentadbiran Harta Pusaka\n e. Contoh Pengisian - Akuan Berkanun (Kahwin / Cerai / Tiada Zuriat / Waris Tunggal / Bujang)\n\n Terdapat fi pentadbiran yang dikenakan bagi pentadbiran harta pusaka ini.\n\n 5% x RM25,000 yang pertama\n 4% x RM225,000 yang berikutnya\n 3% x RM250,000 yang berikutnya\n 2% x RM500,000 yang berikutnya\n 1% x baki selebihnya\n\n Borang yang lengkap beserta dokumen yang diperlukan boleh dihantar ke mana-mana cawangan kami yang berdekatan untuk proses pembukaan fail pusaka. **{name}** boleh membuat temujanji di https://www.amanahraya.my/. `,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' },
+        ]
+    },
+    pusaka_my_pusaka_semenanjung_tidak_islam_ya_melebihi_rm100: {
+        id: 'pusaka_my_pusaka_semenanjung_tidak_islam_ya_melebihi_rm100',
+        message: `1. SIMATI\n a. Sijil Kematian asal Simati & 1 salinan\n b. Wasiat asal Simati & 1 salinan\n c. Sijil Faraid asal & 1 salinan (boleh dipohon di Mahkamah Syariah)\n\n 2. WARIS SIMATI\n a. 1 salinan Kad Pengenalan waris\n\n 3. HARTA ALIH (SEDIAKAN YANG BERKAITAN SAHAJA)\n a. 1 salinan Geran / Sijil Pemilikan Kenderaan (depan dan belakang) dan tidak mempunyai tanggungan / selesai pinjaman\n b. 1 salinan penyata akaun / buku simpanan akaun simati(ASB / Bank / Tabung Haji)\n c. 1 salinan penyata akaun semasa\n d. 1 salinan penyata / buku simpanan akaun bersama\n e. 1 salinan penyata Saham Bursa Malaysia\n f. 1 salinan penyata Deposit Tetap\n g. 1 salinan slip Peti Simpanan Selamat (Safe Deposit Box)\n h. 1 salinan sijil Saham Syarikat\n i. 1 salinan penyata KWSP\n j. 1 salinan polisi Insuran\n k. 1 salinan lesen vessel\n\n 4. MINIMUM DEPOSIT\n a. RM50\n b. RM1000 (jika jumlah aset melebihi RM600,000)\n\n 5. TEMPOH PENTADBIRAN a. 6 bulan dari tarikh pembukaan fail b. 12 bulan dari tarikh pembukaan fail (jika jumlah aset melebihi RM600,000)\n\n 6. BORANG YANG BERKAITAN\n a. Borang Permohonan Pentadbiran Harta Pusaka\n b. Senarai Semak Dokumen Yang Perlu Disertakan (Checklist)\n c. Contoh Pengisian - Borang Permohonan Pentadbiran Harta Pusaka\n\n Terdapat fi pentadbiran yang dikenakan bagi pentadbiran harta pusaka ini.\n\n 5% x RM25,000 yang pertama\n 4% x RM225,000 yang berikutnya\n 3% x RM250,000 yang berikutnya\n 2% x RM500,000 yang berikutnya\n 1% x baki selebihnya\n\n Borang yang lengkap beserta dokumen yang diperlukan boleh dihantar ke mana-mana cawangan kami yang berdekatan untuk proses pembukaan fail pusaka. **{name}** boleh membuat temujanji di https://www.amanahraya.my/.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' },
+        ]
+    },
+    pusaka_my_pusaka_semenanjung_tidak_islam_ya_alih_sahaja: {
+        id: 'pusaka_my_pusaka_semenanjung_tidak_islam_ya_alih_sahaja',
+        message: `1. SIMATI\n a. Sijil Kematian asal Simati & 1 salinan\n b. Wasiat asal Simati & 1 salinan\n c. Sijil Faraid asal & 1 salinan (boleh dipohon di Mahkamah Syariah)\n\n 2. WARIS SIMATI\n a. 1 salinan Kad Pengenalan waris\n\n 3. HARTA ALIH (SEDIAKAN YANG BERKAITAN SAHAJA)\n a. 1 salinan Geran / Sijil Pemilikan Kenderaan (depan dan belakang) dan tidak mempunyai tanggungan / selesai pinjaman\n b. 1 salinan penyata akaun / buku simpanan akaun simati(ASB / Bank / Tabung Haji)\n c. 1 salinan penyata akaun semasa\n d. 1 salinan penyata / buku simpanan akaun bersama\n e. 1 salinan penyata Saham Bursa Malaysia\n f. 1 salinan penyata Deposit Tetap\n g. 1 salinan slip Peti Simpanan Selamat (Safe Deposit Box)\n h. 1 salinan sijil Saham Syarikat\n i. 1 salinan penyata KWSP\n j. 1 salinan polisi Insuran\n k. 1 salinan lesen vessel\n\n 4. HARTA TAK ALIH (SEDIAKAN YANG BERKAITAN SAHAJA)\n a. 1 salinan perjanjian jual beli (S&P) untuk rumah yang belum memilik hakmilik strata\n b. 1 salinan hakmilik strata rumah\n c. 1 salinan geran rumah\n d. 1 salinan geran tanah\n e. Resit asal cukai tanah terkini dan 1 salinan\n f. Resit asal cukai pintu terkini dan 1 salinan\n\n 5. MINIMUM DEPOSIT\n RM1000/hartanah\n\n 6. TEMPOH PENTADBIRAN\n 12 bulan dari tarikh pembukaan fail\n\n 7. BORANG YANG BERKAITAN\n a. Borang Permohonan Pentadbiran Harta Pusaka\n b. Senarai Semak Dokumen Yang Perlu Disertakan (Checklist)\n c. Contoh Pengisian - Borang Permohonan Pentadbiran Harta Pusaka\n\n Terdapat fi pentadbiran yang dikenakan bagi pentadbiran harta pusaka ini.\n\n 5% x RM25,000 yang pertama\n 4% x RM225,000 yang berikutnya\n 3% x RM250,000 yang berikutnya\n 2% x RM500,000 yang berikutnya\n 1% x baki selebihnya\n\n Borang yang lengkap beserta dokumen yang diperlukan boleh dihantar ke mana-mana cawangan kami yang berdekatan untuk proses pembukaan fail pusaka. **{name}** boleh membuat temujanji di https://www.amanahraya.my/.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' },
+        ]
+    },
+    pusaka_my_pusaka_semenanjung_tidak_islam_ya_tidak: {
+        id: 'pusaka_my_pusaka_semenanjung_tidak_islam_ya_tidak',
+        message: `Apakah harta yang ditinggalkan `,
+        options: [
+            { label: "1️⃣ Harta Alih sahaja (tidak melebihi RM100,000)", nextStep: 'pusaka_my_pusaka_semenanjung_tidak_islam_ya_tidak_tidak_melebihi_rm' },
+            { label: '2️⃣ Harta Alih sahaja(melebihi RM100,000)', nextStep: 'pusaka_my_pusaka_semenanjung_tidak_islam_ya_tidak_melebihi' },
+            { label: "3️⃣ Harta Alih dan Tak Alih / Hartax Tak Alih sahaja (jumlah melebihi RM5 juta)", nextStep: 'pusaka_my_pusaka_semenanjung_tidak_islam_ya_tidak_melebihi_rm5' },
+            { label: "4️⃣ Harta Alih dan Tak Alih / Harta Tak Alih sahaja (jumlah tidak melebihi RM5 juta)", nextStep: 'pusaka_my_pusaka_semenanjung_tidak_islam_ya_tidak_tidak_melebihi_rm5' },
+        ]
+    },
+    pusaka_my_pusaka_semenanjung_tidak_islam_ya_tidak_tidak_melebihi_rm: {
+        id: 'pusaka_my_pusaka_semenanjung_tidak_islam_ya_tidak_tidak_melebihi_rm',
+        message: `1. SIMATI\n a. Sijil Kematian asal Simati & 1 salinan\n b. 1 salinan Sijil Kelahiran Simati\n c. 1 salinan Sijil Perkahwinan/Perceraian (jika Simati berkahwin / bercerai)\n\n 2. WARIS SIMATI\n a. 1 salinan Kad Pengenalan dan Sijil Kelahiran waris\n b. 1 salinan Sijil Kematian (bagi waris yang meninggal sebelum / selepas simati)\n\n 3. AKUAN (PILIH YANG BERKAITAN SAHAJA)\n Perlu ditandatangan oleh saksi bebas di hadapan Pesuruhjaya Sumpah dan membuat penyeteman di laman web Lembaga Hasil Dalam Negeri (LHDN). Salinan kad pengenalan saksi perlu disertakan)\n a. Akuan Berkanun Bujang (jika Simati meninggal Bujang)\n b. Akuan Berkanun Kahwin - bagi Bukan Islam sahaja (jika perkahwinan Simati tidak didaftarkan)\n c. Akuan Tiada Zuriat (jika Simati tidak mempunyai anak)\n d. Akuan Waris Tunggal (jika Simati hanya meninggalkan seorang waris sahaja)\n\n 4. HARTA ALIH (SEDIAKAN YANG BERKAITAN SAHAJA)\n a. 1 salinan Geran / Sijil Pemilikan Kenderaan (depan dan belakang) dan tidak mempunyai tanggungan / selesai pinjaman\n b. 1 salinan penyata akaun / buku simpanan akaun simati (ASB / Bank / Tabung Haji)\n c. 1 salinan penyata akaun semasa\n d. 1 salinan penyata / buku simpanan akaun bersama\n e. 1 salinan penyata Saham Bursa Malaysia\n f. 1 salinan penyata Deposit Tetap\n g. 1 salinan slip Peti Simpanan Selamat (Safe Deposit Box)\n h. 1 salinan sijil Saham Syarikat\n i. 1 salinan penyata KWSP\n j. 1 salinan polisi Insuran\n k. 1 salinan lesen vessel\n\n 4. MINIMUM DEPOSIT\n RM50\n\n 5. TEMPOH PENTADBIRAN\n 4-6 bulan dari tarikh pembukaan fail\n\n 6. BORANG YANG BERKAITAN\n a. Borang Permohonan Pentadbiran Harta Pusaka\n b. Senarai Semak Dokumen Yang Perlu Disertakan (Checklist)\n c. Akuan Berkanun (Kahwin / Cerai / Tiada Zuriat / Waris Tunggal / Bujang)\n d. Contoh Pengisian - Borang Permohonan Pentadbiran Harta Pusaka\n e. Contoh Pengisian - Akuan Berkanun (Kahwin / Cerai / Tiada Zuriat / Waris Tunggal / Bujang)\n\n Terdapat fi pentadbiran yang dikenakan bagi pentadbiran harta pusaka ini.\n\n 5% x RM25,000 yang pertama\n 4% x RM225,000 yang berikutnya\n 3% x RM250,000 yang berikutnya\n 2% x RM500,000 yang berikutnya\n 1% x baki selebihnya\n\n Borang yang lengkap beserta dokumen yang diperlukan boleh dihantar ke mana-mana cawangan kami yang berdekatan untuk proses pembukaan fail pusaka. **{name}** boleh membuat temujanji di https://www.amanahraya.my/.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' },
+        ]
+    },
+    pusaka_my_pusaka_semenanjung_tidak_islam_ya_tidak_melebihi: {
+        id: 'pusaka_my_pusaka_semenanjung_tidak_islam_ya_tidak_melebihi',
+        message: `1. SIMATI\n a. Sijil Kematian asal Simati & 1 salinan\n b. Sijil Faraid asal & 1 salinan (boleh dipohon di Mahkamah Syariah)\n\n 2. WARIS SIMATI\n a. 1 salinan Kad Pengenalan waris\n\n 3. HARTA ALIH (SEDIAKAN YANG BERKAITAN SAHAJA)\n a. 1 salinan Geran / Sijil Pemilikan Kenderaan (depan dan belakang) dan tidak mempunyai tanggungan / selesai pinjaman\n b. 1 salinan penyata akaun / buku simpanan akaun simati (ASB / Bank / Tabung Haji)\n c. 1 salinan penyata akaun semasa\n d. 1 salinan penyata / buku simpanan akaun bersama\n e. 1 salinan penyata Saham Bursa Malaysia\n f. 1 salinan penyata Deposit Tetap\n g. 1 salinan slip Peti Simpanan Selamat (Safe Deposit Box)\n h. 1 salinan sijil Saham Syarikat\n i. 1 salinan penyata KWSP\n j. 1 salinan polisi Insuran\n k. 1 salinan lesen vessel\n\n 4. MINIMUM DEPOSIT\n a. RM50\n b. RM1000 (jika jumlah aset melebihi RM600,000)\n 5. TEMPOH PENTADBIRAN\n a. 6 bulan dari tarikh pembukaan fail\n b. 12 bulan dari tarikh pembukaan fail (jika jumlah aset melebihi RM600,000)\n\n 6. BORANG YANG BERKAITAN\n a. Borang Permohonan Pentadbiran Harta Pusaka\n b. Senarai Semak Dokumen Yang Perlu Disertakan (Checklist)\n c. Contoh Pengisian - Borang Permohonan Pentadbiran Harta Pusaka\n\n Terdapat fi pentadbiran yang dikenakan bagi pentadbiran harta pusaka ini.\n\n 5% x RM25,000 yang pertama\n 4% x RM225,000 yang berikutnya\n 3% x RM250,000 yang berikutnya\n 2% x RM500,000 yang berikutnya\n 1% x baki selebihnya\n\n Borang yang lengkap beserta dokumen yang diperlukan boleh dihantar ke mana-mana cawangan kami yang berdekatan untuk proses pembukaan fail pusaka. **{name}** boleh membuat temujanji di https://www.amanahraya.my/.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' },
+        ]
+    },
+    pusaka_my_pusaka_semenanjung_tidak_islam_ya_tidak_melebihi_rm5: {
+        id: 'pusaka_my_pusaka_semenanjung_tidak_islam_ya_tidak_melebihi_rm5',
+        message: `1. SIMATI\n a. Sijil Kematian asal Simati & 1 salinan\n b. Sijil Faraid asal & 1 salinan (boleh dipohon di Mahkamah Syariah)\n\n 2. WARIS SIMATI\n a. 1 salinan Kad Pengenalan waris\n\n 3. HARTA ALIH (SEDIAKAN YANG BERKAITAN SAHAJA)\n a. 1 salinan Geran / Sijil Pemilikan Kenderaan (depan dan belakang) dan tidak mempunyai tanggungan / selesai pinjaman\n b. 1 salinan penyata akaun / buku simpanan akaun simati (ASB / Bank / Tabung Haji)\n c. 1 salinan penyata akaun semasa\n d. 1 salinan penyata / buku simpanan akaun bersama\n e. 1 salinan penyata Saham Bursa Malaysia\n f. 1 salinan penyata Deposit Tetap\n g. 1 salinan slip Peti Simpanan Selamat (Safe Deposit Box)\n h. 1 salinan sijil Saham Syarikat\n i. 1 salinan penyata KWSP\n j. 1 salinan polisi Insuran\n k. 1 salinan lesen vessel\n\n 4. HARTA TAK ALIH (SEDIAKAN YANG BERKAITAN SAHAJA)\n a. 1 salinan perjanjian jual beli (S&P) untuk rumah yang belum memilik hakmilik strata\n b. 1 salinan hakmilik strata rumah\n c. 1 salinan geran rumah\n d. 1 salinan geran tanah\n e. Resit asal cukai tanah terkini dan 1 salinan\n f. Resit asal cukai pintu terkini dan 1 salinan\n\n 5. MINIMUM DEPOSIT\n RM1000/hartanah\n\n 6. TEMPOH PENTADBIRAN\n 12 bulan dari tarikh pembukaan fail\n\n 7. BORANG YANG BERKAITAN\n a. Borang Permohonan Pentadbiran Harta Pusaka\n b. Senarai Semak Dokumen Yang Perlu Disertakan (Checklist)\n c. Contoh Pengisian - Borang Permohonan Pentadbiran Harta Pusaka\n\n Terdapat fi pentadbiran yang dikenakan bagi pentadbiran harta pusaka ini.\n\n 5% x RM25,000 yang pertama\n 4% x RM225,000 yang berikutnya\n 3% x RM250,000 yang berikutnya\n 2% x RM500,000 yang berikutnya\n 1% x baki selebihnya\n\n Borang yang lengkap beserta dokumen yang diperlukan boleh dihantar ke mana-mana cawangan kami yang berdekatan untuk proses pembukaan fail pusaka. **{name}** boleh membuat temujanji di https://www.amanahraya.my/.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' },
+        ]
+    },
+    pusaka_my_pusaka_semenanjung_tidak_islam_ya_tidak_tidak_melebihi_rm5: {
+        id: 'pusaka_my_pusaka_semenanjung_tidak_islam_ya_tidak_tidak_melebihi_rm5',
+        message: `1. SIMATI\n a. Sijil Kematian asal Simati & 1 salinan\n b. 1 salinan Sijil Kelahiran Simati\n c. 1 salinan Sijil Perkahwinan/Perceraian (jika Simati berkahwin / bercerai)\n\n 2. WARIS SIMATI\n a. 1 salinan Kad Pengenalan dan Sijil Kelahiran waris\n b. 1 salinan Sijil Kematian (bagi waris yang meninggal sebelum / selepas simati)\n\n 3. AKUAN (PILIH YANG BERKAITAN SAHAJA) Perlu ditandatangan oleh saksi bebas di hadapan Pesuruhjaya Sumpah dan membuat penyeteman di laman web Lembaga Hasil Dalam Negeri (LHDN). Salinan kad pengenalan saksi perlu disertakan)\n a. Akuan Berkanun Bujang (jika Simati meninggal Bujang)\n b. Akuan Berkanun Kahwin - bagi Bukan Islam sahaja (jika perkahwinan Simati tidak didaftarkan)\n c. Akuan Tiada Zuriat (jika Simati tidak mempunyai anak)\n d. Akuan Waris Tunggal (jika Simati hanya meninggalkan seorang waris sahaja)\n\n 4. HARTA ALIH (SEDIAKAN YANG BERKAITAN SAHAJA)\n a. 1 salinan Geran / Sijil Pemilikan Kenderaan (depan dan belakang) dan tidak mempunyai tanggungan / selesai pinjaman\n b. 1 salinan penyata akaun / buku simpanan akaun simati (ASB / Bank / Tabung Haji)\n c. 1 salinan penyata akaun semasa\n d. 1 salinan penyata / buku simpanan akaun bersama\n e. 1 salinan penyata Saham Bursa Malaysia\n f. 1 salinan penyata Deposit Tetap\n g. 1 salinan slip Peti Simpanan Selamat (Safe Deposit Box)\n h. 1 salinan sijil Saham Syarikat\n i. 1 salinan penyata KWSP\n j. 1 salinan polisi Insuran\n k. 1 salinan lesen vessel\n 5. HARTA TAK ALIH (SEDIAKAN YANG BERKAITAN SAHAJA)\n a. 1 salinan perjanjian jual beli (S&P) untuk rumah yang\n belum memilik hakmilik strata\n b. 1 salinan hakmilik strata rumah\n c. 1 salinan geran rumah\n d. 1 salinan geran tanah\n e. Resit asal cukai tanah terkini dan 1 salinan\n f. Resit asal cukai pintu terkini dan 1 salinan\n\n 6. MINIMUM DEPOSIT\n RM300/hartanah\n\n 7. TEMPOH PENTADBIRAN\n 12 bulan dari tarikh pembukaan fail\n\n 8. BORANG YANG BERKAITAN\n a. Borang Permohonan Pentadbiran Harta Pusaka\n b. Senarai Semak Dokumen Yang Perlu Disertakan (Checklist)\n c. Akuan Berkanun (Kahwin / Cerai / Tiada Zuriat / Waris Tunggal / Bujang)\n d. Contoh Pengisian - Borang Permohonan Pentadbiran Harta Pusaka\n e. Contoh Pengisian - Akuan Berkanun (Kahwin / Cerai / Tiada Zuriat / Waris Tunggal / Bujang)\n\n Terdapat fi pentadbiran yang dikenakan bagi pentadbiran harta pusaka ini. 2% x jumlah aset simati\n\n Borang yang lengkap beserta dokumen yang diperlukan boleh dihantar ke mana-mana cawangan kami yang berdekatan untuk proses pembukaan fail pusaka. **{name}** boleh membuat temujanji di https://www.amanahraya.my/.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' },
+        ]
+    },
+    pusaka_my_pusaka_semenanjung_tidak_bukan_islam: {
+        id: 'pusaka_my_pusaka_semenanjung_tidak_bukan_islam',
+        message: `Adakah Simati mempunyai wasiat?`,
+        options: [
+            { label: '1️⃣ Ya', nextStep: ' pusaka_my_pusaka_semenanjung_tidak_bukan_islam_ya' },
+            { label: '2️⃣ Tidak', nextStep: ' pusaka_my_pusaka_semenanjung_tidak_bukan_islam_tidak' },
+        ]
+    },
+    pusaka_my_pusaka_semenanjung_tidak_bukan_islam_ya: {
+        id: 'pusaka_my_pusaka_semenanjung_tidak_bukan_islam_ya',
+        message: `Apakah harta yang ditinggalkan oleh simati?`,
+        options: [
+            { label: '1️⃣ Harta Alih sahaja', nextStep: ' pusaka_my_pusaka_semenanjung_tidak_bukan_islam_ya_sahaja' },
+            { label: '2️⃣ Harta Alih dan Tak Alih / Harta Tak Alih sahaja', nextStep: 'pusaka_my_pusaka_semenanjung_tidak_bukan_islam_ya_harta_dan_tak' },
+        ]
+    },
+    pusaka_my_pusaka_semenanjung_tidak_bukan_islam_ya_sahaja: {
+        id: 'pusaka_my_pusaka_semenanjung_tidak_bukan_islam_ya_sahaja',
+        message: `1. SIMATI\n a. Sijil Kematian asal Simati & 1 salinan\n b. Wasiat asal Simati & 1 salinan\n\n 2. WARIS SIMATI\n a. 1 salinan Kad Pengenalan penerima wasiat\n\n 3. HARTA ALIH (SEDIAKAN YANG BERKAITAN SAHAJA)\n a. 1 salinan Geran / Sijil Pemilikan Kenderaan (depan dan belakang) dan tidak mempunyai tanggungan / selesai pinjaman\n b. 1 salinan penyata akaun / buku simpanan akaun simati (ASB / Bank)\n c. 1 salinan penyata akaun semasa\n d. 1 salinan penyata / buku simpanan akaun bersama\n e. 1 salinan penyata Saham Bursa Malaysia\n f. 1 salinan penyata Deposit Tetap\n g. 1 salinan slip Peti Simpanan Selamat (Safe Deposit Box)\n h. 1 salinan sijil Saham Syarikat\n i. 1 salinan penyata KWSP\n j. 1 salinan polisi Insuran\n k. 1 salinan lesen vessel\n\n 4. MINIMUM DEPOSIT\n a. RM50\n b. RM1000 (jika jumlah aset melebihi RM600,000)\n\n 5. TEMPOH PENTADBIRAN\n a. 4 - 6 bulan dari tarikh pembukaan fail\n b. 12 bulan dari tarikh pembukaan fail (jika jumlah aset melebihi RM600,000)\n\n 6. BORANG YANG BERKAITAN\n a. Borang Permohonan Pentadbiran Harta Pusaka\n b. Senarai Semak Dokumen Yang Perlu Disertakan (Checklist)\n c. Contoh Pengisian - Borang Permohonan Pentadbiran Harta Pusaka\n\n Terdapat fi pentadbiran yang dikenakan bagi pentadbiran harta pusaka ini.\n\n 5% x RM25,000 yang pertama\n 4% x RM225,000 yang berikutnya\n 3% x RM250,000 yang berikutnya\n 2% x RM500,000 yang berikutnya\n 1% x baki selebihnya\n\n Borang yang lengkap beserta dokumen yang diperlukan boleh dihantar ke mana-mana cawangan kami yang berdekatan untuk proses pembukaan fail pusaka. **{name}** boleh membuat temujanji di https://www.amanahraya.my/.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' },
+        ]
+    },
+    pusaka_my_pusaka_semenanjung_tidak_bukan_islam_ya_harta_dan_tak: {
+        id: 'pusaka_my_pusaka_semenanjung_tidak_bukan_islam_ya_harta_dan_tak',
+        message: `1. SIMATI\n a. Sijil Kematian asal Simati & 1 salinan\n b. Wasiat asal Simati & 1 salinan\n c. Sijil Faraid asal & 1 salinan (boleh dipohon di Mahkamah Syariah)\n\n 2. WARIS SIMATI\n a. 1 salinan Kad Pengenalan waris\n\n 3. HARTA ALIH (SEDIAKAN YANG BERKAITAN SAHAJA)\n a. 1 salinan Geran / Sijil Pemilikan Kenderaan (depan dan belakang) dan tidak mempunyai tanggungan / selesai pinjaman\n b. 1 salinan penyata akaun / buku simpanan akaun simati (ASB / Bank)\n c. 1 salinan penyata akaun semasa\n d. 1 salinan penyata / buku simpanan akaun bersama\n e. 1 salinan penyata Saham Bursa Malaysia\n f. 1 salinan penyata Deposit Tetap\n g. 1 salinan slip Peti Simpanan Selamat (Safe Deposit Box)\n h. 1 salinan sijil Saham Syarikat\n i. 1 salinan penyata KWSP\n j. 1 salinan polisi Insuran\n k. 1 salinan lesen vessel\n\n 4. HARTA TAK ALIH (SEDIAKAN YANG BERKAITAN SAHAJA)\n a. 1 salinan perjanjian jual beli (S&P) untuk rumah yang belum memilik hakmilik strata\n b. 1 salinan hakmilik strata rumah\n c. 1 salinan geran rumah\n d. 1 salinan geran tanah\n e. Resit asal cukai tanah terkini dan 1 salinan\n f. Resit asal cukai pintu terkini dan 1 salinan\n\n 5. MINIMUM DEPOSIT\n RM1000/hartanah\n\n 6. TEMPOH PENTADBIRAN\n 12 bulan dari tarikh pembukaan fail (jika jumlah aset melebihi RM600,000)\n\n 7. BORANG YANG BERKAITAN\n a. Borang Permohonan Pentadbiran Harta Pusaka\n b. Senarai Semak Dokumen Yang Perlu Disertakan (Checklist)\n c. Contoh Pengisian - Borang Permohonan Pentadbiran Harta Pusaka\n\n Terdapat fi pentadbiran yang dikenakan bagi pentadbiran harta pusaka ini.\n\n 5% x RM25,000 yang pertama\n 4% x RM225,000 yang berikutnya\n 3% x RM250,000 yang berikutnya\n 2% x RM500,000 yang berikutnya\n 1% x baki selebihnya\n\n Borang yang lengkap beserta dokumen yang diperlukan boleh dihantar ke mana-mana cawangan kami yang berdekatan untuk proses pembukaan fail pusaka. **{name}** boleh membuat temujanji di https://www.amanahraya.my/.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' },
+        ]
+    },
+    pusaka_my_pusaka_semenanjung_tidak_bukan_islam_tidak: {
+        id: 'pusaka_my_pusaka_semenanjung_tidak_bukan_islam_tidak',
+        message: `Apakah harta yang ditinggalkan oleh simati?`,
+        options: [
+            { label: "1️⃣ Harta Alih sahaja", nextStep: 'pusaka_my_pusaka_semenanjung_tidak_bukan_islam_tidak_alih' },
+            { label: '2️⃣ Harta Alih dan Tak Alih / Harta Tak Alih sahaja (jumlah melebihi RM5 juta)', nextStep: 'pusaka_my_pusaka_semenanjung_tidak_bukan_islam_tidak_melbihi_rm5' },
+            { label: "3️⃣ Harta Alih dan Tak Alih / Harta Tak Alih sahaja (jumlah tidak melebihi RM5 juta)", nextStep: 'pusaka_my_pusaka_semenanjung_tidak_bukan_islam_tidak_tidak_melbihi_rm5' },
+        ]
+    },
+    pusaka_my_pusaka_semenanjung_tidak_bukan_islam_tidak_alih: {
+        id: 'pusaka_my_pusaka_semenanjung_tidak_bukan_islam_tidak_alih',
+        message: `1. SIMATI\n a. Sijil Kematian asal Simati & 1 salinan\n b. 1 salinan Sijil Kelahiran Simati\n c. 1 salinan Sijil Perkahwinan/Perceraian (jika Simati berkahwin / bercerai)\n\n 2. WARIS SIMATI\n a. 1 salinan Kad Pengenalan dan Sijil Kelahiran waris\n b. 1 salinan Sijil Kematian (bagi waris yang meninggal sebelum / selepas simati)\n\n 3. AKUAN (SEDIAKAN YANG BERKAITAN SAHAJA) Perlu ditandatangan oleh saksi bebas di hadapan Pesuruhjaya Sumpah dan membuat penyeteman di laman web Lembaga Hasil Dalam Negeri (LHDN). Salinan kad pengenalan saksi perlu disertakan)\n a. Akuan Berkanun Bujang (jika Simati meninggal Bujang)\n b. Akuan Berkanun Kahwin (jika perkahwinan Simati tidak didaftarkan)\n c. Akuan Tiada Zuriat (jika Simati tidak mempunyai anak)\n d. Akuan Waris Tunggal (jika Simati hanya meninggalkan seorang waris sahaja)\n\n 4. HARTA ALIH (SEDIAKAN YANG BERKAITAN SAHAJA)\n a. 1 salinan Geran / Sijil Pemilikan Kenderaan (depan dan belakang) dan tidak mempunyai tanggungan / selesai pinjaman\n b. 1 salinan penyata akaun / buku simpanan akaun simati (ASB / Bank / Tabung Haji)\n c. 1 salinan penyata akaun semasa\n d. 1 salinan penyata / buku simpanan akaun bersama\n e. 1 salinan penyata Saham Bursa Malaysia\n f. 1 salinan penyata Deposit Tetap\n g. 1 salinan slip Peti Simpanan Selamat (Safe Deposit Box)\n h. 1 salinan sijil Saham Syarikat\n i. 1 salinan penyata KWSP\n j. 1 salinan polisi Insuran\n k. 1 salinan lesen vessel\n\n 4. MINIMUM DEPOSIT\n a. RM50\n b. RM1000 (jika jumlah aset melebihi RM600,000)\n\n 5. TEMPOH PENTADBIRAN\n a. 4 - 6 bulan dari tarikh pembukaan fail\n b. 12 bulan dari tarikh pembukaan fail (jika jumlah aset melebihi RM600,000)\n\n 6. BORANG YANG BERKAITAN\n a. Borang Permohonan Pentadbiran Harta Pusaka\n b. Senarai Semak Dokumen Yang Perlu Disertakan (Checklist)\n c. Akuan Berkanun (Kahwin / Cerai / Tiada Zuriat / Waris Tunggal / Bujang)\n d. Contoh Pengisian - Borang Permohonan Pentadbiran Harta Pusaka\n e. Contoh Pengisian - Akuan Berkanun (Kahwin / Cerai / Tiada Zuriat / Waris Tunggal / Bujang)\n\n Terdapat fi pentadbiran yang dikenakan bagi pentadbiran harta pusaka ini.\n 5% x RM25,000 yang pertama\n 4% x RM225,000 yang berikutnya\n 3% x RM250,000 yang berikutnya\n 2% x RM500,000 yang berikutnya\n 1% x baki selebihnya\n\n Borang yang lengkap beserta dokumen yang diperlukan boleh dihantar ke mana-mana cawangan kami yang berdekatan untuk proses pembukaan fail pusaka. **{name}** boleh membuat temujanji di https://www.amanahraya.my/.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' },
+        ]
+    },
+    pusaka_my_pusaka_semenanjung_tidak_bukan_islam_tidak_melbihi_rm5: {
+        id: 'pusaka_my_pusaka_semenanjung_tidak_bukan_islam_tidak_melbihi_rm5',
+        message: `1. SIMATI\n a. Sijil Kematian asal Simati & 1 salinan\n b. 1 salinan Sijil Kelahiran Simati\n c. 1 salinan Sijil Perkahwinan/Perceraian (jika Simati berkahwin / bercerai)\n\n2. WARIS SIMATI\n a. 1 salinan Kad Pengenalan dan Sijil Kelahiran waris\n b. 1 salinan Sijil Kematian (bagi waris yang meninggal sebelum / selepas simati)\n\n 3. AKUAN (SEDIAKAN YANG BERKAITAN SAHAJA) Perlu ditandatangan oleh saksi bebas di hadapan Pesuruhjaya Sumpah dan membuat penyeteman di laman web Lembaga Hasil Dalam Negeri (LHDN). Salinan kad pengenalan saksi perlu disertakan)\n a. Akuan Berkanun Bujang (jika Simati meninggal Bujang)\n b. Akuan Berkanun Kahwin (jika perkahwinan Simati tidak didaftarkan)\n c. Akuan Tiada Zuriat (jika Simati tidak mempunyai anak)\n d. Akuan Waris Tunggal (jika Simati hanya meninggalkan seorang waris sahaja)\n\n 4. HARTA ALIH (SEDIAKAN YANG BERKAITAN SAHAJA)\n a. 1 salinan Geran / Sijil Pemilikan Kenderaan (depan dan belakang) dan tidak mempunyai tanggungan / selesai pinjaman\n b. 1 salinan penyata akaun / buku simpanan akaun simati (ASB / Bank / Tabung Haji)\n c. 1 salinan penyata akaun semasa\n d. 1 salinan penyata / buku simpanan akaun bersama\n e. 1 salinan penyata Saham Bursa Malaysia\n f. 1 salinan penyata Deposit Tetap\n g. 1 salinan slip Peti Simpanan Selamat (Safe Deposit Box)\n h. 1 salinan sijil Saham Syarikat\n i. 1 salinan penyata KWSP\n j. 1 salinan polisi Insuran\n k. 1 salinan lesen vessel\n\n 5. HARTA TAK ALIH (SEDIAKAN YANG BERKAITAN SAHAJA)\n a. 1 salinan perjanjian jual beli (S&P) untuk rumah yang belum memilik hakmilik strata\n b. 1 salinan hakmilik strata rumah\n c. 1 salinan geran rumah\n d. 1 salinan geran tanah\n e. Resit asal cukai tanah terkini dan 1 salinan\n f. Resit asal cukai pintu terkini dan 1 salinan\n\n 6. MINIMUM DEPOSIT RM1000/hartanah\n\n 7. TEMPOH PENTADBIRAN\n 12 bulan dari tarikh pembukaan fail\n\n 8. BORANG YANG BERKAITAN\n a. Borang Permohonan Pentadbiran Harta Pusaka\n b. Senarai Semak Dokumen Yang Perlu Disertakan (Checklist)\n c. Akuan Berkanun (Kahwin / Cerai / Tiada Zuriat / Waris Tunggal / Bujang)\n d. Contoh Pengisian - Borang Permohonan Pentadbiran Harta Pusaka\n e. Contoh Pengisian - Akuan Berkanun (Kahwin / Cerai / Tiada Zuriat / Waris Tunggal / Bujang)\n\n Terdapat fi pentadbiran yang dikenakan bagi pentadbiran harta pusaka ini.\n 5% x RM25,000 yang pertama\n 4% x RM225,000 yang berikutnya\n 3% x RM250,000 yang berikutnya\n 2% x RM500,000 yang berikutnya\n 1% x baki selebihnya\n\n Borang yang lengkap beserta dokumen yang diperlukan boleh dihantar ke mana-mana cawangan kami yang berdekatan untuk proses pembukaan fail pusaka. **{name}** boleh membuat temujanji di https://www.amanahraya.my/.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' },
+        ]
+    },
+    pusaka_my_pusaka_semenanjung_tidak_bukan_islam_tidak_tidak_melbihi_rm5: {
+        id: 'pusaka_my_pusaka_semenanjung_tidak_bukan_islam_tidak_tidak_melbihi_rm5',
+        message: `1. SIMATI\n a. Sijil Kematian asal Simati & 1 salinan\n b. 1 salinan Sijil Kelahiran Simati\n c. 1 salinan Sijil Perkahwinan/Perceraian (jika Simati berkahwin / bercerai)\n\n 2. WARIS SIMATI\n a. 1 salinan Kad Pengenalan dan Sijil Kelahiran waris\n b. 1 salinan Sijil Kematian (bagi waris yang meninggal sebelum / selepas simati)\n\n 3. AKUAN (SEDIAKAN YANG BERKAITAN SAHAJA) Perlu ditandatangan oleh saksi bebas di hadapan Pesuruhjaya Sumpah dan membuat penyeteman di laman web Lembaga Hasil Dalam Negeri (LHDN). Salinan kad pengenalan saksi perlu disertakan)\n a. Akuan Berkanun Bujang (jika Simati meninggal Bujang)\n b. Akuan Berkanun Kahwin (jika perkahwinan Simati tidak didaftarkan)\n c. Akuan Tiada Zuriat (jika Simati tidak mempunyai anak)\n d. Akuan Waris Tunggal (jika Simati hanya meninggalkan seorang waris sahaja)\n\n 4. HARTA ALIH (SEDIAKAN YANG BERKAITAN SAHAJA)\n a. 1 salinan Geran / Sijil Pemilikan Kenderaan (depan dan belakang) dan tidak mempunyai tanggungan / selesai pinjaman\n b. 1 salinan penyata akaun / buku simpanan akaun simati (ASB / Bank / Tabung Haji)\n c. 1 salinan penyata akaun semasa\n d. 1 salinan penyata / buku simpanan akaun bersama\n e. 1 salinan penyata Saham Bursa Malaysia\n f. 1 salinan penyata Deposit Tetap\n g. 1 salinan slip Peti Simpanan Selamat (Safe Deposit Box)\n h. 1 salinan sijil Saham Syarikat\n i. 1 salinan penyata KWSP\n j. 1 salinan polisi Insuran\n k. 1 salinan lesen vessel\n\n 5. HARTA TAK ALIH (SEDIAKAN YANG BERKAITAN SAHAJA)\na. 1 salinan perjanjian jual beli (S&P) untuk rumah yang belum memilik hakmilik strata\n b. 1 salinan hakmilik strata rumah\n c. 1 salinan geran rumah\n d. 1 salinan geran tanah\n e. Resit asal cukai tanah terkini dan 1 salinan\n f. Resit asal cukai pintu terkini dan 1 salinan\n\n 6. MINIMUM DEPOSIT\n a. RM300/hartanah\n\n 7. TEMPOH PENTADBIRAN\n 12 bulan dari tarikh pembukaan fail\n\n 8. BORANG YANG BERKAITAN\n a. Borang Permohonan Pentadbiran Harta Pusaka\n b. Senarai Semak Dokumen Yang Perlu Disertakan (Checklist)\n c. Akuan Berkanun (Kahwin / Cerai / Tiada Zuriat / Waris Tunggal / Bujang)\n d. Contoh Pengisian - Borang Permohonan Pentadbiran Harta Pusaka\n e. Contoh Pengisian - Akuan Berkanun (Kahwin / Cerai / Tiada Zuriat / Waris Tunggal / Bujang)\n\n Terdapat fi pentadbiran yang dikenakan bagi pentadbiran harta pusaka ini. 2% x jumlah aset simati\n\n Borang yang lengkap beserta dokumen yang diperlukan boleh dihantar ke mana-mana cawangan kami yang berdekatan untuk proses pembukaan fail pusaka. **{name}** boleh membuat temujanji di https://www.amanahraya.my/.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' },
+        ]
+    },
+    pusaka_my_borang: {
+        id: 'pusaka_my_borang',
+        message: `Sila pilih borang yang diperlukan\n\n 1. [Borang Permohonan Pentadbiran Harta Pusaka](https://drive.google.com/file/d/1KziGKpTnw4eLp_8FHup-SCAEQM625tnc/view?usp=sharing)\n 2. [Senarai Semakan Dokumen](https://drive.google.com/file/d/1HedU88RKdbxcU3fjtU8nUQUxxvi7xIoR/view)\n 3. [Surat Persetujuan Penolakan](https://drive.google.com/file/d/1Iw5PPCU704RCX55T7_fNZ7iPFh1McT08/view)\n 4. [Akuan Berkanun Kematian](https://drive.google.com/file/d/14vpHwW7ifhdYAXTkaF0dvOqch-pDvkvb/view)\n 5. [Akuan Berkanun (Kahwin / Cerai / Tiada Zuriat / Waris Tunggal / Bujang)](https://drive.google.com/file/d/1sq7N2VPONYdnATA-Fm8_UC8mQ-beMr5H/view)\n 6. [Surat Akujanji dan Tanggung Rugi Bagi Pindahmilik Kenderaan](https://drive.google.com/file/d/1TYJJ-O_mkuioqCmnCkper8vQuqTYA7Zl/view)\n 7. [Borang Pengesahan Akaun Bank Penerima](https://drive.google.com/file/d/1wGZeu1tu3kUgscM6XVOWS5dmjRFfmQNv/view)\n 8. [Akuan Pindahmilik Kenderaan](https://drive.google.com/file/d/1Nwhv0lP2pCcNgKMbUkRQ3e4ZrmHfPZUp/view)\n 9. [Borang Permohonan Pusaka Aset / Liabiliti Tambahan](https://drive.google.com/file/d/1sMYoAe-0iOpgoTc-U50FwTi9-zsbshOO/view)\n 10. [Surat Nilaian Kenderaan](https://drive.google.com/file/d/1P3Ur3CKLcQXVNs9bjhpCkP17vnmzydt6/view)`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' },
+        ]
+    },
+    // Hibah BM starts from here
+    hibah_my: {
+        id: 'hibah_my',
+        message: `Baiklah. Sebelum ARIA beri penerangan yang lebih lanjut, berikut adalah konsep dan rukun bagi produk hibah.\n\n Konsep Hibah\n 1. Pemberian milikan harta seseorang kepada seseorang yang lain, semasa hidupnya secara sukarela tanpa mengharapkan balasan.\n 2. Harta diamanahkan kepada ARB sebagai pemegang amanah untuk suatu tempoh tertentu berdasarkan Surat Ikatan Hibah dan Surat Ikatan Amanah.\n 3. Akad akan dilakukan bagi mengisytiharkan Penghibah menghibahkan hartanya kepada Penerima Hibah.\n 4. Hibah tidak boleh ditarik balik melainkan Hibah yang dibuat oleh ibu/bapa/datuk/nenek kepada anak/cucu.\n 5. Sekiranya berlaku kematian kepada Penerima Hibah, harta yang dihibahkan menjadi harta pusaka Penerima Hibah dan tidak akan dikembalikan kepada Penghibah kecuali melalui kaedah yang dibenarkan oleh hukum syarak / undang-undang.\n\n Rukun Hibah\n 1. Penghibah\n a) Individu (berusia 18 tahun dan ke atas) / Pertubuhan\n b) Sempurna akal, baligh, rasyid dan tidak muflis.\n c) Boleh terdiri daripada Islam dan Bukan Islam\n d) Bukan dalam keadaan sakit yang boleh membawa kematian\n\n 2. Penerima Hibah\n a) Individu / Pertubuhan\n b) Penerima Hibah bawah umur boleh menerima Harta Hibah melalui Wali Mal.\n c) Boleh terdiri daripada Islam dan Bukan Islam\n\n 3. Harta yang dihibahkan\n a) Milikan penuh Penghibah\n b) Boleh dipindahmilik (tiada sekatan)\n c) Wujud ketika akad dibuat\n d) Harta dikenalpasti\n e) Mempunyai nilai\n\n 4. Sighah (Ijab dan Qabul)\n a) Ijab - Penghibah isytiharkan pemberian harta kepada Penerima.\n b) Qabul - Penerima Hibah menerima harta tersebut.\n c) Mesti dilakukan dalam satu majlis akad.\n d) Perlu melantik Wali Mal jika penerima adalah bawah umur atau OKU\n\n 5. Penerimaan (Qabd)\n a) Penerima Hibah berkuasa berurusan dengan harta yang diterima.\n b) Qabd dilakukan secara aktual (nyata) atau pemindahan secara perundangan\n\n Boleh ARIA tahu jenisharta yang ingin dihibahkan?`,
+        options: [
+            { label: '1️⃣ Tunai', nextStep: 'hibah_my_tunai' },
+            { label: '2️⃣ Hartanah', nextStep: 'hibah_my_hartanah' },
+        ]
+    },
+    hibah_my_tunai: {
+        id: 'hibah_my_tunai',
+        message: `Bagi aset tunai, **{name}** perlu depositkan sejumlah wang yang ingin diberikan tersebut ke akaun ARB\n\n AMANAH HIBAH TUNAI\n 1. MODAL MINIMUM RM20,000.00\n\n 2. HARTA YANG BOLEH DIAMANAHKAN Harta Alih (Tunai sahaja)\n 3. TEMPOH PERAMANAHAN Mengikut SuratIkatan Amanah Hibah\n 4. AGIHAN KEUNTUNGAN\n 3.00% setahun\n\n 5. DOKUMEN YANG DIPERLUKAN\n a. Borang Permohonan Pembukaan Hibah\n b. Salinan Kad Pengenalan Penghibah\n c. Salinan Kad Pengenalan Penerima Hibah\n d. Salinan Kad Pengenalan Wali Mal dan Penjaga (sekiranya berkaitan).\n\n 6. BORANG YANG BERKAITAN\n a. Borang Permohonan Hibah AmanahRaya\n b. Contoh Pengisian - Borang Permohonan Hibah AmanahRaya`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' },
+        ]
+    },
+    hibah_my_hartanah: {
+        id: 'hibah_my_hartanah',
+        message: `Bagi aset hartanah, ianya mesti bebas daripada segala hutang dan geran hartanah adalah milik **{name}**. Hartanah akan dipindahmilik kepada ARB sebagai pemegang amanah dan geran asal akan disimpan oleh ARB.\n\n Adakah hartanah yang ingin diberikan telah bebas daripada hutang dan geran tersebut milik **{name}**?`,
+        options: [
+            { label: '1️⃣ Bebas hutang dan geran milik saya', nextStep: 'hibah_my_hartanah_bebas' },
+            { label: '2️⃣ Masih berhutang dan geran milik saya', nextStep: 'hibah_my_hartanah_masih' },
+        ]
+    },
+    hibah_my_hartanah_bebas: {
+        id: 'hibah_my_hartanah_bebas',
+        message: `Bagi produk ini, beberapa perkara yang perlu diambil perhatian:\n 1. Penilaian semasa hartanah akan dibuat oleh ARB di Jabatan Penilaian dan Perkhidmatan Harta (JPPH).\n 2. Geran hartanah akan didaftarkan di atas nama ARB (sebagai Pemegang Amanah) dan akan disimpan oleh ARB.\n 3. Cukai tanah dan taksiran masih kekal perlu dijelaskan oleh Penghibah.\n 4. Duti Setem akan diselesaikan oleh Penghibah ketika hayat beliau. Namun, sekiranya belum dilakukan, Penerima Hibah perlu membayarnya terlebih dahulu sebelum pindahmilik dibuat.\n 5. Hartanah akan dipindahmilik kepada Penerima Hibah selepas kematian Penghibah atau seperti mana yang termaktub di dalam SuratIkatan Amanah Hibah.\n 6. Sekiranya terdapat sekatan, kelulusan perlu didapatkan terlebih dahulu daripada Pihak Berkuasa Negeri untuk pindahmilik kepada ARB sebagai Pemegang Amanah.\n\n AMANAH HIBAH HARTANAH\n\n 1. DEPOSIT\n RM1,240 / hartanah\n\n 2. PENDERMA & BENEFISIARI\n Mana-mana individu, agensi, pertubuhan atau syarikat.\n\n 3. DUTI SETEM\n Seperti yang akan ditaksirkan oleh LHDN\n\n 4. DOKUMEN YANG DIPERLUKAN\n a) Salinan Kad Pengenalan Penghibah\n b) Salinan Kad Pengenalan Penerima Hibah\n c) Salinan Kad Pengenalan Wali Mal dan Penjaga (sekiranya berkaitan)\n d) Salinan geran hartanah, bil cukai tanah dan taksiran terkini\n\n 5. BORANG YANG BERKAITAN\n a. Borang Permohonan Hibah AmanahRaya\n b. Contoh Pengisian - Borang Permohonan Hibah AmanahRaya\n\n Sila hadir ke mana-mana kaunter cawangan kami yang berdekatan untuk membuat bayaran dengan membawa dokumen yang diperlukan. Bayaran boleh dibuat secara tunai (terhad kepada RM5,000), cek, kad debit/kredit atau pindahan wang atas talian. **{name}** boleh buat temujanji di https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m\n\n Maklumat cawangan boleh didapati di https://www.amanahraya.my/contact-us/branch-locator/ \n\n 1. Pada tarikh temujanji, rundingan dan khidmat nasihat boleh dibuat bersama pegawai kami.\n 2. Serahan dokumen dan pembayaran boleh dilakukan pada hari yang sama.\n 3. **{name}** akan dihubungi oleh pegawai cawangan bagi penyediaan Surat Ikatan Amanah.\n\n Ada apa-apa lagi yang boleh ARIA bantu?`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' },
+        ]
+    },
+    hibah_my_hartanah_masih: {
+        id: 'hibah_my_hartanah_masih',
+        message: `Bagi aset yang masih mempunyai hutang, anda boleh memilih produk yang lain iaitu Hibahku.\n\n Adakah **{name}** berminat untuk tahu lebih lanjut?`,
+        options: [
+            { label: '1️⃣ Ya, saya nak tahu berkenaan HibahKu', nextStep: 'hibahku_my' },
+            { label: '2️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' },
+        ]
+    },
+    // Hibuku BM starts from here
+    hibahku_my: {
+        id: 'hibahku_my',
+        message: `KONSEP HIBAH\n 1. Pemberian milikan harta seseorang kepada seseorang yang lain, semasa hidupnya secara sukarela tanpa mengharapkan balasan.\n 2. Akad akan dilakukan bagi mengisytiharkan Penghibah menghibahkan hartanya kepada Penerima Hibah.\n 3. Hibah tidak boleh ditarik balik melainkan Hibah yang dibuat oleh ibu/bapa/datuk/nenek kepada anak/cucu.\n 5. Sekiranya berlaku kematian kepada Penerima Hibah, harta yang dihibahkan menjadi harta pusaka Penerima Hibah dan tidak akan dikembalikan kepada Penghibah kecuali melalui kaedah yang dibenarkan oleh hukum syarak / undang-undang.\n\n Untuk makluman, bagi produk Hibahku, **{name}** boleh menghibahkan aset berikut kepada orang yang dihajatkan:\n i) Hartanah (bebas/masih hutang)\n ii) Kenderaan (bebas/masih hutang)\n iii) Akaun simpanan bersama di mana-mana bank (hanya dibenarkan untuk Negeri Selangor sahaja)\n\n **{name}** berhasrat untuk bagi harta apa?`,
+        options: [
+            { label: "1️⃣ Hartanah dan/atau kenderaan dan tunai di bank", nextStep: 'hibahku_my_tunai' },
+            { label: '2️⃣ Hartanah dan/atau kenderaan sahaja', nextStep: 'hibahku_my_hartanah' },
+            { label: "3️⃣ Tunai di bank sahaja", nextStep: 'hibahku_my_tunai_sahaja' },
+        ]
+    },
+    hibahku_my_tunai: {
+        id: 'hibahku_my_tunai',
+        message: `Tunai di Bank\n 1. Akaun yang dibenarkan adalah akaun bersama antara Penghibah dan Penerima Hibah sahaja.\n 2. Hanya dibenarkan untuk harta tunai di Negeri Selangor sahaja.\n 3. Simpanan di ASNB dan Tabung Haji adalah terkecuali.\n\n Hartanah\n 1. Bebas daripada segala hutang\n 2. Jika masih berhutang, hartanah mestilah mempunyai\n perlindungan insurans penuh (MRTA/MRTT).\n 3. Hartanah adalah milik Penghibah.\n 4. Boleh dipindahmilik (tiada sekatan)\n 5. Wujud ketika akad dibuat\n 6. Harta dikenalpasti\n 7. Mempunyai nilai.\n\n Kenderaan\n 1. Bebas daripada segala hutang\n 2. Jika masih berhutang, kenderaan mestilah mempunyai\n perlindungan insurans penuh (auto-life insurance)\n 3. Kenderaan adalah milik Penghibah.\n 4. Wujud ketika akad dibuat.\n 5. Harta dikenalpasti.\n 6. Mempunyai nilai.\n\n Penerangan selanjutnya hanya terpakai sekiranya maklumat **{name}** memenuhi kriteria yang ditetapkan.\n\n HIBAHKU\n 1. PENGHIBAH\n Individu berumur 18 tahun dan ke atas\n\n 2. PENERIMA HIBAH\n Mana-mana individu kecuali cacat mental\n\n 3. DOKUMEN YANG DIPERLUKAN\n a) Borang Permohonan HiBAHKU AmanahRaya (boleh didapati di kaunter cawangan ARB)\n b) Salinan Kad Pengenalan Penghibah / Pemberi\n c) Salinan Kad Pengenalan / Sijil Kelahiran Penerima Hibah\n d) Salinan Kad Pengenalan Wali Mal (jika penerima adalah bawah umur atau OKU)\n e) Harta Tak Alih\n i) Salinan Geran Hakmilik / Strata\n ii) Salinan Sales & Purchase Agreement + MRTA/MRTT (jika masih bercagar)\n iii) Salinan Carian Rasmi (jika berkenaan)\n iv) Salinan Surat Tawaran daripada institusi kewangan (jika masih bercagar)\n f) Harta Alih (kenderaan)\n i) Salinan geran kenderaan\n ii) Salinan polisi Auto-life insurance (jika masih bercagar)\n g) Harta Alih (tunai di bank)\n i) Salinan penyata / Pengesahan Akaun Bank\n 4. FI YANG DIKENAKAN\n RM 1,500 (aset pertama), RM 500 (aset seterusnya)\n\n Sila hadir ke mana-mana kaunter cawangan kami yang berdekatan untuk membuat bayaran dengan membawa dokumen yang diperlukan . Bayaran boleh dibuat secara tunai (terhad kepada RM5,000), cek, kad debit/kredit atau pindahan wang atas talian. . **{name}** boleh buat temujanji di https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m\n\n Maklumat cawangan boleh didapati di https://www.amanahraya.my/contact-us/branch-locator/ \n\n 1. Pada tarikh temujanji, rundingan dan khidmat nasihat boleh dibuat bersama pegawai kami.\n 2. Serahan dokumen dan pembayaran boleh dilakukan pada hari yang sama.\n 3. **{name}** akan dihubungi oleh pegawai cawangan bagi penyediaan dokumen akad.\n\n Ada apa-apa lagi yang boleh ARIA bantu?`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' },
+        ]
+    },
+    hibahku_my_hartanah: {
+        id: 'hibahku_my_hartanah',
+        message: `Hartanah\n 1. Bebas daripada segala hutang\n 2. Jika masih berhutang, hartanah mestilah mempunyai perlindungan insurans penuh (MRTA/MRTT).\n 3. Hartanah adalah milik Penghibah.\n 4. Boleh dipindahmilik (tiada sekatan)\n 5. Wujud ketika akad dibuat\n 6. Harta dikenalpasti\n 7. Mempunyai nilai\n\n Kenderaan\n 1. Bebas daripada segala hutang\n 2. Jika masih berhutang, kenderaan mestilah mempunyai perlindungan insurans penuh (auto-life insurance)\n 3. Kenderaan adalah milik Penghibah.\n 4. Wujud ketika akad dibuat.\n 5. Harta dikenalpasti.\n 6. Mempunyai nilai.\n\n Penerangan selanjutnya hanya terpakai sekiranya maklumat **{name}** memenuhi kriteria yang ditetapkan.\n\n HIBAHKU\n 1. PENGHIBAH\n Individu berumur 18 tahun dan ke atas\n\n 2. PENERIMA HIBAH\n Mana-mana individu kecuali cacat mental\n\n 3. DOKUMEN YANG DIPERLUKAN\n a) Borang Permohonan HiBAHKU AmanahRaya (boleh didapati di kaunter cawangan ARB)\n b) Salinan Kad Pengenalan Penghibah / Pemberi\n c) Salinan Kad Pengenalan / Sijil Kelahiran Penerima Hibah\n d) Salinan Kad Pengenalan Wali Mal (jika penerima adalah bawah umur atau OKU)\n e) Harta Tak Alih\n i) Salinan Geran Hakmilik / Strata\n ii) Salinan Sales & Purchase Agreement + MRTA/MRTT (jika masih bercagar)\n iii) Salinan Carian Rasmi (jika berkenaan)\n iv) Salinan Surat Tawaran daripada institusi kewangan (jika masih bercagar)\n f) Harta Alih (kenderaan)\n i) Salinan geran kenderaan\n ii) Salinan polisi Auto-life insurance (jika masih bercagar)\n g) Harta Alih (tunai di bank)\n i) Salinan penyata / Pengesahan Akaun Bank\n 4. FI YANG DIKENAKAN\n RM 1,500 (aset pertama), RM 500 (aset seterusnya)\n\n Sila hadir ke mana-mana kaunter cawangan kami yang berdekatan untuk membuat bayaran dengan membawa dokumen yang diperlukan . Bayaran boleh dibuat secara tunai (terhad kepada RM5,000), cek, kad debit/kredit atau pindahan wang atas talian. . **{name}** boleh buat temujanji di https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m\n\n Maklumat cawangan boleh didapati di https://www.amanahraya.my/contact-us/branch-locator/ \n\n 1. Pada tarikh temujanji, rundingan dan khidmat nasihat boleh dibuat bersama pegawai kami.\n 2. Serahan dokumen dan pembayaran boleh dilakukan pada hari yang sama.\n 3. **{name}** akan dihubungi oleh pegawai cawangan bagi penyediaan dokumen akad.\n\n Ada apa-apa lagi yang boleh ARIA bantu?`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' },
+        ]
+    },
+    hibahku_my_tunai_sahaja: {
+        id: 'hibahku_my_tunai_sahaja',
+        message: `Tunai di Bank\n 1. Akaun yang dibenarkan adalah akaun bersama antara Penghibah dan Penerima Hibah sahaja.\n 2. Hanya dibenarkan untuk harta tunai di Negeri Selangor sahaja.\n 3. Simpanan di ASNB dan Tabung Haji adalah terkecuali\n\n Penerangan selanjutnya hanya terpakai sekiranya maklumat **{name}** memenuhi kriteria yang ditetapkan.\n\n HIBAHKU\n 1. PENGHIBAH\n Individu berumur 18 tahun dan ke atas\n\n 2. PENERIMA HIBAH\n Mana-mana individu kecuali cacat mental\n\n 3. DOKUMEN YANG DIPERLUKAN\n a) Borang Permohonan HiBAHKU AmanahRaya (boleh didapati di kaunter cawangan ARB)\n b) Salinan Kad Pengenalan Penghibah / Pemberi\n c) Salinan Kad Pengenalan / Sijil Kelahiran Penerima Hibah\n d) Salinan Kad Pengenalan Wali Mal (jika penerima adalah bawah umur atau OKU)\n e) Harta Tak Alih\n i) Salinan Geran Hakmilik / Strata\n ii) Salinan Sales & Purchase Agreement + MRTA/MRTT (jika masih bercagar)\n iii) Salinan Carian Rasmi (jika berkenaan)\n iv) Salinan Surat Tawaran daripada institusi kewangan (jika masih bercagar)\n f) Harta Alih (kenderaan)\n i) Salinan geran kenderaan\n ii) Salinan polisi Auto-life insurance (jika masih bercagar)\n g) Harta Alih (tunai di bank)\n i) Salinan penyata / Pengesahan Akaun Bank\n 4. FI YANG DIKENAKAN\n RM 1,500 (aset pertama), RM 500 (aset seterusnya)\n\n Sila hadir ke mana-mana kaunter cawangan kami yang berdekatan untuk membuat bayaran dengan membawa dokumen yang diperlukan . Bayaran boleh dibuat secara tunai (terhad kepada RM5,000), cek, kad debit/kredit atau pindahan wang atas talian. . **{name}** boleh buat temujanji di https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m\n\n Maklumat cawangan boleh didapati di https://www.amanahraya.my/contact-us/branch-locator/ \n\n 1. Pada tarikh temujanji, rundingan dan khidmat nasihat boleh dibuat bersama pegawai kami.\n 2. Serahan dokumen dan pembayaran boleh dilakukan pada hari yang sama.\n 3. **{name}** akan dihubungi oleh pegawai cawangan bagi penyediaan dokumen akad.\n\n Ada apa-apa lagi yang boleh ARIA bantu?`,
+        options: []
+    },
+    // Amanah BM start from here
+    amanah_my: {
+        id: 'amanah_my',
+        message: `Baiklah. Sebelum ARIA beri penerangan yang lebih lanjut, berikut adalah konsep dan syarat bagi produk amanah yang ditawarkan.\n\n 1. Kuasa pelantikan AmanahRaya sebagai pemegang amanah adalah di bawah Seksyen 11 Akta Perbadanan Amanah Raya 1995.\n 2. Penderma dan penerima (benefisiari) boleh terdiri daripada mana-mana individu, agensi, pertubuhan atau syarikat.\n 3. Penjaga boleh terdiri daripada Penderma atau mana-mana individu yang dilantik di dalam Surat\n Ikatan Amanah sekiranya benefisiari berumur di bawah 18 tahun atau Orang Kelainan Upaya (OKU).\n 4. Penjaga berperanan sebagai perantara dalam pengeluaran wang Amanah bagi pihak benefisiari yang berumur di bawah 18 tahun atau OKU.\n 5. Bagi Harta Alih, ianya mesti dipindahkan atau didaftarkan ke atas nama ARB sebagai pemegang amanah.\n 6. Bagi Harta Tak Alih, ianya adalah hakmilik berdaftar atau benefisial Penderma, telah bebas hutang, tiada sekatan dan dipindahmilik ke atas nama ARB sebagai pemegang amanah.\n 7. Cara pembahagian / bayaran kepada benefisiari adalah tertakluk kepada terma yang ditetapkan di dalam Surat Ikatan Amanah.\n 8. Produk amanah ini terkeluar daripada Hukum Faraid / Akta Pembahagian 1958.\n 9. Pembatalan akaun amanah adalah mengikut terma di dalam Surat Ikatan Amanah.\n\n Boleh ARIA tahu jenis aset yang ingin diberikan?`,
+        options: [
+            { label: "1️⃣ Hartanah", nextStep: 'amanah_my_hartanah' },
+            { label: '2️⃣ Tunai', nextStep: 'amanah_my_tunai' },
+            { label: "3️⃣ Insuran / Takaful Care", nextStep: 'amanah_my_insuran' },
+            { label: "4️⃣ Manfaat Pekerja @ Amal Insan", nextStep: 'amanah_my_manfaat' },
+        ]
+    },
+    amanah_my_hartanah: {
+        id: 'amanah_my_hartanah',
+        message: `Adakah hartanah yang ingin diberikan telah bebas daripada hutang dan geran tersebut milik **{name}**?`,
+        options: [
+            { label: "1️⃣ Masih berhutang dan geran milik saya", nextStep: 'amanah_my_hartanah_milik' },
+            { label: '2️⃣ Bebas hutang dan geran milik saya', nextStep: 'amanah_my_hartanah_bebas' },
+        ]
+    },
+    amanah_my_hartanah_milik: {
+        id: 'amanah_my_hartanah_milik',
+        message: `Bagi aset yang masih mempunyai hutang, anda boleh memilih produk yang lain iaitu Hibahku.\n\n Adakah **{name}** berminat untuk tahu lebih lanjut?`,
+        options: [
+            { label: '1️⃣ Ya, saya nak tahu berkenaan HibahKu', nextStep: 'hibahku_my' },
+            { label: '2️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    amanah_my_hartanah_bebas: {
+        id: 'amanah_my_hartanah_bebas',
+        message: `Bagi produk ini, beberapa perkara yang perlu diambil perhatian:\n 1. Penilaian semasa hartanah akan dibuat oleh ARB di Jabatan Penilaian dan Perkhidmatan Harta (JPPH).\n 2. Geran hartanah akan didaftarkan di atas nama ARB (sebagai Pemegang Amanah) dan akan disimpan oleh ARB.\n 3. Cukai tanah dan taksiran masih kekal perlu dijelaskan oleh Penderma.\n 4. Duti Setem akan diselesaikan oleh Penderma ketika hayat beliau. Namun, sekiranya belum dilakukan, Benefisiari perlu membayarnya terlebih dahulu sebelum pindahmilik dibuat.\n 5. Hartanah akan dipindahmilik kepada Penerima selepas kematian Penderma atau seperti mana yang termaktub di dalam SIA.\n 6. Sekiranya terdapat sekatan, kelulusan perlu didapatkan terlebih dahulu daripada Pihak Berkuasa Negeri untuk pindahmilik kepada ARB sebagai Pemegang Amanah.\n\n AMANAH HARTANAH\n 1. DEPOSIT\n RM2,000 / hartanah\n\n 2. PENDERMA & BENEFISIARI\n Mana-mana individu, agensi, pertubuhan atau syarikat.\n\n 3. DUTI SETEM\n Seperti yang akan ditaksirkan oleh LHDN\n\n 4. DOKUMEN YANG DIPERLUKAN\n a) Salinan Kad Pengenalan Penderma\n b) Salinan Kad Pengenalan Benefisiari\n c) Salinan Kad Pengenalan Penjaga (sekiranya berkaitan)\n d) Salinan geran hartanah, bil cukai tanah dan taksiran terkini\n\n 5. BORANG YANG BERKAITAN\n a) Borang Permohonan Pembukaan Akaun Amanah\n b) Contoh Pengisian - Borang Permohonan Pembukaan Akaun Amanah\n\n Sila hadir ke mana-mana kaunter cawangan kami yang berdekatan untuk membuat bayaran dengan membawa dokumen yang diperlukan. Bayaran boleh dibuat secara tunai (terhad kepada RM5,000), cek, kad debit/kredit atau pindahan wang atas talian. . **{name}** boleh buat temujanji di https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m \n\n Maklumat cawangan boleh didapati di https://www.amanahraya.my/contact-us/branch-locator/ \n\n 1. Pada tarikh temujanji, rundingan dan khidmat nasihat boleh dibuat bersama pegawai kami.\n 2. Serahan dokumen dan pembayaran boleh dilakukan pada hari yang sama.\n 3. **{name}** akan dihubungi oleh pegawai cawangan bagi penyediaan Surat Ikatan Amanah.\n\n Ada apa-apa lagi yang boleh ARIA bantu?`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    amanah_my_tunai: {
+        id: 'amanah_my_tunai',
+        message: `Bagi produk ini, **{name}** perlu depositkan amaun yang ingin diberikan ke dalam akaun ARB. Bayaran akan dibuat kepada benefisiari mengikut arahan yang telah dinyatakan di dalam Surat Ikatan Amanah yang telah dibuat.\n\n Sebelum kita pergi lebih lanjut, boleh ARIA tahu, akaun amanah ini untuk tujuan apa?`,
+        options: [
+            { label: "1️⃣ Sumbangan amal / Kebajikan", nextStep: 'amanah_my_tunai_sumbangan' },
+            { label: '2️⃣ Kelangsungan hidup orang tersayang', nextStep: 'amanah_my_tunai_tersayang' },
+            { label: "3️⃣ Kebajikan peribadi", nextStep: 'amanah_my_tunai_kebajikan' },
+            { label: "4️⃣ Jaminan dana pendidikan", nextStep: 'amanah_my_tunai_pendidikan' },
+            { label: "5️⃣ Perlindungan aset", nextStep: 'amanah_my_tunai_aset' },
+            { label: "6️⃣ Perlindungan daripada pembaziran", nextStep: 'amanah_my_tunai_daripada' }
+        ]
+    },
+    amanah_my_tunai_sumbangan: {
+        id: 'amanah_my_tunai_sumbangan',
+        message: `Akaun amanah boleh dibuka bagi menyalurkan sumbangan secara berterusan, seperti derma kepada golongan memerlukan atau institusi kebajikan, selaras dengan hasrat penderma.\n\n KONSEP AMANAH KEBAJIKAN\n 1. Dikhaskan untuk tujuan kebajikan, sedekah dan amal jariah.\n 2. Penderma boleh menubuhkan Jawatankuasa Pengurusan bagi mengendalikan urusan berkaitan akaun amanah ini mengikut SuratIkatan Amanah yang ditetapkan.\n 3. Benefisiari boleh terdiri daripada sesiapa sahaja samada dalam kalangan waris, pusat kebajikan, anak yatim, masjid, gereja, kuil dan lain-lain (bergantung kepada syarat yang ditetapkan di dalam SuratIkatan Amanah).\n 4. Pengeluaran boleh dilakukan hanya dengan kebenaran atau kelulusan daripada Ahli Jawatankuasa Pengurusan yang dilantik mengikut terma yang ditetapkan di dalam SuratIkatan Amanah.\n\n AMANAH KEBAJIKAN\n 1. MODAL MINIMUM\n RM2,000.00.\n\n 2. HARTA YANG BOLEH DIAMANAHKAN\n Harta Alih (Tunai sahaja)\n\n 3. TEMPOH PERAMANAHAN\n Mengikut SuratIkatan Amanah.\n\n 4. AGIHAN KEUNTUNGAN\n 3.00% setahun\n\n 5. DOKUMEN YANG DIPERLUKAN\n a) Borang Permohonan Pembukaan Akaun Amanah\n b) Salinan Kad Pengenalan Penderma dan Ahli Jawatankuasa\n c) Salinan dokumen pendaftaran persatuan / syarikat daripada Jabatan Pendaftaran Pertubuhan Malaysia (ROS) atau Suruhanjaya Syarikat Malaysia (SSM) (sekiranya berkaitan).\n\n 6. BORANG YANG BERKAITAN\n a) Borang Permohonan Pembukaan Akaun Amanah\n b) Contoh Pengisian - Borang Permohonan Pembukaan Akaun Amanah\n\n Sila hadir ke mana-mana kaunter cawangan kami yang berdekatan untuk membuat bayaran dengan membawa dokumen yang diperlukan. Bayaran boleh dibuat secara tunai (terhad kepada RM5,000), cek, kad debit/kredit atau pindahan wang atas talian. . **{name}** boleh buat temujanji di https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m \n\n Maklumat cawangan boleh didapati di https://www.amanahraya.my/contact-us/branch-locator/ \n\n 1. Pada tarikh temujanji, rundingan dan khidmat nasihat boleh dibuat bersama pegawai kami.\n 2. Serahan dokumen dan pembayaran boleh dilakukan pada hari yang sama.\n 3. **{name}** akan dihubungi oleh pegawai cawangan bagi penyediaan Surat Ikatan Amanah.\n\n Ada apa-apa lagi yang boleh ARIA bantu?`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    amanah_my_tunai_tersayang: {
+        id: 'amanah_my_tunai_tersayang',
+        message: `Perancangan dan penyediaan kewangan yang bertujuan untuk memastikan keperluan hidup, pendidikan, penjagaan kesihatan serta masa depan orang tersayang sentiasa terjamin, walaupun setelah ketiadaan atau ketidakupayaan ibu bapa atau penjaga utama.\n\n **{name}** boleh dapatkan dahulu maklumat di bawah dan pilih produk yang bersesuaian.\n\n AMANAH BIASA\n 1. MODAL MINIMUM\n RM2,000.00.\n\n 2. HARTA YANG BOLEH DIAMANAHKAN\n Harta Alih (Tunai sahaja)\n\n 3. TEMPOH PERAMANAHAN\n Mengikut SuratIkatan Amanah.\n\n 4. AGIHAN KEUNTUNGAN\n 3.00% setahun\n\n 5. DOKUMEN YANG DIPERLUKAN\n a. Salinan Kad Pengenalan Penderma\n b. Salinan Kad Pengenalan Benefisiari\n c. Salinan Kad Pengenalan Penjaga (sekiranya berkaitan)\n d. Salinan dokumen pendaftaran persatuan/syarikat daripada ROS / SSM (sekiranya berkaitan).\n\n AMANAH SAFECARE\n 1. MODAL MINIMUM\n RM50,000.00 / RM100,000.\n\n 2. HARTA YANG BOLEH DIAMANAHKAN\n Harta Alih (Tunai sahaja)\n\n 3. TEMPOH PERAMANAHAN\n Tempoh selama 36 bulan dengan pilihan untuk diperbaharui (roll over) selepas capai tempoh matang.\n\n  4. AGIHAN KEUNTUNGAN\n a) 4.25% setahun (RM50,000 < deposit <RM100,000)\n b) 4.35% setahun (RM100,000 < deposit <RM1,000,000)\n\n 5. DOKUMEN YANG DIPERLUKAN\n a. Salinan Kad Pengenalan Penderma\n b. Salinan Kad Pengenalan Benefisiari\n c. Salinan Kad Pengenalan Penjaga (sekiranya berkaitan)\n d. Salinan dokumen pendaftaran persatuan/syarikat daripada ROS / SSM (sekiranya berkaitan).\n\n AMANAH PREMIER SAFECARE\n 1. MODAL MINIMUM\n RM1,000,000.\n\n 2. HARTA YANG BOLEH DIAMANAHKAN\n Harta Alih (Tunai sahaja)\n\n 3. TEMPOH PERAMANAHAN\n Tempoh selama 60 bulan dengan pilihan untuk diperbaharui (roll over) selepas capai tempoh matang.\n\n 4. AGIHAN KEUNTUNGAN\n 4.45% setahun (Deposit ≥ RM1,000,000)\n\n 5. DOKUMEN YANG DIPERLUKAN\n a. Salinan Kad Pengenalan Penderma\n b. Salinan Kad Pengenalan Benefisiari\n c. Salinan Kad Pengenalan Penjaga (sekiranya berkaitan)\n  d. Salinan dokumen pendaftaran persatuan/syarikat daripada ROS / SSM (sekiranya berkaitan).\n\n BORANG YANG BERKAITAN\n a) Borang Permohonan Pembukaan Akaun Amanah\n b) Contoh Pengisian - Borang Permohonan Pembukaan Akaun Amanah\n\n Sila hadir ke mana-mana kaunter cawangan kami yang berdekatan untuk membuat bayaran dengan membawa dokumen yang diperlukan. Bayaran boleh dibuat secara tunai (terhad kepada RM5,000), cek, kad debit/kredit atau pindahan wang atas talian. . **{name}** boleh buat temujanji di https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m \n\n Maklumat cawangan boleh didapati di https://www.amanahraya.my/contact-us/branch-locator/ \n\n 1. Pada tarikh temujanji, rundingan dan khidmat nasihat boleh dibuat bersama pegawai kami.\n 2. Serahan dokumen dan pembayaran boleh dilakukan pada hari yang sama.\n 3. **{name}** akan dihubungi oleh pegawai cawangan bagi penyediaan Surat Ikatan Amanah.\n\n Ada apa-apa lagi yang boleh ARIA bantu?`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    amanah_my_tunai_kebajikan: {
+        id: 'amanah_my_tunai_kebajikan',
+        message: `Penyediaan dana khas bagi memastikan kesejahteraan diri sendiri terus terpelihara di hari tua atau waktu keuzuran.\n\n **{name}** boleh dapatkan dahulu maklumat di bawah dan pilih produk yang bersesuaian.\n\n AMANAH BIASA\n 1. MODAL MINIMUM\n RM2,000.00.\n\n 2. HARTA YANG BOLEH DIAMANAHKAN\n Harta Alih (Tunai sahaja)\n\n 3. TEMPOH PERAMANAHAN\n Mengikut SuratIkatan Amanah.\n\n 4. AGIHAN KEUNTUNGAN\n 3.00% setahun\n\n 5. DOKUMEN YANG DIPERLUKAN\n a. Salinan Kad Pengenalan Penderma\n b. Salinan Kad Pengenalan Benefisiari\n c. Salinan Kad Pengenalan Penjaga (sekiranya berkaitan)\n d. Salinan dokumen pendaftaran persatuan/syarikat daripada ROS / SSM (sekiranya berkaitan).\n\n AMANAH SAFECARE\n 1. MODAL MINIMUM\n RM50,000.00 / RM100,000.\n\n 2. HARTA YANG BOLEH DIAMANAHKAN\n Harta Alih (Tunai sahaja)\n\n 3. TEMPOH PERAMANAHAN\n Tempoh selama 36 bulan dengan pilihan untuk diperbaharui (roll over) selepas capai tempoh matang.\n\n  4. AGIHAN KEUNTUNGAN\n a) 4.25% setahun (RM50,000 < deposit <RM100,000)\n b) 4.35% setahun (RM100,000 < deposit <RM1,000,000)\n\n 5. DOKUMEN YANG DIPERLUKAN\n a. Salinan Kad Pengenalan Penderma\n b. Salinan Kad Pengenalan Benefisiari\n c. Salinan Kad Pengenalan Penjaga (sekiranya berkaitan)\n d. Salinan dokumen pendaftaran persatuan/syarikat daripada ROS / SSM (sekiranya berkaitan).\n\n AMANAH PREMIER SAFECARE\n 1. MODAL MINIMUM\n RM1,000,000.\n\n 2. HARTA YANG BOLEH DIAMANAHKAN\n Harta Alih (Tunai sahaja)\n\n 3. TEMPOH PERAMANAHAN\n Tempoh selama 60 bulan dengan pilihan untuk diperbaharui (roll over) selepas capai tempoh matang.\n\n 4. AGIHAN KEUNTUNGAN\n 4.45% setahun (Deposit ≥ RM1,000,000)\n\n 5. DOKUMEN YANG DIPERLUKAN\n a. Salinan Kad Pengenalan Penderma\n b. Salinan Kad Pengenalan Benefisiari\n c. Salinan Kad Pengenalan Penjaga (sekiranya berkaitan)\n  d. Salinan dokumen pendaftaran persatuan/syarikat daripada ROS / SSM (sekiranya berkaitan).\n\n BORANG YANG BERKAITAN\n a) Borang Permohonan Pembukaan Akaun Amanah\n b) Contoh Pengisian - Borang Permohonan Pembukaan Akaun Amanah\n\n Sila hadir ke mana-mana kaunter cawangan kami yang berdekatan untuk membuat bayaran dengan membawa dokumen yang diperlukan. Bayaran boleh dibuat secara tunai (terhad kepada RM5,000), cek, kad debit/kredit atau pindahan wang atas talian. . **{name}** boleh buat temujanji di https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m \n\n Maklumat cawangan boleh didapati di https://www.amanahraya.my/contact-us/branch-locator/ \n\n 1. Pada tarikh temujanji, rundingan dan khidmat nasihat boleh dibuat bersama pegawai kami.\n 2. Serahan dokumen dan pembayaran boleh dilakukan pada hari yang sama.\n 3. **{name}** akan dihubungi oleh pegawai cawangan bagi penyediaan Surat Ikatan Amanah.\n\n Ada apa-apa lagi yang boleh ARIA bantu?`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    amanah_my_tunai_pendidikan: {
+        id: 'amanah_my_tunai_pendidikan',
+        message: `Perancangan kewangan yang teratur bagi memastikan sumber kewangan tersedia untuk menampung kos pendidikan orang tersayang.\n\n **{name}** boleh dapatkan dahulu maklumat di bawah dan pilih produk yang bersesuaian.\n\n AMANAH BIASA\n 1. MODAL MINIMUM\n RM2,000.00.\n\n 2. HARTA YANG BOLEH DIAMANAHKAN\n Harta Alih (Tunai sahaja)\n\n 3. TEMPOH PERAMANAHAN\n Mengikut SuratIkatan Amanah.\n\n 4. AGIHAN KEUNTUNGAN\n 3.00% setahun\n\n 5. DOKUMEN YANG DIPERLUKAN\n a. Salinan Kad Pengenalan Penderma\n b. Salinan Kad Pengenalan Benefisiari\n c. Salinan Kad Pengenalan Penjaga (sekiranya berkaitan)\n d. Salinan dokumen pendaftaran persatuan/syarikat daripada ROS / SSM (sekiranya berkaitan).\n\n AMANAH SAFECARE\n 1. MODAL MINIMUM\n RM50,000.00 / RM100,000.\n\n 2. HARTA YANG BOLEH DIAMANAHKAN\n Harta Alih (Tunai sahaja)\n\n 3. TEMPOH PERAMANAHAN\n Tempoh selama 36 bulan dengan pilihan untuk diperbaharui (roll over) selepas capai tempoh matang.\n\n  4. AGIHAN KEUNTUNGAN\n a) 4.25% setahun (RM50,000 < deposit <RM100,000)\n b) 4.35% setahun (RM100,000 < deposit <RM1,000,000)\n\n 5. DOKUMEN YANG DIPERLUKAN\n a. Salinan Kad Pengenalan Penderma\n b. Salinan Kad Pengenalan Benefisiari\n c. Salinan Kad Pengenalan Penjaga (sekiranya berkaitan)\n d. Salinan dokumen pendaftaran persatuan/syarikat daripada ROS / SSM (sekiranya berkaitan).\n\n AMANAH PREMIER SAFECARE\n 1. MODAL MINIMUM\n RM1,000,000.\n\n 2. HARTA YANG BOLEH DIAMANAHKAN\n Harta Alih (Tunai sahaja)\n\n 3. TEMPOH PERAMANAHAN\n Tempoh selama 60 bulan dengan pilihan untuk diperbaharui (roll over) selepas capai tempoh matang.\n\n 4. AGIHAN KEUNTUNGAN\n 4.45% setahun (Deposit ≥ RM1,000,000)\n\n 5. DOKUMEN YANG DIPERLUKAN\n a. Salinan Kad Pengenalan Penderma\n b. Salinan Kad Pengenalan Benefisiari\n c. Salinan Kad Pengenalan Penjaga (sekiranya berkaitan)\n  d. Salinan dokumen pendaftaran persatuan/syarikat daripada ROS / SSM (sekiranya berkaitan).\n\n BORANG YANG BERKAITAN\n a) Borang Permohonan Pembukaan Akaun Amanah\n b) Contoh Pengisian - Borang Permohonan Pembukaan Akaun Amanah\n\n Sila hadir ke mana-mana kaunter cawangan kami yang berdekatan untuk membuat bayaran dengan membawa dokumen yang diperlukan. Bayaran boleh dibuat secara tunai (terhad kepada RM5,000), cek, kad debit/kredit atau pindahan wang atas talian. . **{name}** boleh buat temujanji di https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m \n\n Maklumat cawangan boleh didapati di https://www.amanahraya.my/contact-us/branch-locator/ \n\n 1. Pada tarikh temujanji, rundingan dan khidmat nasihat boleh dibuat bersama pegawai kami.\n 2. Serahan dokumen dan pembayaran boleh dilakukan pada hari yang sama.\n 3. **{name}** akan dihubungi oleh pegawai cawangan bagi penyediaan Surat Ikatan Amanah.\n\n Ada apa-apa lagi yang boleh ARIA bantu?`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    amanah_my_tunai_aset: {
+        id: 'amanah_my_tunai_aset',
+        message: `Melindungi harta daripada tuntutan, hutang atau risiko lain, supaya ia kekal terjaga dan boleh diagihkan kepada benefisiari tanpa halangan.\n\n **{name}** boleh dapatkan dahulu maklumat di bawah dan pilih produk yang bersesuaian.\n\n AMANAH BIASA\n 1. MODAL MINIMUM\n RM2,000.00.\n\n 2. HARTA YANG BOLEH DIAMANAHKAN\n Harta Alih (Tunai sahaja)\n\n 3. TEMPOH PERAMANAHAN\n Mengikut SuratIkatan Amanah.\n\n 4. AGIHAN KEUNTUNGAN\n 3.00% setahun\n\n 5. DOKUMEN YANG DIPERLUKAN\n a. Salinan Kad Pengenalan Penderma\n b. Salinan Kad Pengenalan Benefisiari\n c. Salinan Kad Pengenalan Penjaga (sekiranya berkaitan)\n d. Salinan dokumen pendaftaran persatuan/syarikat daripada ROS / SSM (sekiranya berkaitan).\n\n AMANAH SAFECARE\n 1. MODAL MINIMUM\n RM50,000.00 / RM100,000.\n\n 2. HARTA YANG BOLEH DIAMANAHKAN\n Harta Alih (Tunai sahaja)\n\n 3. TEMPOH PERAMANAHAN\n Tempoh selama 36 bulan dengan pilihan untuk diperbaharui (roll over) selepas capai tempoh matang.\n\n  4. AGIHAN KEUNTUNGAN\n a) 4.25% setahun (RM50,000 < deposit <RM100,000)\n b) 4.35% setahun (RM100,000 < deposit <RM1,000,000)\n\n 5. DOKUMEN YANG DIPERLUKAN\n a. Salinan Kad Pengenalan Penderma\n b. Salinan Kad Pengenalan Benefisiari\n c. Salinan Kad Pengenalan Penjaga (sekiranya berkaitan)\n d. Salinan dokumen pendaftaran persatuan/syarikat daripada ROS / SSM (sekiranya berkaitan).\n\n AMANAH PREMIER SAFECARE\n 1. MODAL MINIMUM\n RM1,000,000.\n\n 2. HARTA YANG BOLEH DIAMANAHKAN\n Harta Alih (Tunai sahaja)\n\n 3. TEMPOH PERAMANAHAN\n Tempoh selama 60 bulan dengan pilihan untuk diperbaharui (roll over) selepas capai tempoh matang.\n\n 4. AGIHAN KEUNTUNGAN\n 4.45% setahun (Deposit ≥ RM1,000,000)\n\n 5. DOKUMEN YANG DIPERLUKAN\n a. Salinan Kad Pengenalan Penderma\n b. Salinan Kad Pengenalan Benefisiari\n c. Salinan Kad Pengenalan Penjaga (sekiranya berkaitan)\n  d. Salinan dokumen pendaftaran persatuan/syarikat daripada ROS / SSM (sekiranya berkaitan).\n\n BORANG YANG BERKAITAN\n a) Borang Permohonan Pembukaan Akaun Amanah\n b) Contoh Pengisian - Borang Permohonan Pembukaan Akaun Amanah\n\n Sila hadir ke mana-mana kaunter cawangan kami yang berdekatan untuk membuat bayaran dengan membawa dokumen yang diperlukan. Bayaran boleh dibuat secara tunai (terhad kepada RM5,000), cek, kad debit/kredit atau pindahan wang atas talian. . **{name}** boleh buat temujanji di https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m \n\n Maklumat cawangan boleh didapati di https://www.amanahraya.my/contact-us/branch-locator/ \n\n 1. Pada tarikh temujanji, rundingan dan khidmat nasihat boleh dibuat bersama pegawai kami.\n 2. Serahan dokumen dan pembayaran boleh dilakukan pada hari yang sama.\n 3. **{name}** akan dihubungi oleh pegawai cawangan bagi penyediaan Surat Ikatan Amanah.\n\n Ada apa-apa lagi yang boleh ARIA bantu?`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    amanah_my_tunai_daripada: {
+        id: 'amanah_my_tunai_daripada',
+        message: `Melindungi benefisiari daripada pembaziran dengan menetapkan penyaluran harta secara terkawal.\n\n **{name}** boleh dapatkan dahulu maklumat di bawah dan pilih produk yang bersesuaian.\n\n AMANAH BIASA\n 1. MODAL MINIMUM\n RM2,000.00.\n\n 2. HARTA YANG BOLEH DIAMANAHKAN\n Harta Alih (Tunai sahaja)\n\n 3. TEMPOH PERAMANAHAN\n Mengikut SuratIkatan Amanah.\n\n 4. AGIHAN KEUNTUNGAN\n 3.00% setahun\n\n 5. DOKUMEN YANG DIPERLUKAN\n a. Salinan Kad Pengenalan Penderma\n b. Salinan Kad Pengenalan Benefisiari\n c. Salinan Kad Pengenalan Penjaga (sekiranya berkaitan)\n d. Salinan dokumen pendaftaran persatuan/syarikat daripada ROS / SSM (sekiranya berkaitan).\n\n AMANAH SAFECARE\n 1. MODAL MINIMUM\n RM50,000.00 / RM100,000.\n\n 2. HARTA YANG BOLEH DIAMANAHKAN\n Harta Alih (Tunai sahaja)\n\n 3. TEMPOH PERAMANAHAN\n Tempoh selama 36 bulan dengan pilihan untuk diperbaharui (roll over) selepas capai tempoh matang.\n\n  4. AGIHAN KEUNTUNGAN\n a) 4.25% setahun (RM50,000 < deposit <RM100,000)\n b) 4.35% setahun (RM100,000 < deposit <RM1,000,000)\n\n 5. DOKUMEN YANG DIPERLUKAN\n a. Salinan Kad Pengenalan Penderma\n b. Salinan Kad Pengenalan Benefisiari\n c. Salinan Kad Pengenalan Penjaga (sekiranya berkaitan)\n d. Salinan dokumen pendaftaran persatuan/syarikat daripada ROS / SSM (sekiranya berkaitan).\n\n AMANAH PREMIER SAFECARE\n 1. MODAL MINIMUM\n RM1,000,000.\n\n 2. HARTA YANG BOLEH DIAMANAHKAN\n Harta Alih (Tunai sahaja)\n\n 3. TEMPOH PERAMANAHAN\n Tempoh selama 60 bulan dengan pilihan untuk diperbaharui (roll over) selepas capai tempoh matang.\n\n 4. AGIHAN KEUNTUNGAN\n 4.45% setahun (Deposit ≥ RM1,000,000)\n\n 5. DOKUMEN YANG DIPERLUKAN\n a. Salinan Kad Pengenalan Penderma\n b. Salinan Kad Pengenalan Benefisiari\n c. Salinan Kad Pengenalan Penjaga (sekiranya berkaitan)\n  d. Salinan dokumen pendaftaran persatuan/syarikat daripada ROS / SSM (sekiranya berkaitan).\n\n BORANG YANG BERKAITAN\n a) Borang Permohonan Pembukaan Akaun Amanah\n b) Contoh Pengisian - Borang Permohonan Pembukaan Akaun Amanah\n\n Sila hadir ke mana-mana kaunter cawangan kami yang berdekatan untuk membuat bayaran dengan membawa dokumen yang diperlukan. Bayaran boleh dibuat secara tunai (terhad kepada RM5,000), cek, kad debit/kredit atau pindahan wang atas talian. . **{name}** boleh buat temujanji di https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m \n\n Maklumat cawangan boleh didapati di https://www.amanahraya.my/contact-us/branch-locator/ \n\n 1. Pada tarikh temujanji, rundingan dan khidmat nasihat boleh dibuat bersama pegawai kami.\n 2. Serahan dokumen dan pembayaran boleh dilakukan pada hari yang sama.\n 3. **{name}** akan dihubungi oleh pegawai cawangan bagi penyediaan Surat Ikatan Amanah.\n\n Ada apa-apa lagi yang boleh ARIA bantu?`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    amanah_my_insuran: {
+        id: 'amanah_my_insuran',
+        message: `Sekiranya berlaku kematian atau hilang keupayaan kekal, wang pampasan daripada syarikat insurans / takaful akan dipindahkan ke dalam akaun amanah ini. Bayaran akan dibuat kepada benefisiari mengikut arahan yang telah dinyatakan di dalam SuratIkatan Amanah.\n\n ARB akan dilantik sebagai pemegang amanah melalui konsep Serah Hak dengan penyempurnaan Borang Serah Hak daripada syarikat insurans dan SuratIkatan Amanah bersama ARB.\n\n Jenis insurans yang dibenarkan bagi produk ini adalah:\n 1. Insurans Bertempoh (Term Insurance)\n 2. Insurans Hayat Seumur Hidup (Whole Life Insurance)\n 3. Insurans Endowmen\n 4. Insurans Berkaitan Pelaburan (Investment Linked Insurance) Bagi Takaful, hanya Takaful Keluarga sahaja yang dibenarkan.\n\n Terdapat 2 jenis produk amanah insurans / takaful yang ditawarkan\n\n AMANAH TAKAFUL / INSURANS CARE ASAS\n 1. FI YANG DIKENAKAN\n a) Fi : RM750.00 (setiap polisi)\n b) Fi Guaman: RM200.00\n c) Fi Pengurusan : 0.5% setahun terhadap modal Amanah (setelah menerima wang pampasan selepas kematian daripada Syarikat Insurans yang dilantik)\n\n 2. PENDERMA & BENEFISIARI\n Mana-mana individu, agensi, pertubuhan atau syarikat.\n\n 3. SYARAT SURATIKATAN AMANAH\n a) Penderma dibenarkan meletakkan hanya terhad kepada 2 benefisiari sahaja.\n b) Peratusan diletakkan untuk setiap benefisiari.\n 4. PINDAAN Tidak dibenarkan sebarang pindaan / tambahan klausa.\n\n AMANAH TAKAFUL / INSURANS CARE KOMPREHENSIF\n 1. FI YANG DIKENAKAN\n a) Fi : RM1,200.00 (setiap polisi)\n b) Fi Guaman: RM200.00\n c) Fi Pengurusan : 0.5% setahun terhadap modal Amanah (setelah menerima wang pampasan selepas kematian daripada Syarikat Insurans yang dilantik)\n\n 2. PENDERMA & BENEFISIARI\n Mana-mana individu, agensi, pertubuhan atau syarikat.\n\n 3. SYARAT SURATIKATAN AMANAH\n SuratIkatan Amanah boleh ditulis mengikut hasrat penderma.\n\n 4. PINDAAN\n Sekiranya terdapat pindaan SIA, kos tambahan adalah sebanyak RM200.00. Jika terdapat tambahan klausa, RM100.00 akan dikenakan.\n\n DOKUMEN YANG DIPERLUKAN\n a) 1 salinan Polisi Insurans\n b) Borang Serah Hak daripada Syarikat Insurans\n c) 1 salinan Kad Pengenalan pemilik polisi\n d) 1 salinan Kad Pengenalan benefisiari\n e) 1 salinan Kad Pengenalan penjaga (jika berkaitan)\n\n BORANG YANG BERKAITAN\n a) Borang Permohonan Amanah Insurans / Takaful Care\n b) Contoh Pengisian - Borang Permohonan Amanah Insurans / Takaful Caren\n\n Sila hadir ke mana-mana kaunter cawangan kami yang berdekatan untuk membuat bayaran dengan membawa dokumen yang diperlukan. Bayaran boleh dibuat secara tunai (terhad kepada RM5,000), cek, kad debit/kredit atau pindahan wang atas talian. . **{name}** boleh buat temujanji di https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m \n\n Maklumat cawangan boleh didapati di https://www.amanahraya.my/contact-us/branch-locator/ \n\n 1. Pada tarikh temujanji, rundingan dan khidmat nasihat boleh dibuat bersama pegawai kami.\n 2. Serahan dokumen dan pembayaran boleh dilakukan pada hari yang sama.\n 3. **{name}** akan dihubungi oleh pegawai cawangan bagi penyediaan Surat Ikatan Amanah.\n\n Ada apa-apa lagi yang boleh ARIA bantu?`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    amanah_my_manfaat: {
+        id: 'amanah_my_manfaat',
+        message: `Ditubuhkan oleh majikan bagi manfaat pekerjanya. Majikan boleh menamakan hartapampasan insurans, hadiah atau sebarang sumbangan lain sebagai harta amanah untuk ditadbir oleh ARB sebagai Pemegang Amanah bagi Manfaat Pekerja.\n\n KELEBIHAN AMANAH MANFAAT PEKERJA\n 1. Pekerja dapat mencadangkan kaedah pengagihan wang pampasan manfaat pekerja berkenaan.\n\n 2. Pekerja dapat menentukan terlebih dahulu kadar pengagihan kepada benefisiari yang dinamakan.\n\n 3. Pekerja dapat melantik penjaga bagi benefisiari minor / OKU / Ibu bapa / tanggungan lain\n\n 4. Pekerja dapat memberikan wang pampasan tersebut melalui kebajikan atau kepada orang yang diinginkan termasuk selain waris.\n\n KONSEP AMANAH MANFAAT PEKERJA\n 1. Perjanjian kerjasama akan dibuat antara Majikan dan ARB berkenaan kaedah dan terma pengagihan manfaat kepada benefisiari.\n 2. Pekerja diberikan peluang untuk menyenaraikan cadangan benefisiari (termasuk bukan waris atau untuk kebajikan) dan pengagihan pampasan dengan melengkapkan Borang Cadangan.\n 3. Wang pampasan diterima oleh ARB setelah\n pekerja meninggal dunia.\n 4. Agihan dibuat kepada benefisiari mengikut cadangan yang diberikan oleh pekerja semasa hayat.\n\n **{name}** berminat untuk daftar produk ini?`,
+        options: [
+            { label: '1️⃣ Tidak berminat', nextStep: 'amanah_my_manfaat_berminat' },
+            { label: '2️⃣ Ya, berminat', nextStep: 'retrieve_page1_my' }
+        ]
+    },
+    amanah_my_manfaat_berminat: {
+        id: 'amanah_my_manfaat_berminat',
+        message: `Ada apa-apa lagi yang boleh ARIA bantu?`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    //Wasiat BM starts from here
+    wasiat_my: {
+        id: 'wasiat_my',
+        message: `Boleh ARIA tahu, **{name}** ingin tahu berkenaan apa?`,
+        options: [
+            { label: "1️⃣ Maklumat Am", nextStep: 'wasiat_my_maklumat' },// Need to discuss with Sanjay
+            { label: '2️⃣ Permohonan Wasiat', nextStep: 'wasiat_my_permohonan' },
+            { label: "3️⃣ Penyimpanan Wasiat Luar di ARB", nextStep: 'wasiat_my_penyimpanan' },
+        ]
+    },
+    wasiat_my_permohonan: {
+        id: 'wasiat_my_permohonan',
+        message: `**{name}** pernah membuat wasiat dengan pihak lain?`,
+        options: [
+            { label: '1️⃣ Ya', nextStep: 'wasiat_my_permohonan_ya' },
+            { label: '2️⃣ Tidak', nextStep: 'wasiat_my_permohonan_tidak' }
+        ]
+    },
+    wasiat_my_permohonan_ya: {
+        id: 'wasiat_my_permohonan_ya',
+        message: `Tahniah kerana telah membuat perancangan harta.\n\n ARIA nak maklumkan, wasiat yang pernah dibuat sebelum ini akan terbatal sekiranya **{name}** membuat wasiat baru di AmanahRaya.\n\n Boleh ARIA teruskan?`,
+        options: [
+            { label: '1️⃣ Ya', nextStep: 'wasiat_my_permohonan_tidak' },
+            { label: '2️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    wasiat_my_permohonan_tidak: {
+        id: 'wasiat_my_permohonan_tidak',
+        message: `**{name}** ingin tahu mengenai Wasiat Islam atau Wasiat Bukan Islam?`,
+        options: [
+            { label: '1️⃣ Wasiat Islam', nextStep: 'wasiat_my_permohonan_tidak_waisiat_islam' },
+            { label: '2️⃣ Wasiat Bukan Islam', nextStep: 'wasiat_my_permohonan_tidak_bukan_wasiat_islam' }
+        ]
+    },
+    wasiat_my_permohonan_tidak_waisiat_islam: {
+        id: 'wasiat_my_permohonan_tidak_waisiat_islam',
+        message: `AmanahRaya ada menawarkan 2 jenis wasiat.\n\n Wasiat Asas: Dokumen yang menetapkan pelantikan pentadbir untuk mengurus pusaka, termasuk penyelesaian hutang serta pembahagian baki harta mengikut hukum faraid. Selain itu, ia juga membolehkan pemilik harta mengagihkan sehingga 1/3 daripada keseluruhan hartanya kepada bukan waris.\n\n Wasiat Komprehensif: Suatu ketetapan yang dibuat oleh seseorang sebelum kematiannya untuk mengagihkan sebahagian hartanya kepada penerima tertentu, sama ada waris atau bukan waris, selaras dengan hukum syarak. Wasiat ini bertujuan untuk memastikan pengurusan harta dilakukan dengan adil, termasuk menyelesaikan hutang serta memberikan sehingga satu pertiga daripada harta kepada waris (tertakluk kepada Enakmen Wasiat Negeri masing-masing dan Hukum Syarak) dan bukan waris, tanpa menjejaskan hak waris yang ditetapkan dalam hukum faraid. Selain itu, ia juga boleh meliputi arahan khusus seperti penjagaan anak di bawah umur, pemenuhan tanggungan kewangan, derma kepada badan amal, dan pesanan kepada waris. Wasiat komprehensif memastikan perancangan pusaka yang lebih jelas, mengelakkan pertikaian dalam kalangan waris, serta memudahkan proses pentadbiran harta selepas kematian pewasiat.\n\n Untuk perbandingan Wasiat Asas dan Wasiat Komprehensif secara terperinci, sila klik https://www.amanahraya.my/ms/perkhidmatan-wasiat/ \n\n **{name}** berminat wasiat yang mana?`,
+        options: [
+            { label: '1️⃣ Wasiat Asas', nextStep: 'wasiat_my_permohonan_tidak_waisiat_islam_asas' },
+            { label: '2️⃣ Wasiat Komprehensif', nextStep: 'wasiat_my_permohonan_tidak_waisiat_islam_komprehensif' }
+        ]
+    },
+    wasiat_my_permohonan_tidak_waisiat_islam_asas: {
+        id: 'wasiat_my_permohonan_tidak_waisiat_islam_asas',
+        message: `Tahniah. **{name}** telah mengambil langkah bijak dalam merancang masa depan.\n\n Wasi: AmanahRaya Tempoh Penyediaan: 1 hari bekerja Fi Wasiat: RM500 (Fi adalah termasuk khidmat rundingan, penyediaan wasiat dan penyimpanan wasiat)\n\n Boleh ARIA terus ke proses permohonan? proses permohonan?`,
+        options: [
+            { label: '1️⃣ Teruskan', nextStep: 'wasiat_my_permohonan_tidak_waisiat_islam_asas_teruskan' },
+            { label: '2️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    wasiat_my_permohonan_tidak_waisiat_islam_asas_teruskan: {
+        id: 'wasiat_my_permohonan_tidak_waisiat_islam_asas_teruskan',
+        message: `Permohonan boleh dibuat melalui beberapa cara. **{name}** nak pilih yang mana?`,
+        options: [
+            { label: "1️⃣ MyAmanahRaya Apps", nextStep: 'wasiat_my_permohonan_tidak_waisiat_islam_asas_teruskan_arb_app' },
+            { label: '2️⃣ Wasiat atas talian', nextStep: 'wasiat_my_permohonan_tidak_waisiat_islam_asas_teruskan_arb_app_talian' },
+            { label: "3️⃣ Kaunter", nextStep: 'wasiat_my_permohonan_tidak_waisiat_islam_asas_teruskan_kaunter' },
+        ]
+    },
+    wasiat_my_permohonan_tidak_waisiat_islam_asas_teruskan_arb_app: {
+        id: 'wasiat_my_permohonan_tidak_waisiat_islam_asas_teruskan_arb_app',
+        message: `1. **{name}** boleh muat turun MyAmanahRaya Apps melalui Google Play atau Apple Apps Store.\n 2. Daftar untuk penggunaan.\n 3. Pilih 'Wasiat'\n 4. Pilih Ejen untuk urusan secara bersemuka atau boleh terus membuat permohonan melalui aplikasi ini.\n\n **{name}** ingin buat melalui ejen atau atas talian?\n\n `,
+        options: [
+            { label: '1️⃣ Ejen', nextStep: 'wasiat_my_permohonan_tidak_waisiat_islam_asas_teruskan_arb_app_ejen' },
+            { label: '2️⃣ Atas talian', nextStep: 'wasiat_my_permohonan_tidak_waisiat_islam_asas_teruskan_arb_app_talian' }
+        ]
+    },
+    wasiat_my_permohonan_tidak_waisiat_islam_asas_teruskan_arb_app_ejen: {
+        id: 'wasiat_my_permohonan_tidak_waisiat_islam_asas_teruskan_arb_app_ejen',
+        message: `1. Pilih ejen berdekatan.\n 2. Ejen akan hubungi untuk temujanji.\n 3. Rundingan dijalankan pada tarikh ditetapkan.\n 4. Ejen bantu permohonan dan pembayaran atas talian.\n 5. Cetak dan tandatangan Wasiat Asas bersama ejen.\n 6. Wasiat Asal dihantar oleh ejen ke cawangan berdekatan.\n 7. Wasiat Pendua akan diserahkan kepada **{name}** untuk simpanan.\n\n **{name}** akan menerima e-mel pengesahan dan e-card Wasiat selepas Wasiat Asal diterima serta disimpan selamat oleh AmanahRaya.\n\n Sekiranya **{name}** telah sampai ke peringkat ini, ARIA mengucapkan TAHNIAH kerana telah berjaya merancang masa depan `,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    wasiat_my_permohonan_tidak_waisiat_islam_asas_teruskan_arb_app_talian: {
+        id: 'wasiat_my_permohonan_tidak_waisiat_islam_asas_teruskan_arb_app_talian',
+        message: `1. Sila klik https://willwriting.amanahraya.com.my/.\n 2. Daftar untuk penggunaan.\n 3. Sila teruskan penulisan wasiat dan pembayaran mengikut arahan yang tertera atas talian tersebut.\n\n 1. Wasiat Asas boleh dicetak sendiri atau melalui cawangan kami.\n 2. Sekiranya **{name}** membuat cetakan sendiri, sila ikut arahan seperti atas talian.\n 3. Sekiranya cetakan ingin dibuat di cawangan, sila buat temujanji dengan menghubungi Talian Mesra 03-27237273.\n 4. Tandatangan akan dilakukan bersama pegawai kami pada tarikh tersebut.\n 5. Wasiat Asal disimpan oleh AmanahRaya, manakala Wasiat Pendua diberikan kepada **{name}** untuk simpanan\n\n **{name}** akan menerima e-mel pengesahan dan e-card Wasiat selepas Wasiat Asal diterima serta disimpan selamat oleh AmanahRaya.\n\n Sekiranya **{name}** telah sampai ke peringkat ini, ARIA mengucapkan TAHNIAH kerana telah berjaya merancang masa depan`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    wasiat_my_permohonan_tidak_waisiat_islam_asas_teruskan_kaunter: {
+        id: 'wasiat_my_permohonan_tidak_waisiat_islam_asas_teruskan_kaunter',
+        message: `Sila kemukakan borang permohonan beserta dokumen berikut:\n 1. Borang Permohonan Wasiat Asas (link)\n 2. Salinan Kad Pengenalan pewasiat\n 3. Salinan Kad Pengenalan penerima\n 4. Fi Wasiat Asas : RM500. (pembayaran boleh melalui tunai, kad debit/kredit, kod QR)\n\n Sila hadir ke mana-mana kaunter cawangan kami yang berdekatan. **{name}** boleh buat temujanji di https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m Maklumat cawangan boleh didapati di https://www.amanahraya.my/contact-us/branch-locator/ \n\n 1. Pada tarikh temujanji, rundingan boleh dibuat bersama pegawai kami.\n 2. Serahan dokumen dan pembayaran boleh dilakukan pada hari yang sama.\n 3. Tandatangan akan dilakukan bersama pegawai kami.\n 4. Wasiat Asal akan disimpan di AmanahRaya.\n 5. Wasiat Pendua akan diserahkan kepada **{name}** untuk simpanan.\n\n **{name}** akan menerima e-mel pengesahan dan e-card Wasiat selepas Wasiat Asal diterima serta disimpan selamat oleh AmanahRaya.\n\n Sekiranya **{name}** telah sampai ke peringkat ini, ARIA mengucapkan TAHNIAH kerana telah berjaya merancang masa depans`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    wasiat_my_permohonan_tidak_waisiat_islam_komprehensif: {
+        id: 'wasiat_my_permohonan_tidak_waisiat_islam_komprehensif',
+        message: `Tahniah. **{name}** telah mengambil langkah bijak dalam merancang masa depan.\n\n Wasi: AmanahRaya Tempoh Penyediaan: 7 hari bekerja Fi Wasiat: RM1,200 (Fi adalah termasuk khidmat rundingan, penyediaan wasiat dan penyimpanan wasiat)\n\n Boleh ARIA terus ke Boleh ARIA terus ke proses permohonan?`,
+        options: [
+            { label: '1️⃣ Teruskan', nextStep: 'wasiat_my_permohonan_tidak_waisiat_islam_komprehensif_teruskan' },
+            { label: '2️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    wasiat_my_permohonan_tidak_waisiat_islam_komprehensif_teruskan: {
+        id: 'wasiat_my_permohonan_tidak_waisiat_islam_komprehensif_teruskan',
+        message: `Permohonan boleh dibuat melalui beberapa cara. **{name}** nak pilih yang mana?`,
+        options: [
+            { label: "1️⃣ MyAmanahRaya Apps", nextStep: 'wasiat_my_permohonan_tidak_waisiat_islam_komprehensif_teruskan_arb_app' },
+            { label: '2️⃣ Wasiat atas talian', nextStep: 'wasiat_my_permohonan_tidak_waisiat_islam_komprehensif_teruskan_arb_app_talian' },
+            { label: "3️⃣ Kaunter", nextStep: 'wasiat_my_permohonan_tidak_waisiat_islam_komprehensif_teruskan_kaunter' },
+        ]
+    },
+    wasiat_my_permohonan_tidak_waisiat_islam_komprehensif_teruskan_arb_app: {
+        id: 'wasiat_my_permohonan_tidak_waisiat_islam_komprehensif_teruskan_arb_app',
+        message: ``,
+        options: [
+            { label: '1️⃣ Ejen', nextStep: 'wasiat_my_permohonan_tidak_waisiat_islam_asas_teruskan_arb_app_ejen' },
+            { label: '2️⃣ Atas talian', nextStep: 'wasiat_my_permohonan_tidak_waisiat_islam_komprehensif_teruskan_arb_app_talian' }
+        ]
+    },
+    wasiat_my_permohonan_tidak_waisiat_islam_komprehensif_teruskan_arb_app_talian: {
+        id: 'wasiat_my_permohonan_tidak_waisiat_islam_komprehensif_teruskan_arb_app_talian',
+        message: `1. Sila klik https://willwriting.amanahraya.com.my/.\n 2. Daftar untuk penggunaan.\n 3. Sila teruskan penulisan wasiat dan pembayaran mengikut arahan yang tertera atas talian tersebut.\n\n 1. Penulis wasiat kami akan menyediakan draf dalam 7 hari bekerja dari tarikh pendaftaran permohonan dan akan dihantar melalui e-mel.\n 2. Sila berikan maklum balas sama ada bersetuju atau perlukan pindaan.\n 3. Jika setuju, tetapkan tarikh temujanji di cawangan berdekatan untuk tandatangan.\n 4. Tandatangan akan dilakukan bersama pegawai kami pada tarikh tersebut.\n 5. Wasiat Asal disimpan oleh AmanahRaya, manakala Wasiat Pendua diberikan kepada **{name}** untuk simpanan.\n\n **{name}** akan menerima e-mel pengesahan dan e-card Wasiat selepas Wasiat Asal diterima serta disimpan selamat oleh AmanahRaya.\n\n Sekiranya **{name}** telah sampai ke peringkat ini, ARIA mengucapkan TAHNIAH kerana telah berjaya merancang masa depan`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    wasiat_my_permohonan_tidak_waisiat_islam_komprehensif_teruskan_kaunter: {
+        id: 'wasiat_my_permohonan_tidak_waisiat_islam_komprehensif_teruskan_kaunter',
+        message: `Sila kemukakan borang permohonan beserta dokumen berikut:\n 1. Borang Permohonan Wasiat (link)\n 2. Salinan Kad Pengenalan pewasiat\n 3. Salinan Kad Pengenalan penerima\n 4. Salinan Kad Pengenalan penjaga (sekiranya berkaitan)\n 5. Salinan dokumen aset/hutang yang dinyatakan di dalam wasiat.\n 6. Fi Wasiat Komprehensif : RM1200. (pembayaran boleh melalui tunai, kad debit/kredit, kod QR)\n\n Sila hadir ke mana-mana kaunter cawangan kami yang berdekatan. **{name}** boleh buat temujanji di https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m \n\n Maklumat cawangan boleh didapati di https://www.amanahraya.my/contact-us/branch-locator/ \n\n 1. Pada tarikh temujanji, rundingan dan khidmat nasihat boleh dibuat bersama pegawai kami.\n 2. Serahan dokumen dan pembayaran boleh dilakukan pada hari yang sama.\n 3. Penulis wasiat kami akan menyediakan draf dalam 7 hari bekerja dari tarikh pendaftaran permohonan dan akan dihantar melalui e-mel.\n 4. Sila berikan maklum balas sama ada bersetuju atau perlukan pindaan.\n 5. Jika setuju, tetapkan tarikh temujanji di cawangan berdekatan untuk tandatangan.\n 6. Tandatangan akan dilakukan bersama pegawai kami pada tarikh tersebut\n 7. Wasiat Asal akan disimpan di AmanahRaya.\n 8. Wasiat Pendua akan diserahkan kepada **{name}** untuk simpanan.\n\n **{name}** akan menerima e-mel pengesahan dan e-card Wasiat selepas Wasiat Asal diterima serta disimpan selamat oleh AmanahRaya.\n\n Sekiranya **{name}** telah sampai ke peringkat ini, ARIA mengucapkan TAHNIAH kerana telah berjaya merancang masa depan`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    wasiat_my_permohonan_tidak_bukan_wasiat_islam: {
+        id: 'wasiat_my_permohonan_tidak_bukan_wasiat_islam',
+        message: `AmanahRaya ada menawarkan 2 jenis wasiat.\n\n Wasiat Asas : Dokumen yang menetapkan pelantikan Amanah Raya Berhad untuk menguruskan harta, termasuk penyelesaian hutang, mengikut Akta Wasiat 1959. Wasiat ini hanya menyatakan nama penerima dan bahagian yang akan diterima tanpa menyenaraikan jenis aset secara terperinci.\n\n Wasiat Komprehensif : Dokumen perundangan yang lebih terperinci dan menyeluruh, yang menyatakan kehendak pewasiat mengenai pengurusan serta pengagihan hartanya selepas kematian. Wasiat ini bukan sahaja merangkumi pelantikan pentadbir dan pembahagian aset kepada penerima pilihan, tetapi juga boleh meliputi arahan khusus seperti penjagaan anak di bawah umur, pemenuhan tanggungan kewangan, derma kepada badan amal, dan pesanan kepada waris. Wasiat komprehensif memastikan perancangan pusaka yang lebih jelas, mengelakkan pertikaian dalam kalangan waris, serta memudahkan proses pentadbiran harta selepas kematian pewasiat.\n\n Untuk perbandingan Wasiat Asas dan Wasiat Komprehensif secara terperinci, sila klik https://www.amanahraya.my/ms/perkhidmatan-wasiat/ \n\n **{name}** berminat wasiat yang mana?`,
+        options: [
+            { label: '1️⃣ Wasiat Asas', nextStep: 'wasiat_my_permohonan_tidak_bukan_wasiat_islam_asas' },
+            { label: '2️⃣ Wasiat Komprehensif', nextStep: 'wasiat_my_permohonan_tidak_bukan_wasiat_islam_komprehensif' }
+        ]
+    },
+    wasiat_my_permohonan_tidak_bukan_wasiat_islam_asas: {
+        id: 'wasiat_my_permohonan_tidak_bukan_wasiat_islam_asas',
+        message: `Hebat!!!**{name}** telah mengambil langkah bijak dalam merancang masa depan.\n\n Wasi: AmanahRaya Tempoh Penyediaan: 1 hari bekerja Fi Wasiat: RM500 (Fi adalah termasuk khidmat rundingan, penyediaan wasiat dan penyimpanan wasiat)\n\n Boleh ARIA terus ke proses permohonan?`,
+        options: [
+            { label: '1️⃣ Teruskan', nextStep: 'wasiat_my_permohonan_tidak_bukan_wasiat_islam_asas_tersukan' },
+            { label: '2️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    wasiat_my_permohonan_tidak_bukan_wasiat_islam_asas_tersukan: {
+        id: 'wasiat_my_permohonan_tidak_bukan_wasiat_islam_asas_tersukan',
+        message: ``,
+        options: [
+            { label: "1️⃣ MyAmanahRaya Apps", nextStep: 'wasiat_my_permohonan_tidak_bukan_wasiat_islam_asas_tersukan_arb_app' },
+            { label: '2️⃣ Wasiat atas talian', nextStep: ' wasiat_my_permohonan_tidak_bukan_wasiat_islam_asas_tersukan_arb_app_talian' },
+            { label: "3️⃣ Kaunter", nextStep: 'wasiat_my_permohonan_tidak_bukan_wasiat_islam_asas_tersukan_kaunter' },
+        ]
+    },
+    wasiat_my_permohonan_tidak_bukan_wasiat_islam_asas_tersukan_arb_app: {
+        id: 'wasiat_my_permohonan_tidak_bukan_wasiat_islam_asas_tersukan_arb_app',
+        message: ``,
+        options: [
+            { label: '1️⃣ Ejen', nextStep: 'wasiat_my_permohonan_tidak_waisiat_islam_asas_teruskan_arb_app_ejen' },
+            { label: '2️⃣ Atas talian', nextStep: 'wasiat_my_permohonan_tidak_bukan_wasiat_islam_asas_tersukan_arb_app_talian' }
+        ]
+    },
+    wasiat_my_permohonan_tidak_bukan_wasiat_islam_asas_tersukan_arb_app_talian: {
+        id: 'wasiat_my_permohonan_tidak_bukan_wasiat_islam_asas_tersukan_arb_app_talian',
+        message: `1. Sila klik https://willwriting.amanahraya.com.my/.\n 2. Daftar untuk penggunaan.\n 3. Sila teruskan penulisan wasiat dan pembayaran mengikut arahan yang tertera atas talian tersebut.\n\n 1. Wasiat Asas boleh dicetak sendiri atau melalui cawangan kami.\n 2. Sekiranya **{name}** membuat cetakan sendiri, sila ikut arahan seperti atas talian.\n 3. Sekiranya cetakan ingin dibuat di cawangan, temujanji perlu dibuat dengan menghubungi Talian Mesra 03-2723 7273.\n 4. Tandatangan akan dilakukan bersama pegawai kami pada tarikh tersebut.\n 5. Wasiat Asal disimpan oleh AmanahRaya, manakala Wasiat Pendua diberikan kepada **{name}** untuk simpanan.\n\n **{name}** akan menerima e-mel pengesahan dan e-card Wasiat selepas Wasiat Asal diterima serta disimpan selamat oleh AmanahRaya\n\n ekiranya **{name}** telah sampai ke peringkat ini, ARIA mengucapkan TAHNIAH kerana telah berjaya merancang masa depan.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    wasiat_my_permohonan_tidak_bukan_wasiat_islam_asas_tersukan_kaunter: {
+        id: 'wasiat_my_permohonan_tidak_bukan_wasiat_islam_asas_tersukan_kaunter',
+        message: `Sila kemukakan borang permohonan beserta dokumen berikut:\n 1. Borang Permohonan Wasiat Asas (link)\n 2. Salinan Kad Pengenalan pewasiat\n 3. Salinan Kad Pengenalan penerima\n 4. Salinan dokumen aset/hutang yang dinyatakan di dalam wasiat.\n 5. Fi Wasiat Asas : RM500. (pembayaran boleh melalui tunai, kad debit/kredit, kod QR)\n\n Sila hadir ke mana-mana kaunter cawangan kami yang berdekatan. **{name}** boleh buat temujanji di https://arb.nubitel.co/arb/Appointment/ AppointmentForm.aspx?para=m\n\n Maklumat cawangan boleh didapati di https://www.amanahraya.my/contact-us/branch-locator/ \n\n 1. Pada tarikh temujanji, rundingan boleh dibuat bersama pegawai kami.\n 2. Serahan dokumen dan pembayaran boleh dilakukan pada hari yang sama.\n 3. Tandatangan akan dilakukan bersama pegawai kami.\n 4. Wasiat Asal akan disimpan di AmanahRaya.\n 5. Wasiat Pendua akan diserahkan kepada **{name}** untuk simpanan.\n\n **{name}** akan menerima e-mel pengesahan dan e-card Wasiat selepas Wasiat Asal diterima serta disimpan selamat oleh AmanahRaya\n\n ekiranya **{name}** telah sampai ke peringkat ini, ARIA mengucapkan TAHNIAH kerana telah berjaya merancang masa depan.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    wasiat_my_permohonan_tidak_bukan_wasiat_islam_komprehensif: {
+        id: 'wasiat_my_permohonan_tidak_bukan_wasiat_islam_komprehensif',
+        message: `Hebat!!!**{name}** telah mengambil langkah bijak dalam merancang masa depan.\n\n Wasi: AmanahRaya Tempoh Penyediaan: 7 hari bekerja Fi Wasiat: RM1,200 (Fi adalah termasuk khidmat rundingan, penyediaan wasiat dan penyimpanan wasiat)\n\n Boleh ARIA terus ke proses permohonan?`,
+        options: [
+            { label: '1️⃣ Teruskan', nextStep: 'wasiat_my_permohonan_tidak_bukan_wasiat_islam_komprehensif_tersukan' },
+            { label: '2️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    wasiat_my_permohonan_tidak_bukan_wasiat_islam_komprehensif_tersukan: {
+        id: 'wasiat_my_permohonan_tidak_bukan_wasiat_islam_komprehensif_tersukan',
+        message: `Permohonan boleh dibuat melalui beberapa cara. **{name}** nak pilih yang mana?`,
+        options: [
+            { label: "1️⃣ MyAmanahRaya Apps", nextStep: 'wasiat_my_permohonan_tidak_bukan_wasiat_islam_komprehensif_tersukan_arb_app' },
+            { label: '2️⃣ Wasiat atas talian', nextStep: 'wasiat_my_permohonan_tidak_bukan_wasiat_islam_komprehensif_tersukan_arb_app_talian' },
+            { label: "3️⃣ Kaunter", nextStep: 'wasiat_my_permohonan_tidak_bukan_wasiat_islam_komprehensif_tersukan_kaunter' },
+        ]
+    },
+    wasiat_my_permohonan_tidak_bukan_wasiat_islam_komprehensif_tersukan_arb_app: {
+        id: 'wasiat_my_permohonan_tidak_bukan_wasiat_islam_komprehensif_tersukan_arb_app',
+        message: `1. Sila muat turun MyAmanahRaya Apps melalui Google Play atau Apple Apps Store.\n 2. Daftar untuk penggunaan.\n 3. Pilih 'Wasiat'\n 4. Pilih Ejen untuk urusan secara bersemuka atau boleh terus membuat permohonan melalui aplikasi ini.\n\n **{name}** ingin buat melalui ejen atau atas talian?`,
+        options: [
+            { label: '1️⃣ Ejen', nextStep: 'wasiat_my_permohonan_tidak_waisiat_islam_asas_teruskan_arb_app_ejen' },
+            { label: '2️⃣ Atas talian', nextStep: 'wasiat_my_permohonan_tidak_bukan_wasiat_islam_komprehensif_tersukan_arb_app_talian' }
+        ]
+    },
+    wasiat_my_permohonan_tidak_bukan_wasiat_islam_komprehensif_tersukan_arb_app_talian: {
+        id: 'wasiat_my_permohonan_tidak_bukan_wasiat_islam_komprehensif_tersukan_arb_app_talian',
+        message: `1. Sila klik https://willwriting.amanahraya.com.my/.\n 2. Daftar untuk penggunaan.\n 3. Sila teruskan penulisan wasiat dan pembayaran mengikut arahan yang tertera atas talian tersebut.\n\n 1. Penulis wasiat kami akan menyediakan draf dalam 7 hari bekerja dari tarikh pendaftaran permohonan dan akan dihantar melalui e-mel.\n 2. Sila berikan maklum balas sama ada bersetuju atau perlukan pindaan.\n 3. Jika setuju, tetapkan tarikh temujanji di cawangan berdekatan untuk tandatangan.\n 4. Tandatangan akan dilakukan bersama pegawai kami pada tarikh tersebut.\n 5. Wasiat Asal disimpan oleh AmanahRaya, manakala Wasiat Pendua diberikan kepada **{name}** untuk simpanan.\n\n **{name}** akan menerima e-mel pengesahan dan e-card Wasiat selepas Wasiat Asal diterima serta disimpan selamat oleh AmanahRaya.\n\n Sekiranya **{name}** telah sampai ke peringkat ini, ARIA mengucapkan TAHNIAH kerana telah berjaya merancang masa depan.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    wasiat_my_permohonan_tidak_bukan_wasiat_islam_komprehensif_tersukan_kaunter: {
+        id: 'wasiat_my_permohonan_tidak_bukan_wasiat_islam_komprehensif_tersukan_kaunter',
+        message: `Sila kemukakan borang permohonan beserta dokumen berikut:\n 1. Borang Permohonan Wasiat (link)\n 2. Salinan Kad Pengenalan pewasiat\n 3. Salinan Kad Pengenalan penerima\n 4. Salinan Kad Pengenalan penjaga (sekiranya berkaitan)\n 5. Salinan dokumen aset/hutang yang dinyatakan di dalam wasiat.\n 6. Fi Wasiat Komprehensif : RM1200. (pembayaran boleh melalui tunai, kad debit/kredit, kod QR)\n\n Sila hadir ke mana-mana kaunter cawangan kami yang berdekatan. **{name}** boleh buat temujanji di https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m\n\n Maklumat cawangan boleh didapati di https://www.amanahraya.my/contact-us/branch-locator/\n\n 1. Pada tarikh temujanji, rundingan dan khidmat nasihat boleh dibuat bersama pegawai kami.\n 2. Serahan dokumen dan pembayaran boleh dilakukan pada hari yang sama.\n 3. Penulis wasiat kami akan menyediakan draf dalam 7 hari bekerja dari tarikh pendaftaran permohonan dan akan dihantar melalui e-mel.\n 4. Sila berikan maklum balas sama ada bersetuju atau perlukan pindaan.\n 5. Jika setuju, tetapkan tarikh temujanji di cawangan berdekatan untuk tandatangan.\n 6. Tandatangan akan dilakukan bersama pegawai kami pada tarikh tersebut\n 7. Wasiat Asal akan disimpan di AmanahRaya.\n 8. Wasiat Pendua akan diserahkan kepada **{name}** untuk simpanan.\n\n **{name}** akan menerima e-mel pengesahan dan e-card Wasiat selepas Wasiat Asal diterima serta disimpan selamat oleh AmanahRaya.\n\n Sekiranya **{name}** telah sampai ke peringkat ini, ARIA mengucapkan TAHNIAH kerana telah berjaya merancang masa depan.`,
+        options: []
+    },
+    wasiat_my_penyimpanan: {
+        id: 'wasiat_my_penyimpanan',
+        message: `ARIA nak maklumkan wasiat luar adalah merujuk kepada wasiat yang ditulis dengan pihak selain ARB namun tetap boleh disimpan selamat di ARB\n\n Kelebihan penyimpanan wasiat di ARB:\n 1. Keselamatan terjamin\n 2. Akses mudah dan teratur\n 3. Kerahsiaan terpelihara\n 4. Memudahkan urusan waris\n\n **{name}** ingin simpan wasiat siapa?`,
+        options: [
+            { label: "1️⃣ Wasiat saya ", nextStep: 'wasiat_my_penyimpanan_saya' },
+            { label: '2️⃣ Wasiat anak guam saya', nextStep: 'wasiat_my_penyimpanan_saya' },
+            { label: "3️⃣ Wasiat pelanggan saya", nextStep: 'wasiat_my_penyimpanan_saya' },
+        ]
+    },
+    wasiat_my_penyimpanan_saya: {
+        id: 'wasiat_my_penyimpanan_saya',
+        message: `Boleh ARIA tahu, siapa wasi yang dilantik di dalam wasiat?\n\n Wasi adalah merujuk kepada individu yang dilantik di dalam wasiat bagi menguruskan harta pusaka setelah berlaku kematian pewasiat.`,
+        options: [
+            { label: "1️⃣ Amanah Raya Berhad", nextStep: 'wasiat_my_penyimpanan_saya_raya' },
+            { label: '2️⃣ Selain Amanah Raya Berhad', nextStep: 'wasiat_my_penyimpanan_saya_raya_berhad' },
+        ]
+    },
+    wasiat_my_penyimpanan_saya_raya: {
+        id: 'wasiat_my_penyimpanan_saya_raya',
+        message: `Terbaik!!! **{name}** telah memilih wasi yang tepat.Sila hadir ke mana-mana cawangan kami yang berdekatan dan bawa bersama dokumen-dokumen berikut:\n 1. Borang Permohonan Wasiat (link)\n 2. Wasiat asal\n 3. Salinan Kad Pengenalan pewasiat\n 4. Fi Penyimpanan : RM600 (pembayaran boleh melalui tunai, kad debit/kredit, kod QR)\n 1. Borang Permohonan Wasiat (link)\n 2. Wasiat asal\n 3. Salinan Kad Pengenalan pewasiat dan saksi-saksi wasiat\n 4. Fi Penyimpanan : RM400 (pembayaran boleh melalui tunai, kad debit/kredit, kod QR)\n\n Maklumat cawangan boleh didapati di https://www.amanahraya.my/contact-us/branch-locator/ \n\n **{name}** akan terima e-mel pengesahan penyimpanan wasiat setelah proses penyimpanan selesai dilaksanakan.\n\n Ada apa-apa lagi yang boleh ARIA bantu?`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    wasiat_my_penyimpanan_saya_raya_berhad: {
+        id: 'wasiat_my_penyimpanan_saya_raya_berhad',
+        message: `Sila hadir ke mana-mana cawangan kami yang berdekatan dan bawa bersama dokumen- dokumen berikut:\n 1. Borang Permohonan Wasiat (link)\n 2. Wasiat asal\n 3. Salinan Kad Pengenalan pewasiat\n 4. Fi Penyimpanan : RM600 (pembayaran boleh melalui tunai, kad debit/kredit, kod QR)\n\n Maklumat cawangan boleh didapati di https://www.amanahraya.my/contact-us/branch-locator/ \n\n **{name}** akan terima e-mel pengesahan penyimpanan wasiat setelah proses penyimpanan selesai dilaksanakan.\n\n Ada apa-apa lagi yang boleh ARIA bantu?`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    // Pusaka asset starts from here
+    pusaka_my_aset: {
+        id: 'pusaka_my_aset',
+        message: `Boleh ARIA tahu, apa aset tambahan yang hendak ditadbir?`,
+        options: [
+            { label: "1️⃣ Kenderaan sahaja (nilaian semasa kurang dari RM10,000)", nextStep: 'pusaka_my_aset_kenderaan' },
+            { label: '2️⃣ Aset alih sahaja', nextStep: 'pusaka_my_aset_alih_sahaja' },
+            { label: "3️⃣ Kenderaan sahaja (nilaian semasa melebihi RM10,000)", nextStep: 'pusaka_my_aset_alih_sahaja' },
+            { label: "4️⃣ Aset alih dan aset tak alih ", nextStep: 'pusaka_my_aset_alih_sahaja' },
+            { label: "5️⃣ Aset tak alih sahaja", nextStep: 'pusaka_my_aset_alih_sahaja' },
+        ]
+    },
+    pusaka_my_aset_kenderaan: {
+        id: 'pusaka_my_aset_kenderaan',
+        message: `ARIA maklumkan pentadbiran ini boleh dibuat secara prosedur Fast Lane iaitu Surat Kuasa Mentadbir (SKM) dikeluarkan dalam tempoh 30 hari dari tarikh penerimaan dokumen lengkap. Prosedur ini hanya terpakai bagi SKM yang dikeluarkan oleh ARB sahaja.\n\n 1. SIMATI\n a. Sijil Kematian asal & 1 salinan\n b. 1 salinan Sijil Kelahiran simati (Jika waris simati adalah ibubapa / adik beradik)\n\n 2. WAKIL WARIS\n a. 1 salinan kad pengenalan / passport\n b. 1 salinan dokumen pembuktian pertalian dengan simati\n i. Sijil Kelahiran (jika waris adalah anak / adik beradik)\n ii. Sijil Perkahwinan (jika waris adalah pasangan)\n\n 3. PEMBELI (JIKA PENERIMA KENDERAAN ADALAH PEMBELI)\n a. 1 salinan kad pengenalan / passport\n b. Bukti pembelian kenderaan\n\n 4. HARTA ALIH - KENDERAAN\n a. Geran baru - 1 salinan geran kenderaan (depan sahaja)\n * Perlu sertakan carian e-hakmilik kenderaan / bukti penyelesaian hutang / bukti pembelian tunai\n b. Geran lama - 1 salinan geran kenderaan (depan dan belakang sahaja)\n * Jika masih mempunyai hakmilik dituntut yang belum dibatalkan dan pinjaman telah selesai, perlu sertakan carian e-hakmilik / bukti penyelesaian hutang\n\n 5. MINIMUM DEPOSIT\n RM50\n\n 6. TEMPOH PENTADBIRAN\n 30 hari dari tarikh pembukaan fail dan dokumen lengkap\n\n 7. BORANG YANG BERKAITAN\n a. Borang Permohonan Pusaka Aset atau Liabiliti Tambahan\n b. Surat Akuan Pindahmilik Kenderaan\n c. Contoh Pengisian - Borang Permohonan Pusaka Aset atau Liabiliti Tambahan\n d. Contoh Pengisian - Surat Akuan Pindahmilik Kenderaan\n\n Terdapat fi pentadbiran yang dikenakan bagi pentadbiran harta pusaka ini.\n a. Jumlah nilaian RM3,000 dan ke bawah : RM50\n b. Jumlah nilaian RM3,000.01 - RM5,000 : RM150\n c. Jumlah nilaian RM5,000.01 - RM10,000 : 5.00% ke atas nilai kenderaan\n\n Untuk makluman, nilaian kenderaan akan dibuat melalui laman web di kaunter cawangan ketika proses pembukaan fail. **{name}** perlu tandatangan bagi menyatakan persetujuan ke atas nilaian yang dikeluarkan.\n\n Borang yang lengkap beserta dokumen yang diperlukan mestilah dihantar ke cawangan AmanahRaya yang sama mengikut pentadbiran terdahulu.\n\n Cara penghantaran mana yang lebih mudah untuk **{name}**?`,
+        options: [
+            { label: "1️⃣ Kaunter", nextStep: 'pusaka_my_aset_kenderaan_kaunter' },
+            { label: '2️⃣ Pos', nextStep: 'pusaka_my_aset_kenderaan_pos' },
+            { label: "3️⃣ E-mel / WhatsApp", nextStep: 'pusaka_my_aset_kenderaan_email' },
+        ]
+    },
+    pusaka_my_aset_alih_sahaja: {
+        id: 'pusaka_my_aset_alih_sahaja',
+        message: `Ok jelas. ARIA akan senaraikan keperluan dokumen.\n\n 1. SIMATI\n a. Sijil Kematian asal & 1 salinan\n\n 2. WARIS SIMATI\n a. 1 salinan Sijil Kematian (jika terdapat waris yang meninggal selepas pentadbiran awal selesai)\n\n 3. HARTA ALIH (SEDIAKAN YANG BERKAITAN SAHAJA)\n a. 1 salinan Geran / Sijil Pemilikan Kenderaan (depan dan belakang) dan tidak mempunyai tanggungan / selesai pinjaman\n b. 1 salinan penyata akaun / buku simpanan akaun simati (ASB / Bank / Tabung Haji)\n c. 1 salinan penyata akaun semasa\n d. 1 salinan penyata / buku simpanan akaun bersama\n e. 1 salinan penyata Saham Bursa Malaysia\n f. 1 salinan penyata Deposit Tetap\n g. 1 salinan slip Peti Simpanan Selamat (Safe Deposit Box)\n h. 1 salinan sijil Saham Syarikat\n i. 1 salinan penyata KWSP\n j. 1 salinan polisi Insuran\n k. 1 salinan lesen vessel\n\n 4. HARTA TAK ALIH (SEDIAKAN YANG BERKAITAN SAHAJA)\n a. 1 salinan perjanjian jual beli (S&P) untuk rumah yang belum memilik hakmilik strata\n b. 1 salinan hakmilik strata rumah\n c. 1 salinan geran rumah\n d. 1 salinan geran tanah\n e. Resit asal cukai tanah terkini dan 1 salinan\n f. Resit asal cukai pintu terkini dan 1 salinan\n\n 5. DEPOSIT\n a. RM50 - RM1000 (jumlah sebenar akan dimaklumkan\n setelah semakan dokumen dibuat)\n\n 6. BORANG YANG BERKAITAN\n a. Borang Permohonan Pusaka Aset atau Liabiliti Tambahan\n b. Contoh Pengisian - Borang Permohonan Pusaka Aset atau Liabiliti Tambahan\n\n Borang yang lengkap beserta dokumen yang diperlukan mestilah dihantar ke cawangan AmanahRaya yang sama mengikut pentadbiran terdahulu.\n\n Cara penghantaran mana yang lebih mudah untuk **{name}**?`,
+        options: [
+            { label: "1️⃣ Kaunter", nextStep: 'pusaka_my_aset_kenderaan_kaunter' },
+            { label: '2️⃣ Pos', nextStep: 'pusaka_my_aset_kenderaan_pos' },
+            { label: "3️⃣ E-mel / WhatsApp", nextStep: 'pusaka_my_aset_kenderaan_email' },
+        ]
+    },
+    pusaka_my_aset_kenderaan_kaunter: {
+        id: 'pusaka_my_aset_kenderaan_kaunter',
+        message: `Sila hadir ke mana-mana kaunter cawangan kami yang berdekatan. **{name}** boleh buat temujanji di https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m \n\n Maklumat cawangan boleh didapati di https://www.amanahraya.my/contact-us/branch-locator/ \n\n Ada apa-apa lagi yang boleh AIRA bantu?`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    pusaka_my_aset_kenderaan_pos: {
+        id: 'pusaka_my_aset_kenderaan_pos',
+        message: `Sila poskan ke cawangan di mana fail telah didaftarkan.\n\n https://www.amanahraya.my/contact-us/branch-locator/ \n\n **{name}** akan dihubungi bagi pembayaran atas talian setelah dokumen diterima.\n\n Ada apa-apa lagi yang boleh AIRA bantu?`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    pusaka_my_aset_kenderaan_email: {
+        id: 'pusaka_my_aset_kenderaan_email',
+        message: `Dokumen yang jelas boleh dihantar melalui e-mel ke crmd@arb.com.my atau WhatsApp kami di 03-2055 7557.\n\n **{name}** akan dihubungi bagi pembayaran atas talian setelah dokumen diterima.\n\n Ada apa-apa lagi yang boleh AIRA bantu?`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    sabah_my: {
+        id: 'sabah_my',
+        message: `Pentadbiran pusaka di Sabah hanya terpakai sekiranya harta Simati (alih dan tak alih) berada di Sabah. Jika harta di Semenanjung, Sarawak atau Labuan, pentadbiran pusaka hendaklah dibuat di Semenanjung, Sarawak atau Labuan.\n\n Sepanjang pengetahuan **{name}**, adakah pentadbiran pusaka Simati pernah dibuat sebelum ini?`,
+        options: [
+            { label: "1️⃣ Ya, pernah dibuat", nextStep: 'sabah_my_ya' },
+            { label: '2️⃣ Tidak pernah dibuat sebelum ini', nextStep: 'sabah_my_tidak' },
+        ]
+    },
+    sabah_my_ya: {
+        id: 'sabah_my_ya',
+        message: `Boleh ARIA tahu, di mana pentadbiran sebelum ini dibuat?`,
+        options: [
+            { label: '1️⃣ Mahkamah Tinggi Sivil (Semenanjung)', nextStep: 'sabah_my_ya_tinggi_sivil' },
+            { label: '2️⃣ Mahkamah Tinggi Sivil (Kota Kinabalu / Tawau / Sandakan)', nextStep: 'sabah_my_ya_tawau' },
+            { label: '3️⃣ Mahkamah Syariah (Kota Kinabalu / Tawau / Sandakan)', nextStep: 'esabah_my_ya_kota_kinabalu' },
+            { label: '4️⃣ Pejabat Daerah / Amanah Raya Berhad (Sarawak)', nextStep: 'sabah_my_ya_arb_sarawak' },
+            { label: '5️⃣ Amanah Raya Berhad (Semenanjung)', nextStep: 'sabah_my_ya_arb_sarawak' },
+            { label: '6️⃣ Pejabat Pembahagian Pusaka (Semenanjung / Labuan)', nextStep: 'sabah_my_ya_arb_sarawak' },
+            { label: '7️⃣ Mahkamah Anak Negeri (Sabah)', nextStep: 'sabah_my_ya_anak_negari_sabah' },
+            { label: '8️⃣ Amanah Raya Berhad (Sabah)', nextStep: 'sabah_my_ya_arb_sabah' },
+        ]
+    },
+    sabah_my_ya_tinggi_sivil: {
+        id: 'sabah_my_ya_tinggi_sivil',
+        message: `Adakah hartanah di Sabah telah dimasukkan di dalam pentadbiran pusaka yang dibuat?`,
+        options: [
+            { label: '1️⃣ Ya', nextStep: 'sabah_my_ya_tinggi_sivil_ya' },
+            { label: '2️⃣ Tidak', nextStep: 'sabah_my_ya_tinggi_sivil_tidak' },
+        ]
+    },
+    sabah_my_ya_tinggi_sivil_ya: {
+        id: 'sabah_my_ya_tinggi_sivil_ya',
+        message: `Bagi bukan Islam, pindahmilik hanya boleh dibuat sekiranya **{name}** mengemukakan perintah tersebut ke ARB Kota Kinabalu untuk tujuan resealing di Mahkamah Tinggi Sabah. Bagi Islam, **{name}** perlu mengemukakan permohonan pusaka baharu di ARB Kota Kinabalu untuk difailkan melalui Mahkamah Syariah.\n\n Adakah **{name}** ingin teruskan?`,
+        options: [
+            { label: '1️⃣ Teruskan', nextStep: 'sabah_my_tidak' },
+            { label: '2️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    sabah_my_ya_tinggi_sivil_tidak: {
+        id: 'sabah_my_ya_tinggi_sivil_tidak',
+        message: `**{name}** boleh mengemukakan permohonan pusaka baharu di ARB Kota Kinabalu untuk difailkan melalui Mahkamah TInggi Sivil (bagi Bukan Islam) atau Mahkamah Syariah (bagi Islam).\n\n Adakah **{name}** ingin teruskan?`,
+        options: [
+            { label: '1️⃣ Teruskan', nextStep: 'sabah_my_tidak' },
+            { label: '2️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    sabah_my_ya_tawau: {
+        id: 'sabah_my_ya_tawau',
+        message: `Sekiranya Pentadbir telah dilantik oleh Mahkmah Tinggi, **{name}** boleh meneruskan pentadbiran yang telah dibuat di Mahkamah Tinggi. Namun, sekiranya Pentadbir yang dilantik gagal menjalankan tugas, **{name}** boleh melantik ARB Kota Kinabalu sebagai pentadbr gantian dengan mengemukakan permohonan di ARB Kota Kinabalu.\n\n  Adakah **{name}** ingin teruskan?`,
+        options: [
+            { label: '1️⃣ Teruskan', nextStep: 'sabah_my_tidak' },
+            { label: '2️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    esabah_my_ya_kota_kinabalu: {
+        id: 'esabah_my_ya_kota_kinabalu',
+        message: `Sekiranya Wasi @ Wali Harta telah dilantik oleh Mahkmah Syariah, **{name}** boleh meneruskan pentadbiran yang telah dibuat di Mahkamah Syariah. Namun, sekiranya Wasi @ Wali Harta yang dilantik gagal menjalankan tugas, **{name}** boleh melantik ARB Kota Kinabalu sebagai Wasi @ Wali Harta yang baharu dengan mengemukakan permohonan di ARB Kota Kinabalu.\n\n Adakah **{name}** ingin teruskan?`,
+        options: [
+            { label: '1️⃣ Teruskan', nextStep: 'sabah_my_tidak' },
+            { label: '2️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    sabah_my_ya_arb_sarawak: {
+        id: 'sabah_my_ya_arb_sarawak',
+        message: `**{name}** boleh mengemukakan permohonan pusaka baharu di ARB Kota Kinabalu untuk difailkan melalui Mahkamah TInggi Sivil (bagi Bukan Islam) atau Mahkamah Syariah (bagi Islam).\n\n Adakah **{name}** ingin teruskan?`,
+        options: [
+            { label: '1️⃣ Teruskan', nextStep: 'sabah_my_tidak' },
+            { label: '2️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    sabah_my_ya_anak_negari_sabah: {
+        id: 'sabah_my_ya_anak_negari_sabah',
+        message: `Bagi harta Simati yang tidak boleh ditadbir melalui Mahkamah Anak Negeri, **{name}** boleh mengemukakan permohonan pusaka baharu di ARB Kota Kinabalu untuk difailkan melalui Mahkamah TInggi Sivil.\n\n Adakah **{name}** ingin teruskan?`,
+        options: [
+            { label: '1️⃣ Teruskan', nextStep: 'sabah_my_tidak' },
+            { label: '2️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    sabah_my_ya_arb_sabah: {
+        id: 'sabah_my_ya_arb_sabah',
+        message: `**{name}** boleh melengkapkan borang aset tambahan di bawah dan menghantar borang serta dokumen yang lengkap ke ARB Kota Kinabalu.\n\n [BORANG PERMOHONAN ASET TAMBAHAN](https://drive.google.com/file/d/1sMYoAe-0iOpgoTc-U50FwTi9-zsbshOO/view)`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    sabah_my_tidak: {
+        id: 'sabah_my_tidak',
+        message: `Sebelum ARIA berikan penerangan lanjut, **{name}** boleh mendapatkan maklumat berkenaan pentadbiran pusaka di ARB Kota Kinabalu.\n\n 1. Pentadbiran pusaka\n a. Jika Simati beragama Islam, permohonan akan dibuat melalui Mahkamah Syariah.\n b. Jika Simati bukan Islam (Bukan Bumiputera), permohonan akan dibuat melalui Mahkamah Tinggi Sivil.\n\n 2. Status hartanah\n a. Bagi hartanah berstatus Native Land (NT), penerima mestilah berstatus Anak Negeri (Bumiputera / Peribumi Sabah).\n b. Bagi hartanah selain NT, tiada syarat yang ditetapkan ke atas penerima.\n c. Jika lokasi hartanah berada di luar kawasan Kota Kinabalu, proses pindahmilik hartanah akan dibuat di Jabatan Tanah Daerah yang terlibat.\n\n 3. Status pemilikan hartanah\n a. Jika Simati beragama Islam, hartanah mestilah bebas daripada hutang dan mempunyai geran individu asal ketika permohonan dibuat di Mahkamah Syariah.\n b. Jika Simati bukan Islam, permohonan boleh dibuat di Mahkamah Tinggi Sivil walaupun hartanah masih mempunyai hutang. Namun, proses pindahmilik akan ditangguhkan sehingga hutang selesai dilaksanakan dan mempunyai geran individu asal.\n *disclaimer bhw penerangan atas memang untuk hartanah di Sabah ahaja. Untuk harta alih di Sabah, boleh failkan di mana-mana (tidak semestinya dibuat di Sabah).\n\n Penerangan selanjutnya hanya terpakai sekiranya maklumat **{name}** memenuhi kriteria yang ditetapkan.\n\n Apakah agama yang dianuti oleh Simati?`,
+        options: [
+            { label: '1️⃣ Islam', nextStep: 'sabah_my_tidak_islam' },
+            { label: '2️⃣ Bukan Islam', nextStep: 'sabah_my_tidak_bulkan_islam' }
+        ]
+    },
+    sabah_my_tidak_islam: {
+        id: 'sabah_my_tidak_islam',
+        message: `1. SIMATI\n a. Sijil Kematian asal Simati & 3 salinan yang telah disahkan oleh JPN (jika meninggal luar negara, kemukakan Laporan Kematian Luar Negara oleh JPN)\n b. 3 salinan Sijil Kelahiran Simati yang telah disahkan oleh JPN\n c. Wasiat asal Simati & 1 salinan (sekiranya ada)\n\n 2. WARIS SIMATI\n a. 3 salinan Kad Pengenalan setiap waris yang telah disahkan oleh JPN.\n b. Bukti pertalian waris dengan Simati\n i. Pasangan - Sijil Pernikahan asal & 3 salinan yang telah disahkan oleh Jab. Hal Ehwal Agama Islam Negeri Sabah (JHEAINS) / Majlis Ugama Islam Sabah (MUIS))\n ii. Anak – 3 salinan Sijil Kelahiran setiap waris yang telah disahkan oleh JPN.\n c. 3 salinan Sijil Kematian (bagi waris yang meninggal sebelum / selepas simati) yang telah disahkan oleh JPN.\n * Jika dokumen seperti Sijil Kelahiran / Sijil Kematian tidak dapat dikemukakan, sila dapatkan di JPN.\n * Bagi Sijil Nikah, pasangan perlu dapatkan di JHEAINS/MUIS.\n\n 3. AKUAN (SEDIAKAN YANG BERKAITAN SAHAJA) Perlu ditandatangan oleh saksi bebas di hadapan Pesuruhjaya Sumpah dan membuat penyeteman di laman web Lembaga Hasil Dalam Negeri (LHDN). Salinan kad pengenalan saksi perlu disertakan)\n a. Akuan Berkanun Bujang (jika Simati meninggal Bujang)\n b. Akuan Tiada Zuriat (jika Simati tidak mempunyai anak)\n c. Akuan Waris Tunggal (jika Simati hanya meninggalkan seorang waris sahaja)\n\n 4. HARTA ALIH (SEDIAKAN YANG BERKAITAN SAHAJA)\n a. 1 salinan Geran / Sijil Pemilikan Kenderaan (depan dan belakang) dan tidak mempunyai tanggungan / selesai pinjaman\n b. 1 salinan penyata akaun / buku simpanan akaun simati (ASB / Bank / Tabung Haji)\n c. 1 salinan penyata akaun semasa\n d. 1 salinan penyata / buku simpanan akaun bersama\n e. 1 salinan penyata Saham Bursa Malaysia\n f. 1 salinan penyata Deposit Tetap\n g. 1 salinan slip Peti Simpanan Selamat (Safe Deposit Box)\n h. 1 salinan sijil Saham Syarikat\n i. 1 salinan penyata KWSP\n j. 1 salinan polisi Insuran\n k. 1 salinan lesen vessel\n\n 5. HARTA TAK ALIH (SEDIAKAN YANG BERKAITAN SAHAJA)\n a. Geran tanah asal atas nama Simati & 1 salinan geran tanah\n b. Pengesahan anak negeri (untuk tanah statys Native Title) sekiranya penerima bukan 100% bumiputera sabah\n\n 6. MINIMUM DEPOSIT\n a. RM1,500.00 bagi aset alih sahaja.\n b. RM2,000.00 bagi setiap aset tak alih.\n 7. TEMPOH PENTADBIRAN Minimum 1 tahun 6 bulan dari tarikh pembukaan fail\n\n 8. BORANG YANG BERKAITAN\n a. Borang Permohonan Pentadbiran Harta Pusaka\n b. Contoh Pengisian - Borang Permohonan Pentadbiran Harta Pusaka\n c. Senarai Semakan Dokumen Yang Perlu Disertakan\n d. Borang-borang lain (mahkamah) yang perlu dilengkapkan dari semasa ke semasa, setelah pendaftaran kes mal dibuat di Mahkamah Syariah.\n Cth: Borang Akuan Perlantikan Wali/Wasi Harta & Borang Persetujuan Pembahagian & Borang Penolakan.\n\n * Borang Permohonan perlu dilengkapkan dan ditandatangan oleh Pemohon di hadapan Pesuruhjaya Sumpah. Borang yang telah lengkap perlu dibuat penyeteman RM10.00 secara atas talian melalui laman sesawang Lembaga Hasil Dalam Negeri melalui pautan https://stamps.hasil.gov.my/stamps.\n\n Terdapat fi pentadbiran yang dikenakan bagi pentadbiran harta pusaka ini.\n 5% x RM25,000 yang pertama\n 4% x RM225,000 yang berikutnya\n 3% x RM250,000 yang berikutnya\n 2% x RM500,000 yang berikutnya\n 1% x baki selebihnya\n\n *Tidak termasuk fi perundangan & caj pihak ketiga (cth: Mahkamah, LHDN, JPPH dll).\n\n Borang yang lengkap beserta dokumen yang diperlukan boleh dihantar ke ARB Kota Kinabalu untuk proses pembukaan fail pusaka. **{name}** boleh membuat temujanji di https://www.amanahraya.my/.\n\n Maklumat cawangan boleh didapati di https://www.amanahraya.my/contact-us/branch-locator/ \n\n 1. Pada tarikh temujanji, rundingan dan khidmat nasihat boleh dibuat bersama pegawai kami.\n 2. Serahan dokumen dan pembayaran boleh dilakukan pada hari yang sama.\n\n Ada apa-apa lagi yang boleh ARIA bantu?`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    sabah_my_tidak_bulkan_islam: {
+        id: 'sabah_my_tidak_bulkan_islam',
+        message: `1. SIMATI\n a. Sijil Kematian asal Simati & 3 salinan yang telah disahkan oleh JPN (jika meninggal luar negara, kemukakan Laporan Kematian Luar Negara oleh JPN)\n b. Wasiat asal Simati & 1 salinan (sekiranya ada)\n\n 2. WARIS SIMATI\n a. 3 salinan Kad Pengenalan setiap waris yang telah disahkan oleh JPN.\n b. Bukti pertalian waris dengan Simati\n i. Sijil Pekahwinan asal & 3 salinan yang telah disahkan oleh JPN) - sekiranya Simati tiada wasiat.\n ii. Anak – 3 salinan Sijil Kelahiran setiap waris yang telah disahkan oleh JPN.\n c. 3 salinan Sijil Kematian (bagi waris yang meninggal sebelum / selepas simati) yang telah disahkan oleh JPN.\n * Jika dokumen seperti Sijil Kelahiran / Sijil Kematian / Sijil Perkahwinan tidak dapat dikemukakan, sila dapatkan di JPN.\n\n 3. AKUAN (SEDIAKAN YANG BERKAITAN SAHAJA) Perlu ditandatangan oleh saksi bebas di hadapan Pesuruhjaya Sumpah dan membuat penyeteman di laman web Lembaga Hasil Dalam Negeri (LHDN). Salinan kad pengenalan saksi perlu disertakan)\n a. Akuan Berkanun Bujang (jika Simati meninggal Bujang)\n b. Akuan Tiada Zuriat (jika Simati tidak mempunyai anak)\n c. Akuan Waris Tunggal (jika Simati hanya meninggalkan seorang waris sahaja)\n\n 4. HARTA ALIH (SEDIAKAN YANG BERKAITAN SAHAJA)\n a. 1 salinan Geran / Sijil Pemilikan Kenderaan (depan dan belakang) dan tidak mempunyai tanggungan / selesai pinjaman\n b. 1 salinan penyata akaun / buku simpanan akaun simati (ASB / Bank / Tabung Haji)\n c. 1 salinan penyata akaun semasa\n d. 1 salinan penyata / buku simpanan akaun bersama\n e. 1 salinan penyata Saham Bursa Malaysia\n f. 1 salinan penyata Deposit Tetap\n g. 1 salinan slip Peti Simpanan Selamat (Safe Deposit Box)\n h. 1 salinan sijil Saham Syarikat\n i. 1 salinan penyata KWSP\n j. 1 salinan polisi Insuran\n k. 1 salinan lesen vessel\n\n 5. HARTA TAK ALIH (SEDIAKAN YANG BERKAITAN SAHAJA)\n a. Geran tanah asal atas nama Simati & 1 salinan geran tanah\n b. Pengesahan anak negeri (untuk tanah statys Native Title) sekiranya penerima bukan 100% bumiputera sabah\n\n 6. MINIMUM DEPOSIT\n a. RM1,500.00 bagi aset alih sahaja.\n b. RM2,000.00 bagi setiap aset tak alih.\n\n 7. TEMPOH PENTADBIRAN\n a. Pusaka Berwasiat : Minimum 6 bulan dari tarikh pembukaan fail\n b. Pusaka tidak berwasiat : Minimum 1 tahun 6 bulan dari tarikh pembukaan fail\n\n 8. BORANG YANG BERKAITAN\n a. Borang Permohonan Pentadbiran Harta Pusaka\n b. Contoh Pengisian - Borang Permohonan Pentadbiran Harta Pusaka\n c. Senarai Semakan Dokumen Yang Perlu Disertakan\n\n * Borang Permohonan perlu dilengkapkan dan ditandatangan oleh Pemohon di hadapan Pesuruhjaya Sumpah. Borang yang telah lengkap perlu dibuat penyeteman RM10.00 secara atas talian melalui laman sesawang Lembaga Hasil Dalam Negeri melalui pautan https://stamps.hasil.gov.my/stamps.\n\n Terdapat fi pentadbiran yang dikenakan bagi pentadbiran harta pusaka ini.\n 5% x RM25,000 yang pertama\n 4% x RM225,000 yang berikutnya\n 3% x RM250,000 yang berikutnya\n 2% x RM500,000 yang berikutnya\n 1% x baki selebihnya\n\n *Tidak termasuk fi perundangan & caj pihak ketiga (cth: Mahkamah, LHDN, JPPH dll).\n\n Borang yang lengkap beserta dokumen yang diperlukan boleh dihantar ke ARB Kota Kinabalu untuk proses pembukaan fail pusaka. **{name}** boleh membuat temujanji di https://www.amanahraya.my/.\n\n Maklumat cawangan boleh didapati di https://www.amanahraya.my/contact-us/branch-locator/ \n\n 1. Pada tarikh temujanji, rundingan dan khidmat nasihat boleh dibuat bersama pegawai kami.\n 2. Serahan dokumen dan pembayaran boleh dilakukan pada hari yang sama.\n\n Ada apa-apa lagi yang boleh ARIA bantu?`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    //Sarawk starts from here
+    sarawak_my: {
+        id: 'sarawak_my',
+        message: `Sepanjang pengetahuan **{name}**, adakah pentadbiran pusaka simati pernah dibuat sebelum ini?`,
+        options: [
+            { label: "1️⃣ Ya, pernah dibuat", nextStep: 'sarawak_my_ya' },
+            { label: '2️⃣ Tidak pernah dibuat sebelum ini', nextStep: 'sarawak_my_tidak' },
+        ]
+    },
+    sarawak_my_ya: {
+        id: 'sarawak_my_ya',
+        message: `Boleh ARIA tahu, di mana pentadbiran sebelum ini dibuat?`,
+        options: [
+            { label: '1️⃣ Pejabat Daerah (Sarawak)', nextStep: 'sarawak_my_ya_daerah_sarawak' },
+            { label: '2️⃣ Amanah Raya Berhad (Sarawak)', nextStep: 'sarawak_my_ya_arb_sarawak' },
+            { label: '3️⃣ Mahkamah Tinggi Sivil (Semenanjung / Sabah)', nextStep: 'sarawak_my_ya_semenanjung' },
+            { label: '4️⃣ Pejabat Pembahagian Pusaka (Semenanjung / Labuan)', nextStep: 'sarawak_my_tidak' },
+            { label: '5️⃣ Mahkamah Syariah / Mahkamah Anak Negeri (Sabah)', nextStep: 'sarawak_my_tidak' },
+            { label: '6️⃣ Amanah Raya Berhad (Semenanjung / Sabah)', nextStep: 'sarawak_my_tidak' },
+        ]
+    },
+    sarawak_my_ya_daerah_sarawak: {
+        id: 'sarawak_my_ya_daerah_sarawak',
+        message: `**{name}** boleh membuat rujukan dengan Pejabat Daerah bagi pentadbiran aset tambahan Simati.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    sarawak_my_ya_arb_sarawak: {
+        id: 'sarawak_my_ya_arb_sarawak',
+        message: `**{name}** boleh melengkapkan borang aset tambahan di bawah dan menghantar borang serta dokumen yang lengkap ke cawangan Kuching untuk proses pengeluaran Surat Kuasa Tambahan\n\n [Borang Aset Tambahan](https://drive.google.com/file/d/187OrybkH0m6xPbS65gU6aj3L5lP5XZXZ/view)`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    sarawak_my_ya_semenanjung: {
+        id: 'sarawak_my_ya_semenanjung',
+        message: `Adakah hartanah di Sarawak telah dimasukkan di dalam pentadbiran pusaka yang dibuat?`,
+        options: [
+            { label: "1️⃣ Ya", nextStep: 'sarawak_my_ya_semenanjung_ya' },
+            { label: '2️⃣ Tidak', nextStep: 'sarawak_my_tidak' },
+        ]
+    },
+    sarawak_my_ya_semenanjung_ya: {
+        id: 'sarawak_my_ya_semenanjung_ya',
+        message: `Bagi urusan pindahmilik hartanah tersebut, **{name}** perlu membuat proses resealing di Amanah Raya Berhad Kuching\n\n **{name}** boleh hadir ke cawangan Kuching untuk mendapatkan penerangan lanjut.`,
+        options: []
+    },
+    sarawak_my_tidak: {
+        id: 'sarawak_my_tidak',
+        message: `Untuk makluman, ARB Kuching hanya boleh mengeluarkan Surat Kuasa Mentadbir / Surat Probet bagi:\n 1. Lokasi hartanah\n a. Hartanah Simati dalam kawasan Kuching sahaja atau waris bermastautin di Kuching\n b. Bagi hartanah selain Kuching, pentadbiran perlu dibuat di Pejabat Daerah.\n\n 2. Penerima/Waris\n a. Warganegara Malaysia.\n b. Jika bukan warganegara, perlu kemukakan perintah Power of Attorney kepada Amanah Raya Berhad Kuching. (bagi harta yang melibatkan hartanah di Kuching sahaja).\n\n 3. Simati\n Berhad Kuching.\n a. Jika Simati bukan Melayu/Bumiputera, pentadbiran perlu dibuat di Amanah Raya\n b. Jika Simati adalah Melayu/Bumiputera, pentadbiran perlu dibuat di Pejabat Daerah.\n\n *Penjelasan di atas adalah khusus bagi urusan berkaitan hartanah yang terletak di Sarawak sahaja. Bagi harta alih di Sarawak, permohonan pentadbiran boleh difailkan di mana-mana cawangan Amanah Raya Berhad dan tidak semestinya dibuat di Sarawak.\n\n Penerangan selanjutnya hanya terpakai sekiranya maklumat **{name}** memenuhi kriteria yang ditetapkan.\n\n Adakah Simati meninggalkan wasiat dan siapakah Wasi di dalam wasiat Simati?`,
+        options: [
+            { label: '1️⃣ Tiada wasiat', nextStep: 'sarawak_my_tidak_tiada_wasiat' },
+            { label: '2️⃣ Ada wasiat dan wasi adalah selain ARB', nextStep: 'sarawak_my_tidak_wasi' },
+            { label: '3️⃣ Ada wasiat dan wasi adalah ARB', nextStep: 'sarawak_my_tidak_wasi' },
+        ]
+    },
+    sarawak_my_tidak_tiada_wasiat: {
+        id: 'sarawak_my_tidak_tiada_wasiat',
+        message: `1. SIMATI\n a. Sijil Kematian asal Simati & 1 salinan (jika meninggal luar negara, kemukakan Sijil Kematian yang dikeluarkan oleh Negara terbabit dan disertakan pengesahan kematian daripada Kedutaan Malaysia atau Laporan Kematian Luar Negara oleh JPN ATAU\n b. Perintah Anggapan Kematian daripada Mahkamah Tinggi Sivil & 1 salinan.\n c. Salinan Sijil Pernikahan / Perkahwinan / Perceraian / Dikri Nisi Mutlak.\n\n 2. WARIS SIMATI\n a. 1 salinan Kad Pengenalan waris /pemohon\n b. 1 salinan bukti pertalian waris dengan Simati (contoh : Sijil Kelahiran, Sijil Pekahwinan)\n c. 1 salinan Sijil Kematian (bagi waris yang meninggal sebelum / selepas simati)\n\n 3. AKUAN\n a. Akuan Bersumpah oleh pemohon (Jika Sijil Kematian waris tidak dapat dikemukakan) – LA 1 (Swk. 1/2017).\n b. Akuan Bersumpah oleh pemohon dan 2 orang saksi bebas (jika Sijil Perkahwinan tidak dapat dikemukakan) – LA 2 (Swk. 1/2017) & LA 3 (Swk. 1/2017).\n c. Akuan Bersumpah oleh pemohon (bagi permohonan Surat Kuasa Mentadbir) – LA 5 (Swk. 1/2017).\n d. Akuan Bersumpah oleh seorang saksi bebas yang mengenali Simati untuk mengesahkan status perkahwinan Simati ATAU pengesahan daripada Persatuan Keturunan / Tua Kampung / Ketua Masyarakat / Ketua Badan Agama (jika Simati Bujang)\n\n * Akuan perlu ditandatangani oleh pemohon / saksi bebas di hadapan Pesuruhjaya Sumpah dan membuat penyeteman di laman web Lembaga Hasil Dalam Negeri (LHDN). Salinan kad pengenalan pemohon / saksi perlu disertakan.\n\n 4. LAIN-LAIN DOKUMEN\n a. Surat pengesahan oleh waris terdekat (Next-of-Kin) daripada Persatuan Keturunan / Temenggong / Penghulu – LA 4 (Swk. 1/2017).\n b. Surat persetujuan oleh benefisiari / waris terdekat Simati – LA 6 (Swk. 1/2017).\n c. Laporan Polis / Laporan Siasatan Polis Lengkap (jika kematian disebabkan kemalangan serta surat daripada pemohon menyatakan hasrat untuk mengambil tindakan undang-undang berkaitan).\n d. Surat daripada pemohon yang menyatakan tiada keperluan untuk membuat nilaian harta Simati seperti tanah, saham, kenderaan dan sebagainya. – LA 7 (Swk. 1/2017) e. Borang Aku Janji Amanah (Trust Undertaking) – TU (Swk. 1/2017) (jika berkaitan)\n\n 5. HARTA ALIH (SEDIAKAN YANG BERKAITAN SAHAJA)\n a. 1 salinan Buku Akaun Simpanan / Penyata Akaun Semasa terkini / Penyata Akaun Tetap / resit deposit tetap / resit deposit keselamatan.\n b. 1 salinan Sijil Saham Bursa Malaysia / Penyata Akaun CDS.\n c. 1 salinan penyata KWSP atau surat pengesahan daripada KWSP mengenai jumlah keseluruhan.\n d. 1 salinan polisi Insuran atau Surat pengesahan daripada syarikat berkaitan menyatakan jumlah yang perlu dibayar.\n e. Bagi perniagaan (3 salinan Penyata Perdagangan, Untung Rugi dan Penyata Kunci Kira-kira pada tarikh kematian).\n i. Jika pemilikan tunggal, perlu disahkan oleh waris terdekat dan disertakan salinan cop syarikat. ii. Jika mempunyai pemilikan saham syarikat, maka perlu kemukakan Carian dari SSM. iii. Jika perkongsian, perlu disahkan oleh rakan kongsi yang masih hidup dan disertakan cop syarikat & salinan pendaftaran perniagaan dari LHDN / Pejabat Daerah.\n f. 1 salinan Geran / Sijil Pemilikan Kenderaan (depan dan belakang)\n g. 1 salinan Lesen Pemilikan Senjata Api.\n h. Surat daripada majikan Simati yang menyatakan gaji / bonus Simati (jika ada).\n\n 6. HARTA TAK ALIH (SEDIAKAN YANG BERKAITAN SAHAJA)\n a. Salinan Geran Tanah dan Carian Rasmi daripada Pejabat Tanah / Memorandum Pemindahan / Perjanjian Jual Beli / Perjanjian Sewa / Surat Kuasa Wakil / Surat Wakil Kuasa.\n\n 7. FI PENTADBIRAN\n a. RM300.00 (Tiada nilaian harta alih dan harta tak alih)\n b. RM150.00 (Jika ada nilaian bagi harta alih dan harta tak alih kurang daripada <RM100K)\n c. RM300.00 (Jika harta alih dan harta tak alih bernilai RM100>RM1 juta)\n d. RM500.00 (jika harta alih dan harta tak alih bernilai RM1 juta dan ke atas)\n e. RM350.00 (Bagi permohonan oleh Warganegara Asing)\n\n 8. TEMPOH PENTADBIRAN\n 30 hari bekerja\n\n 9. BORANG YANG BERKAITAN\n a. Application for Letter of Administration\n b. Statutory Declaratin – LA 1 (Swk. 1/2017)\n c. Letter of Next-of-Kin – LA 4 (Swk. 1/2017)\n d. Statutory Declaration (by applicant) – LA 5 (1/2017)\n e. Consent to Grant of Letter of Administration – LA 6 (1/2017)\n f. No valuation letter – LA 7 (Swk.1/2017)\n\n Borang yang lengkap beserta dokumen yang diperlukan boleh dihantar ke ARB Kuching untuk proses pembukaan fail pusaka. **{name}** boleh membuat temujanji di https://www.amanahraya.my/.\n\n Maklumat cawangan boleh didapati di https://www.amanahraya.my/contact-us/branch-locator/ \n\n 1. Pada tarikh temujanji, rundingan dan khidmat nasihat boleh dibuat bersama pegawai kami.\n 2. Serahan dokumen dan pembayaran boleh dilakukan pada hari yang sama.\n\n Ada apa-apa lagi yang boleh ARIA bantu?`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    sarawak_my_tidak_wasi: {
+        id: 'sarawak_my_tidak_wasi',
+        message: `1. SIMATI\n a. Sijil Kematian asal Simati & 1 salinan (jika meninggal luar negara, kemukakan Sijil Kematian yang dikeluarkan oleh Negara terbabit dan disertakan pengesahan kematian daripada Kedutaan Malaysia atau Laporan Kematian Luar Negara oleh JPN) ATAU\n b. Perintah Anggapan Kematian daripada Mahkamah Tinggi Sivil & 1 salinan.\n c. Wasiat asal Simati & 2 salinan (TIDAK perlu disahkan).\n\n 2. WASI / PENTADBIR\n a. 1 salinan Kad Pengenalan Wasi / Pentadbir Wasiat Simati.\n\n 3. AKUAN\n a. Akuan Bersumpah oleh 2 orang saksi Wasiat Simati (bagi tujuan pengesahan saksi).\n b. Akuan Bersumpah oleh Wasi / Pentadbir (bagi permohonan Geran Probet untuk pentadbiran pusaka Simati) – P1 (Swk. 1/2005).\n\n * Akuan perlu ditandatangani oleh saksi / wasi di hadapan Pesuruhjaya Sumpah dan membuat penyeteman di laman web Lembaga Hasil Dalam Negeri (LHDN). Salinan kad pengenalan wasi perlu disertakan.\n\n 4. LAIN-LAIN DOKUMEN\n a. Surat daripada Wasi yang menyatakan tiada keperluan untuk membuat nilaian harta Simati seperti tanah, saham, kenderaan dan sebagainya. – P2 (Swk. 1/2005).\n\n 5. HARTA ALIH (SEDIAKAN YANG BERKAITAN SAHAJA)\n a. 1 salinan Buku Akaun Simpanan / Penyata Akaun Semasa terkini / Penyata Akaun Tetap / resit deposit tetap / resit deposit keselamatan.\n b. 1 salinan Sijil Saham Bursa Malaysia / Penyata Akaun CDS.\n c. 1 salinan penyata KWSP atau surat pengesahan daripada KWSP mengenai jumlah keseluruhan.\n d. 1 salinan polisi Insuran atau Surat pengesahan daripada syarikat berkaitan menyatakan jumlah yang perlu dibayar.\n e. Bagi perniagaan (3 salinan Penyata Perdagangan, Untung Rugi dan Penyata Kunci Kira-kira pada tarikh kematian).\n i. Jika pemilikan tunggal, perlu disahkan oleh waris terdekat dan disertakan salinan cop syarikat.\n ii. Jika mempunyai pemilikan saham syarikat, maka perlu kemukakan Carian dari SSM. iii. Jika perkongsian, perlu disahkan oleh rakan kongsi yang masih hidup dan disertakan cop syarikat & salinan pendaftaran perniagaan dari LHDN / Pejabat Daerah.\n f. 1 salinan Geran / Sijil Pemilikan Kenderaan (depan dan belakang)\n g. 1 salinan Lesen Pemilikan Senjata Api.\n h. Surat daripada majikan Simati yang menyatakan gaji / bonus Simati (jika ada).\n\n 6. HARTA TAK ALIH (SEDIAKAN YANG BERKAITAN SAHAJA)\n a. Salinan Geran Tanah dan Carian Rasmi daripada Pejabat Tanah / Memorandum Pemindahan / Perjanjian Jual Beli / Perjanjian Sewa / Surat Kuasa Wakil / Surat Wakil Kuasa.\n\n 7. FI PENTADBIRAN\n a. RM300.00 (Tiada nilaian harta alih dan harta tak alih)\n b. RM150.00 (Jika ada nilaian bagi harta alih dan harta tak alih kurang daripada <RM100K)\n c. RM300.00 (Jika harta alih dan harta tak alih bernilai RM100>RM1 juta)\n d. RM500.00 (jika harta alih dan harta tak alih bernilai RM1 juta dan ke atas)\n e. RM350.00 (Bagi permohonan oleh Warganegara Asing)\n\n 8. TEMPOH PENTADBIRAN\n 30 hari bekerja\n\n 9. BORANG YANG BERKAITAN\n a. Application for Probate of the Will\n b. Statutory Declaration – P1 (Swk. 1/2005)\n c. No valuation letter – P2 (Swk. 1/2005)\n\n Borang yang lengkap beserta dokumen yang diperlukan boleh dihantar ke ARB Kuching untuk proses pembukaan fail pusaka. **{name}** boleh membuat temujanji di https://www.amanahraya.my/.\n\n Maklumat cawangan boleh didapati di https://www.amanahraya.my/contact-us/branch-locator/ \n\n 1. Pada tarikh temujanji, rundingan dan khidmat nasihat boleh dibuat bersama pegawai kami.\n 2. Serahan dokumen dan pembayaran boleh dilakukan pada hari yang sama.\n\n Ada apa-apa lagi yang boleh ARIA bantu?`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    //Prenentuan Waris starts from here
+    establishment_rightful_beneficiaries_my: {
+        id: 'establishment_rightful_beneficiaries_my',
+        message: `Boleh ARIA tahu, apakah agama simati semasa kematian?`,
+        options: [
+            { label: '1️⃣ Islam', nextStep: 'establishment_rightful_beneficiaries_my_islam' },
+            { label: '2️⃣ Bukan Islam', nextStep: 'establishment_rightful_beneficiaries_my_bukan_islam' },
+        ]
+    },
+    establishment_rightful_beneficiaries_my_islam: {
+        id: 'establishment_rightful_beneficiaries_my_islam',
+        message: `Bagi Simati Islam, pembahagian harta adalah mengikut Hukum Faraid selepas ditolak hutang dan disempurnakan wasiat (jika ada)\n\n Maklumat penentuan waris di bawah hanya terpakai untuk kes biasa, contohnya waris seperti pasangan atau anak masih hidup. Tidak termasuk kes kematian berlapis, contohnya waris seperti anak telah meninggal dunia selepas Simati.\n\n Sepanjang pengetahuan **{name}**, apakah status perkahwinan simati?`,
+        options: [
+            { label: '1️⃣ Bujang', nextStep: 'establishment_rightful_beneficiaries_my_islam_bujang' },
+            { label: '2️⃣ Berkahwin', nextStep: 'establishment_rightful_beneficiaries_my_islam_berkahwin' },
+        ]
+    },
+    establishment_rightful_beneficiaries_my_islam_bujang: {
+        id: 'establishment_rightful_beneficiaries_my_islam_bujang',
+        message: `Adakah ibubapa Simati masih hidup ketika kematian simati?`,
+        options: [
+            { label: '1️⃣ Kedua-dua telah meningga', nextStep: 'est_rightful_b_my_islam_bujang_kedua' },
+            { label: '2️⃣ Ibu sahaja masih hidup', nextStep: 'est_rightful_b_my_islam_bujang_ibu' },
+            { label: '3️⃣ Bapa sahaja masih hidup', nextStep: 'est_rightful_b_my_islam_bujang_bapa' },
+            { label: '4️⃣ Ibu dan bapa masih hidup', nextStep: 'est_rightful_b_my_islam_bujang_ibu_dan_bapa' },
+        ]
+    },
+    est_rightful_b_my_islam_bujang_kedua: {
+        id: 'est_rightful_b_my_islam_bujang_kedua',
+        message: `Adakah simati mempunyai adik beradik?`,
+        options: [
+            { label: '1️⃣ Telah meninggal sebelum Simati', nextStep: 'sest_rightful_b_my_islam_bujang_kedua_simati' },
+            { label: '2️⃣ Adik beradik lelaki dan perempuan', nextStep: 'est_rightful_b_my_islam_bujang_kedua_lelaki_dan_perempuan' },
+            { label: '3️⃣ Adik beradik perempuan sahaja', nextStep: 'est_rightful_b_my_islam_bujang_kedua_perempuan' },
+            { label: '4️⃣ Adik beradik lelaki sahaja', nextStep: 'est_rightful_b_my_islam_bujang_kedua_lelaki' },
+            { label: '5️⃣ Tiada adik beradik', nextStep: 'est_rightful_b_my_islam_bujang_kedua_adik' },
+        ]
+    },
+    sest_rightful_b_my_islam_bujang_kedua_simati: {
+        id: 'sest_rightful_b_my_islam_bujang_kedua_simati',
+        message: `Harta akan dibahagikan kepada waris lain yang berhak mengikut turutan:\n\n 1. Datuk sebelah bapa\n 2. Anak saudara lelaki dari adik beradik lelaki\n 3. Bapa saudara sebelah\n bapa\n 4. Sepupu lelaki\n 5. Anak sepupu lelaki Jika tiada waris, baki akan dibahagikan kepada Baitulmal.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_bujang_kedua_lelaki_dan_perempuan: {
+        id: 'est_rightful_b_my_islam_bujang_kedua_lelaki_dan_perempuan',
+        message: `Pembahagian adalah seperti berikut:\n\n 1. Adik beradik - Asobah (baki)\n\n *Asobah - Nisbah pembahagian antara adik beradik lelaki dan perempuan adalah 2:1`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_bujang_kedua_perempuan: {
+        id: 'est_rightful_b_my_islam_bujang_kedua_perempuan',
+        message: `Pembahagian adalah seperti berikut :\n\n 1. Adik beradik -1/2 @ 2/3\n\n *Baki akan dibahagikan kepada waris lain yang berhak mengikut turutan:\n 1. Datuk sebelah bapa\n 2. Bapa saudara sebelah bapa\n 3. Sepupu lelaki\n 4. Anak sepupu lelaki Jika tiada waris, baki akan dibahagikan kepada Baitulmal.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_bujang_kedua_lelaki: {
+        id: 'est_rightful_b_my_islam_bujang_kedua_lelaki',
+        message: `Pembahagian adalah seperti berikut:\n\n 1. Adik beradik - Asobah (baki)\n\n *Asobah - Nisbah pembahagian adalah secara sama rata.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_bujang_kedua_adik: {
+        id: 'est_rightful_b_my_islam_bujang_kedua_adik',
+        message: `Harta akan dibahagikan kepada waris lain yang berhak mengikut turutan:\n\n 1. Datuk sebelah bapa\n 2. Bapa saudara sebelah bapa\n 3. Sepupu lelaki\n 4. Anak sepupu lelak  Jika tiada waris, baki akan dibahagikan kepada Baitulmal`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_bujang_ibu: {
+        id: 'est_rightful_b_my_islam_bujang_ibu',
+        message: `Adakah simati mempunyai adik beradik?`,
+        options: [
+            { label: '1️⃣ Telah meninggal sebelum Simati', nextStep: 'est_rightful_b_my_islam_bujang_ibu_simati' },
+            { label: '2️⃣ Adik beradik lelaki dan perempuan', nextStep: 'est_rightful_b_my_islam_bujang_ibu_lelaki_dan_perempuan' },
+            { label: '3️⃣ Adik beradik perempuan sahaja', nextStep: 'est_rightful_b_my_islam_bujang_ibu_perempuan' },
+            { label: '4️⃣ Adik beradik lelaki sahaja', nextStep: 'est_rightful_b_my_islam_bujang_ibu_lelaki' },
+            { label: '5️⃣ Tiada adik beradik', nextStep: 'est_rightful_b_my_islam_bujang_ibu_adik' },
+        ]
+    },
+    est_rightful_b_my_islam_bujang_ibu_simati: {
+        id: 'est_rightful_b_my_islam_bujang_ibu_simati',
+        message: `Pembahagian adalah seperti berikut:\n 1. Ibu - 1/3\n\n *Baki akan dibahagikan kepada waris lain yang berhak mengikut turutan:\n 1. Datuk sebelah bapa\n 2. Anak saudara lelaki dari adik beradik lelaki\n 3. Bapa saudara sebelah bapa\n 4. Sepupu lelaki\n 5. Anak sepupu lelaki.\n\n Jika tiada waris, baki akan dibahagikan kepada Baitulmal.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_bujang_ibu_lelaki_dan_perempuan: {
+        id: 'est_rightful_b_my_islam_bujang_ibu_lelaki_dan_perempuan',
+        message: `Pembahagian adalah seperti berikut:\n\n 1. Ibu - 1/3 @ 1/6\n 2. Adik beradik - Asobah (baki)\n\n *Asobah - Nisbah pembahagian antara adik beradik lelaki dan perempuan adalah 2:1`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_bujang_ibu_perempuan: {
+        id: 'est_rightful_b_my_islam_bujang_ibu_perempuan',
+        message: `Pembahagian adalah seperti berikut :\n\n 1. Ibu - 1/3 @ 1/6\n 2. Adik beradik -1/2 @ 2/3\n\n *Baki harta akan dibahagikan kepada waris lain yang berhak mengikut turutan:\n 1. Datuk sebelah bapa\n 2. Bapa saudara sebelah bapa\n 3. Sepupu lelaki\n 4. Anak sepupu lelaki.\n\n Jika tiada waris, baki akan dibahagikan kepada Baitulmal.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_bujang_ibu_lelaki: {
+        id: 'est_rightful_b_my_islam_bujang_ibu_lelaki',
+        message: `Pembahagian adalah seperti berikut:\n\n 1. Ibu - 1/3 @ 1/6\n 2. Adik beradik - Asobah (baki) *Asobah - Nisbah pembahagian adalah secara sama rata.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_bujang_ibu_adik: {
+        id: 'est_rightful_b_my_islam_bujang_ibu_adik',
+        message: `Pembahagian adalah seperti berikut:\n 1. Ibu - 1/3\n\n * Baki harta akan dibahagikan kepada waris lain yang berhak mengikut turutan:\n 1. Datuk sebelah bapa\n 2. Bapa saudara sebelah bapa\n 3. Sepupu lelaki\n 4. Anak sepupu lelaki.\n\n Jika tiada waris, baki akan dibahagikan kepada Baitulmal.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_bujang_bapa: {
+        id: 'est_rightful_b_my_islam_bujang_bapa',
+        message: `Pembahagian adalah seperti berikut:\n\n 1. Bapa - Asobah (baki).\n\n *Bapa mewarisi keseluruhan harta pusaka Simati`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_bujang_ibu_dan_bapa: {
+        id: 'est_rightful_b_my_islam_bujang_ibu_dan_bapa',
+        message: `Pembahagian adalah seperti berikut:\n\n 1. Ibu - 1/3 @ 1/6\n 2. Bapa - Asobah (baki).\n\n *Baki akan diberikan kepada bapa.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    establishment_rightful_beneficiaries_my_islam_berkahwin: {
+        id: 'establishment_rightful_beneficiaries_my_islam_berkahwin',
+        message: `Adakah Simati mempunyai anak?`,
+        options: [
+            { label: '1️⃣ Tiada anak', nextStep: 'est_rightful_b_my_islam_berkahwin_tiada_anak' },
+            { label: '2️⃣ Anak lelaki dan perempuan', nextStep: 'est_rightful_b_my_islam_berkahwin_lelaki_dan_perempuan' },
+            { label: '3️⃣ Anak lelaki sahaja', nextStep: 'est_rightful_b_my_islam_berkahwin_lelaki_dan_perempuan' },
+            { label: '4️⃣ Anak perempuan sahaja', nextStep: 'est_rightful_b_my_islam_berkahwin_perempuan' },
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_tiada_anak: {
+        id: 'est_rightful_b_my_islam_berkahwin_tiada_anak',
+        message: ``,
+        options: [
+            { label: '1️⃣ Kedua-dua telah meninggal', nextStep: 'est_rightful_b_my_islam_berkahwin_tiada_anak_kedau' },
+            { label: '2️⃣ Ibu sahaja masih hidup', nextStep: 'est_rightful_b_my_islam_berkahwin_tiada_anak_ibu' },
+            { label: '3️⃣ Bapa sahaja masih hidup', nextStep: 'est_rightful_b_my_islam_berkahwin_tiada_anak_bapa' },
+            { label: '4️⃣ Ibu dan bapa masih hidup', nextStep: 'est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_dan_bapa' },
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_tiada_anak_kedau: {
+        id: 'est_rightful_b_my_islam_berkahwin_tiada_anak_kedau',
+        message: `Adakah pasangan Simati masih hidup ketika kematian Simati?`,
+        options: [
+            { label: "1️⃣ Ya, masih hidup", nextStep: 'est_rightful_b_my_islam_berkahwin_tiada_anak_kedau_ya' },
+            { label: '2️⃣ Tidak telah meninggal', nextStep: 'est_rightful_b_my_islam_berkahwin_tiada_anak_kedau_tidak' },
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_tiada_anak_kedau_ya: {
+        id: 'est_rightful_b_my_islam_berkahwin_tiada_anak_kedau_ya',
+        message: `Adakah simati mempunyai adik beradik?`,
+        options: [
+            { label: '1️⃣ Telah meninggal sebelum Simati', nextStep: 'est_rightful_b_my_islam_berkahwin_tiada_anak_kedau_ya_simati' },
+            { label: '2️⃣ Adik beradik lelaki dan perempuan', nextStep: 'est_rightful_b_my_islam_berkahwin_tiada_anak_kedau_ya_lelaki_dan_perempuan' },
+            { label: '3️⃣ Adik beradik perempuan sahaja', nextStep: 'est_rightful_b_my_islam_berkahwin_tiada_anak_kedau_ya_perempuan' },
+            { label: '4️⃣ Adik beradik lelaki sahaja', nextStep: 'est_rightful_b_my_islam_berkahwin_tiada_anak_kedau_ya_lelaki' },
+            { label: '5️⃣ Tiada adik beradik', nextStep: 'est_rightful_b_my_islam_berkahwin_tiada_anak_kedau_ya_adik' },
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_tiada_anak_kedau_ya_simati: {
+        id: 'est_rightful_b_my_islam_berkahwin_tiada_anak_kedau_ya_simati',
+        message: `Pembahagian adalah seperti berikut:\n\n 1. Pasangan - 1/2 (Suami), 1/4 (Isteri)\n\n * Baki akan dibahagikan kepada waris lain yang berhak mengikut turutan:\n 1. Datuk sebelah bapa\n 2. Anak saudara lelaki dari adik beradik lelaki\n 3. Bapa saudara sebelah bapa\n 4. Sepupu lelaki\n 5. Anak sepupu lelaki.\n\n Jika tiada waris, baki akan dibahagikan kepada Baitulmal.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_tiada_anak_kedau_ya_lelaki_dan_perempuan: {
+        id: 'est_rightful_b_my_islam_berkahwin_tiada_anak_kedau_ya_lelaki_dan_perempuan',
+        message: `Pembahagian adalah seperti berikut:\n\n 1. Pasangan - 1/2 (Suami), 1/4 (Isteri)\n 2. Adik beradik seibu - 1/3 @ 1/6 (jika ada)\n 3. Adik beradik kandung @ sebapa - Asobah (baki)\n\n *Asobah - Nisbah pembahagian antara adik beradik lelaki dan perempuan adalah 2:1.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_tiada_anak_kedau_ya_perempuan: {
+        id: 'est_rightful_b_my_islam_berkahwin_tiada_anak_kedau_ya_perempuan',
+        message: `Pembahagian adalah seperti berikut:\n\n 1. Pasangan - 1/2 (Suami), 1/4 (Isteri)\n 2. Adik beradik seibu - 1/3 @ 1/6 (jika ada)\n 3. Adik beradik kandung @ sebapa - 1/2 @ 2/3\n\n *Sekiranya masih terdapat baki, ianya akan dibahagikan kepada waris lain yang berhak mengikut turutan:\n 1. Datuk sebelah bapa\n 2. Bapa saudara sebelah bapa\n 3. Sepupu lelaki\n 4. Anak sepupu lelaki.\n\n Jika tiada waris, baki akan dibahagikan kepada Baitulmal.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_tiada_anak_kedau_ya_lelaki: {
+        id: 'est_rightful_b_my_islam_berkahwin_tiada_anak_kedau_ya_lelaki',
+        message: `Pembahagian adalah seperti berikut:\n\n 1. Pasangan - 1/2 (Suami), 1/4 (Isteri)\n 2. Adik beradik seibu - 1/3 @ 1/6 (jika ada)\n 3. Adik beradik kandung @ sebapa - Asobah (baki)\n\n *Asobah - Nisbah pembahagian antara adik beradik lelaki adalah secara sama rata.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_tiada_anak_kedau_ya_adik: {
+        id: 'est_rightful_b_my_islam_berkahwin_tiada_anak_kedau_ya_adik',
+        message: `Pembahagian adalah seperti berikut:\n\n 1. Pasangan - 1/2 (Suami), 1/4 (Isteri)\n\n *Baki harta akan dibahagikan kepada waris lain yang berhak mengikut turutan:\n 1. Datuk sebelah bapa\n 2. Bapa saudara sebelah bapa\n 3. Sepupu lelaki\n 4. Anak sepupu lelaki\n\n Jika tiada waris, baki akan dibahagikan kepada Baitulmal.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_tiada_anak_kedau_tidak: {
+        id: 'est_rightful_b_my_islam_berkahwin_tiada_anak_kedau_tidak',
+        message: `Adakah simati mempunyai adik beradik?`,
+        options: [
+            { label: '1️⃣ Telah meninggal sebelum Simati', nextStep: 'est_rightful_b_my_islam_berkahwin_tiada_anak_kedau_tidak_simati' },
+            { label: '2️⃣ Adik beradik lelaki dan perempuan', nextStep: 'est_rightful_b_my_islam_berkahwin_tiada_anak_kedau_tidak_lelaki_dan_perempuan' },
+            { label: '3️⃣ Adik beradik perempuan sahaja', nextStep: 'est_rightful_b_my_islam_berkahwin_tiada_anak_kedau_tidak_perempuan' },
+            { label: '4️⃣ Adik beradik lelaki sahaja', nextStep: 'est_rightful_b_my_islam_berkahwin_tiada_anak_kedau_tidak_lelaki' },
+            { label: '5️⃣ Tiada adik beradik', nextStep: 'est_rightful_b_my_islam_berkahwin_tiada_anak_kedau_tidak_adik' },
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_tiada_anak_kedau_tidak_simati: {
+        id: 'est_rightful_b_my_islam_berkahwin_tiada_anak_kedau_tidak_simati',
+        message: `Harta akan dibahagikan kepada waris lain yang berhak mengikut turutan:\n 1. Datuk sebelah bapa\n 2. Anak saudara lelaki dari adik beradik lelaki\n 3. Bapa saudara sebelah bapa\n 4. Sepupu lelaki\n 5. Anak sepupu lelaki\n\n Jika tiada waris, baki akan dibahagikan kepada Baitulmal.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_tiada_anak_kedau_tidak_lelaki_dan_perempuan: {
+        id: 'est_rightful_b_my_islam_berkahwin_tiada_anak_kedau_tidak_lelaki_dan_perempuan',
+        message: `Pembahagian adalah seperti berikut:\n 1. Adik beradik seibu - 1/3 @ 1/6 (jika ada)\n 2. Adik beradik kandung @ sebapa - Asobah (baki)\n\n * Asobah - Nisbah pembahagian antara adik beradik lelaki dan perempuan adalah 2:1.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_tiada_anak_kedau_tidak_perempuan: {
+        id: 'est_rightful_b_my_islam_berkahwin_tiada_anak_kedau_tidak_perempuan',
+        message: `Pembahagian adalah seperti berikut:\n 1. Adik beradik seibu - 1/3 @ 1/6 (jika ada)\n 2. Adik beradik kandung @ sebapa - 1/2 @ 2/3\n\n * Baki harta akan dibahagikan kepada waris lain yang berhak mengikut turutan:\n 1. Datuk sebelah bapa\n 2. Bapa saudara sebelah bapa\n 3. Sepupu lelaki\n 4. Anak sepupu lelaki.\n\n Jika tiada waris, baki akan dibahagikan kepada Baitulmal.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_tiada_anak_kedau_tidak_lelaki: {
+        id: 'est_rightful_b_my_islam_berkahwin_tiada_anak_kedau_tidak_lelaki',
+        message: `Pembahagian adalah seperti berikut:\n 1. Adik beradik seibu - 1/3 @ 1/6 (jika ada)\n 2. Adik beradik kandung @ sebapa - Asobah (baki)\n\n * Asobah - Nisbah pembahagian antara adik beradik lelaki adalah secara sama rata.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_tiada_anak_kedau_tidak_adik: {
+        id: 'est_rightful_b_my_islam_berkahwin_tiada_anak_kedau_tidak_adik',
+        message: `Harta akan dibahagikan kepada waris lain yang berhak mengikut turutan:\n 1. Datuk sebelah bapa\n 2. Bapa saudara sebelah bapa\n 3. Sepupu lelaki\n 4. Anak sepupu lelaki.\n\n Jika tiada waris, baki akan dibahagikan kepada Baitulmal.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_tiada_anak_ibu: {
+        id: 'est_rightful_b_my_islam_berkahwin_tiada_anak_ibu',
+        message: `Adakah pasangan Simati masih hidup ketika kematian Simati?`,
+        options: [
+            { label: "1️⃣ Ya, masih hidup", nextStep: 'est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_ya' },
+            { label: '2️⃣ Tidak telah meninggal', nextStep: 'est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_tidak' },
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_ya: {
+        id: 'est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_ya',
+        message: `Adakah simati mempunyai adik beradik?`,
+        options: [
+            { label: '1️⃣ Telah meninggal sebelum Simati', nextStep: 'est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_ya_simati' },
+            { label: '2️⃣ Adik beradik lelaki dan perempuan', nextStep: 'est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_ya_lelaki_dan_perempuan' },
+            { label: '3️⃣ Adik beradik perempuan sahaja', nextStep: 'est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_ya_tidak_perempuan' },
+            { label: '4️⃣ Adik beradik lelaki sahaja', nextStep: 'est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_ya_lelaki' },
+            { label: '5️⃣ Tiada adik beradik', nextStep: 'est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_ya_adik' },
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_ya_simati: {
+        id: 'est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_ya_simati',
+        message: `Pembahagian adalah seperti berikut:\n 1. Ibu - 1/3 @ 1/6\n 2. Pasangan - 1/2 (Suami), 1/4 (Isteri)\n\n * Baki akan dibahagikan kepada waris lain yang berhak mengikut turutan:\n 1. Datuk sebelah bapa\n 2. Anak saudara lelaki dari adik beradik lelaki\n 3. Bapa saudara sebelah bapa\n 4. Sepupu lelaki\n 5. Anak sepupu lelaki.\n\n Jika tiada waris, baki akan dibahagikan kepada Baitulmal.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_ya_lelaki_dan_perempuan: {
+        id: 'est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_ya_lelaki_dan_perempuan',
+        message: `Pembahagian adalah seperti berikut:\n 1. Ibu - 1/3 @ 1/6\n 2. Pasangan - 1/2 (Suami), 1/4 (Isteri)\n 3. Adik beradik seibu - 1/3 @ 1/6 (jika ada)\n 4. Adik beradik kandung @ sebapa - Asobah (baki)\n\n *Asobah - Nisbah pembahagian antara adik beradik lelaki dan perempuan adalah 2:1.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_ya_tidak_perempuan: {
+        id: 'est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_ya_tidak_perempuan',
+        message: `Pembahagian adalah seperti berikut:\n 1. Ibu - 1/3 @ 1/6\n 2. Pasangan - 1/2 (Suami), 1/4 (Isteri)\n 3. Adik beradik seibu - 1/3 @ 1/6 (jika ada)\n 4. Adik beradik kandung @ sebapa - 1/2 @ 2/3\n\n * Sekiranya terdapat baki. ianya akan dibahagikan kepada waris lain yang berhak mengikut turutan: 1. Datuk sebelah bapa\n 2. Bapa saudara sebelah bapa\n 3. Sepupu lelaki\n 4. Anak sepupu lelaki.\n\n Jika tiada waris, baki akan dibahagikan kepada Baitulmal.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_ya_lelaki: {
+        id: 'est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_ya_lelaki',
+        message: `Pembahagian adalah seperti berikut:\n 1. Ibu - 1/3 @ 1/6\n 2. Pasangan - 1/2 (Suami), 1/4 (Isteri)\n 3. Adik beradik seibu - 1/3 @ 1/6 (jika ada)\n 4. Adik beradik kandung @ sebapa - Asobah (baki).\n\n *Asobah - Nisbah pembahagian antara adik beradik lelaki adalah secara sama rata.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_ya_adik: {
+        id: 'est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_ya_adik',
+        message: `Pembahagian adalah seperti berikut:\n 1. Ibu - 1/3\n 2. Pasangan - 1/2 (Suami),1/4 (Isteri).\n\n Baki akan dibahagikan kepada waris lain yang berhak mengikut turutan:\n 1. Datuk sebelah bapa\n 2. Bapa saudara sebelah bapa\n 3. Sepupu lelaki\n 4. Anak sepupu lelaki.\n\n Jika tiada waris, baki akan dibahagikan kepada Baitulmal.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_tidak: {
+        id: 'est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_tidak',
+        message: `Adakah simati mempunyai adik beradik?`,
+        options: [
+            { label: '1️⃣ Telah meninggal sebelum Simati', nextStep: 'est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_tidak_simati' },
+            { label: '2️⃣ Adik beradik lelaki dan perempuan', nextStep: 'est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_tidak_lelaki_dan_perempuan' },
+            { label: '3️⃣ Adik beradik perempuan sahaja', nextStep: 'est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_tidak_tidak_perempuan' },
+            { label: '4️⃣ Adik beradik lelaki sahaja', nextStep: 'est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_tidak_lelaki' },
+            { label: '5️⃣ Tiada adik beradik', nextStep: 'est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_tidak_adik' },
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_tidak_simati: {
+        id: 'est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_tidak_simati',
+        message: `Pembahagian adalah seperti berikut:\n 1. Ibu - 1/3 @ 1/6 * Baki harta akan dibahagikan kepada waris lain yang berhak mengikut turutan:\n 1. Datuk sebelah bapa\n 2. Anak saudara lelaki dari adik beradik lelaki\n 3. Bapa saudara sebelah bapa\n 4. Sepupu lelaki\n 5. Anak sepupu lelaki.\n\n Jika tiada waris, baki akan dibahagikan kepada Baitulmal.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_tidak_lelaki_dan_perempuan: {
+        id: 'est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_tidak_lelaki_dan_perempuan',
+        message: `Pembahagian adalah seperti berikut:\n 1. Ibu - 1/3 @ 1/6\n 2. Adik beradik seibu - 1/3 @ 1/6 (jika ada)\n 3. Adik beradik kandung @ sebapa - Asobah (baki).\n\n * Asobah - Nisbah pembahagian antara adik beradik lelaki dan perempuan adalah 2:1.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_tidak_tidak_perempuan: {
+        id: 'est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_tidak_tidak_perempuan',
+        message: `Pembahagian adalah seperti berikut:\n 1. Ibu - 1/3 @ 1/6\n 2. Adik beradik seibu - 1/3 @ 1/6 (jika ada)\n 3. Adik beradik kandung @ sebapa - 1/2 @ 2/3\n\n * Sekiranya terdapat baki, ianya akan dibahagikan kepada waris lain yang berhak mengikut turutan:\n 1. Datuk sebelah bapa\n 2. Bapa saudara sebelah bapa\n 3. Sepupu lelaki\n 4. Anak sepupu lelaki.\n]n Jika tiada waris, baki akan dibahagikan kepada Baitulmal.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_tidak_lelaki: {
+        id: 'est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_tidak_lelaki',
+        message: `Pembahagian adalah seperti berikut:\n 1. Ibu - 1/3 @ 1/6\n 2. Adik beradik seibu - 1/ 3 @ 1/6 (jika ada)\n 3. Adik beradik kandung @ sebapa - Asobah (baki).\n\n * Asobah - Nisbah pembahagian antara adik beradik lelaki adalah secara sama rata`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_tidak_adik: {
+        id: 'est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_tidak_adik',
+        message: `Pembahagian adalah seperti berikut:\n 1. Ibu - 1/3\n\n *Baki harta akan dibahagikan kepada waris lain yang berhak mengikut turutan:\n 1. Datuk sebelah bapa\n 2. Bapa saudara sebelah bapa\n 3. Sepupu lelaki\n 4. Anak sepupu lelaki.\n\n Jika tiada waris, baki akan dibahagikan kepada Baitulmal.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_tiada_anak_bapa: {
+        id: 'est_rightful_b_my_islam_berkahwin_tiada_anak_bapa',
+        message: `Adakah pasangan Simati masih hidup ketika kematian Simati?`,
+        options: [
+            { label: "1️⃣ Ya, masih hidup", nextStep: 'est_rightful_b_my_islam_berkahwin_tiada_anak_bapa_ya' },
+            { label: '2️⃣ Tidak telah meninggal', nextStep: 'est_rightful_b_my_islam_berkahwin_tiada_anak_bapa_tidak' },
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_tiada_anak_bapa_ya: {
+        id: 'est_rightful_b_my_islam_berkahwin_tiada_anak_bapa_ya',
+        message: `Pembahagian adalah seperti berikut:\n 1. Bapa - Asobah\n 2. Pasangan - 1/2 (Suami), 1/4 (Isteri)`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_tiada_anak_bapa_tidak: {
+        id: 'est_rightful_b_my_islam_berkahwin_tiada_anak_bapa_tidak',
+        message: `Pembahagian adalah seperti berikut:\n 1. Bapa - Asobah\n\n * Bapa mewarisi keseluruhan harta Simati.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_dan_bapa: {
+        id: 'est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_dan_bapa',
+        message: `Adakah pasangan Simati masih hidup ketika kematian Simati?`,
+        options: [
+            { label: "1️⃣ Ya, masih hidup", nextStep: 'est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_dan_bapa_ya' },
+            { label: '2️⃣ Tidak telah meninggal', nextStep: 'est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_dan_bapa_tidak' },
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_dan_bapa_ya: {
+        id: 'est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_dan_bapa_ya',
+        message: `Pembahagian adalah seperti berikut:\n 1. Ibu - 1/3 baki @ 1/6\n 2. Bapa - Asobah 3. Pasangan - 1/2 (Suami), 1/4 (Isteri)`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_dan_bapa_tidak: {
+        id: 'est_rightful_b_my_islam_berkahwin_tiada_anak_ibu_dan_bapa_tidak',
+        message: `Pembahagian adalah seperti berikut:\n 1. Ibu - 1/3 @ 1/6\n 2. Bapa - Asobah\n\n * Bapa mewarisi keseluruhan harta Simati.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_lelaki_dan_perempuan: {
+        id: 'est_rightful_b_my_islam_berkahwin_lelaki_dan_perempuan',
+        message: `Adakah ibubapa Simati masih hidup ketik kematian Simati?`,
+        options: [
+            { label: '1️⃣ Ibu / bapa sahaja masih hidup', nextStep: 'est_rightful_b_my_islam_berkahwin_lelaki_dan_perempuan_ibu_bapa' },
+            { label: '2️⃣ Ibu dan bapa masih hidup', nextStep: 'est_rightful_b_my_islam_berkahwin_lelaki_dan_perempuan_ibu_dan_bapa' },
+            { label: '3️⃣ Kedua-dua Telah meninggal', nextStep: 'est_rightful_b_my_islam_berkahwin_lelaki_dan_perempuan_meninggal' },
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_lelaki_dan_perempuan_ibu_bapa: {
+        id: 'est_rightful_b_my_islam_berkahwin_lelaki_dan_perempuan_ibu_bapa',
+        message: `Adakah pasangan Simati masih hidup ketika kematian Simati?`,
+        options: [
+            { label: "1️⃣ Ya, masih hidup", nextStep: 'est_rightful_b_my_islam_berkahwin_lelaki_dan_perempuan_ibu_bapa_ya' },
+            { label: '2️⃣ Tidak telah meninggal', nextStep: 'est_rightful_b_my_islam_berkahwin_lelaki_dan_perempuan_ibu_bapa_tidak' },
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_lelaki_dan_perempuan_ibu_bapa_ya: {
+        id: 'est_rightful_b_my_islam_berkahwin_lelaki_dan_perempuan_ibu_bapa_ya',
+        message: `Pembahagian adalah seperti berikut:\n 1. Ibu @ bapa - 1/6 2. Pasangan - 1/4 (Suami), 1/8 (Isteri)\n 3. Anak - Asobah\n\n * Nisbah pembahagian antara anak lelaki dan perempuan adalah 2:1.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_lelaki_dan_perempuan_ibu_bapa_tidak: {
+        id: 'est_rightful_b_my_islam_berkahwin_lelaki_dan_perempuan_ibu_bapa_tidak',
+        message: `Pembahagian adalah seperti berikut:\n 1. Ibu @ bapa - 1/6\n 2. Anak - Asobah\n\n * Nisbah pembahagian antara anak lelaki dan perempuan adalah 2:1.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_lelaki_dan_perempuan_ibu_dan_bapa: {
+        id: 'est_rightful_b_my_islam_berkahwin_lelaki_dan_perempuan_ibu_dan_bapa',
+        message: `Adakah pasangan Simati masih hidup ketika kematian Simati?`,
+        options: [
+            { label: "1️⃣ Ya, masih hidup", nextStep: 'est_rightful_b_my_islam_berkahwin_lelaki_dan_perempuan_ibu_dan_bapa_ya' },
+            { label: '2️⃣ Tidak telah meninggal', nextStep: 'est_rightful_b_my_islam_berkahwin_lelaki_dan_perempuan_ibu_dan_bapa_tidak' },
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_lelaki_dan_perempuan_ibu_dan_bapa_ya: {
+        id: 'est_rightful_b_my_islam_berkahwin_lelaki_dan_perempuan_ibu_dan_bapa_ya',
+        message: `Pembahagian adalah seperti berikut:\n 1. Ibu - 1/6\n 2. Bapa - 1/6\n 3. Pasangan - 1/4 (Suami), 1/8 (Isteri)\n 4. Anak - Asobah\n\n * Nisbah pembahagian antara anak lelaki dan perem`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_lelaki_dan_perempuan_ibu_dan_bapa_tidak: {
+        id: 'est_rightful_b_my_islam_berkahwin_lelaki_dan_perempuan_ibu_dan_bapa_tidak',
+        message: `Pembahagian adalah seperti berikut:\n 1. Ibu - 1/6\n 2. Bapa - 1/6\n 3. Anak - Asobah\n\n * Nisbah pembahagian antara anak lelaki dan perempuan adalah 2:1.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_lelaki_dan_perempuan_meninggal: {
+        id: 'est_rightful_b_my_islam_berkahwin_lelaki_dan_perempuan_meninggal',
+        message: `Adakah pasangan Simati masih hidup ketika kematian Simati?`,
+        options: [
+            { label: "1️⃣ Ya, masih hidup", nextStep: 'est_rightful_b_my_islam_berkahwin_lelaki_dan_perempuan_meninggal_ya' },
+            { label: '2️⃣ Tidak telah meninggal', nextStep: 'est_rightful_b_my_islam_berkahwin_lelaki_dan_perempuan_meninggal_tidak' },
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_lelaki_dan_perempuan_meninggal_ya: {
+        id: 'est_rightful_b_my_islam_berkahwin_lelaki_dan_perempuan_meninggal_ya',
+        message: `Pembahagian adalah seperti berikut:\n 1. Pasangan - 1/4 (Suami), 1/8 (Isteri)\n 2. Anak - Asobah\n\n * Nisbah pembahagian antara anak lelaki dan perempuan adalah 2:1.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_lelaki_dan_perempuan_meninggal_tidak: {
+        id: 'est_rightful_b_my_islam_berkahwin_lelaki_dan_perempuan_meninggal_tidak',
+        message: `Pembahagian adalah seperti berikut:\n 1. Anak - Asobah\n\n * Nisbah pembahagian antara anak lelaki dan perempuan adalah 2:1.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_perempuan: {
+        id: 'est_rightful_b_my_islam_berkahwin_perempuan',
+        message: `Adakah ibubapa Simati masih hidup ketika kematian Simati?`,
+        options: [
+            { label: '1️⃣ Kedua-dua telah meninggal', nextStep: 'est_rightful_b_my_islam_berkahwin_perempuan_kedau' },
+            { label: '2️⃣ Ibu sahaja masih hidup', nextStep: 'est_rightful_b_my_islam_berkahwin_perempuan_ibu' },
+            { label: '3️⃣ Bapa sahaja masih hidup', nextStep: 'est_rightful_b_my_islam_berkahwin_perempuan_bapa' },
+            { label: '4️⃣ Ibu dan bapa masih hidup', nextStep: 'est_rightful_b_my_islam_berkahwin_perempuan_ibu_dan_bapa' },
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_perempuan_ibu: {
+        id: 'est_rightful_b_my_islam_berkahwin_perempuan_ibu',
+        message: `Adakah pasangan Simati masih hidup ketika kematian Simati?`,
+        options: [
+            { label: "1️⃣ Ya, masih hidup", nextStep: 'est_rightful_b_my_islam_berkahwin_perempuan_ibu_ya' },
+            { label: '2️⃣ Tidak telah meninggal', nextStep: 'est_rightful_b_my_islam_berkahwin_perempuan_ibu_tidak' },
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_perempuan_ibu_ya: {
+        id: 'est_rightful_b_my_islam_berkahwin_perempuan_ibu_ya',
+        message: `Adakah ibubapa Simati masih hidup ketika kematian Simati?`,
+        options: [
+            { label: '1️⃣ Ya, masih hidup', nextStep: 'est_rightful_b_my_islam_berkahwin_perempuan_ibu_ya_masih' },
+            { label: '2️⃣ Telah meninggal sebelum Simati', nextStep: 'est_rightful_b_my_islam_berkahwin_perempuan_ibu_ya_simati' },
+            { label: '3️⃣ Tidak, Simati adalah anak tunggal', nextStep: 'est_rightful_b_my_islam_berkahwin_perempuan_ibu_ya_tunggal' },
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_perempuan_ibu_ya_masih: {
+        id: 'est_rightful_b_my_islam_berkahwin_perempuan_ibu_ya_masih',
+        message: `Pembahagian adalah seperti berikut:\n 1. Ibu - 1/6\n 2. Pasangan - 1/4 (Suami), 1/8 (Isteri)\n 3. Anak - 1/2 @ 2/3\n 4. Adik beradik - Asobah\n\n * Adik beradik adalah merujuk kepada adik beradik kandung @ sebapa sahaja dan hanya akan menerima sekiranya masih mempunyai baki. Adik beradik seibu tidak mewarisi dalam situasi ini.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_perempuan_ibu_ya_simati: {
+        id: 'est_rightful_b_my_islam_berkahwin_perempuan_ibu_ya_simati',
+        message: `Pembahagian adalah seperti berikut:\n 1. Ibu - 1/6\n 2. Pasangan - 1/4 (Suami), 1/8 (Isteri)\n 3. Anak - 1/2 @ 2/3\n\n *Sekiranya masih mempunyai baki, ianya akan dibahagikan kepada waris yang berhak mengikut turutan:\n 1. Datuk sebelah bapa\n 2. Anak saudara lelaki dari adik beradik lelaki\n 3. Bapa saudara sebelah bapa\n 4. Sepupu lelaki\n 5. Anak sepupu lelaki.\n\n Jika tiada waris, baki akan dibahagikan kepada Baitulmal.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_perempuan_ibu_ya_tunggal: {
+        id: 'est_rightful_b_my_islam_berkahwin_perempuan_ibu_ya_tunggal',
+        message: `Pembahagian adalah seperti berikut:\n 1. Ibu - 1/6\n 2. Pasangan - 1/4 (Suami), 1/8 (Isteri) 3. Anak - 1/2 @ 2/3\n\n *Sekiranya masih mempunyai baki, ianya akan dibahagikan kepada waris yang berhak mengikut turutan:\n 1. Datuk sebelah bapa\n 2. Bapa saudara sebelah bapa\n 3. Sepupu lelaki\n 4. Anak sepupu lelaki.\n\n Jika tiada waris, baki akan dibahagikan kepada Baitulmal.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_perempuan_ibu_tidak: {
+        id: 'est_rightful_b_my_islam_berkahwin_perempuan_ibu_tidak',
+        message: `Adakah ibubapa Simati masih hidup ketika kematian Simati?`,
+        options: [
+            { label: '1️⃣ Ya, masih hidup', nextStep: 'est_rightful_b_my_islam_berkahwin_perempuan_ibu_tidak_masih' },
+            { label: '2️⃣ Telah meninggal sebelum Simati', nextStep: 'est_rightful_b_my_islam_berkahwin_perempuan_ibu_tidak_simati' },
+            { label: '3️⃣ Tidak, Simati adalah anak tunggal', nextStep: 'est_rightful_b_my_islam_berkahwin_perempuan_ibu_tidak_tunggal' },
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_perempuan_ibu_tidak_masih: {
+        id: 'est_rightful_b_my_islam_berkahwin_perempuan_ibu_tidak_masih',
+        message: `Pembahagian adalah seperti berikut:\n 1. Ibu - 1/6\n 2. Anak - 1/2 @ 2/3\n 3. Adik beradik - Asobah\n\n * Adik beradik adalah merujuk kepada adik beradik kandung @ sebapa sahaja. Adik beradik seibu tidak mewarisi dalam situasi ini.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_perempuan_ibu_tidak_simati: {
+        id: 'est_rightful_b_my_islam_berkahwin_perempuan_ibu_tidak_simati',
+        message: `Pembahagian adalah seperti berikut:\n 1. Ibu - 1/6\n 2. Anak - 1/2 @ 2/3\n\n *Baki harta akan dibahagikan kepada waris yang berhak mengikut turutan:\n 1. Datuk sebelah bapa\n 2. Anak saudara lelaki dari adik beradik lelaki\n 3. Bapa saudara sebelah bapa\n 4. Sepupu lelaki\n 5. Anak sepupu lelaki.\n\n Jika tiada waris, baki akan dibahagikan kepada Baitulmal.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_perempuan_ibu_tidak_tunggal: {
+        id: 'est_rightful_b_my_islam_berkahwin_perempuan_ibu_tidak_tunggal',
+        message: `Pembahagian adalah seperti berikut:\n 1. Ibu - 1/6\n 2. Anak - 1/2 @ 2/3\n\n *Baki harta akan dibahagikan kepada waris yang berhak mengikut turutan:\n 1. Datuk sebelah bapa\n 2. Bapa saudara sebelah bapa\n 3. Sepupu lelaki\n 4. Anak sepupu lelaki.\n\n Jika tiada waris, baki akan dibahagikan kepada Baitulmal.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_perempuan_bapa: {
+        id: 'est_rightful_b_my_islam_berkahwin_perempuan_bapa',
+        message: `Adakah pasangan Simati masih hidup ketika kematian Simati?`,
+        options: [
+            { label: "1️⃣ Ya, masih hidup", nextStep: 'est_rightful_b_my_islam_berkahwin_perempuan_bapa_ya' },
+            { label: '2️⃣ Tidak telah meninggal', nextStep: 'est_rightful_b_my_islam_berkahwin_perempuan_bapa_tidak' },
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_perempuan_bapa_ya: {
+        id: 'est_rightful_b_my_islam_berkahwin_perempuan_bapa_ya',
+        message: `Pembahagian adalah seperti berikut:\n 1. Bapa - 1/6 + Asobah\n 2. Pasangan - 1/4 (Suami), 1/8 (Isteri)\n 3. Anak - 1/2 @ 2/3`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_perempuan_bapa_tidak: {
+        id: 'est_rightful_b_my_islam_berkahwin_perempuan_bapa_tidak',
+        message: `Pembahagian adalah seperti berikut:\n 1. Bapa - 1/6 + Asobah\n 2. Anak - 1/2 @ 2/3`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_perempuan_ibu_dan_bapa: {
+        id: 'est_rightful_b_my_islam_berkahwin_perempuan_ibu_dan_bapa',
+        message: `Adakah pasangan Simati masih hidup ketika kematian Simati?`,
+        options: [
+            { label: "1️⃣ Ya, masih hidup", nextStep: 'est_rightful_b_my_islam_berkahwin_perempuan_ibu_dan_bapa_ya' },
+            { label: '2️⃣ Tidak telah meninggal', nextStep: 'est_rightful_b_my_islam_berkahwin_perempuan_ibu_dan_bapa_tidak' },
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_perempuan_ibu_dan_bapa_ya: {
+        id: 'est_rightful_b_my_islam_berkahwin_perempuan_ibu_dan_bapa_ya',
+        message: `Pembahagian adalah seperti berikut:\n 1. Ibu - 1/6\n 2. Bapa - 1/6 + Asobah\n 3. Pasangan - 1/4 (Suami), 1/8 (Isteri)\n 4. Anak - 1/2 @ 2/3`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_perempuan_ibu_dan_bapa_tidak: {
+        id: 'est_rightful_b_my_islam_berkahwin_perempuan_ibu_dan_bapa_tidak',
+        message: `Pembahagian adalah seperti berikut:\n 1. Ibu - 1/6\n 2. Bapa - 1/6 + Asobah\n 3. Anak - 1/2 @ 23`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_perempuan_kedau: {
+        id: 'est_rightful_b_my_islam_berkahwin_perempuan_kedau',
+        message: `Adakah pasangan Simati masih hidup ketika kematian Simati?`,
+        options: [
+            { label: "1️⃣ Ya, masih hidup", nextStep: 'est_rightful_b_my_islam_berkahwin_perempuan_kedau_ya' },
+            { label: '2️⃣ Tidak telah meninggal', nextStep: 'est_rightful_b_my_islam_berkahwin_perempuan_kedau_tidak' },
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_perempuan_kedau_ya: {
+        id: 'est_rightful_b_my_islam_berkahwin_perempuan_kedau_ya',
+        message: `Adakah ibubapa Simati masih hidup ketika kematian Simati?`,
+        options: [
+            { label: '1️⃣ Ya, masih hidup', nextStep: 'est_rightful_b_my_islam_berkahwin_perempuan_kedau_ya_masih' },
+            { label: '2️⃣ Telah meninggal sebelum Simati', nextStep: 'est_rightful_b_my_islam_berkahwin_perempuan_kedau_ya_simati' },
+            { label: '3️⃣ Tidak, Simati adalah anak tunggal', nextStep: 'est_rightful_b_my_islam_berkahwin_perempuan_kedau_ya_tunggal' },
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_perempuan_kedau_ya_masih: {
+        id: 'est_rightful_b_my_islam_berkahwin_perempuan_kedau_ya_masih',
+        message: `Pembahagian adalah seperti berikut:\n 1. Pasangan - 1/4 (Suami), 1/8 (Isteri)\n 2. Anak - 1/2 @ 2/3\n 3. Adik beradik - Asobah\n\n * Adik beradik adalah merujuk kepada adik beradik kandung @ sebapa sahaja. Adik beradik seibu tidak mewarisi dalam situasi ini.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_perempuan_kedau_ya_simati: {
+        id: 'est_rightful_b_my_islam_berkahwin_perempuan_kedau_ya_simati',
+        message: `Pembahagian adalah seperti berikut:\n 1. Pasangan - 1/4 (Suami), 1/8 (Isteri)\n 2. Anak - 1/2 @ 2/3\n\n *Baki harta akan dibahagikan kepada waris yang berhak mengikut turutan:\n 1. Datuk sebelah bapa\n 2. Anak saudara lelaki dari adik beradik lelaki\n 3. Bapa saudara sebelah bapa\n 4. Sepupu lelaki\n 5. Anak sepupu lelaki.\n\n Jika tiada waris, baki akan dibahagikan kepada Baitulmal.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_perempuan_kedau_ya_tunggal: {
+        id: 'est_rightful_b_my_islam_berkahwin_perempuan_kedau_ya_tunggal',
+        message: `Pembahagian adalah seperti berikut:\n 1. Pasangan - 1/4 (Suami), 1/8 (Isteri)\n 2. Anak - 1/2 @ 2/3\n\n *Baki harta akan dibahagikan kepada waris yang berhak mengikut turutan:\n 1. Datuk sebelah bapa\n 2. Bapa saudara sebelah bapa\n 3. Sepupu lelaki\n 4. Anak sepupu lelaki.\n\n Jika tiada waris, baki akan dibahagikan kepada Baitulmal.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_perempuan_kedau_tidak: {
+        id: 'est_rightful_b_my_islam_berkahwin_perempuan_kedau_tidak',
+        message: `Adakah ibubapa Simati masih hidup ketika kematian Simati?`,
+        options: [
+            { label: '1️⃣ Ya, masih hidup', nextStep: 'est_rightful_b_my_islam_berkahwin_perempuan_kedau_tidak_masih' },
+            { label: '2️⃣ Telah meninggal sebelum Simati', nextStep: 'est_rightful_b_my_islam_berkahwin_perempuan_kedau_tidak_simati' },
+            { label: '3️⃣ Tidak, Simati adalah anak tunggal', nextStep: 'est_rightful_b_my_islam_berkahwin_perempuan_kedau_tidak_tunggal' },
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_perempuan_kedau_tidak_masih: {
+        id: 'est_rightful_b_my_islam_berkahwin_perempuan_kedau_tidak_masih',
+        message: `Pembahagian adalah seperti berikut:\n 1. Anak - 1/2 @ 2/3\n 2. Adik beradik - Asobah\n\n * Adik beradik adalah merujuk kepada adik beradik kandung @ sebapa sahaja. Adik beradik seibu tidak mewarisi dalam situasi ini.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_perempuan_kedau_tidak_simati: {
+        id: 'est_rightful_b_my_islam_berkahwin_perempuan_kedau_tidak_simati',
+        message: `Pembahagian adalah seperti berikut:\n 1. Anak - 1/2 @ 2/3\n\n *Baki harta akan dibahagikan kepada waris yang berhak mengikut turutan:\n 1. Datuk sebelah bapa\n 2. Anak saudara lelaki dari adik beradik lelaki\n 3. Bapa saudara sebelah bapa\n 4. Sepupu lelaki\n 5. Anak sepupu lelaki.\n\n Jika tiada waris, baki akan dibahagikan kepada Baitulmal.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    est_rightful_b_my_islam_berkahwin_perempuan_kedau_tidak_tunggal: {
+        id: 'est_rightful_b_my_islam_berkahwin_perempuan_kedau_tidak_tunggal',
+        message: `Pembahagian adalah seperti berikut:\n 1. Anak - 1/2 @ 2/3\n\n *Baki harta akan dibahagikan kepada waris yang berhak mengikut turutan:\n 1. Datuk sebelah bapa\n 2. Bapa saudara sebelah bapa\n 3. Sepupu lelaki\n 4. Anak sepupu lelaki.\n\n Jika tiada waris, baki akan dibahagikan kepada Baitulmal.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    establishment_rightful_beneficiaries_my_bukan_islam: {
+        id: 'establishment_rightful_beneficiaries_my_bukan_islam',
+        message: `Bagi Simati bukan islam, sekiranya Simati tidak meninggalkan wasiat, pentadbiran harta pusaka adalah mengikut Akta Pembahagian 1958 selepas ditolak hutang (jika ada)\n\n Maklumat penentuan waris di bawah hanya terpakai untuk kes biasa, contohnya waris seperti pasangan atau anak masih hidup. Tidak termasuk kes kematian berlapis, contohnya waris seperti anak telah meninggal dunia selepas Simati.\n\n Sepanjang pengetahuan **{name}**, apakah status perkahwinan simati?`,
+        options: [
+            { label: '1️⃣ Bujang', nextStep: 'establishment_rightful_beneficiaries_my_bukan_islam_bujang' },
+            { label: '2️⃣ Berkahwin', nextStep: 'establishment_rightful_beneficiaries_my_bukan_islam_berkahwin' },
+        ]
+    },
+    establishment_rightful_beneficiaries_my_bukan_islam_bujang: {
+        id: 'establishment_rightful_beneficiaries_my_bukan_islam_bujang',
+        message: ``,
+        options: [
+            { label: '1️⃣ Ibu dan/atau bapa masih hidup', nextStep: 'establishment_rightful_beneficiaries_my_bukan_islam_bujang_ibu' },
+            { label: '2️⃣ Kedua-dua telah meninggal', nextStep: 'establishment_rightful_beneficiaries_my_bukan_islam_bujang_meninggal' },
+        ]
+    },
+    establishment_rightful_beneficiaries_my_bukan_islam_bujang_ibu: {
+        id: 'establishment_rightful_beneficiaries_my_bukan_islam_bujang_ibu',
+        message: `1. Ibu dan bapa masih hidup - Pembahagian adalah secara sama rata\n\n 2. Ibu atau bapa masih hidup - Waris yang masih hidup mewarisi keseluruhan harta Simati`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    establishment_rightful_beneficiaries_my_bukan_islam_bujang_meninggal: {
+        id: 'establishment_rightful_beneficiaries_my_bukan_islam_bujang_meninggal',
+        message: `Adakah Simati mempunyai adik beradik?`,
+        options: [
+            { label: '1️⃣ Ya, masih hidup', nextStep: 'establishment_rightful_beneficiaries_my_bukan_islam_bujang_meninggal_masih' },
+            { label: '2️⃣ Ya, tetapi telah meninggal dunia sebelum Simati', nextStep: 'establishment_rightful_beneficiaries_my_bukan_islam_bujang_meninggal_simati' },
+            { label: '3️⃣ Tidak, Simati adalah anak tunggal', nextStep: 'establishment_rightful_beneficiaries_my_bukan_islam_bujang_meninggal_simati' },
+        ]
+    },
+    establishment_rightful_beneficiaries_my_bukan_islam_bujang_meninggal_masih: {
+        id: 'establishment_rightful_beneficiaries_my_bukan_islam_bujang_meninggal_masih',
+        message: `Adik beradik Simati akan mewarisi keseluruhan harta Simati. Jika melebihi dari seorang, pembahagian adalah secara sama rata.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    establishment_rightful_beneficiaries_my_bukan_islam_bujang_meninggal_simati: {
+        id: 'establishment_rightful_beneficiaries_my_bukan_islam_bujang_meninggal_simati',
+        message: `Jika Simati masih mempunyai waris di bawah yang masih hidup ketika kematian Simati, waris tersebut layak menerima harta pusaka Simati (mengikut turutan).\n 1. Datuk / Nenek\n 2. Bapa / ibu saudara\n 3. Moyang lelaki / perempuan\n 4. Datuk / Nenek saudara\n\n Namun, jika Simati juga tidak mempunyai waris di atas, harta pusaka Simati akan diberikan kepada Kerajaan (Bona Vacantia).`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    establishment_rightful_beneficiaries_my_bukan_islam_berkahwin: {
+        id: 'establishment_rightful_beneficiaries_my_bukan_islam_berkahwin',
+        message: `Siapakah waris Simati yang masih hidup ketika kematian simati?`,
+        options: [
+            { label: '1️⃣ Ibubapa, pasangan dan anak', nextStep: 'establishment_rightful_beneficiaries_my_bukan_islam_berkahwin_ibubapa' },
+            { label: '2️⃣ Pasangan dan anak sahaja', nextStep: 'establishment_rightful_beneficiaries_my_bukan_islam_berkahwin_pasangan' },
+            { label: '3️⃣ Ibubapa dan anak sahaja', nextStep: 'establishment_rightful_beneficiaries_my_bukan_islam_berkahwin_ibubapa_dan_anak' },
+            { label: '4️⃣ Pasangan dan ibubapa sahaja)', nextStep: 'establishment_rightful_beneficiaries_my_bukan_islam_berkahwin_pasangan_dan_ibubapa' },
+            { label: '5️⃣ Anak / Pasangan / Ibubapa sahaja', nextStep: 'establishment_rightful_beneficiaries_my_bukan_islam_berkahwin_a_p_i' },
+            { label: '6️⃣ Adik beradik sahaja', nextStep: 'establishment_rightful_beneficiaries_my_bukan_islam_berkahwin_beradik' },
+            { label: '7️⃣ Semua waris telah meninggal', nextStep: 'establishment_rightful_beneficiaries_my_bukan_islam_berkahwin_waris' },
+        ]
+    },
+    establishment_rightful_beneficiaries_my_bukan_islam_berkahwin_ibubapa: {
+        id: 'establishment_rightful_beneficiaries_my_bukan_islam_berkahwin_ibubapa',
+        message: `Pembahagian adalah seperti berikut:\n 1. Ibu dan/atau bapa : 1/4\n 2. Pasangan : 1/4\n 3. Anak : 2/4`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    establishment_rightful_beneficiaries_my_bukan_islam_berkahwin_pasangan: {
+        id: 'establishment_rightful_beneficiaries_my_bukan_islam_berkahwin_pasangan',
+        message: `Pembahagian adalah seperti berikut:\n 1. Pasangan : 1/3\n 2. Anak : 2/3`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    establishment_rightful_beneficiaries_my_bukan_islam_berkahwin_ibubapa_dan_anak: {
+        id: 'establishment_rightful_beneficiaries_my_bukan_islam_berkahwin_ibubapa_dan_anak',
+        message: `Pembahagian adalah seperti berikut:\n 1. Ibu dan/atau bapa : 1/3\n 2. Anak : 2/3`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    establishment_rightful_beneficiaries_my_bukan_islam_berkahwin_pasangan_dan_ibubapa: {
+        id: 'establishment_rightful_beneficiaries_my_bukan_islam_berkahwin_pasangan_dan_ibubapa',
+        message: `Pembahagian adalah seperti berikut:\n 1. Pasangan : 1/2\n 2. Ibu dan/atau bapa : 1/2`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    establishment_rightful_beneficiaries_my_bukan_islam_berkahwin_a_p_i: {
+        id: 'eestablishment_rightful_beneficiaries_my_bukan_islam_berkahwin_a_p_i',
+        message: `Waris yang masih hidup akan menerima keseluruhan harta Simati.\n\n Jika melebihi dari seorang, pembahagian adalah secara sama rata.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    establishment_rightful_beneficiaries_my_bukan_islam_berkahwin_beradik: {
+        id: 'establishment_rightful_beneficiaries_my_bukan_islam_berkahwin_beradik',
+        message: `Jika tiada ibubapa, pasangan dan anak, adik beradik Simati akan mewarisi keseluruhan harta Simati.\n\n Jika adik beradik melebihi dari seorang, pembahagian adalah secara sama rata.`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
+    },
+    establishment_rightful_beneficiaries_my_bukan_islam_berkahwin_waris: {
+        id: 'establishment_rightful_beneficiaries_my_bukan_islam_berkahwin_waris',
+        message: `Jika Simati masih mempunyai waris di bawah yang masih hidup ketika kematian Simati, waris tersebut layak menerima harta pusaka Simati (mengikut turutan).\n\n 1. Datuk / Nenek\n 2. Bapa / ibu saudara\n 3. Moyang lelaki / perempuan\n 4. Datuk / Nenek saudara\n\n Namun, jika Simati juga tidak mempunyai waris di atas, harta pusaka Simati akan diberikan kepada Kerajaan (Bona Vacantia).`,
+        options: [
+            { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
+        ]
     },
 }
 

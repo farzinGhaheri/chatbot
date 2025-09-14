@@ -40,6 +40,18 @@ export class ChatbotEngine {
                 this.userData['contact'] = input;
                 this.goToStep('retrieve_page1_done');
                 break;
+            case 'retrieve_page1_my':
+                this.userData['name'] = input;
+                this.goToStep('retrieve_page1_nric_my');
+                break;
+            case 'retrieve_page1_nric_my':
+                this.userData['nric'] = input;
+                this.goToStep('retrieve_page1_contact_my');
+                break;
+            case 'retrieve_page1_contact_my':
+                this.userData['contact'] = input;
+                this.goToStep('retrieve_page1_done_my');
+                break;
             default:
                 break;
 
