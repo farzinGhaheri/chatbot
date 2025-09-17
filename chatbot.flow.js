@@ -1,6 +1,4 @@
-import { BotFlow } from '../models/chatbot.js';
-
-export const chatbotFlow: BotFlow = {
+export const chatbotFlow = {
     start: {
         id: 'start',
         message: `Salam sejahtera, saya ARIA. Boleh saya tahu nama anda?\n\n Hi, I’m ARIA. May I know your name?`,
@@ -33,7 +31,6 @@ export const chatbotFlow: BotFlow = {
             { label: "4️⃣ I would like to retrieve my unclaimed portion at ARB", nextStep: 'retrieve_page1' },
             { label: "5️⃣ I have an order from the Land Office / High Court", nextStep: 'order_page1' },
             { label: "6️⃣ I would like to know about the establishment of rightful beneficiaries", nextStep: 'establishment_rightful_beneficiaries' }
-
         ]
     },
     // these below steps are belong to page 1
@@ -200,7 +197,6 @@ export const chatbotFlow: BotFlow = {
             { label: '2️⃣ Yes, it has been done before', nextStep: 'estate_yes' }
         ]
     },
-
     estate_no_1: {
         id: 'estate_no_1',
         message: `Is there any remaining loan on the deceased’s vehicle?`,
@@ -222,7 +218,6 @@ export const chatbotFlow: BotFlow = {
         message: `1. DECEASED (SIMATI)\n a. Original Death Certificate of the deceased & 1 copy.\n b. 1 copy of the Deceased’s Birth Certificate.\n c. Original Will of the deceased & 1 copy.\n d. 1 copy of Marriage/Divorce Certificate (if the deceased was married/divorced).\n\n 2. DECEASED'S BENEFICIARIES\n a. 1 copy of the Identity Card and Birth Certificate of the beneficiaries.\n b. 1 copy of Death Certificate (for any beneficiary who passed away before/after the deceased).\n\n 3. STATUTORY DECLARATION (PROVIDE ONLY IF RELEVANT)\n To be signed by an independent witness in front of a Commissioner for Oaths and stamped via the Inland Revenue Board (LHDN) website. A copy of the witness’s identity card must be included.\n a. Statutory Declaration of Single Status (if the deceased was unmarried).\n b. Statutory Declaration of No Children (if the deceased had no children).\n c. Statutory Declaration of Sole Beneficiary (if there is only one surviving beneficiary).\n\n 4. MOVABLE PROPERTY – VEHICLE a. New Grant – 1 copy of the vehicle grant (front page only) * Must include e-ownership search / proof of loan settlement / proof of cash purchase.\n b. Old Grant – 1 copy of the vehicle grant (front and back) * If ownership is still under claim and loan has been settled, include e-ownership search / proof of loan settlement.\n\n 5. MINIMUM DEPOSIT\n RM50\n\n 6. ADMINISTRATION PERIOD\n 4 months from the date of file opening\n\n 7. RELATED FORMS\n a. Application Form For Estate Administration.\n b. Document Checklist to be Attached.\n c. Statutory Declaration (Married / Divorced / No Children / Sole Beneficiary / Single).\n d. Sample – Estate Administration Application Form.\n e. Sample – Statutory Declaration (Married / Divorced / No Children / Sole Beneficiary / Single).\n\n An administration fee will be charged for the administration of the estate, as follows:\n 5% on the first RM25,000.\n 4% on the next RM225,000.\n 3% on the next RM250,000.\n 2% on the next RM500,000.\n 1% on the remaining balance.\n\n The completed form along with the required documents can be submitted to any of our nearest branches for the estate file opening process. **{name}** may schedule an appointment at [Appointment Form](https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m)`,
         options: [
             { label: 'Thank you. Feel free to return anytime!', nextStep: '' }
-
         ]
     },
     estate_no_yes: {
@@ -428,7 +423,6 @@ export const chatbotFlow: BotFlow = {
         ]
     },
     // Below steps are belong to Sabah
-
     sabah: {
         id: 'sabah',
         message: `Estate administration in Sabah is only applicable if all of the deceased's assets (both movable and immovable) are located in Sabah. If the assets are located in Peninsular Malaysia, Sarawak, or Labuan, the estate administration must be filed and carried out in the respective region based on the location of the assets.\n\n To **{name}**’s knowledge, has the deceased’s estate ever been administered before?`,
@@ -675,7 +669,6 @@ export const chatbotFlow: BotFlow = {
             { label: '3️⃣ Registering additional assets of the deceased', nextStep: 'pukasa_add_asset' },
         ]
     },
-
     pusaka_estate_check_status: {
         id: 'pusaka_estate_check_status',
         message: `File status can also be checked at [Status](https://online.amanahraya.my/estate_online/)\n\n Kindly provide your name.`,
@@ -1113,7 +1106,6 @@ export const chatbotFlow: BotFlow = {
         message: `For this product, several matters need to be noted:\n\n 1. The current valuation of the property will be carried out by ARB through the Valuation and Property Services Department (JPPH).\n 2. The property title will be registered under ARB (as Trustee) and kept by ARB.\n 3. Quit rent and assessment rates must still be paid by the Donor.\n 4. Stamp duty must be settled by the Donor during their lifetime. However, if not done, the Recipient (Penerima Hibah) must pay it first before the transfer of ownership can be completed.\n 5. The property will be transferred to the Recipient after the death of the Donor or as stipulated in the Trust Deed.\n 6. If there are restrictions, approval must first be obtained from the State Authority for the transfer of ownership to ARB as Trustee.\n\n PROPERTY HIBAH TRUST\n\n 1. DEPOSIT\n RM1,240 per property\n\n 2. ELIGIBLE DONORS & BENEFICIARIES\n Can be any individual, agency, organisation, or company.\n\n 3. STAMP DUTY As assessed by the Inland Revenue Board of Malaysia (LHDN)\n\n 4. REQUIRED DOCUMENTS\n a. Copy of Donor’s Identity Card\n b. Copy of Recipient’s Identity Card\n c. Copy of Guardian’s (Wali Mal) Identity Card (if applicable)\n d. Copy of property title deed, latest quit rent proof of payment, and latest assessment bill\n\n 5. RELATED FORMS\n a. Application Form For Hibah AmanahRaya\n b. Sample - Application Form For Hibah AmanahRaya\n\n Please visit any of our nearest branch counters to make payment, bringing along the required documents. Payment can be made in cash (limited to RM5,000), cheque, debit/credit card, or online transfer.\n **{name}** may [Schedule An Appointment](https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m)\n\n for our branches location, please click [here](https://www.amanahraya.my/contact-us/branch-locator/)\n\n 1. On the appointment date, consultation and advisory services can be conducted with our officer.\n 2. Document submission and payment can be completed on the same day.\n **{name}** will be contacted by the branch officer for the preparation of the Trust Deed.\n\n Is there anything else ARIA can assist you with?`,
         options: [
             { label: "1️⃣ That's all, thank you", nextStep: 'exit' }
-
         ]
     },
     hibah_property_title_deed_under_my_name: {
@@ -2085,7 +2077,6 @@ export const chatbotFlow: BotFlow = {
         message: `Sila sertakan dokumen berikut:\n\n 1. 1 Salinan Sijil Kematian Simati\n 2. 1 Salinan Kad Pengenalan Penjaga\n 3. 1 Salinan Kad Pengenalan dan Sijil Kelahiran waris bawah umur / OKU\n\n 4. Perintah asal daripada Mahkamah Tinggi / Pejabat Tanah yang melantik ARB sebagai pemegang amanah kepada waris bawah umur / OKU\n\nSila hadir ke mana-mana kaunter cawangan kami yang berdekatan untuk membuat bayaran dengan membawa dokumen yang diperlukan . Bayaran boleh dibuat secara tunai (terhad kepada RM5,000), cek, kad debit/kredit atau pindahan wang atas talian. **{name}** boleh buat temujanji di [sini](https://arb.nubitel.co/arb/Appointment/AppointmentForm.aspx?para=m)\n\n Maklumat cawangan boleh didapati di [sini](https://www.amanahraya.my/contact-us/branch-locator/)`,
         options: [
             { label: 'Terima kasih. Sila datang kembali bila-bila masa', nextStep: 'exit_my' },
-
         ]
     },
     untraceable_my: {
@@ -2595,7 +2586,6 @@ export const chatbotFlow: BotFlow = {
             { label: '2️⃣ Tidak', nextStep: 'pusaka_my_pusaka_semenanjung_tidak_islam_ya_tidak' },
         ]
     },
-
     pusaka_my_pusaka_semenanjung_tidak_islam_ya: {
         id: 'pusaka_my_pusaka_semenanjung_tidak_islam_ya',
         message: `Apakah harta yang ditinggalkan oleh simati?`,
@@ -2914,7 +2904,7 @@ export const chatbotFlow: BotFlow = {
         id: 'wasiat_my',
         message: `Boleh ARIA tahu, **{name}** ingin tahu berkenaan apa?`,
         options: [
-            { label: "1️⃣ Maklumat Am", nextStep: 'wasiat_my_maklumat' },// Need to discuss with Sanjay
+            { label: "1️⃣ Maklumat Am", nextStep: 'wasiat_my_maklumat' }, // Need to discuss with Sanjay
             { label: '2️⃣ Permohonan Wasiat', nextStep: 'wasiat_my_permohonan' },
             { label: "3️⃣ Penyimpanan Wasiat Luar di ARB", nextStep: 'wasiat_my_penyimpanan' },
         ]
@@ -4150,4 +4140,4 @@ export const chatbotFlow: BotFlow = {
             { label: '1️⃣ Itu sahaja. Kembali Terima kasih', nextStep: 'exit_my' }
         ]
     },
-}
+};

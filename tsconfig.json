@@ -4,7 +4,8 @@
         "module": "es6",
         "outDir": "./dist",
         "rootDir": "./",
-        "strict": true
+        "strict": true,
+        "types": []
     },
     "include": [
         "**/*.ts"
