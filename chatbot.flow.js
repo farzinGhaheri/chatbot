@@ -1,4 +1,4 @@
-import { BotFlow } from '../models/chatbot';
+import { BotFlow } from '../models/chatbot.js';
 
 export const chatbotFlow: BotFlow = {
     start: {
